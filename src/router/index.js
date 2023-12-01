@@ -6,48 +6,58 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: () => import('@/views/HomeView.vue')
+      component: () => import('@/views/home/HomeView.vue')
     },
     {
-      path: '/alerts',
-      name: 'alerts',
-      component: () => import('@/views/alerts/Alert.vue')
+      path: '/resources',
+      name: 'resources',
+      component: () => import('@/components/template/Layout.vue'),
+      children: [
+        {
+          path: '/resources/alerts',
+          name: 'resources-alerts',
+          component: () => import('@/views/alerts/Alert.vue')
+        },
+        {
+          path: '/resources/forms',
+          name: 'resources-forms',
+          component: () => import('@/views/forms/Form.vue')
+        },
+        {
+          path: '/resources/buttons',
+          name: 'resources-buttons',
+          component: () => import('@/views/buttons/Button.vue')
+        },
+        {
+          path: '/resources/badges',
+          name: 'resources-badges',
+          component: () => import('@/views/badges/Badge.vue')
+        },
+        {
+          path: '/resources/cards',
+          name: 'resources-cards',
+          component: () => import('@/views/cards/Card.vue')
+        },
+        {
+          path: '/resources/avatars',
+          name: 'resources-avatars',
+          component: () => import('@/views/avatars/Avatar.vue')
+        },
+        {
+          path: '/resources/paginations',
+          name: 'resources-paginations',
+          component: () => import('@/views/paginations/Pagination.vue')
+        },
+        {
+          path: '/resources/breadcrumbs',
+          name: 'resources-breadcrumbs',
+          component: () => import('@/views/breadcrumbs/Breadcrumb.vue')
+        },
+      ]
     },
-    {
-      path: '/forms',
-      name: 'forms',
-      component: () => import('@/views/forms/Form.vue')
-    },
-    {
-      path: '/buttons',
-      name: 'buttons',
-      component: () => import('@/views/buttons/Button.vue')
-    },
-    {
-      path: '/badges',
-      name: 'badges',
-      component: () => import('@/views/badges/Badge.vue')
-    },
-    {
-      path: '/cards',
-      name: 'cards',
-      component: () => import('@/views/cards/Card.vue')
-    },
-    {
-      path: '/avatars',
-      name: 'avatars',
-      component: () => import('@/views/avatars/Avatar.vue')
-    },
-    {
-      path: '/paginations',
-      name: 'paginations',
-      component: () => import('@/views/paginations/Pagination.vue')
-    },
-    {
-      path: '/breadcrumbs',
-      name: 'breadcrumbs',
-      component: () => import('@/views/breadcrumbs/Breadcrumb.vue')
-    },
+
+
+   
   ]
 })
 
