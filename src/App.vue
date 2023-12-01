@@ -24,11 +24,18 @@
   </div>
 
   
+  <Footer />
+ 
+
+  
 </template>
 
 
 <script setup>
+  
   import { RouterLink, RouterView } from 'vue-router';
+  import Footer from './components/template/Footer.vue';
+
 
 
 </script>
