@@ -7,6 +7,22 @@
     <RouterLink :to="{ name: 'resources' }" class="hover:text-blue-300">Recursos</RouterLink>
   </div>
 
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/ZwKhufmMxko" frameborder="0" allowfullscreen></iframe>
+
+
+
+  <div>
+    <h1>Video de YouTube en Vue.js 3</h1>
+    <iframe
+      width="560"
+      height="315"
+      :src="videoUrl"
+      frameborder="0"
+      allowfullscreen
+    ></iframe>
+  </div>
+
+
 
   <section class="text-gray-600 body-font">
   <div class="container px-5 py-24 mx-auto">
@@ -95,6 +111,9 @@
 <script setup>
 
 import { RouterLink } from 'vue-router';
+
+
+let videoUrl = "https://www.youtube.com/embed/OzHgOwMsw-8"; 
 
 
 </script>
