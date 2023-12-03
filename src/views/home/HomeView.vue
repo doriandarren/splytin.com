@@ -110,10 +110,57 @@
 
 <script setup>
 
+import { onMounted } from 'vue';
 import { RouterLink } from 'vue-router';
 
 
+
+
+
 let videoUrl = "https://www.youtube.com/embed/OzHgOwMsw-8"; 
+
+
+
+
+
+
+
+const findData = async () => {
+
+
+  let config = {
+		headers: {
+			"Content-Type": "application/json",
+			"Authorization": `Bearer ${localStorage.getItem('token')}`
+		}
+	}
+
+
+
+  //await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}session-logs/list`,{
+  await fetch(`https://api.splytin.com/api/v1/youtube-videos/list`,{
+			method: 'GET',
+			headers: config.headers,
+		})
+		.then(res => res.json())
+		.then((res) => {
+			
+      console.log(res.data);
+
+		})
+		.catch((e) => {
+			sessionLogErrors.value.push(t("errors.error_internal"));
+		});
+
+}
+
+
+
+
+onMounted(() => {
+  findData();
+})
+
 
 
 </script>
