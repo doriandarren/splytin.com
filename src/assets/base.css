@@ -91,4 +91,5 @@ pre{
   color: #ffffff;
   padding-top: 2rem;
   border-radius: 0px 0px 15px 15px;
+  overflow: auto;
 }
