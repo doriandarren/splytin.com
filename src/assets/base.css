@@ -84,3 +84,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 } */
+
+
+pre{
+  background-color: #1c1c1c;
+  color: #ffffff;
+  padding-top: 2rem;
+  border-radius: 0px 0px 15px 15px;
+}
