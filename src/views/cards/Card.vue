@@ -75,6 +75,13 @@
             </div>
         </div>
 
+        <pre>
+            {{ Card_image_with_text_over }}
+        </pre>
+
+
+        
+
     </div>
 </template>
 
@@ -105,6 +112,19 @@ let Card_with_text = `<div class="max-w-xs overflow-hidden rounded-lg shadow-lg"
                     tium, quibusdam facere quo laborum maiores sequi nam tenetur laud.</p>
             </div>
         </div>`;
+
+let Card_horizontal = `<div class="w-full max-w-lg overflow-hidden rounded-lg shadow-lg sm:flex">
+            <div class="w-full sm:w-1/3">
+                <img class="object-cover w-full h-48"
+                    src="https://images.pexels.com/photos/853199/pexels-photo-853199.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+                    alt="Flower and sky" />
+            </div>
+            <div class="flex-1 px-6 py-4">
+                <h4 class="mb-3 text-xl font-semibold tracking-tight text-gray-800">This is the title</h4>
+                <p class="leading-normal text-gray-700">Lorem ipsum dolor, sit amet cons ectetur adipis icing elit. Praesen
+                    tium, quibusdam facere quo laborum maiores sequi nam tenetur laud.</p>
+            </div>
+        </div>`;       
 
 
 let Card_image_with_text_over = `<div class="relative max-w-xs overflow-hidden rounded-lg shadow-lg">
