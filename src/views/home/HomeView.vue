@@ -1,26 +1,50 @@
 <template>
-  <main>
-    <h1 class="text-xl">Principal</h1>
-  </main>
+  
+ <div class="grid grid-cols-2 gap-2 ">
 
-  <div class="mt-5 ml-5 text-cyan-700">
-    <RouterLink :to="{ name: 'resources' }" class="hover:text-blue-300">Recursos</RouterLink>
-  </div>
-
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/ZwKhufmMxko" frameborder="0" allowfullscreen></iframe>
-
-
-
-  <div>
+  <div class="col-span-2 md:col-span-2 lg:col-span-1">
     <h1>Video de YouTube en Vue.js 3</h1>
     <iframe
-      width="560"
-      height="315"
-      :src="videoUrl"
+      :src="videoUrl1"
       frameborder="0"
       allowfullscreen
     ></iframe>
   </div>
+
+
+  <div class="col-span-2 md:col-span2 lg:col-span-1">
+    <h1>Video de YouTube en Vue.js 3</h1>
+    <iframe
+      :src="videoUrl2"
+      frameborder="0"
+      allowfullscreen
+    ></iframe>
+  </div>
+
+
+  <div class="col-span-2 md:col-span-2 lg:col-span-1">
+    <h1>Video de YouTube en Vue.js 3</h1>
+    <iframe
+      :src="videoUrl3"
+      frameborder="0"
+      allowfullscreen
+    ></iframe>
+  </div>
+
+
+  <div class="col-span-2 md:col-span2 lg:col-span-1">
+    <h1>Video de YouTube en Vue.js 3</h1>
+    <iframe
+      :src="videoUrl4"
+      frameborder="0"
+      allowfullscreen
+    ></iframe>
+  </div>
+
+
+ </div>
+
+ 
 
 
 
@@ -110,10 +134,67 @@
 
 <script setup>
 
+import { onMounted, ref } from 'vue';
 import { RouterLink } from 'vue-router';
 
 
-let videoUrl = "https://www.youtube.com/embed/OzHgOwMsw-8"; 
+
+
+
+//let videoUrl = "https://www.youtube.com/embed/OzHgOwMsw-8"; 
+
+
+const videoUrl1 = ref('https://www.youtube.com/embed/');
+const videoUrl2 = ref('https://www.youtube.com/embed/');
+const videoUrl3 = ref('https://www.youtube.com/embed/');
+const videoUrl4 = ref('https://www.youtube.com/embed/');
+
+
+
+
+
+
+const findData = async () => {
+
+
+  let config = {
+		headers: {
+			"Content-Type": "application/json",
+			"Authorization": `Bearer ${localStorage.getItem('token')}`
+		}
+	}
+
+
+
+  //await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}session-logs/list`,{
+  await fetch(`https://api.splytin.com/api/v1/youtube-videos/list`,{
+			method: 'GET',
+			headers: config.headers,
+		})
+		.then(res => res.json())
+		.then((res) => {
+			
+    
+      videoUrl1.value = videoUrl1.value + res.data[0].yt_id;
+      videoUrl2.value = videoUrl2.value + res.data[1].yt_id;
+      videoUrl3.value = videoUrl3.value + res.data[2].yt_id;
+      videoUrl4.value = videoUrl4.value + res.data[3].yt_id;
+
+
+		})
+		.catch((e) => {
+			sessionLogErrors.value.push(t("errors.error_internal"));
+		});
+
+}
+
+
+
+
+onMounted(() => {
+  findData();
+})
+
 
 
 </script>
