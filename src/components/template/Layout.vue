@@ -43,6 +43,15 @@
             <li class="mr-5">
                 <RouterLink :to="{ name: 'tailwind-resources-block-blog2' }" class="hover:text-blue-300">Blog2</RouterLink>
             </li>
+            <li class="mr-5">
+                <RouterLink :to="{ name: 'tailwind-resources-block-blog3' }" class="hover:text-blue-300">Blog3</RouterLink>
+            </li>
+            <li class="mr-5">
+                <RouterLink :to="{ name: 'tailwind-resources-block-blog4' }" class="hover:text-blue-300">Blog4</RouterLink>
+            </li>
+            <li class="mr-5">
+                <RouterLink :to="{ name: 'tailwind-resources-block-blog5' }" class="hover:text-blue-300">Blog5</RouterLink>
+            </li>
         </ul>
         <!-- End Menu -->
     </div>
