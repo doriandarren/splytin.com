@@ -141,6 +141,115 @@ const router = createRouter({
           component: () => import('@/views/tailwind/resources/blocks/content/Content8.vue')
         },
 
+
+        // CTA
+        {
+          path: '/tailwind/resources/block/cta1',
+          name: 'tailwind-resources-block-cta1',
+          component: () => import('@/views/tailwind/resources/blocks/cta/Cta1.vue')
+        },
+        {
+          path: '/tailwind/resources/block/cta2',
+          name: 'tailwind-resources-block-cta2',
+          component: () => import('@/views/tailwind/resources/blocks/cta/Cta2.vue')
+        },
+        {
+          path: '/tailwind/resources/block/cta3',
+          name: 'tailwind-resources-block-cta3',
+          component: () => import('@/views/tailwind/resources/blocks/cta/Cta3.vue')
+        },
+
+
+        // Ecommerce
+        {
+          path: '/tailwind/resources/block/ecommerce1',
+          name: 'tailwind-resources-block-ecommerce1',
+          component: () => import('@/views/tailwind/resources/blocks/ecommerce/Ecommerce1.vue')
+        },
+        {
+          path: '/tailwind/resources/block/ecommerce2',
+          name: 'tailwind-resources-block-ecommerce2',
+          component: () => import('@/views/tailwind/resources/blocks/ecommerce/Ecommerce2.vue')
+        },
+        {
+          path: '/tailwind/resources/block/ecommerce3',
+          name: 'tailwind-resources-block-ecommerce3',
+          component: () => import('@/views/tailwind/resources/blocks/ecommerce/Ecommerce3.vue')
+        },
+
+
+        // Feature
+        {
+          path: '/tailwind/resources/block/feature1',
+          name: 'tailwind-resources-block-feature1',
+          component: () => import('@/views/tailwind/resources/blocks/feature/Feature1.vue')
+        },
+        {
+          path: '/tailwind/resources/block/feature2',
+          name: 'tailwind-resources-block-feature2',
+          component: () => import('@/views/tailwind/resources/blocks/feature/Feature2.vue')
+        },
+        {
+          path: '/tailwind/resources/block/feature3',
+          name: 'tailwind-resources-block-feature3',
+          component: () => import('@/views/tailwind/resources/blocks/feature/Feature3.vue')
+        },
+        {
+          path: '/tailwind/resources/block/feature4',
+          name: 'tailwind-resources-block-feature4',
+          component: () => import('@/views/tailwind/resources/blocks/feature/Feature4.vue')
+        },
+        {
+          path: '/tailwind/resources/block/feature5',
+          name: 'tailwind-resources-block-feature5',
+          component: () => import('@/views/tailwind/resources/blocks/feature/Feature5.vue')
+        },
+        {
+          path: '/tailwind/resources/block/feature6',
+          name: 'tailwind-resources-block-feature6',
+          component: () => import('@/views/tailwind/resources/blocks/feature/Feature6.vue')
+        },
+        {
+          path: '/tailwind/resources/block/feature7',
+          name: 'tailwind-resources-block-feature7',
+          component: () => import('@/views/tailwind/resources/blocks/feature/Feature7.vue')
+        },
+        {
+          path: '/tailwind/resources/block/feature8',
+          name: 'tailwind-resources-block-feature8',
+          component: () => import('@/views/tailwind/resources/blocks/feature/Feature8.vue')
+        },
+
+
+        // Footer
+        {
+          path: '/tailwind/resources/block/footer1',
+          name: 'tailwind-resources-block-footer1',
+          component: () => import('@/views/tailwind/resources/blocks/footer/Footer1.vue')
+        },
+        {
+          path: '/tailwind/resources/block/footer2',
+          name: 'tailwind-resources-block-footer2',
+          component: () => import('@/views/tailwind/resources/blocks/footer/Footer2.vue')
+        },
+        {
+          path: '/tailwind/resources/block/footer3',
+          name: 'tailwind-resources-block-footer3',
+          component: () => import('@/views/tailwind/resources/blocks/footer/Footer3.vue')
+        },
+        {
+          path: '/tailwind/resources/block/footer4',
+          name: 'tailwind-resources-block-footer4',
+          component: () => import('@/views/tailwind/resources/blocks/footer/Footer4.vue')
+        },
+        {
+          path: '/tailwind/resources/block/footer5',
+          name: 'tailwind-resources-block-footer5',
+          component: () => import('@/views/tailwind/resources/blocks/footer/Footer5.vue')
+        },
+        
+
+
       ]
     },
 
