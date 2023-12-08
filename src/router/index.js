@@ -13,6 +13,7 @@ const router = createRouter({
       name: 'resources',
       component: () => import('@/components/template/Layout.vue'),
       children: [
+        //Routes components
         {
           path: '/resources/alerts',
           name: 'resources-alerts',
@@ -52,6 +53,12 @@ const router = createRouter({
           path: '/resources/breadcrumbs',
           name: 'resources-breadcrumbs',
           component: () => import('@/views/tailwind_resources/components/breadcrumbs/Breadcrumb.vue')
+        },
+        //Routes Block
+        {
+          path: '/resources/block/blog1',
+          name: 'resources-block-blog1',
+          component: () => import('@/views/tailwind_resources/blog/Blog1.vue')
         },
       ]
     },
