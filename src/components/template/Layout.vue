@@ -40,6 +40,9 @@
             <li class="mr-5">
                 <RouterLink :to="{ name: 'tailwind-resources-block-blog1' }" class="hover:text-blue-300">Blog1</RouterLink>
             </li>
+            <li class="mr-5">
+                <RouterLink :to="{ name: 'tailwind-resources-block-blog2' }" class="hover:text-blue-300">Blog2</RouterLink>
+            </li>
         </ul>
         <!-- End Menu -->
     </div>
