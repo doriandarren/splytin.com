@@ -16,42 +16,42 @@ const router = createRouter({
         {
           path: '/resources/alerts',
           name: 'resources-alerts',
-          component: () => import('@/views/alerts/Alert.vue')
+          component: () => import('@/views/tailwind_resources/components/alerts/Alert.vue')
         },
         {
           path: '/resources/forms',
           name: 'resources-forms',
-          component: () => import('@/views/forms/Form.vue')
+          component: () => import('@/views/tailwind_resources/components/forms/Form.vue')
         },
         {
           path: '/resources/buttons',
           name: 'resources-buttons',
-          component: () => import('@/views/buttons/Button.vue')
+          component: () => import('@/views/tailwind_resources/components/buttons/Button.vue')
         },
         {
           path: '/resources/badges',
           name: 'resources-badges',
-          component: () => import('@/views/badges/Badge.vue')
+          component: () => import('@/views/tailwind_resources/components/badges/Badge.vue')
         },
         {
           path: '/resources/cards',
           name: 'resources-cards',
-          component: () => import('@/views/cards/Card.vue')
+          component: () => import('@/views/tailwind_resources/components/cards/Card.vue')
         },
         {
           path: '/resources/avatars',
           name: 'resources-avatars',
-          component: () => import('@/views/avatars/Avatar.vue')
+          component: () => import('@/views/tailwind_resources/components/avatars/Avatar.vue')
         },
         {
           path: '/resources/paginations',
           name: 'resources-paginations',
-          component: () => import('@/views/paginations/Pagination.vue')
+          component: () => import('@/views/tailwind_resources/components/paginations/Pagination.vue')
         },
         {
           path: '/resources/breadcrumbs',
           name: 'resources-breadcrumbs',
-          component: () => import('@/views/breadcrumbs/Breadcrumb.vue')
+          component: () => import('@/views/tailwind_resources/components/breadcrumbs/Breadcrumb.vue')
         },
       ]
     },
