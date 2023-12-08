@@ -247,7 +247,172 @@ const router = createRouter({
           name: 'tailwind-resources-block-footer5',
           component: () => import('@/views/tailwind/resources/blocks/footer/Footer5.vue')
         },
-        
+
+
+        // Gallery
+        {
+          path: '/tailwind/resources/block/gallery1',
+          name: 'tailwind-resources-block-gallery1',
+          component: () => import('@/views/tailwind/resources/blocks/gallery/Gallery1.vue')
+        },
+        {
+          path: '/tailwind/resources/block/gallery2',
+          name: 'tailwind-resources-block-gallery2',
+          component: () => import('@/views/tailwind/resources/blocks/gallery/Gallery2.vue')
+        },
+        {
+          path: '/tailwind/resources/block/gallery3',
+          name: 'tailwind-resources-block-gallery3',
+          component: () => import('@/views/tailwind/resources/blocks/gallery/Gallery3.vue')
+        },
+
+
+
+        // Header
+        {
+          path: '/tailwind/resources/block/header1',
+          name: 'tailwind-resources-block-header1',
+          component: () => import('@/views/tailwind/resources/blocks/header/Header1.vue')
+        },
+        {
+          path: '/tailwind/resources/block/header2',
+          name: 'tailwind-resources-block-header2',
+          component: () => import('@/views/tailwind/resources/blocks/header/Header2.vue')
+        },
+        {
+          path: '/tailwind/resources/block/header3',
+          name: 'tailwind-resources-block-header3',
+          component: () => import('@/views/tailwind/resources/blocks/header/Header3.vue')
+        },
+        {
+          path: '/tailwind/resources/block/header4',
+          name: 'tailwind-resources-block-header4',
+          component: () => import('@/views/tailwind/resources/blocks/header/Header4.vue')
+        },
+
+
+
+        // Hero
+        {
+          path: '/tailwind/resources/block/hero1',
+          name: 'tailwind-resources-block-hero1',
+          component: () => import('@/views/tailwind/resources/blocks/hero/Hero1.vue')
+        },
+        {
+          path: '/tailwind/resources/block/hero2',
+          name: 'tailwind-resources-block-hero2',
+          component: () => import('@/views/tailwind/resources/blocks/hero/Hero2.vue')
+        },
+        {
+          path: '/tailwind/resources/block/hero3',
+          name: 'tailwind-resources-block-hero3',
+          component: () => import('@/views/tailwind/resources/blocks/hero/Hero3.vue')
+        },
+        {
+          path: '/tailwind/resources/block/hero4',
+          name: 'tailwind-resources-block-hero4',
+          component: () => import('@/views/tailwind/resources/blocks/hero/Hero4.vue')
+        },
+        {
+          path: '/tailwind/resources/block/hero5',
+          name: 'tailwind-resources-block-hero5',
+          component: () => import('@/views/tailwind/resources/blocks/hero/Hero5.vue')
+        },
+        {
+          path: '/tailwind/resources/block/hero6',
+          name: 'tailwind-resources-block-hero6',
+          component: () => import('@/views/tailwind/resources/blocks/hero/Hero6.vue')
+        },
+
+
+
+        // Pricing
+        {
+          path: '/tailwind/resources/block/pricing1',
+          name: 'tailwind-resources-block-pricing1',
+          component: () => import('@/views/tailwind/resources/blocks/pricing/Pricing1.vue')
+        },
+        {
+          path: '/tailwind/resources/block/pricing2',
+          name: 'tailwind-resources-block-pricing2',
+          component: () => import('@/views/tailwind/resources/blocks/pricing/Pricing2.vue')
+        },
+        {
+          path: '/tailwind/resources/block/pricing3',
+          name: 'tailwind-resources-block-pricing3',
+          component: () => import('@/views/tailwind/resources/blocks/pricing/Pricing3.vue')
+        },
+
+
+        // Statistic
+        {
+          path: '/tailwind/resources/block/statistic1',
+          name: 'tailwind-resources-block-statistic1',
+          component: () => import('@/views/tailwind/resources/blocks/statistic/Statistic1.vue')
+        },
+        {
+          path: '/tailwind/resources/block/statistic2',
+          name: 'tailwind-resources-block-statistic2',
+          component: () => import('@/views/tailwind/resources/blocks/statistic/Statistic2.vue')
+        },
+        {
+          path: '/tailwind/resources/block/statistic3',
+          name: 'tailwind-resources-block-statistic3',
+          component: () => import('@/views/tailwind/resources/blocks/statistic/Statistic3.vue')
+        },
+
+
+
+        // Step
+        {
+          path: '/tailwind/resources/block/step1',
+          name: 'tailwind-resources-block-step1',
+          component: () => import('@/views/tailwind/resources/blocks/step/Step1.vue')
+        },
+        {
+          path: '/tailwind/resources/block/step2',
+          name: 'tailwind-resources-block-step2',
+          component: () => import('@/views/tailwind/resources/blocks/step/Step2.vue')
+        },
+
+
+
+        // Team
+        {
+          path: '/tailwind/resources/block/team1',
+          name: 'tailwind-resources-block-team1',
+          component: () => import('@/views/tailwind/resources/blocks/team/Team1.vue')
+        },
+        {
+          path: '/tailwind/resources/block/team2',
+          name: 'tailwind-resources-block-team2',
+          component: () => import('@/views/tailwind/resources/blocks/team/Team2.vue')
+        },
+        {
+          path: '/tailwind/resources/block/team3',
+          name: 'tailwind-resources-block-team3',
+          component: () => import('@/views/tailwind/resources/blocks/team/Team3.vue')
+        },
+
+
+        // Testimonial
+        {
+          path: '/tailwind/resources/block/testimonial1',
+          name: 'tailwind-resources-block-testimonial1',
+          component: () => import('@/views/tailwind/resources/blocks/testimonial/Testimonial1.vue')
+        },
+        {
+          path: '/tailwind/resources/block/testimonial2',
+          name: 'tailwind-resources-block-testimonial2',
+          component: () => import('@/views/tailwind/resources/blocks/testimonial/Testimonial2.vue')
+        },
+        {
+          path: '/tailwind/resources/block/testimonial3',
+          name: 'tailwind-resources-block-testimonial3',
+          component: () => import('@/views/tailwind/resources/blocks/testimonial/Testimonial3.vue')
+        },
+
+
 
 
       ]

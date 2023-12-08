@@ -239,17 +239,39 @@
             |
         </div>
 
+        <!-- Gallery -->
+        <ul class="flex space-x-6 mr-4">
+            <li class="mr-5">
+                <RouterLink :to="{ name: 'tailwind-resources-block-gallery1' }" class="hover:text-blue-300">Gallery1</RouterLink>
+            </li>
+            <li class="mr-5">
+                <RouterLink :to="{ name: 'tailwind-resources-block-gallery2' }" class="hover:text-blue-300">Gallery2</RouterLink>
+            </li>
+            <li class="mr-5">
+                <RouterLink :to="{ name: 'tailwind-resources-block-gallery3' }" class="hover:text-blue-300">Gallery3</RouterLink>
+            </li>
+        </ul>
+
+
     </div>
 
 
 
 
-
     <div class="flex justify-center rounded-lg  m-10 bg-slate-100">
-        <!--  -->
+        <!-- Header -->
         <ul class="flex space-x-6 mr-4">
             <li class="mr-5">
-                <RouterLink :to="{ name: 'tailwind-resources-block-content1' }" class="hover:text-blue-300">Content1</RouterLink>
+                <RouterLink :to="{ name: 'tailwind-resources-block-header1' }" class="hover:text-blue-300">Header1</RouterLink>
+            </li>
+            <li class="mr-5">
+                <RouterLink :to="{ name: 'tailwind-resources-block-header2' }" class="hover:text-blue-300">Header2</RouterLink>
+            </li>
+            <li class="mr-5">
+                <RouterLink :to="{ name: 'tailwind-resources-block-header3' }" class="hover:text-blue-300">Header3</RouterLink>
+            </li>
+            <li class="mr-5">
+                <RouterLink :to="{ name: 'tailwind-resources-block-header4' }" class="hover:text-blue-300">Header4</RouterLink>
             </li>
         </ul>
         <!-- End -->
@@ -259,8 +281,138 @@
             |
         </div>
 
+        <!-- Hero -->
+        <ul class="flex space-x-6 mr-4">
+            <li class="mr-5">
+                <RouterLink :to="{ name: 'tailwind-resources-block-hero1' }" class="hover:text-blue-300">Hero1</RouterLink>
+            </li>
+            <li class="mr-5">
+                <RouterLink :to="{ name: 'tailwind-resources-block-hero2' }" class="hover:text-blue-300">Hero2</RouterLink>
+            </li>
+            <li class="mr-5">
+                <RouterLink :to="{ name: 'tailwind-resources-block-hero3' }" class="hover:text-blue-300">Hero3</RouterLink>
+            </li>
+            <li class="mr-5">
+                <RouterLink :to="{ name: 'tailwind-resources-block-hero4' }" class="hover:text-blue-300">Hero4</RouterLink>
+            </li>
+            <li class="mr-5">
+                <RouterLink :to="{ name: 'tailwind-resources-block-hero5' }" class="hover:text-blue-300">Hero5</RouterLink>
+            </li>
+            <li class="mr-5">
+                <RouterLink :to="{ name: 'tailwind-resources-block-hero6' }" class="hover:text-blue-300">Hero6</RouterLink>
+            </li>
+
+        </ul>
+        <!-- End -->
+
     </div>
 
+
+
+
+    <div class="flex justify-center rounded-lg  m-10 bg-slate-100">
+        <!-- Pricing -->
+        <ul class="flex space-x-6 mr-4">
+            <li class="mr-5">
+                <RouterLink :to="{ name: 'tailwind-resources-block-pricing1' }" class="hover:text-blue-300">pricing1</RouterLink>
+            </li>
+            <li class="mr-5">
+                <RouterLink :to="{ name: 'tailwind-resources-block-pricing2' }" class="hover:text-blue-300">pricing2</RouterLink>
+            </li>
+            <li class="mr-5">
+                <RouterLink :to="{ name: 'tailwind-resources-block-pricing3' }" class="hover:text-blue-300">pricing3</RouterLink>
+            </li>
+        </ul>
+        <!-- End -->
+
+        <!-- Separator -->
+        <div class="mr-4">
+            |
+        </div>
+
+
+        <!-- Statistic -->
+        <ul class="flex space-x-6 mr-4">
+            <li class="mr-5">
+                <RouterLink :to="{ name: 'tailwind-resources-block-statistic1' }" class="hover:text-blue-300">Statistic1</RouterLink>
+            </li>
+            <li class="mr-5">
+                <RouterLink :to="{ name: 'tailwind-resources-block-statistic2' }" class="hover:text-blue-300">Statistic2</RouterLink>
+            </li>
+            <li class="mr-5">
+                <RouterLink :to="{ name: 'tailwind-resources-block-statistic3' }" class="hover:text-blue-300">Statistic3</RouterLink>
+            </li>
+        </ul>
+        <!-- End -->
+
+    </div>
+
+
+
+
+    <div class="flex justify-center rounded-lg  m-10 bg-slate-100">
+        <!-- Step -->
+        <ul class="flex space-x-6 mr-4">
+            <li class="mr-5">
+                <RouterLink :to="{ name: 'tailwind-resources-block-step1' }" class="hover:text-blue-300">Step1</RouterLink>
+            </li>
+            <li class="mr-5">
+                <RouterLink :to="{ name: 'tailwind-resources-block-step2' }" class="hover:text-blue-300">Step2</RouterLink>
+            </li>
+        </ul>
+        <!-- End -->
+
+        <!-- Separator -->
+        <div class="mr-4">
+            |
+        </div>
+
+
+        <!-- Team -->
+        <ul class="flex space-x-6 mr-4">
+            <li class="mr-5">
+                <RouterLink :to="{ name: 'tailwind-resources-block-team1' }" class="hover:text-blue-300">Team1</RouterLink>
+            </li>
+            <li class="mr-5">
+                <RouterLink :to="{ name: 'tailwind-resources-block-team2' }" class="hover:text-blue-300">Team2</RouterLink>
+            </li>
+            <li class="mr-5">
+                <RouterLink :to="{ name: 'tailwind-resources-block-team3' }" class="hover:text-blue-300">Team3</RouterLink>
+            </li>
+        </ul>
+        <!-- End -->
+
+    </div>
+
+
+
+
+
+
+
+
+    <div class="flex justify-center rounded-lg  m-10 bg-slate-100">
+        <!-- Testimonial -->
+        <ul class="flex space-x-6 mr-4">
+            <li class="mr-5">
+                <RouterLink :to="{ name: 'tailwind-resources-block-testimonial1' }" class="hover:text-blue-300">Testimonial1</RouterLink>
+            </li>
+            <li class="mr-5">
+                <RouterLink :to="{ name: 'tailwind-resources-block-testimonial2' }" class="hover:text-blue-300">Testimonial2</RouterLink>
+            </li>
+            <li class="mr-5">
+                <RouterLink :to="{ name: 'tailwind-resources-block-testimonial3' }" class="hover:text-blue-300">Testimonial3</RouterLink>
+            </li>
+            
+        </ul>
+        <!-- End -->
+
+        <!-- Separator -->
+        <div class="mr-4">
+            |
+        </div>
+
+    </div>
 
 
 
