@@ -65,6 +65,21 @@ const router = createRouter({
           name: 'tailwind-resources-block-blog2',
           component: () => import('@/views/tailwind/resources/blocks/blog/Blog2.vue')
         },
+        {
+          path: '/tailwind/resources/block/blog3',
+          name: 'tailwind-resources-block-blog3',
+          component: () => import('@/views/tailwind/resources/blocks/blog/Blog3.vue')
+        },
+        {
+          path: '/tailwind/resources/block/blog4',
+          name: 'tailwind-resources-block-blog4',
+          component: () => import('@/views/tailwind/resources/blocks/blog/Blog4.vue')
+        },
+        {
+          path: '/tailwind/resources/block/blog5',
+          name: 'tailwind-resources-block-blog5',
+          component: () => import('@/views/tailwind/resources/blocks/blog/Blog5.vue')
+        },
       ]
     },
 
