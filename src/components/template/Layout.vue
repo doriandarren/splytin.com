@@ -214,7 +214,7 @@
 
 
     <div class="flex justify-center rounded-lg  m-10 bg-slate-100">
-        <!--  -->
+        <!-- Footer -->
         <ul class="flex space-x-6 mr-4">
             <li class="mr-5">
                 <RouterLink :to="{ name: 'tailwind-resources-block-footer1' }" class="hover:text-blue-300">Footer1</RouterLink>
