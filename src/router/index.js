@@ -60,6 +60,11 @@ const router = createRouter({
           name: 'tailwind-resources-block-blog1',
           component: () => import('@/views/tailwind/resources/blocks/blog/Blog1.vue')
         },
+        {
+          path: '/tailwind/resources/block/blog2',
+          name: 'tailwind-resources-block-blog2',
+          component: () => import('@/views/tailwind/resources/blocks/blog/Blog2.vue')
+        },
       ]
     },
 
