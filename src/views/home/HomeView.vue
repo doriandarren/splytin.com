@@ -5,33 +5,25 @@
   <div class="grid grid-cols-2 gap-10">
 
     <div class="col-span-2 md:col-span-2 lg:col-span-1">
-      <h1>Video de YouTube en Vue.js 3</h1>
       <iframe :src="videoUrl1" frameborder="0" allowfullscreen width="100%" height="300vh"></iframe>
     </div>
 
 
     <div class="col-span-2 md:col-span2 lg:col-span-1">
-      <h1>Video de YouTube en Vue.js 3</h1>
       <iframe :src="videoUrl2" frameborder="0" allowfullscreen width="100%" height="300vh"></iframe>
     </div>
 
 
     <div class="col-span-2 md:col-span-2 lg:col-span-1">
-      <h1>Video de YouTube en Vue.js 3</h1>
       <iframe :src="videoUrl3" frameborder="0" allowfullscreen width="100%" height="300vh"></iframe>
     </div>
 
 
     <div class="col-span-2 md:col-span2 lg:col-span-1">
-      <h1>Video de YouTube en Vue.js 3</h1>
       <iframe :src="videoUrl4" frameborder="0" allowfullscreen width="100%" height="300vh"></iframe>
     </div>
-
-
+    
   </div>
-
-
-
 
 
   <section class="text-gray-600 body-font">
