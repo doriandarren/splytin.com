@@ -337,11 +337,6 @@ const router = createRouter({
           name: 'tailwind-resources-block-pricing2',
           component: () => import('@/views/tailwind/resources/blocks/pricing/Pricing2.vue')
         },
-        {
-          path: '/tailwind/resources/block/pricing3',
-          name: 'tailwind-resources-block-pricing3',
-          component: () => import('@/views/tailwind/resources/blocks/pricing/Pricing3.vue')
-        },
 
 
         // Statistic
