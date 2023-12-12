@@ -6,7 +6,7 @@
 
 
       <!-- Logo o Título -->
-      <a href="/" class="text-white text-4xl font-bold">Splytin</a>
+      <a href="/" class="text-white text-3xl font-bold">Splytin</a>
 
       <!-- Botón de Menú (Visible en Pantallas Pequeñas) -->
       <div class="lg:hidden">
@@ -19,9 +19,15 @@
 
 
       <!-- Menú de Navegación (Visible en Pantallas Grandes) -->
-      <div class="hidden lg:flex items-center space-x-4 text-4xl">
+      <div class="hidden lg:flex items-center space-x-4 text-lg">
 
-        <RouterLink :to="{ name: 'resources' }" class="text-white">Recursos</RouterLink>
+        <ul class="flex space-x-6 text-white mr-4">
+          <li>
+            <RouterLink :to="{ name: 'resources' }" class="text-white">Recursos</RouterLink>
+          </li>
+        </ul>
+
+        
       </div>
 
     </div>
@@ -35,7 +41,7 @@
 
 
 
-  <div class="container mx-auto mt-20" >
+  <div class="container mx-auto" >
     <RouterView />
   </div>
   <Footer />
