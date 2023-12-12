@@ -5,7 +5,7 @@
     <div class="container mx-auto flex justify-between items-center">
 
       <!-- Logo o Título -->
-      <a href="/" class="text-white text-xl font-bold">Splytin</a>
+      <a href="/" class="text-white text-4xl font-bold">Splytin</a>
 
       <!-- Botón de Menú (Visible en Pantallas Pequeñas) -->
       <div class="lg:hidden">
@@ -17,7 +17,7 @@
       </div>
 
       <!-- Menú de Navegación (Visible en Pantallas Grandes) -->
-      <div class="hidden lg:flex items-center space-x-4">
+      <div class="hidden lg:flex items-center space-x-4 text-4xl">
 
         <RouterLink :to="{ name: 'resources' }" class="text-white">Recursos</RouterLink>
       </div>
