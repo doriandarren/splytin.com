@@ -2,11 +2,9 @@
 
 
   <section>
-    
     <h1 class="text-3xl mb-10">
       ¡Bienvenido a Splytin! Descubre la excelencia en entretenimiento con nuestros productos de alta calidad. Explora y encuentra la solución perfecta para ti.
     </h1>
-    
   </section>
 
 
