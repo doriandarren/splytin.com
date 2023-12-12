@@ -319,9 +319,6 @@
             <li class="mr-5">
                 <RouterLink :to="{ name: 'tailwind-resources-block-pricing2' }" class="hover:text-blue-300">pricing2</RouterLink>
             </li>
-            <li class="mr-5">
-                <RouterLink :to="{ name: 'tailwind-resources-block-pricing3' }" class="hover:text-blue-300">pricing3</RouterLink>
-            </li>
         </ul>
         <!-- End -->
 

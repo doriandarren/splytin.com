@@ -3,7 +3,7 @@
   <!-- Menú de Navegación -->
   <nav class="bg-gray-700 p-8">
     <div class="container mx-auto flex justify-between items-center">
-      
+
 
       <!-- Logo o Título -->
       <a href="/" class="text-white text-4xl font-bold">Splytin</a>
@@ -54,10 +54,6 @@
   // menuToggle.addEventListener('click', () => {
   //   menu.classList.toggle('hidden');
   // });
-
-  
-
-
 
 </script>
 
