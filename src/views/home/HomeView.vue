@@ -3,7 +3,7 @@
 
   <section>
     
-    <h1 class="text-5xl mb-10">
+    <h1 class="text-3xl mb-10">
       ¡Bienvenido a Splytin! Descubre la excelencia en entretenimiento con nuestros productos de alta calidad. Explora y encuentra la solución perfecta para ti.
     </h1>
     
@@ -38,8 +38,8 @@
 
   <section class="text-gray-600 body-font">
     <div class="container px-5 py-24 mx-auto">
-      <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
-        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Nuestras Páginas</h1>
+      <div class="flex flex-wrap w-full flex-col items-center text-center">
+        <h1 class="sm:text-2xl text-2xl font-medium title-font mb-2 text-gray-900">Nuestras Páginas</h1>
         <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">
           Todo para ti
         </p>
