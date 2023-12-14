@@ -203,6 +203,12 @@ const findData = async () => {
 
 onMounted(() => {
   findData();
+
+  console.log('Configurando meta description');
+  const metaDescription = 'Descripción única para este componente';
+  document.querySelector('meta[name="description"]').setAttribute('content', metaDescription);
+
+
 })
 
 
