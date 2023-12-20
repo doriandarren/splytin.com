@@ -3,40 +3,18 @@
   <!-- Banner -->
   <section class="bg-gray-800">
     <div class="container w-full">
-      <img :src="imagen" alt="img" style="width: 100%">
+      <!-- <img :src="imagen" alt="img"> -->
+      <img src="/public/img/img1.jpg" alt="img">
     </div>
   </section>
 
 
-  <!-- Contenido Principal -->
-  <main class="container mx-auto my-8">
-    <!-- Sección 1 -->
-    <section class="mb-8">
-      <h2 class="text-2xl font-bold mb-4">Sección 1</h2>
-      <p>Contenido de la sección 1...</p>
-    </section>
-
-    <!-- Sección 2 -->
-    <section class="mb-8">
-      <h2 class="text-2xl font-bold mb-4">Sección 2</h2>
-      <p>Contenido de la sección 2...</p>
-    </section>
-
-    <!-- Agrega más secciones según sea necesario -->
-
-  </main>
-
-
-
-
-
-  <div class="container mx-auto">
+  <div class="container mx-auto mt-20">
     <h1 class="text-3xl mb-10">
       ¡Bienvenido a Splytin! Descubre la excelencia en entretenimiento con nuestros productos de alta calidad. Explora y
       encuentra la solución perfecta para ti.
     </h1>
   </div>
-
 
 
   <div class="container mx-auto">
@@ -187,6 +165,7 @@
 <script setup>
 
 import { onMounted, ref } from 'vue';
+import bgImg from '@/assets/img1.jpg';
 
 
 const videoUrl1 = ref('https://www.youtube.com/embed/');
@@ -194,11 +173,9 @@ const videoUrl2 = ref('https://www.youtube.com/embed/');
 const videoUrl3 = ref('https://www.youtube.com/embed/');
 const videoUrl4 = ref('https://www.youtube.com/embed/');
 
-import bgImg from '@/assets/img1.jpg';
 
 
-
-const imagen = ref(bgImg);
+const imagen = ref();
 
 
 
@@ -239,7 +216,11 @@ const findData = async () => {
 
 
 onMounted(() => {
+
+  imagen.value = bgImg;
   findData();
+
+  
 
   // console.log('Configurando meta description');
   // const metaDescription = 'Descripción única para este componente';

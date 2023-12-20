@@ -1,7 +1,9 @@
 <template>
   <!-- Menú de Navegación -->
   <nav class="bg-gray-700 p-8">
+
     <div class="container mx-auto flex justify-between items-center">
+      
       <div class="flex items-center flex-shrink-0 text-white mr-6">
         <img src="./assets/LogoSplytin.png" alt="Logo" class="w-10 h-10 mr-3">
         <span class="font-semibold text-xl tracking-tight">
@@ -23,27 +25,16 @@
 
       <!-- Menú de Navegación (Visible en Pantallas Grandes) -->
       <div class="hidden lg:flex items-center space-x-4 text-lg">
-
         <ul class="flex space-x-6 text-white mr-4">
           <li>
             <RouterLink :to="{ name: 'resources' }" class="text-white">Recursos</RouterLink>
           </li>
         </ul>
-
-
       </div>
 
     </div>
+
   </nav>
-
-
-  <!-- Menú de Navegación (Visible en Pantallas Grandes) -->
-  <div id="menu" class="flex items-center space-x-4">
-    <RouterLink :to="{ name: 'resources' }" class="text-white">Recursos</RouterLink>
-  </div>
-
-
-
 
   <!-- <div class="container mx-auto">
     <div>
