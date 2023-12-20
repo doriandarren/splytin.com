@@ -57,16 +57,19 @@
 
 
 <script setup>
-import { ref } from 'vue';
 import { RouterView } from 'vue-router';
-import Footer from './components/template/Footer.vue';
+import Footer from '@/components/template/Footer.vue';
 
+import { onMounted } from 'vue';
+import AOS from 'aos';
 
 
 const menuToggle = document.getElementById('menu-toggle');
 const menu = document.getElementById('menu');
 
-
+onMounted(() => {
+  AOS.init();
+})
 
 // menuToggle.addEventListener('click', () => {
 //   menu.classList.toggle('hidden');

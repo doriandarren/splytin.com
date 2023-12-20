@@ -1,10 +1,18 @@
-import './assets/main.css'
+import './assets/main.css';
 
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+// importing AOS css style globally
+import 'aos/dist/aos.css';
 
-import App from './App.vue'
-import router from './router'
+
+import { createApp } from 'vue';
+import { createPinia } from 'pinia';
+
+import App from './App.vue';
+import router from './router';
+
+
+
+
 
 const app = createApp(App)
 
