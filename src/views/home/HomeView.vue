@@ -12,9 +12,9 @@
 
 
 
-    <section class="text-gray-600 body-font px-5 py-24">
+    <section class="text-gray-600 body-font pt-10">
       <div class="container mx-auto">
-        <div class="flex flex-wrap w-full flex-col items-center text-center">
+        <div class="flex flex-wrap w-full flex-col items-center text-center mb-10">
           <h1 class="sm:text-2xl text-2xl font-medium title-font mb-2 text-gray-900">
             Videos a la carta
           </h1>
@@ -47,9 +47,9 @@
     </section>
 
 
-    <section class="text-gray-600 body-font px-5 py-24">
+    <section class="text-gray-600 body-font pt-10">
       <div class="container mx-auto">
-        <div class="flex flex-wrap w-full flex-col items-center text-center">
+        <div class="flex flex-wrap w-full flex-col items-center text-center pb-10">
           <h1 class="sm:text-2xl text-2xl font-medium title-font mb-2 text-gray-900">Nuestros Productos</h1>
           <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">
             Pensado en todos y para todos
