@@ -1,12 +1,12 @@
 <template>
 
   <!-- Banner -->
-  <section class="bg-gray-800">
+  <!-- <section class="bg-gray-800">
     <div class="container w-full">
-      <!-- <img :src="imagen" alt="img"> -->
+      
       <img src="/public/img/img1.jpg" alt="img">
     </div>
-  </section>
+  </section> -->
 
 
   <div class="container mx-auto mt-20">
@@ -52,9 +52,9 @@
   <section class="text-gray-600 body-font">
     <div class="container px-5 py-24 mx-auto">
       <div class="flex flex-wrap w-full flex-col items-center text-center">
-        <h1 class="sm:text-2xl text-2xl font-medium title-font mb-2 text-gray-900">Nuestras Páginas</h1>
+        <h1 class="sm:text-2xl text-2xl font-medium title-font mb-2 text-gray-900">Nuestros Productos</h1>
         <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">
-          Todo para ti
+          Pensado en todos y para todos
         </p>
       </div>
       <div class="flex flex-wrap -m-4">
@@ -63,94 +63,14 @@
           <div class="border border-gray-200 p-6 rounded-lg">
             <div
               class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                class="w-6 h-6" viewBox="0 0 24 24">
-                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M18.671 3.208A2 2 0 0 1 21 5.18V17a4 4 0 1 1-2-3.465V9.18L9 10.847V18c0 .06-.005.117-.015.174A3.5 3.5 0 1 1 7 15.337v-8.49a2 2 0 0 1 1.671-1.973zM9 8.82l10-1.667V5.18L9 6.847z"/></g></svg>
             </div>
-            <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Shooting Stars</h2>
-            <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waist co, subway tile poke
-              farm.</p>
+            <h2 class="text-lg text-gray-900 font-medium title-font mb-2"><a href="https://music.famindex.com/" target="_blank">Famimusic</a></h2>
+            <p class="leading-relaxed text-base">Página de Música y entretenimiento</p>
           </div>
         </div>
 
-        <div class="xl:w-1/3 md:w-1/2 p-4">
-          <div class="border border-gray-200 p-6 rounded-lg">
-            <div
-              class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                class="w-6 h-6" viewBox="0 0 24 24">
-                <circle cx="6" cy="6" r="3"></circle>
-                <circle cx="6" cy="18" r="3"></circle>
-                <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
-              </svg>
-            </div>
-            <h2 class="text-lg text-gray-900 font-medium title-font mb-2">The Catalyzer</h2>
-            <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waist co, subway tile poke
-              farm.</p>
-          </div>
-        </div>
-
-        <div class="xl:w-1/3 md:w-1/2 p-4">
-          <div class="border border-gray-200 p-6 rounded-lg">
-            <div
-              class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                class="w-6 h-6" viewBox="0 0 24 24">
-                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-              </svg>
-            </div>
-            <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Neptune</h2>
-            <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waist co, subway tile poke
-              farm.</p>
-          </div>
-        </div>
-
-        <div class="xl:w-1/3 md:w-1/2 p-4">
-          <div class="border border-gray-200 p-6 rounded-lg">
-            <div
-              class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                class="w-6 h-6" viewBox="0 0 24 24">
-                <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7"></path>
-              </svg>
-            </div>
-            <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Melanchole</h2>
-            <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waist co, subway tile poke
-              farm.</p>
-          </div>
-        </div>
-
-        <div class="xl:w-1/3 md:w-1/2 p-4">
-          <div class="border border-gray-200 p-6 rounded-lg">
-            <div
-              class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                class="w-6 h-6" viewBox="0 0 24 24">
-                <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
-              </svg>
-            </div>
-            <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Bunker</h2>
-            <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waist co, subway tile poke
-              farm.</p>
-          </div>
-        </div>
-
-        <div class="xl:w-1/3 md:w-1/2 p-4">
-          <div class="border border-gray-200 p-6 rounded-lg">
-            <div
-              class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                class="w-6 h-6" viewBox="0 0 24 24">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-              </svg>
-            </div>
-            <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Ramona Falls</h2>
-            <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waist co, subway tile poke
-              farm.</p>
-          </div>
-        </div>
+        
 
       </div>
 
