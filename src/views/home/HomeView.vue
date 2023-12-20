@@ -1,12 +1,5 @@
 <template>
-  <div data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
-
-
-
-
-
-
-
+  <div>
 
     <!-- Banner -->
     <!-- <section class="bg-gray-800">
@@ -85,15 +78,7 @@
               <p class="leading-relaxed text-base">Página de Música y entretenimiento</p>
             </div>
           </div>
-
-
-
         </div>
-
-        <button
-          class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-          Button
-        </button>
       </div>
     </section>
 

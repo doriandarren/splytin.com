@@ -1,5 +1,5 @@
 <template>
-    <div class="container mx-auto" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
+    <div class="container mx-auto">
 
         <div class="flex justify-center rounded-lg bg-gray-400">
             <!-- Menu -->
@@ -439,15 +439,9 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue';
 import { RouterLink, RouterView } from 'vue-router';
-import AOS from 'aos';
-
-
-onMounted(() => {
-    AOS.init();
-})
 
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+</style>

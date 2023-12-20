@@ -50,7 +50,10 @@
     <RouterView />
   </div> -->
 
+  
   <RouterView />
+
+  
 
   <Footer />
 </template>
@@ -61,15 +64,9 @@ import { RouterView } from 'vue-router';
 import Footer from '@/components/template/Footer.vue';
 
 import { onMounted } from 'vue';
-import AOS from 'aos';
-
 
 const menuToggle = document.getElementById('menu-toggle');
 const menu = document.getElementById('menu');
-
-onMounted(() => {
-  AOS.init();
-})
 
 // menuToggle.addEventListener('click', () => {
 //   menu.classList.toggle('hidden');
@@ -77,4 +74,6 @@ onMounted(() => {
 
 </script>
 
-<style scoped></style>
+<style scoped>
+
+</style>

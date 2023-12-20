@@ -1,8 +1,5 @@
 <template>
-  <div data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
-
-
-
+  <div>
 
     <section class="text-gray-600 body-font">
       <div class="container px-5 py-24 mx-auto">
@@ -130,6 +127,8 @@
 </template>
 
 <script setup>
+
+
 
 let blog1 = `<section class="text-gray-600 body-font">
   <div class="container px-5 py-24 mx-auto">

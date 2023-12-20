@@ -61,4 +61,4 @@ const year = ref('2023');
 
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped></style>
