@@ -1,15 +1,6 @@
 <template>
   <div v-animate>
 
-    <!-- Banner -->
-    <!-- <section class="bg-gray-800">
-    <div class="container w-full">
-      
-      <img src="/public/img/img1.jpg" alt="img">
-    </div>
-  </section> -->
-
-
     <div class="container mx-auto mt-20">
       <h1 class="text-3xl mb-10">
         ¡Bienvenido a Splytin! Descubre la excelencia en entretenimiento con nuestros productos de alta calidad. Explora y
@@ -89,7 +80,6 @@
 <script setup>
 
 import { onMounted, ref } from 'vue';
-import bgImg from '@/assets/img1.jpg';
 
 
 const videoUrl1 = ref('https://www.youtube.com/embed/');
@@ -97,9 +87,6 @@ const videoUrl2 = ref('https://www.youtube.com/embed/');
 const videoUrl3 = ref('https://www.youtube.com/embed/');
 const videoUrl4 = ref('https://www.youtube.com/embed/');
 
-
-
-const imagen = ref();
 
 
 
@@ -138,19 +125,8 @@ const findData = async () => {
 
 
 
-
 onMounted(() => {
-
-  imagen.value = bgImg;
   findData();
-
-
-
-  // console.log('Configurando meta description');
-  // const metaDescription = 'Descripción única para este componente';
-  // document.querySelector('meta[name="description"]').setAttribute('content', metaDescription);
-
-
 })
 
 
