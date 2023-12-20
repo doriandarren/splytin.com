@@ -1,11 +1,12 @@
 <template>
+
+    <div class="container mx-auto">
+
+ 
     
-    <div class="flex justify-center rounded-lg  m-10 bg-slate-100">
+    <div class="flex justify-center rounded-lg bg-gray-400">
         <!-- Menu -->
         <ul class="flex space-x-6 mr-4">
-            <li class="mr-5">
-                <RouterLink :to="{ name: 'home' }" class="hover:text-blue-300">Home</RouterLink>
-            </li>
             <li class="mr-5">
                 <RouterLink :to="{ name: 'tailwind-resources-component-alerts' }" class="hover:text-blue-300">Alerts</RouterLink>
             </li>
@@ -34,7 +35,8 @@
         <!-- End Menu -->
     </div>
 
-    <div class="flex justify-center rounded-lg  m-10 bg-slate-100">
+
+    <div class="flex justify-center rounded-lg bg-slate-100">
         <!-- Blog -->
         <ul class="flex space-x-6 mr-4">
             <li class="mr-5">
@@ -55,13 +57,7 @@
         </ul>
         <!-- End -->
 
-        <!-- Separator -->
-        <div class="mr-4">
-            |
-        </div>
-        <!-- End -->
-
-
+    
          <!-- Contact -->
          <ul class="flex space-x-6 mr-4">
             <li class="mr-5">
@@ -77,12 +73,6 @@
         <!-- End -->
 
 
-
-        <!-- Separator -->
-        <div class="mr-4">
-            |
-        </div>
-        <!-- End -->
 
 
          <!-- Contact -->
@@ -102,8 +92,7 @@
     </div>
 
 
-
-    <div class="flex justify-center rounded-lg  m-10 bg-slate-100">
+    <div class="flex justify-center rounded-lg bg-gray-400">
         <!-- Content -->
         <ul class="flex space-x-6 mr-4">
             <li class="mr-5">
@@ -133,12 +122,6 @@
         </ul>
         <!-- End -->
 
-        <!-- Separator -->
-        <div class="mr-4">
-            |
-        </div>
-
-
         <!-- CTA -->
         <ul class="flex space-x-6 mr-4">
             <li class="mr-5">
@@ -156,9 +139,7 @@
     </div>
 
 
-
-
-    <div class="flex justify-center rounded-lg  m-10 bg-slate-100">
+    <div class="flex justify-center rounded-lg bg-slate-100">
         <!-- Ecommerce -->
         <ul class="flex space-x-6 mr-4">
             <li class="mr-5">
@@ -173,10 +154,6 @@
         </ul>
         <!-- End -->
 
-        <!-- Separator -->
-        <div class="mr-4">
-            |
-        </div>
 
 
          <!-- Feature -->
@@ -211,9 +188,7 @@
     </div>
 
 
-
-
-    <div class="flex justify-center rounded-lg  m-10 bg-slate-100">
+    <div class="flex justify-center rounded-lg bg-gray-400">
         <!-- Footer -->
         <ul class="flex space-x-6 mr-4">
             <li class="mr-5">
@@ -256,9 +231,7 @@
     </div>
 
 
-
-
-    <div class="flex justify-center rounded-lg  m-10 bg-slate-100">
+    <div class="flex justify-center rounded-lg bg-slate-100">
         <!-- Header -->
         <ul class="flex space-x-6 mr-4">
             <li class="mr-5">
@@ -308,9 +281,7 @@
     </div>
 
 
-
-
-    <div class="flex justify-center rounded-lg  m-10 bg-slate-100">
+    <div class="flex justify-center rounded-lg bg-gray-400">
         <!-- Pricing -->
         <ul class="flex space-x-6 mr-4">
             <li class="mr-5">
@@ -321,11 +292,6 @@
             </li>
         </ul>
         <!-- End -->
-
-        <!-- Separator -->
-        <div class="mr-4">
-            |
-        </div>
 
 
         <!-- Statistic -->
@@ -345,9 +311,7 @@
     </div>
 
 
-
-
-    <div class="flex justify-center rounded-lg  m-10 bg-slate-100">
+    <div class="flex justify-center rounded-lg bg-slate-100">
         <!-- Step -->
         <ul class="flex space-x-6 mr-4">
             <li class="mr-5">
@@ -358,11 +322,6 @@
             </li>
         </ul>
         <!-- End -->
-
-        <!-- Separator -->
-        <div class="mr-4">
-            |
-        </div>
 
 
         <!-- Team -->
@@ -383,12 +342,7 @@
 
 
 
-
-
-
-
-
-    <div class="flex justify-center rounded-lg  m-10 bg-slate-100">
+    <div class="flex justify-center rounded-lg bg-gray-400">
         <!-- Testimonial -->
         <ul class="flex space-x-6 mr-4">
             <li class="mr-5">
@@ -404,18 +358,16 @@
         </ul>
         <!-- End -->
 
-        <!-- Separator -->
-        <div class="mr-4">
-            |
-        </div>
-
     </div>
 
+</div>
 
 
-<div class="container mx-auto mt-20">
-    <RouterView />
-</div></template>
+    <div class="container mx-auto">
+        <RouterView />
+    </div>
+
+</template>
 
 <script setup>
 

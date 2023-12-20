@@ -1,37 +1,74 @@
 <template>
 
-
-  <section>
-    <h1 class="text-3xl mb-10">
-      ¡Bienvenido a Splytin! Descubre la excelencia en entretenimiento con nuestros productos de alta calidad. Explora y encuentra la solución perfecta para ti.
-    </h1>
+  <!-- Banner -->
+  <section class="bg-gray-800">
+    <div class="container w-full">
+      <img :src="imagen" alt="img" style="width: 100%">
+    </div>
   </section>
 
 
-  <h1 class="text-4xl">Videos a la carta</h1>
+  <!-- Contenido Principal -->
+  <main class="container mx-auto my-8">
+    <!-- Sección 1 -->
+    <section class="mb-8">
+      <h2 class="text-2xl font-bold mb-4">Sección 1</h2>
+      <p>Contenido de la sección 1...</p>
+    </section>
 
-  <div class="grid grid-cols-2 gap-10">
+    <!-- Sección 2 -->
+    <section class="mb-8">
+      <h2 class="text-2xl font-bold mb-4">Sección 2</h2>
+      <p>Contenido de la sección 2...</p>
+    </section>
 
-    <div class="col-span-2 md:col-span-2 lg:col-span-1">
-      <iframe :src="videoUrl1" frameborder="0" allowfullscreen width="100%" height="300vh"></iframe>
-    </div>
+    <!-- Agrega más secciones según sea necesario -->
 
-
-    <div class="col-span-2 md:col-span2 lg:col-span-1">
-      <iframe :src="videoUrl2" frameborder="0" allowfullscreen width="100%" height="300vh"></iframe>
-    </div>
-
-
-    <div class="col-span-2 md:col-span-2 lg:col-span-1">
-      <iframe :src="videoUrl3" frameborder="0" allowfullscreen width="100%" height="300vh"></iframe>
-    </div>
+  </main>
 
 
-    <div class="col-span-2 md:col-span2 lg:col-span-1">
-      <iframe :src="videoUrl4" frameborder="0" allowfullscreen width="100%" height="300vh"></iframe>
+
+
+
+  <div class="container mx-auto">
+    <h1 class="text-3xl mb-10">
+      ¡Bienvenido a Splytin! Descubre la excelencia en entretenimiento con nuestros productos de alta calidad. Explora y
+      encuentra la solución perfecta para ti.
+    </h1>
+  </div>
+
+
+
+  <div class="container mx-auto">
+
+    <h1 class="text-4xl">Videos a la carta</h1>
+
+    <div class="grid grid-cols-2 gap-10">
+
+      <div class="col-span-2 md:col-span-2 lg:col-span-1">
+        <iframe :src="videoUrl1" frameborder="0" allowfullscreen width="100%" height="300vh"></iframe>
+      </div>
+
+
+      <div class="col-span-2 md:col-span2 lg:col-span-1">
+        <iframe :src="videoUrl2" frameborder="0" allowfullscreen width="100%" height="300vh"></iframe>
+      </div>
+
+
+      <div class="col-span-2 md:col-span-2 lg:col-span-1">
+        <iframe :src="videoUrl3" frameborder="0" allowfullscreen width="100%" height="300vh"></iframe>
+      </div>
+
+
+      <div class="col-span-2 md:col-span2 lg:col-span-1">
+        <iframe :src="videoUrl4" frameborder="0" allowfullscreen width="100%" height="300vh"></iframe>
+      </div>
+
     </div>
 
   </div>
+
+
 
 
   <section class="text-gray-600 body-font">
@@ -43,7 +80,7 @@
         </p>
       </div>
       <div class="flex flex-wrap -m-4">
-        
+
         <div class="xl:w-1/3 md:w-1/2 p-4">
           <div class="border border-gray-200 p-6 rounded-lg">
             <div
@@ -140,13 +177,11 @@
       </div>
 
       <button
-        class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
-      >
+        class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
         Button
       </button>
     </div>
   </section>
-
 </template>
 
 <script setup>
@@ -154,14 +189,16 @@
 import { onMounted, ref } from 'vue';
 
 
-
-//let videoUrl = "https://www.youtube.com/embed/OzHgOwMsw-8"; 
-
-
 const videoUrl1 = ref('https://www.youtube.com/embed/');
 const videoUrl2 = ref('https://www.youtube.com/embed/');
 const videoUrl3 = ref('https://www.youtube.com/embed/');
 const videoUrl4 = ref('https://www.youtube.com/embed/');
+
+import bgImg from '@/assets/img1.jpg';
+
+
+
+const imagen = ref(bgImg);
 
 
 
@@ -204,9 +241,9 @@ const findData = async () => {
 onMounted(() => {
   findData();
 
-  console.log('Configurando meta description');
-  const metaDescription = 'Descripción única para este componente';
-  document.querySelector('meta[name="description"]').setAttribute('content', metaDescription);
+  // console.log('Configurando meta description');
+  // const metaDescription = 'Descripción única para este componente';
+  // document.querySelector('meta[name="description"]').setAttribute('content', metaDescription);
 
 
 })
@@ -214,3 +251,8 @@ onMounted(() => {
 
 
 </script>
+
+
+<style>
+
+</style>

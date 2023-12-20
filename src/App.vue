@@ -38,26 +38,44 @@
 
 
   <!-- Menú de Navegación (Visible en Pantallas Grandes) -->
-  <div id="menu" class="hidden lg:flex items-center space-x-4">
+  <div id="menu" class="flex items-center space-x-4">
     <RouterLink :to="{ name: 'resources' }" class="text-white">Recursos</RouterLink>
   </div>
 
 
 
-  <div class="container mx-auto">
+
+  <!-- <div class="container mx-auto">
+    <div>
+      <img :src="imagen" alt="img">
+    </div>  
+  </div> -->
+
+
+  
+
+
+  <!-- <div class="container mx-auto">
     <RouterView />
-  </div>
+  </div> -->
+
+  <RouterView />
+
   <Footer />
 </template>
 
 
 <script setup>
-
+import { ref } from 'vue';
 import { RouterView } from 'vue-router';
 import Footer from './components/template/Footer.vue';
 
+
+
 const menuToggle = document.getElementById('menu-toggle');
 const menu = document.getElementById('menu');
+
+
 
 // menuToggle.addEventListener('click', () => {
 //   menu.classList.toggle('hidden');
