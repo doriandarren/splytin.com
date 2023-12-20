@@ -1,48 +1,54 @@
 <template>
   <div v-animate>
 
+
+  
     <div class="container mx-auto mt-20">
-      <h1 class="text-3xl mb-10">
-        ¡Bienvenido a Splytin! Descubre la excelencia en entretenimiento con nuestros productos de alta calidad. Explora y
-        encuentra la solución perfecta para ti.
+      <h1 class="sm:text-2xl text-2xl font-medium title-font mb-2 text-gray-900 text-center">
+        ¡Bienvenido a Splytin! Descubre la excelencia en entretenimiento con nuestros productos de alta calidad. 
+        <br>Explora y encuentra la solución perfecta para ti.
       </h1>
     </div>
 
 
-    <div class="container mx-auto">
 
-      <h1 class="text-4xl">Videos a la carta</h1>
-
-      <div class="grid grid-cols-2 gap-10">
-
-        <div class="col-span-2 md:col-span-2 lg:col-span-1">
-          <iframe :src="videoUrl1" frameborder="0" allowfullscreen width="100%" height="300vh"></iframe>
+    <section class="text-gray-600 body-font px-5 py-24">
+      <div class="container mx-auto">
+        <div class="flex flex-wrap w-full flex-col items-center text-center">
+          <h1 class="sm:text-2xl text-2xl font-medium title-font mb-2 text-gray-900">
+            Videos a la carta
+          </h1>
         </div>
+        
+        <div class="grid grid-cols-2 gap-10">
+
+          <div class="col-span-2 md:col-span-2 lg:col-span-1">
+            <iframe :src="videoUrl1" frameborder="0" allowfullscreen width="100%" height="300vh"></iframe>
+          </div>
 
 
-        <div class="col-span-2 md:col-span2 lg:col-span-1">
-          <iframe :src="videoUrl2" frameborder="0" allowfullscreen width="100%" height="300vh"></iframe>
-        </div>
+          <div class="col-span-2 md:col-span2 lg:col-span-1">
+            <iframe :src="videoUrl2" frameborder="0" allowfullscreen width="100%" height="300vh"></iframe>
+          </div>
 
 
-        <div class="col-span-2 md:col-span-2 lg:col-span-1">
-          <iframe :src="videoUrl3" frameborder="0" allowfullscreen width="100%" height="300vh"></iframe>
-        </div>
+          <div class="col-span-2 md:col-span-2 lg:col-span-1">
+            <iframe :src="videoUrl3" frameborder="0" allowfullscreen width="100%" height="300vh"></iframe>
+          </div>
 
 
-        <div class="col-span-2 md:col-span2 lg:col-span-1">
-          <iframe :src="videoUrl4" frameborder="0" allowfullscreen width="100%" height="300vh"></iframe>
+          <div class="col-span-2 md:col-span2 lg:col-span-1">
+            <iframe :src="videoUrl4" frameborder="0" allowfullscreen width="100%" height="300vh"></iframe>
+          </div>
+
         </div>
 
       </div>
-
-    </div>
-
+    </section>
 
 
-
-    <section class="text-gray-600 body-font">
-      <div class="container px-5 py-24 mx-auto">
+    <section class="text-gray-600 body-font px-5 py-24">
+      <div class="container mx-auto">
         <div class="flex flex-wrap w-full flex-col items-center text-center">
           <h1 class="sm:text-2xl text-2xl font-medium title-font mb-2 text-gray-900">Nuestros Productos</h1>
           <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">

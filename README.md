@@ -60,7 +60,7 @@ File tailwind.config.js edit:
 
 
 
-##animate
+### Animate
 
 ```sh
 
