@@ -1,7 +1,6 @@
 <template>
   <div v-animate>
 
-
   
     <div class="container mx-auto mt-20">
       <h1 class="sm:text-2xl text-2xl font-medium title-font mb-2 text-gray-900 text-center">
