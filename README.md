@@ -64,7 +64,17 @@ File tailwind.config.js edit:
 
 ```sh
 
+//Instalar
 npm install animate.css --save
 
+
+// Se creo una directive en la carpeta directive
+// luego en el div:
+
+...
+ <div v-animate >
+ ...
+ </div>
+...
 
 ```
