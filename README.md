@@ -56,3 +56,15 @@ File tailwind.config.js edit:
 
 
 ```
+
+
+
+
+##animate
+
+```sh
+
+npm install animate.css --save
+
+
+```

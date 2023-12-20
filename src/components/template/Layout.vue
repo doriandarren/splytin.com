@@ -1,5 +1,5 @@
 <template>
-    <div class="container mx-auto">
+    <div class="mt-8" v-animate>
 
         <div class="flex justify-center rounded-lg bg-gray-400">
             <!-- Menu -->
@@ -404,36 +404,34 @@
         </ul>
         <!-- End -->
 
-    </div>
+        </div>
 
 
 
-    <div class="flex justify-center rounded-lg bg-gray-400">
-        <!-- Testimonial -->
-        <ul class="flex space-x-6 mr-4">
-            <li class="mr-5">
-                <RouterLink :to="{ name: 'tailwind-resources-block-testimonial1' }" class="hover:text-blue-300">
-                    Testimonial1</RouterLink>
-            </li>
-            <li class="mr-5">
-                <RouterLink :to="{ name: 'tailwind-resources-block-testimonial2' }" class="hover:text-blue-300">
-                    Testimonial2</RouterLink>
-            </li>
-            <li class="mr-5">
-                <RouterLink :to="{ name: 'tailwind-resources-block-testimonial3' }" class="hover:text-blue-300">
-                    Testimonial3</RouterLink>
-            </li>
+        <div class="flex justify-center rounded-lg bg-gray-400">
+            <!-- Testimonial -->
+            <ul class="flex space-x-6 mr-4">
+                <li class="mr-5">
+                    <RouterLink :to="{ name: 'tailwind-resources-block-testimonial1' }" class="hover:text-blue-300">
+                        Testimonial1</RouterLink>
+                </li>
+                <li class="mr-5">
+                    <RouterLink :to="{ name: 'tailwind-resources-block-testimonial2' }" class="hover:text-blue-300">
+                        Testimonial2</RouterLink>
+                </li>
+                <li class="mr-5">
+                    <RouterLink :to="{ name: 'tailwind-resources-block-testimonial3' }" class="hover:text-blue-300">
+                        Testimonial3</RouterLink>
+                </li>
 
-        </ul>
-        <!-- End -->
+            </ul>
+            <!-- End -->
 
-    </div>
-
-    </div>
+        </div>
 
 
-    <div class="container mx-auto">
         <RouterView />
+
     </div>
 
 </template>

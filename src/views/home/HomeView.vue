@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-animate>
 
     <!-- Banner -->
     <!-- <section class="bg-gray-800">

@@ -43,6 +43,7 @@
   </div> -->
 
 
+
   
 
 
@@ -50,11 +51,8 @@
     <RouterView />
   </div> -->
 
-  
   <RouterView />
-
   
-
   <Footer />
 </template>
 
@@ -63,7 +61,6 @@
 import { RouterView } from 'vue-router';
 import Footer from '@/components/template/Footer.vue';
 
-import { onMounted } from 'vue';
 
 const menuToggle = document.getElementById('menu-toggle');
 const menu = document.getElementById('menu');
