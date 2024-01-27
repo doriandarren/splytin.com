@@ -61,9 +61,10 @@
           </p>
         </div>
         <div class="flex flex-wrap -m-4">
-
-          <div class="xl:w-1/3 md:w-1/2 p-4">
-            <div class="border border-gray-200 p-6 rounded-lg">
+          
+            <div class="xl:w-1/3 md:w-1/2 p-4">
+              <a href="https://music.famindex.com/" target="_blank">
+            <div class="border border-gray-200 p-6 rounded-lg hover:bg-blue-100 hover:border-blue-300 hover:rounded-lg hover:shadow-xl ">
               <div
                 class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -75,11 +76,15 @@
                   </g>
                 </svg>
               </div>
-              <h2 class="text-lg text-gray-900 font-medium title-font mb-2"><a href="https://music.famindex.com/"
-                  target="_blank">Famimusic</a></h2>
+              <h2 class="text-lg text-gray-900 font-medium title-font mb-2">
+                Famimusic
+              </h2>
               <p class="leading-relaxed text-base">Página de Música y entretenimiento</p>
             </div>
+          </a>
           </div>
+          
+          
         </div>
       </div>
     </section>
