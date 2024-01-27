@@ -6,6 +6,13 @@
         ¡Bienvenido a Splytin! Descubre la excelencia en entretenimiento con nuestros productos de alta calidad. 
         <br>Explora y encuentra la solución perfecta para ti.
       </h1>
+
+
+      <!-- <button class="btn-primary">
+        Save changes
+      </button> -->
+      
+
     </div>
 
 
