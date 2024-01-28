@@ -34,6 +34,10 @@
                 Sign In
             </button>
         </div>
+
+        <div>
+            {{ message }}
+        </div>
         
 
     </div>
@@ -41,15 +45,27 @@
 
 <script setup>
     import { ref } from 'vue';
+    import { useRouter } from 'vue-router';
 
     
 
     const correo = ref('');
     const password = ref('');
+    const message = ref('');
+    const router = useRouter();
 
     
 
     const submit = () => {
+        message.value = '';
+
+        if(!correo.value || !password.value) {
+            message.value = 'los dos campos son requeridos';
+            return;
+        }
+
+
+
         //Splytin2023
         let data = {
             email: correo.value,
@@ -66,7 +82,20 @@
         })
         .then((res) => res.json())
         .then((response) => {
-            console.log("Success:", response);
+            
+            console.log(response.token);
+        
+
+            if( response.success && response.token) {
+                // message.value = 'datos correctos';
+
+                localStorage.setItem('splytin_token', response.token);
+                router.push('/dashboard');
+            }else {
+                message.value = 'datos incorrectos';
+            }
+
+
         });
     }
 
