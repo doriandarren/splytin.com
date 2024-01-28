@@ -29,8 +29,12 @@
           <li>
             <RouterLink :to="{ name: 'resources' }" class="text-white">Recursos</RouterLink>
           </li>
+          <li>
+            <RouterLink :to="{ name: 'login' }" class="text-white">Login</RouterLink>
+          </li>
         </ul>
       </div>
+
 
     </div>
 
