@@ -1,7 +1,5 @@
 # Spytin Web
 
-This template should help get you started developing with Vue 3 in Vite.
-
 ## Project Setup
 
 ```sh
@@ -21,12 +19,34 @@ npm run build
 ```
 
 
-### Page Reference:
 
-[Reference](https://tailwind-starter-kit.vercel.app/docs/alerts).
+### sweetalert
+
+Guide: [Vue Install](https://github.com/avil13/vue-sweetalert2).
 
 
-[Reference](https://tailblocks.cc/).
+```sh
+
+
+npm install -S vue-sweetalert2
+
+add main.js:
+
+...
+
+//sweetalert
+import VueSweetalert2 from 'vue-sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
+
+too:
+
+app.use(VueSweetalert2)
+
+...
+
+
+
+```
 
 
 
@@ -72,7 +92,7 @@ npm install animate.css --save
 // luego en el div:
 
 ...
- <div v-animate >
+ <div v-animate>
  ...
  </div>
 ...

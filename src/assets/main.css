@@ -1,12 +1,47 @@
 @import './base.css';
 
+
+
+/*
+ |--------------------------------------------------------------------------
+ | Tabulator
+ |--------------------------------------------------------------------------
+ |
+ | Import Tabulator
+ | 
+ */
+ @import  "tabulator-tables/dist/css/tabulator.min.css";
+
+
+
+
+/*
+ |--------------------------------------------------------------------------
+ | Tailwind Directives
+ |--------------------------------------------------------------------------
+ |
+ | Import TailwindCSS directives and swipe out at build-time with all of
+ | the styles it generates based on your configured design system.
+ |
+ */ 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
+
+/*
+ |--------------------------------------------------------------------------
+ | Tailwind Layer
+ |--------------------------------------------------------------------------
+ |
+ | Import layer components.
+ |
+ */
 
 @layer components {
     .btn-primary {
         @apply py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
     }
 }
+
