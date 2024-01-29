@@ -21,7 +21,7 @@ const router = createRouter({
     {
       path: '/resources',
       name: 'resources',
-      component: () => import('@/components/template/Layout.vue'),
+      component: () => import('@/components/template/public/Layout.vue'),
       children: [
         //Routes components
         {
@@ -423,6 +423,11 @@ const router = createRouter({
       ]
     },
 
+    {
+      path: '/test',
+      name: 'test',
+      component: () => import('@/views/dev/TestView.vue')
+    },
 
    
   ]

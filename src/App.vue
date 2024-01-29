@@ -63,7 +63,7 @@
 
 <script setup>
 import { RouterView } from 'vue-router';
-import Footer from '@/components/template/Footer.vue';
+import Footer from '@/components/template/public/Footer.vue';
 
 
 const menuToggle = document.getElementById('menu-toggle');

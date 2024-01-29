@@ -8,7 +8,7 @@
                         viewBox="0 0 24 24">
                         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                     </svg> -->
-                    <img src="../../assets/LogoSplytin.png" alt="Logo" class="w-6 h-6">
+                    <img src="../../../assets/LogoSplytin.png" alt="Logo" class="w-6 h-6">
                     <span class="ml-3 text-xl">Splytin</span>
                 </a>
                 <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">©
@@ -55,11 +55,9 @@
 
 <script setup>
 
-import { ref } from 'vue';
+    import { ref } from 'vue';
 
-const year = ref('2023');
-
-
+    const year = ref('2023');
 
 </script>
 
