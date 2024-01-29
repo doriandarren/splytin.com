@@ -45,10 +45,7 @@ app.use(VueSweetalert2)
 ...
 
 
-
 ```
-
-
 
 
 
