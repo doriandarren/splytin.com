@@ -1,0 +1,10 @@
+{
+    "languages": {
+      "pt": "Portuguese",
+      "en": "English",
+      "es": "Spanish"
+    },
+    "title": {
+      "config": "Configuration"
+    }
+}

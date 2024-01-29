@@ -118,7 +118,7 @@ const initTabulator = () => {
 					title: "Slug",
 					minWidth: 200,
 					responsive: 0,
-					field: "slug",
+					field: "age",
 					vertAlign: "middle",
 					headerHozAlign:"left",
 				},
