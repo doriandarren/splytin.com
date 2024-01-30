@@ -428,6 +428,11 @@ const router = createRouter({
       name: 'test',
       component: () => import('@/views/dev/TestView.vue')
     },
+    {
+      path: '/msft-prices',
+      name: 'msft-prices',
+      component: () => import('@/views/msft_prices/MsftPricesView.vue')
+    },
 
    
   ]

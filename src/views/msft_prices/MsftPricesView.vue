@@ -1,59 +1,62 @@
 
 <template>
     <div>
-        <h1>desde dashboard</h1>
+        <h1>Hola desde msft</h1>
+    </div>
 
-        <div class="intro-y box p-5 mt-5">
+    <div class="intro-y box p-5 mt-5">
 
-            <form id="tabulator-html-filter-form" class="xl:flex sm:mr-auto">
-                <div class="relative sm:flex items-center sm:mr-4 mt-2 xl:mt-0">
-                    <input id="tabulator-html-filter-value" v-model="filter.value" type="text"
-                        class="w-full xl:w-[600px] form-control mt-2 sm:mt-0" :placeholder="$t('search')"
-                        @keyup="onFilter" />
-                    <XCircleIcon class="w-4 h-4 absolute my-auto inset-y-0 mr-3 right-0 text-slate-400 hover:cursor-pointer"
-                        @click="onResetFilter" />
-                </div>
-            </form>
-
-
-            <div class="overflow-x-auto scrollbar-hidden">
-                <div id="tabulator" ref="table" class="mt-5 table-report table-report--tabulator">
-                </div>
-
-            </div>
-
-        </div>
+    <form id="tabulator-html-filter-form" class="xl:flex sm:mr-auto">
+    <div class="relative sm:flex items-center sm:mr-4 mt-2 xl:mt-0">
+        <input id="tabulator-html-filter-value" v-model="filter.value" type="text"
+            class="w-full xl:w-[600px] form-control mt-2 sm:mt-0" :placeholder="$t('search')"
+            @keyup="onFilter" />
+        <XCircleIcon
+            class="w-4 h-4 absolute my-auto inset-y-0 mr-3 right-0 text-slate-400 hover:cursor-pointer"
+            @click="onResetFilter" />
+    </div>
+    </form>
 
 
-        <div>
-            <table>
-                <tr>
-                    <th>ID</th>
-                    <th>TITLE</th>
-                    <th>YT_ID</th>
-                </tr>
+    <div class="overflow-x-auto scrollbar-hidden">
+    <div
+        id="tabulator"
+        ref="table"
+        class="mt-5 table-report table-report--tabulator"
+    >
+    </div>
 
-                <tr v-for="item of data" :key="item.id">
-                    <td>{{ item.id }}</td>
-                    <td>{{ item.title }}</td>
-                    <td>{{ item.yt_id }}</td>
-                </tr>
-            </table>
-        </div>
+    </div>
 
-        <div>
+</div>
 
-        </div>
+
+    <div>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>SYMBOL</th>
+                <th>PRICE_USD</th>
+                <th>CREATED_AT</th>
+            </tr>
+
+            <tr v-for="item of data" :key="item.id">
+                <td>{{ item.id }}</td>
+                <td>{{ item.symbol }}</td>
+                <td>{{ item.price_usd }}</td>
+                <td>{{ item.created_at }}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div>
 
     </div>
 </template>
 
 <script setup>
-
-
 import {ref, reactive, onMounted} from 'vue';
-
-import {TabulatorFull as Tabulator} from 'tabulator-tables';
+import {TabulatorFull as Tabulator} from 'tabulator-tables'; //import Tabulator library
 
 // const data = ref([]);
 
@@ -62,8 +65,6 @@ const filter = reactive({
   type: "like",
   value: "",
 });
-
-
 
 const onFilter = () => {
   //tabulator.value.setFilter(filter.field, filter.type, filter.value);
@@ -75,22 +76,9 @@ const onFilter = () => {
   ]);
 };
 
-
 const table = ref(null); //reference to your table element
 const tabulator = ref(null); //variable to hold your table
 const tableData = reactive([]); //data for table to display
-
-// data.value.push({
-//     id: 1,
-//     title: 'titulo 1',
-//     yt_id: 'jgdfgkbvjk',
-// });
-
-
-
-
-
-
 
 // var data = [
 //   {id:1, name:"Oli Bob", age:"12", col:"red", dob:""},
@@ -110,7 +98,7 @@ const initTabulator = (data) => {
 			paginationSizeSelector: [10, 20, 30, 40],
 			layout: "fitColumns",
 			responsiveLayout: "collapse",
-      data: data, //link data to table
+      data: tableData.value, //link data to table
       //data: data, //link data to table
       reactiveData:true, //enable data reactivity
       columns: [
@@ -131,18 +119,10 @@ const initTabulator = (data) => {
 					headerHozAlign:"left",
 				},
         {
-					title: "Edad",
+					title: "Slug",
 					minWidth: 200,
 					responsive: 0,
 					field: "age",
-					vertAlign: "middle",
-					headerHozAlign:"left",
-				},
-        {
-					title: "Col",
-					minWidth: 200,
-					responsive: 0,
-					field: "col",
 					vertAlign: "middle",
 					headerHozAlign:"left",
 				},
@@ -151,30 +131,24 @@ const initTabulator = (data) => {
 
 }
 
-
-
-
-onMounted( async () => {
-
-    let data ;
-
-    fetch('https://api.splytin.com/api/v1/youtube-videos/list', {
-    method: "GET",
+onMounted(async () => {
+    let data
+    fetch('https://api.splytin.com/api/v1/b-msft-prices/list', {
+    method:"GET",
     headers: {
         "Content-Type": "application/json"
     },
 })
-    .then((res) => res.json())
-    .then((response) => {
-        // console.log(response)
-        data = response.data;
-    });
+.then((res) => res.json())
+.then((response) => {
+    console.log(response.data);
+    data = response.data;
+});
 
 
     // tableData.value = data;
 
-    // console.log(tableData.value)
-
+    // console.log(tableData.value);
 
     initTabulator(data);
 
@@ -184,20 +158,16 @@ onMounted( async () => {
 
 
 
-
-
-
-
-
 </script>
 
 <style  scoped>
-table {
+
+table{
     border: black 1px solid;
 }
 
-td,
-th {
+td, th {
     border: black 1px solid;
 }
+
 </style>
