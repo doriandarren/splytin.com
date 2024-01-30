@@ -51,13 +51,14 @@
   
 
 
-  <!-- <div class="container mx-auto">
+  <div class="container mx-auto">
     <RouterView />
-  </div> -->
+  </div>
 
-  <RouterView />
+<!-- <RouterView /> -->
   
   <Footer />
+  
 </template>
 
 

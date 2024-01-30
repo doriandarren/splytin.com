@@ -1,4 +1,3 @@
-
 <template>
     <div>
         <h1>Hola desde msft</h1>
@@ -70,8 +69,8 @@ const onFilter = () => {
   //tabulator.value.setFilter(filter.field, filter.type, filter.value);
   tabulator.value.setFilter([
     [
-      {field: 'name', type: 'like', value: filter.value},
-      {field: 'slug', type: 'like', value: filter.value},
+      {field: 'symbol', type: 'like', value: filter.value},
+      {field: 'price_usd', type: 'like', value: filter.value},
     ]
   ]);
 };
@@ -79,6 +78,7 @@ const onFilter = () => {
 const table = ref(null); //reference to your table element
 const tabulator = ref(null); //variable to hold your table
 const tableData = reactive([]); //data for table to display
+
 
 // var data = [
 //   {id:1, name:"Oli Bob", age:"12", col:"red", dob:""},
@@ -90,7 +90,7 @@ const tableData = reactive([]); //data for table to display
 
 
 
-const initTabulator = (data) => {
+const initTabulator = async () => {
 
   tabulator.value = new Tabulator(table.value, {
       pagination: "local",
@@ -111,18 +111,18 @@ const initTabulator = (data) => {
 					headerSort: false,
 				},
 				{
-					title: "Nombre",
+					title: "Symbol",
 					minWidth: 200,
 					responsive: 0,
-					field: "name",
+					field: "symbol",
 					vertAlign: "middle",
 					headerHozAlign:"left",
 				},
         {
-					title: "Slug",
+					title: "Price_",
 					minWidth: 200,
 					responsive: 0,
-					field: "age",
+					field: "price_usd",
 					vertAlign: "middle",
 					headerHozAlign:"left",
 				},
@@ -132,25 +132,23 @@ const initTabulator = (data) => {
 }
 
 onMounted(async () => {
-    let data
-    fetch('https://api.splytin.com/api/v1/b-msft-prices/list', {
-    method:"GET",
-    headers: {
-        "Content-Type": "application/json"
-    },
-})
-.then((res) => res.json())
-.then((response) => {
-    console.log(response.data);
-    data = response.data;
-});
 
+    await fetch('https://api.splytin.com/api/v1/b-msft-prices/list', {
+        method:"GET",
+        headers: {
+            "Content-Type": "application/json"
+        },
+    })
+    .then((res) => res.json())
+    .then((response) => {
 
-    // tableData.value = data;
+        //console.log(response.data);
 
-    // console.log(tableData.value);
+        tableData.value = response.data;
 
-    initTabulator(data);
+    });
+
+    await initTabulator();
 
 })
 
