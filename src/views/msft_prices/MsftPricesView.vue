@@ -5,14 +5,30 @@
 
     <div class="intro-y box p-5 mt-5">
 
-        <form id="tabulator-html-filter-form" class="xl:flex sm:mr-auto">
-            <div class="relative sm:flex items-center sm:mr-4 mt-2 xl:mt-0">
-                <input id="tabulator-html-filter-value" v-model="filter.value" type="text"
-                    class="w-full xl:w-[600px] form-control mt-2 sm:mt-0" :placeholder="$t('search')" @keyup="onFilter" />
-                <XCircleIcon class="w-4 h-4 absolute my-auto inset-y-0 mr-3 right-0 text-slate-400 hover:cursor-pointer"
-                    @click="onResetFilter" />
+        <div class="flex flex-col sm:flex-row sm:items-end xl:items-start">
+            <form id="tabulator-html-filter-form" class="xl:flex sm:mr-auto">
+                <div class="relative sm:flex items-center sm:mr-4 mt-2 xl:mt-0">
+                    <input id="tabulator-html-filter-value" v-model="filter.value" type="text"
+                        class="w-full xl:w-[600px] form-control mt-2 sm:mt-0" :placeholder="$t('search')" @keyup="onFilter" />
+                    <button 
+                        class="w-4 h-4 absolute my-auto inset-y-0 mr-3 right-0 text-slate-400 hover:cursor-pointer"
+                        @click.prevent="onResetFilter"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6c0 1.01-.25 1.97-.7 2.8l1.46 1.46A7.93 7.93 0 0 0 20 12c0-4.42-3.58-8-8-8m0 14c-3.31 0-6-2.69-6-6c0-1.01.25-1.97.7-2.8L5.24 7.74A7.93 7.93 0 0 0 4 12c0 4.42 3.58 8 8 8v3l4-4l-4-4z"/></svg>
+                    </button>
+                </div>
+            </form>
+
+
+            <div class="flex mt-5 sm:mt-0">
+                <button class="btn-primary w-1/2 sm:w-auto mr-2" @click="showCreateCompany">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 50 50"><path fill="currentColor" d="M25 42c-9.4 0-17-7.6-17-17S15.6 8 25 8s17 7.6 17 17s-7.6 17-17 17m0-32c-8.3 0-15 6.7-15 15s6.7 15 15 15s15-6.7 15-15s-6.7-15-15-15"/><path fill="currentColor" d="M16 24h18v2H16z"/><path fill="currentColor" d="M24 16h2v18h-2z"/></svg>
+                </button>
             </div>
-        </form>
+            
+        </div>
+
+        
 
 
         <div class="overflow-x-auto scrollbar-hidden">
