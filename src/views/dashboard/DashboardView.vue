@@ -25,21 +25,7 @@
         </div>
 
 
-        <div>
-            <table>
-                <tr>
-                    <th>ID</th>
-                    <th>TITLE</th>
-                    <th>YT_ID</th>
-                </tr>
-
-                <tr v-for="item of data" :key="item.id">
-                    <td>{{ item.id }}</td>
-                    <td>{{ item.title }}</td>
-                    <td>{{ item.yt_id }}</td>
-                </tr>
-            </table>
-        </div>
+        
 
         <div>
 
@@ -69,8 +55,9 @@ const onFilter = () => {
   //tabulator.value.setFilter(filter.field, filter.type, filter.value);
   tabulator.value.setFilter([
     [
-      {field: 'name', type: 'like', value: filter.value},
-      {field: 'slug', type: 'like', value: filter.value},
+      {field: 'id', type: 'like', value: filter.value},
+      {field: 'title', type: 'like', value: filter.value},
+      {field: 'yt_id', type: 'like', value: filter.value},
     ]
   ]);
 };
@@ -95,7 +82,7 @@ const initTabulator = async () => {
 
   tabulator.value = new Tabulator(table.value, {
       pagination: "local",
-        paginationSize: 1000,
+        paginationSize: 10,
         paginationSizeSelector: [10, 20, 30, 100],
         layout: "fitColumns",
         responsiveLayout: "collapse",
