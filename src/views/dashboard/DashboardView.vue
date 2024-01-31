@@ -88,29 +88,18 @@ const tableData = reactive([]); //data for table to display
 
 
 
+const initTabulator = async () => {
 
 
-
-
-// var data = [
-//   {id:1, name:"Oli Bob", age:"12", col:"red", dob:""},
-//   {id:2, name:"Mary May", age:"1", col:"blue", dob:"14/05/1982"},
-//   {id:3, name:"Christine Lobowski", age:"42", col:"green", dob:"22/05/1982"},
-//   {id:4, name:"Brendon Philips", age:"125", col:"orange", dob:"01/08/1980"},
-//   {id:5, name:"Margret Marmajuke", age:"16", col:"yellow", dob:"31/01/1999"},
-// ];
-
-
-
-const initTabulator = (data) => {
+    console.log(tableData.value)
 
   tabulator.value = new Tabulator(table.value, {
       pagination: "local",
-			paginationSize: 10,
-			paginationSizeSelector: [10, 20, 30, 40],
-			layout: "fitColumns",
-			responsiveLayout: "collapse",
-      data: data, //link data to table
+        paginationSize: 1000,
+        paginationSizeSelector: [10, 20, 30, 100],
+        layout: "fitColumns",
+        responsiveLayout: "collapse",
+      data: tableData.value, //link data to table
       //data: data, //link data to table
       reactiveData:true, //enable data reactivity
       columns: [
@@ -122,43 +111,42 @@ const initTabulator = (data) => {
 					resizable: false,
 					headerSort: false,
 				},
+                {
+					title: "ID",
+					minWidth: 200,
+					responsive: 0,
+					field: "id",
+					vertAlign: "middle",
+					headerHozAlign:"left",
+				},
 				{
-					title: "Nombre",
+					title: "Titulo",
 					minWidth: 200,
 					responsive: 0,
-					field: "name",
+					field: "title",
 					vertAlign: "middle",
 					headerHozAlign:"left",
 				},
+        
         {
-					title: "Edad",
+					title: "Yt_id",
 					minWidth: 200,
 					responsive: 0,
-					field: "age",
+					field: "yt_id",
 					vertAlign: "middle",
 					headerHozAlign:"left",
 				},
-        {
-					title: "Col",
-					minWidth: 200,
-					responsive: 0,
-					field: "col",
-					vertAlign: "middle",
-					headerHozAlign:"left",
-				},
+
+               
       ], //define table columns
     });
 
 }
 
 
+onMounted(async () => {
 
-
-onMounted( async () => {
-
-    let data ;
-
-    fetch('https://api.splytin.com/api/v1/youtube-videos/list', {
+    await fetch('https://api.splytin.com/api/v1/youtube-videos/list', {
     method: "GET",
     headers: {
         "Content-Type": "application/json"
@@ -167,7 +155,7 @@ onMounted( async () => {
     .then((res) => res.json())
     .then((response) => {
         // console.log(response)
-        data = response.data;
+        tableData.value = response.data;
     });
 
 
@@ -176,7 +164,7 @@ onMounted( async () => {
     // console.log(tableData.value)
 
 
-    initTabulator(data);
+    await initTabulator();
 
 })
 
