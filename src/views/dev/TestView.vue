@@ -3,8 +3,6 @@
 
         <h1>Test</h1>
 
-
-
         <div class="intro-y box p-5 mt-5">
 
             <form id="tabulator-html-filter-form" class="xl:flex sm:mr-auto">
