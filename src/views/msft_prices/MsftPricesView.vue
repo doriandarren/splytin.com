@@ -23,25 +23,6 @@
 
     </div>
 
-
-    <div>
-        <table>
-            <tr>
-                <th>ID</th>
-                <th>SYMBOL</th>
-                <th>PRICE_USD</th>
-                <th>CREATED_AT</th>
-            </tr>
-
-            <tr v-for="item of data" :key="item.id">
-                <td>{{ item.id }}</td>
-                <td>{{ item.symbol }}</td>
-                <td>{{ item.price_usd }}</td>
-                <td>{{ item.created_at }}</td>
-            </tr>
-        </table>
-    </div>
-
     <div>
 
     </div>
@@ -54,7 +35,7 @@ import { TabulatorFull as Tabulator } from 'tabulator-tables'; //import Tabulato
 // const data = ref([]);
 
 const filter = reactive({
-    field: "name",
+    field: "id",
     type: "like",
     value: "",
 });
@@ -63,6 +44,7 @@ const onFilter = () => {
     //tabulator.value.setFilter(filter.field, filter.type, filter.value);
     tabulator.value.setFilter([
         [
+            { field: 'id', type: 'like', value: filter.value },
             { field: 'symbol', type: 'like', value: filter.value },
             { field: 'price_usd', type: 'like', value: filter.value },
         ]
