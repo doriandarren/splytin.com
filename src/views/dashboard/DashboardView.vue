@@ -1,6 +1,11 @@
 
 <template>
     <div>
+
+        <div>
+            <Create />
+        </div>
+
         <h1>desde dashboard</h1>
 
         <div class="intro-y box p-5 mt-5">
@@ -59,12 +64,15 @@
 
 <script setup>
 
-
 import { ref, reactive, onMounted } from 'vue';
-
 import { TabulatorFull as Tabulator } from 'tabulator-tables';
+import Create from '@/components/dashboard/DashboardCreate.vue';
 
-// const data = ref([]);
+
+const table = ref(null); //reference to your table element
+const tabulator = ref(null); //variable to hold your table
+const tableData = reactive([]); //data for table to display
+
 
 const filter = reactive({
     field: "name",
@@ -86,22 +94,19 @@ const onFilter = () => {
 };
 
 
-const table = ref(null); //reference to your table element
-const tabulator = ref(null); //variable to hold your table
-const tableData = reactive([]); //data for table to display
 
-// data.value.push({
-//     id: 1,
-//     title: 'titulo 1',
-//     yt_id: 'jgdfgkbvjk',
-// });
+
+
+const onResetFilter = () => {
+    filter.field = "id";
+    filter.type = "like";
+    filter.value = "";
+    onFilter();
+};
 
 
 
 const initTabulator = async () => {
-
-
-    console.log(tableData.value)
 
     tabulator.value = new Tabulator(table.value, {
         pagination: "local",
@@ -137,7 +142,6 @@ const initTabulator = async () => {
                 vertAlign: "middle",
                 headerHozAlign: "left",
             },
-
             {
                 title: "Yt_id",
                 minWidth: 200,
@@ -146,12 +150,56 @@ const initTabulator = async () => {
                 vertAlign: "middle",
                 headerHozAlign: "left",
             },
+            {
+                title: "",
+                minWidth: 80,
+                width: 10,
+                responsive: 0,
+                field: "actions",
+                vertAlign: "middle",
+                headerHozAlign: "left",
+                formatter: (cell, formaterParams) => {
+                    return `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600 hover:text-blue-400" viewBox="0 0 24 24"><path fill="currentColor" d="m7 17.013l4.413-.015l9.632-9.54c.378-.378.586-.88.586-1.414s-.208-1.036-.586-1.414l-1.586-1.586c-.756-.756-2.075-.752-2.825-.003L7 12.583zM18.045 4.458l1.589 1.583l-1.597 1.582l-1.586-1.585zM9 13.417l6.03-5.973l1.586 1.586l-6.029 5.971L9 15.006z"/><path fill="currentColor" d="M5 21h14c1.103 0 2-.897 2-2v-8.668l-2 2V19H8.158c-.026 0-.053.01-.079.01c-.033 0-.066-.009-.1-.01H5V5h6.847l2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2"/></svg>`;
+                },
+                cellClick: (e, cell) => {
+                    e.preventDefault();
+                    console.log('Editamos')
+                }
+            },
+            {
+                title: "",
+                minWidth: 80,
+                width: 10,
+                responsive: 0,
+                field: "actions",
+                vertAlign: "middle",
+                headerHozAlign: "left",
+                formatter: (cell, formaterParams) => {
+                    return `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-600 hover:text-red-400" viewBox="0 0 24 24"><path fill="currentColor" d="M7 21q-.825 0-1.412-.587T5 19V6H4V4h5V3h6v1h5v2h-1v13q0 .825-.587 1.413T17 21zM17 6H7v13h10zM9 17h2V8H9zm4 0h2V8h-2zM7 6v13z"/></svg>`;
+
+                },
+                cellClick: (e, cell) => {
+                    e.preventDefault();
+                    console.log('Eliminamos')
+                }
+            },
 
 
         ], //define table columns
     });
 
 }
+
+/**
+ * 
+ * CREATE
+ * 
+ * 
+ *  */
+const showCreateCompany = () => {
+
+}
+
 
 
 onMounted(async () => {
@@ -187,6 +235,8 @@ onMounted(async () => {
 
 
 
+
+
 </script>
 
 <style  scoped>
@@ -197,4 +247,5 @@ table {
 td,
 th {
     border: black 1px solid;
-}</style>
+}
+</style>
