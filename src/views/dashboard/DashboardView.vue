@@ -1,6 +1,11 @@
 
 <template>
     <div>
+
+        <div>
+            <Create />
+        </div>
+
         <h1>desde dashboard</h1>
 
         <div class="intro-y box p-5 mt-5">
@@ -61,6 +66,7 @@
 
 import { ref, reactive, onMounted } from 'vue';
 import { TabulatorFull as Tabulator } from 'tabulator-tables';
+import Create from '@/components/dashboard/DashboardCreate.vue';
 
 
 const table = ref(null); //reference to your table element
@@ -101,9 +107,6 @@ const onResetFilter = () => {
 
 
 const initTabulator = async () => {
-
-
-    console.log(tableData.value)
 
     tabulator.value = new Tabulator(table.value, {
         pagination: "local",
@@ -187,6 +190,17 @@ const initTabulator = async () => {
 
 }
 
+/**
+ * 
+ * CREATE
+ * 
+ * 
+ *  */
+const showCreateCompany = () => {
+
+}
+
+
 
 onMounted(async () => {
 
@@ -221,6 +235,8 @@ onMounted(async () => {
 
 
 
+
+
 </script>
 
 <style  scoped>
@@ -231,4 +247,5 @@ table {
 td,
 th {
     border: black 1px solid;
-}</style>
+}
+</style>
