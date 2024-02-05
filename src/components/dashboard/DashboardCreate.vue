@@ -94,9 +94,9 @@
         </div>
 
         <div>
-            <button class="btn-primary mt-3 sm:w-auto mr-2">guardar</button>
+            <button class="btn-primary mt-3 sm:w-auto mr-2">Guardar</button>
 
-            <button class="btn-primary mt-3 sm:w-auto mr-2" @click.prevent="emit('cancelCreate')">cancelar</button>
+            <button class="btn-danger mt-3 sm:w-auto mr-2" @click.prevent="emit('cancelCreate')">Cancelar</button>
         </div>
 
 
