@@ -63,7 +63,7 @@
         </div>
 
         <div>
-            <button class="btn-primary sm:w-auto mr-2 mt-3" @click="showCreateCompany">Guardar</button>
+            <button class="btn-primary sm:w-auto mr-2 mt-3" @click.prevent='save'>Guardar</button>
             <button class="btn-danger sm:w-auto mr-2 mt-3" @click.prevent="emit('cancelCreate')">Cancelar</button>
         </div>
 
@@ -77,7 +77,14 @@
 <script setup>
     // console.log('Desde el Create');
 
-    const emit = defineEmits(['cancelCreate']);
+    const emit = defineEmits(['cancelCreate','saveMsftPriceForm']);
+
+
+    const save = async () => {
+        emit('saveMsftPriceForm');
+
+        
+    }
 
 
 </script>
