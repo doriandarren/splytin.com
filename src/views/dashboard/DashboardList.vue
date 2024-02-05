@@ -9,7 +9,7 @@
             />
         </div>
 
-        <h1>desde dashboard</h1>
+        
 
         <div class="intro-y box p-5 mt-5" id="div_table">
 
