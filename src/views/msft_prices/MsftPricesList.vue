@@ -4,6 +4,7 @@
     <div v-if="isCreate" >
         <Create
             @cancelCreate="cancelCreate"
+            @saveMsftPriceForm="saveMsftPriceForm"
 
         />
     </div>
@@ -205,8 +206,9 @@ const cancelCreate = () => {
 } 
 
 
-
-
+const saveMsftPriceForm = () => {
+    console.log('se guarda desde List');
+}
 
 
 onMounted(async () => {
