@@ -2,15 +2,16 @@
 <template>
     <div>
 
-        <div>
-            <Create />
+        <div v-if="isCreate">
+            <Create 
+                @cancelCreate="cancelCreate"
+            
+            />
         </div>
 
         <h1>desde dashboard</h1>
 
-        <div class="intro-y box p-5 mt-5">
-
-
+        <div class="intro-y box p-5 mt-5" id="div_table">
 
 
             <div class="flex flex-col sm:flex-row sm:items-end xl:items-start">
@@ -31,7 +32,7 @@
 
 
                 <div class="flex mt-5 sm:mt-0">
-                    <button class="btn-primary w-1/2 sm:w-auto mr-2" @click="showCreateCompany">
+                    <button class="btn-primary w-1/2 sm:w-auto mr-2" @click="showCreateDashboard">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 50 50">
                             <path fill="currentColor"
                                 d="M25 42c-9.4 0-17-7.6-17-17S15.6 8 25 8s17 7.6 17 17s-7.6 17-17 17m0-32c-8.3 0-15 6.7-15 15s6.7 15 15 15s15-6.7 15-15s-6.7-15-15-15" />
@@ -73,6 +74,9 @@ const table = ref(null); //reference to your table element
 const tabulator = ref(null); //variable to hold your table
 const tableData = reactive([]); //data for table to display
 
+const isCreate = ref(false);
+
+
 
 const filter = reactive({
     field: "name",
@@ -103,6 +107,8 @@ const onResetFilter = () => {
     filter.value = "";
     onFilter();
 };
+
+
 
 
 
@@ -151,6 +157,14 @@ const initTabulator = async () => {
                 headerHozAlign: "left",
             },
             {
+                title: "channel_id",
+                minWidth: 200,
+                responsive: 0,
+                field: "channel_id",
+                vertAlign: "middle",
+                headerHozAlign: "left",
+            },
+            {
                 title: "",
                 minWidth: 80,
                 width: 10,
@@ -190,15 +204,39 @@ const initTabulator = async () => {
 
 }
 
+
+
 /**
  * 
  * CREATE
  * 
  * 
- *  */
-const showCreateCompany = () => {
-
+ */
+const showCreateDashboard = () => {
+    isCreate.value = true;
+    div_table.style.display = 'none'; 
 }
+
+const cancelCreate = () => {
+    isCreate.value = false;
+    div_table.style.display = 'block'; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -219,7 +257,9 @@ onMounted(async () => {
 
     // tableData.value = data;
 
-    // console.log(tableData.value)
+    console.log(tableData.value)
+
+    
 
 
     await initTabulator();
