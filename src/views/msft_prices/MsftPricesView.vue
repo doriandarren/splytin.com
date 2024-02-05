@@ -27,9 +27,7 @@
             </div>
 
         </div>
-
         
-
 
         <div class="overflow-x-auto scrollbar-hidden">
             <div id="tabulator" ref="table" class="mt-5 table-report table-report--tabulator">
