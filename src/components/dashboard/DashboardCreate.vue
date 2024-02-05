@@ -94,7 +94,7 @@
         </div>
 
         <div>
-            <button class="btn-primary mt-3 sm:w-auto mr-2">Guardar</button>
+            <button class="btn-primary mt-3 sm:w-auto mr-2" @click.prevent="save">Guardar</button>
 
             <button class="btn-danger mt-3 sm:w-auto mr-2" @click.prevent="emit('cancelCreate')">Cancelar</button>
         </div>
@@ -105,7 +105,13 @@
 
 <script setup>
 
-const emit = defineEmits(['cancelCreate']);
+const emit = defineEmits(['cancelCreate', 'saveDashboardForm']);
+
+const save = () => {
+    emit('saveDashboardForm'); 
+}
+
+
 
 </script>
 

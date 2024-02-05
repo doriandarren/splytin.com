@@ -5,7 +5,8 @@
         <div v-if="isCreate">
             <Create 
                 @cancelCreate="cancelCreate"
-            
+                @saveDashboardForm="saveDashboardForm"
+
             />
         </div>
 
@@ -220,6 +221,9 @@ const showCreateDashboard = () => {
 const cancelCreate = () => {
     isCreate.value = false;
     div_table.style.display = 'block'; 
+}
+const saveDashboardForm = () => {
+    console.log('guarda desde list');
 }
 
 
