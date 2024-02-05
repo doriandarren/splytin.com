@@ -1,15 +1,18 @@
 <template>
     
 
-    <div>
-        <Create />
+    <div v-if="isCreate" >
+        <Create
+            @cancelCreate="cancelCreate"
+
+        />
     </div>
 
     <div>
         <h1>Hola desde msft</h1>
     </div>
 
-    <div class="intro-y box p-5 mt-5">
+    <div id="div_table" class="intro-y box p-5 mt-5">
 
         <div class="flex flex-col sm:flex-row sm:items-end xl:items-start">
             <form id="tabulator-html-filter-form" class="xl:flex sm:mr-auto">
@@ -29,7 +32,7 @@
 
 
             <div class="flex mt-5 sm:mt-0">
-                <button class="btn-primary w-1/2 sm:w-auto mr-2" @click="showCreateCompany">
+                <button class="btn-primary w-1/2 sm:w-auto mr-2" @click="showCreateMsftPrices">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 50 50">
                         <path fill="currentColor"
                             d="M25 42c-9.4 0-17-7.6-17-17S15.6 8 25 8s17 7.6 17 17s-7.6 17-17 17m0-32c-8.3 0-15 6.7-15 15s6.7 15 15 15s15-6.7 15-15s-6.7-15-15-15" />
@@ -42,8 +45,6 @@
         </div>
 
 
-
-
         <div class="overflow-x-auto scrollbar-hidden">
             <div id="tabulator" ref="table" class="mt-5 table-report table-report--tabulator">
             </div>
@@ -51,6 +52,7 @@
         </div>
 
     </div>
+
 </template>
 
 <script setup>
@@ -63,6 +65,9 @@ import Create from '@/components/msft_prices/MsftPriceCreate.vue';
 const table = ref(null); //reference to your table element
 const tabulator = ref(null); //variable to hold your table
 const tableData = reactive([]); //data for table to display
+
+
+const isCreate = ref(false); 
 
 
 
@@ -140,6 +145,14 @@ const initTabulator = async () => {
                 headerHozAlign: "left",
             },
             {
+                title: "Day_of_week",
+                minWidth: 200,
+                responsive: 0,
+                field: "day_of_week",
+                vertAlign: "middle",
+                headerHozAlign: "left",
+            },
+            {
                 title: "",
                 minWidth: 80,
                 width: 10,
@@ -182,10 +195,17 @@ const initTabulator = async () => {
 
 /** Create **/
 
-const showCreateCompany = () => {
+const showCreateMsftPrices = () => {
+
+    isCreate.value = true;
+    div_table.style.display = 'none';
 
 }
 
+const cancelCreate = () => {
+    isCreate.value = false;
+    div_table.style.display = 'block';
+} 
 
 
 
@@ -203,7 +223,7 @@ onMounted(async () => {
         .then((res) => res.json())
         .then((response) => {
 
-            //console.log(response.data);
+            console.log(response.data);
 
             tableData.value = response.data;
 
