@@ -1,33 +1,49 @@
 <template>
+    
+
+    <div v-if="isCreate" >
+        <Create
+            @cancelCreate="cancelCreate"
+
+        />
+    </div>
+
     <div>
         <h1>Hola desde msft</h1>
     </div>
 
-    <div class="intro-y box p-5 mt-5">
+    <div id="div_table" class="intro-y box p-5 mt-5">
 
         <div class="flex flex-col sm:flex-row sm:items-end xl:items-start">
             <form id="tabulator-html-filter-form" class="xl:flex sm:mr-auto">
                 <div class="relative sm:flex items-center sm:mr-4 mt-2 xl:mt-0">
                     <input id="tabulator-html-filter-value" v-model="filter.value" type="text"
-                        class="w-full xl:w-[600px] form-control mt-2 sm:mt-0" :placeholder="$t('search')" @keyup="onFilter" />
-                    <button 
-                        class="w-4 h-4 absolute my-auto inset-y-0 mr-3 right-0 text-slate-400 hover:cursor-pointer"
-                        @click.prevent="onResetFilter"
-                    >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6c0 1.01-.25 1.97-.7 2.8l1.46 1.46A7.93 7.93 0 0 0 20 12c0-4.42-3.58-8-8-8m0 14c-3.31 0-6-2.69-6-6c0-1.01.25-1.97.7-2.8L5.24 7.74A7.93 7.93 0 0 0 4 12c0 4.42 3.58 8 8 8v3l4-4l-4-4z"/></svg>
+                        class="w-full xl:w-[600px] form-control mt-2 sm:mt-0" :placeholder="$t('search')"
+                        @keyup="onFilter" />
+                    <button class="w-4 h-4 absolute my-auto inset-y-0 mr-3 right-0 text-slate-400 hover:cursor-pointer"
+                        @click.prevent="onResetFilter">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6c0 1.01-.25 1.97-.7 2.8l1.46 1.46A7.93 7.93 0 0 0 20 12c0-4.42-3.58-8-8-8m0 14c-3.31 0-6-2.69-6-6c0-1.01.25-1.97.7-2.8L5.24 7.74A7.93 7.93 0 0 0 4 12c0 4.42 3.58 8 8 8v3l4-4l-4-4z" />
+                        </svg>
                     </button>
                 </div>
             </form>
 
 
             <div class="flex mt-5 sm:mt-0">
-                <button class="btn-primary w-1/2 sm:w-auto mr-2" @click="showCreateCompany">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 50 50"><path fill="currentColor" d="M25 42c-9.4 0-17-7.6-17-17S15.6 8 25 8s17 7.6 17 17s-7.6 17-17 17m0-32c-8.3 0-15 6.7-15 15s6.7 15 15 15s15-6.7 15-15s-6.7-15-15-15"/><path fill="currentColor" d="M16 24h18v2H16z"/><path fill="currentColor" d="M24 16h2v18h-2z"/></svg>
+                <button class="btn-primary w-1/2 sm:w-auto mr-2" @click="showCreateMsftPrices">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 50 50">
+                        <path fill="currentColor"
+                            d="M25 42c-9.4 0-17-7.6-17-17S15.6 8 25 8s17 7.6 17 17s-7.6 17-17 17m0-32c-8.3 0-15 6.7-15 15s6.7 15 15 15s15-6.7 15-15s-6.7-15-15-15" />
+                        <path fill="currentColor" d="M16 24h18v2H16z" />
+                        <path fill="currentColor" d="M24 16h2v18h-2z" />
+                    </svg>
                 </button>
             </div>
 
         </div>
-        
+
 
         <div class="overflow-x-auto scrollbar-hidden">
             <div id="tabulator" ref="table" class="mt-5 table-report table-report--tabulator">
@@ -37,20 +53,22 @@
 
     </div>
 
-    <div>
-
-    </div>
 </template>
 
 <script setup>
 import { ref, reactive, onMounted } from 'vue';
 import { TabulatorFull as Tabulator } from 'tabulator-tables'; //import Tabulator library
+import Create from '@/components/msft_prices/MsftPriceCreate.vue';
 
 
 
 const table = ref(null); //reference to your table element
 const tabulator = ref(null); //variable to hold your table
 const tableData = reactive([]); //data for table to display
+
+
+const isCreate = ref(false); 
+
 
 
 
@@ -82,10 +100,7 @@ const onResetFilter = () => {
 };
 
 
-
 const initTabulator = async () => {
-
-    console.log(tableData.value);
 
     tabulator.value = new Tabulator(table.value, {
         pagination: "local",
@@ -130,6 +145,14 @@ const initTabulator = async () => {
                 headerHozAlign: "left",
             },
             {
+                title: "Day_of_week",
+                minWidth: 200,
+                responsive: 0,
+                field: "day_of_week",
+                vertAlign: "middle",
+                headerHozAlign: "left",
+            },
+            {
                 title: "",
                 minWidth: 80,
                 width: 10,
@@ -144,7 +167,7 @@ const initTabulator = async () => {
                     e.preventDefault();
                     console.log('editamos')
                 },
-                
+
             },
             {
                 title: "",
@@ -156,19 +179,38 @@ const initTabulator = async () => {
                 headerHozAlign: "left",
                 formatter: (cell, formatterParams) => {
                     return `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-600 hover:text-red-400" viewBox="0 0 24 24"><path fill="currentColor" d="M7 21q-.825 0-1.412-.587T5 19V6H4V4h5V3h6v1h5v2h-1v13q0 .825-.587 1.413T17 21zM17 6H7v13h10zM9 17h2V8H9zm4 0h2V8h-2zM7 6v13z"/></svg>`;
-                    
+
                 },
                 cellClick: (e, cell) => {
                     e.preventDefault();
                     console.log('eliminamos')
                 }
             },
-            
-            
+
+
         ], //define table columns
     });
 
 }
+
+/** Create **/
+
+const showCreateMsftPrices = () => {
+
+    isCreate.value = true;
+    div_table.style.display = 'none';
+
+}
+
+const cancelCreate = () => {
+    isCreate.value = false;
+    div_table.style.display = 'block';
+} 
+
+
+
+
+
 
 onMounted(async () => {
 
@@ -181,7 +223,7 @@ onMounted(async () => {
         .then((res) => res.json())
         .then((response) => {
 
-            //console.log(response.data);
+            console.log(response.data);
 
             tableData.value = response.data;
 
@@ -205,5 +247,4 @@ table {
 td,
 th {
     border: black 1px solid;
-}
-</style>
+}</style>
