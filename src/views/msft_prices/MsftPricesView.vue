@@ -8,9 +8,6 @@
         />
     </div>
 
-    <div>
-        <h1>Hola desde msft</h1>
-    </div>
 
     <div id="div_table" class="intro-y box p-5 mt-5">
 

@@ -64,7 +64,7 @@
 
         <div>
             <button class="btn-primary sm:w-auto mr-2 mt-3" @click="showCreateCompany">Guardar</button>
-            <button class="btn-primary sm:w-auto mr-2 mt-3" @click.prevent="emit('cancelCreate')">Cancelar</button>
+            <button class="btn-danger sm:w-auto mr-2 mt-3" @click.prevent="emit('cancelCreate')">Cancelar</button>
         </div>
 
         
