@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Crear</h1>
+        <h1>Edit</h1>
         
 
         <div class="w-full">
@@ -96,7 +96,7 @@
         <div>
             <button class="btn-primary mt-3 sm:w-auto mr-2" @click.prevent="save">Guardar</button>
 
-            <button class="btn-danger mt-3 sm:w-auto mr-2" @click.prevent="emit('cancelCreate')">Cancelar</button>
+            <button class="btn-danger mt-3 sm:w-auto mr-2" @click.prevent="emit('cancelEdit')">Cancelar</button>
         </div>
 
 
@@ -105,10 +105,10 @@
 
 <script setup>
 
-const emit = defineEmits(['cancelCreate', 'saveDashboardForm']);
+const emit = defineEmits(['cancelEdit', 'updateDashboardForm']);
 
 const save = () => {
-    emit('saveDashboardForm'); 
+    emit('updateDashboardForm'); 
 }
 
 

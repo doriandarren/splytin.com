@@ -5,7 +5,14 @@
         <div v-if="isCreate">
             <Create 
                 @cancelCreate="cancelCreate"
-            
+                @saveDashboardForm="saveDashboardForm"
+            />
+        </div>
+
+        <div v-if="isEdit">
+            <Edit
+            @cancelEdit="cancelEdit"
+            @updateDashboardForm="updateDashboardForm"
             />
         </div>
 
@@ -31,6 +38,7 @@
                 </form>
 
 
+                <!-- ------------------BOTON CREAR-------------------------------- -->
                 <div class="flex mt-5 sm:mt-0">
                     <button class="btn-primary w-1/2 sm:w-auto mr-2" @click="showCreateDashboard">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 50 50">
@@ -53,9 +61,6 @@
 
         </div>
 
-
-
-
         <div>
 
         </div>
@@ -68,13 +73,19 @@
 import { ref, reactive, onMounted } from 'vue';
 import { TabulatorFull as Tabulator } from 'tabulator-tables';
 import Create from '@/components/dashboard/DashboardCreate.vue';
+import Edit from '@/components/dashboard/DashboardEdit.vue';
 
 
+
+
+//CREAMOS VARIABLES//
 const table = ref(null); //reference to your table element
 const tabulator = ref(null); //variable to hold your table
 const tableData = reactive([]); //data for table to display
 
 const isCreate = ref(false);
+const isEdit = ref(false);
+
 
 
 
@@ -177,7 +188,7 @@ const initTabulator = async () => {
                 },
                 cellClick: (e, cell) => {
                     e.preventDefault();
-                    console.log('Editamos')
+                    showEditDashboard(cell.getData().id);
                 }
             },
             {
@@ -221,7 +232,34 @@ const cancelCreate = () => {
     isCreate.value = false;
     div_table.style.display = 'block'; 
 }
+const saveDashboardForm = () => {
+    console.log('guarda desde list');
+}
 
+
+/**
+ * 
+ * EDIT
+ * 
+ * 
+ */
+
+// 'cancelEdit', 'updateDashboardForm'
+
+const showEditDashboard = (id) => {
+    console.log('Editamos', id);
+    isEdit.value = true;
+    div_table.style.display = 'none';
+}
+
+const cancelEdit = () => {
+    isEdit.value = false;
+    div_table.style.display = 'block'; 
+}
+
+const updateDashboardForm = () => {
+    console.log('guarda desde list');
+}
 
 
 
