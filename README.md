@@ -179,3 +179,19 @@ app.use(i18n())
 
 
 ```
+
+
+
+
+## Vuelidator
+
+Guide: [Install](https://vuelidate-next.netlify.app/#installation).
+
+
+```sh
+
+
+npm install @vuelidate/core @vuelidate/validators
+
+
+```
