@@ -5,17 +5,7 @@
         <Create
             @cancelCreate="cancelCreate"
             @saveMsftPriceForm="saveMsftPriceForm"
-            
         />
-    </div>
-
-    <div v-if="isEdit">
-        <Edit
-            @cancelEdit="cancelEdit"
-            @updateMsftPriceForm="updateMsftPriceForm"
-        
-        />
-    
     </div>
 
 
@@ -37,7 +27,6 @@
                 </div>
             </form>
 
-            <!---------------------------- BOTON CREAR ---------------------------------->
 
             <div class="flex mt-5 sm:mt-0">
                 <button class="btn-primary w-1/2 sm:w-auto mr-2" @click="showCreateMsftPrices">
@@ -67,10 +56,8 @@
 import { ref, reactive, onMounted } from 'vue';
 import { TabulatorFull as Tabulator } from 'tabulator-tables'; //import Tabulator library
 import Create from '@/components/msft_prices/MsftPriceCreate.vue';
-import Edit from '@/components/msft_prices/MsftPriceEdit.vue';
 
 
-// CREAMOS VARIABLES
 
 const table = ref(null); //reference to your table element
 const tabulator = ref(null); //variable to hold your table
@@ -78,7 +65,8 @@ const tableData = reactive([]); //data for table to display
 
 
 const isCreate = ref(false); 
-const isEdit = ref(false); 
+
+
 
 
 
@@ -174,7 +162,7 @@ const initTabulator = async () => {
                 },
                 cellClick: (e, cell) => {
                     e.preventDefault();
-                    showEditMsftPrice(cell.getData().id);
+                    console.log('editamos')
                 },
 
             },
@@ -205,8 +193,10 @@ const initTabulator = async () => {
 /** Create **/
 
 const showCreateMsftPrices = () => {
+
     isCreate.value = true;
     div_table.style.display = 'none';
+
 }
 
 const cancelCreate = () => {
@@ -214,28 +204,10 @@ const cancelCreate = () => {
     div_table.style.display = 'block';
 } 
 
+
 const saveMsftPriceForm = () => {
     console.log('se guarda desde List');
 }
-
-
-/** Edit **/
-
-const showEditMsftPrice = (id) => {
-    console.log('Editamos', id);
-    isEdit.value = true;
-    div_table.style.display = 'none';
-}
-const cancelEdit = () => {
-    isEdit.value = false;
-    div_table.style.display = 'block';
-} 
-
-const updateMsftPriceForm = () => {
-    console.log('se edita desde List');
-}
-
-// 'cancelEdit','updateMsftPriceForm'
 
 
 onMounted(async () => {
