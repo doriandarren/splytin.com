@@ -218,27 +218,6 @@ const saveMsftPriceForm = () => {
     console.log('se guarda desde List');
 }
 
-/** Edit **/
-
-const showEditMsftPrices = () => {
-
-    isEdit.value = true;
-    div_table.style.display = 'none';
-
-}
-
-const cancelEdit = () => {
-    isEdit.value = false;
-    div_table.style.display = 'block';
-} 
-
-
-const updateMsftPriceForm = () => {
-    console.log('se guarda desde List');
-}
-
-
-
 
 /** Edit **/
 
