@@ -12,6 +12,7 @@
     <div v-if="isEdit">
         <Edit
             @cancelEdit="cancelEdit"
+            
             @updateMsftPriceForm="updateMsftPriceForm"
         
         />
