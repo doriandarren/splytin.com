@@ -66,6 +66,7 @@
 import { ref, reactive, onMounted } from 'vue';
 import { TabulatorFull as Tabulator } from 'tabulator-tables'; //import Tabulator library
 import Create from '@/components/msft_prices/MsftPriceCreate.vue';
+import Edit from '@/components/msft_prices/MsftPriceEdit.vue';
 
 
 
@@ -75,8 +76,7 @@ const tableData = reactive([]); //data for table to display
 
 
 const isCreate = ref(false); 
-
-
+const isEdit = ref(false); 
 
 
 
@@ -218,6 +218,27 @@ const cancelCreate = () => {
 const saveMsftPriceForm = () => {
     console.log('se guarda desde List');
 }
+
+/** Edit **/
+
+const showEditMsftPrices = () => {
+
+    isEdit.value = true;
+    div_table.style.display = 'none';
+
+}
+
+const cancelEdit = () => {
+    isEdit.value = false;
+    div_table.style.display = 'block';
+} 
+
+
+const updateMsftPriceForm = () => {
+    console.log('se guarda desde List');
+}
+
+
 
 
 onMounted(async () => {
