@@ -76,12 +76,17 @@
 
 <script setup>
     // console.log('Desde el Create');
+    const props = defineProps(['msftPriceId']);
+
+    console.log('Editamos', props.msftPriceId);
 
     const emit = defineEmits(['cancelEdit','updateMsftPriceForm']);
 
 
     const save = async () => {
         emit('updateMsftPriceForm');
+
+    
 
         
     }

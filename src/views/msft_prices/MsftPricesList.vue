@@ -13,6 +13,7 @@
         <Edit
             @cancelEdit="cancelEdit"
             @updateMsftPriceForm="updateMsftPriceForm"
+            :msftPriceId="msftPriceId"
         
         />
     
@@ -68,6 +69,7 @@ import { ref, reactive, onMounted } from 'vue';
 import { TabulatorFull as Tabulator } from 'tabulator-tables'; //import Tabulator library
 import Create from '@/components/msft_prices/MsftPriceCreate.vue';
 import Edit from '@/components/msft_prices/MsftPriceEdit.vue';
+import useMsftPrice from '@/composables/msft_prices';
 
 
 // CREAMOS VARIABLES
@@ -79,6 +81,8 @@ const tableData = reactive([]); //data for table to display
 
 const isCreate = ref(false); 
 const isEdit = ref(false); 
+const msftPriceId = ref(0);
+const { msftPrice, msftPrices, msftPriceErrors, getMsftPrices} = useMsftPrice();
 
 
 
@@ -222,9 +226,10 @@ const saveMsftPriceForm = () => {
 /** Edit **/
 
 const showEditMsftPrice = (id) => {
-    console.log('Editamos', id);
+    
     isEdit.value = true;
     div_table.style.display = 'none';
+    msftPriceId.value = id;
 }
 const cancelEdit = () => {
     isEdit.value = false;
@@ -240,26 +245,17 @@ const updateMsftPriceForm = () => {
 
 onMounted(async () => {
 
-    await fetch('https://api.splytin.com/api/v1/b-msft-prices/list', {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json"
-        },
-    })
-        .then((res) => res.json())
-        .then((response) => {
+    // TODO AQUI PONGO EL COMPOSABLE //
 
-            console.log(response.data);
+    await getMsftPrices();
 
-            tableData.value = response.data;
+    // console.log(msftPrices.value);
 
-        });
+    tableData.value = msftPrices.value;
 
     await initTabulator();
 
 })
-
-
 
 
 
