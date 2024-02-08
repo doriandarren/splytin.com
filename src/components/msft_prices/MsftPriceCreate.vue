@@ -17,6 +17,9 @@
 
                 </div>
 
+
+                
+
                 <div class="col-span-6">
 
                     <div class="w-full">
@@ -38,7 +41,7 @@
                     </div>
 
                 </div>
-
+                 
 
                 <div class="col-span-12">
                     <div class="w-full">
@@ -61,7 +64,9 @@
                     </div>
                 </div>
 
+                <!-- day_of_week, is_first, is_last, is_open, price_usd, symbol -->
 
+                
                 <div class="col-span-12">
 
                     <div class="w-full">
