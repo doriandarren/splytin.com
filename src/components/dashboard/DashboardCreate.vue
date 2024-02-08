@@ -8,6 +8,9 @@
             <div class="grid grid-cols-12 gap-6">
 
 
+                <!-- title, comment_count, etag, favorite_count, kind, like_count, published_at, view_count -->
+
+
                 <div class="col-span-12 md:col-span-6 lg:col-span-12">
                     <div class="w-full">
                         <label class="block mb-1" for="title">Titulo</label>

@@ -74,6 +74,7 @@ import { ref, reactive, onMounted } from 'vue';
 import { TabulatorFull as Tabulator } from 'tabulator-tables';
 import Create from '@/components/dashboard/DashboardCreate.vue';
 import Edit from '@/components/dashboard/DashboardEdit.vue';
+import useDashboard from '@/composables/dashboard';
 
 
 
@@ -85,7 +86,7 @@ const tableData = reactive([]); //data for table to display
 
 const isCreate = ref(false);
 const isEdit = ref(false);
-
+const {dashboard, dashboards, dashboardErrors, getDashboards} = useDashboard();
 
 
 
@@ -280,22 +281,11 @@ const updateDashboardForm = () => {
 
 onMounted(async () => {
 
-    await fetch('https://api.splytin.com/api/v1/youtube-videos/list', {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json"
-        },
-    })
-        .then((res) => res.json())
-        .then((response) => {
-            // console.log(response)
-            tableData.value = response.data;
-        });
+    
+    await getDashboards();
 
 
-    // tableData.value = data;
-
-    console.log(tableData.value)
+    tableData.value = dashboards.value;
 
     
 
