@@ -11,11 +11,11 @@ export default function useDashboard() {
 
 	const getDashboards = async () => {
 		dashboardErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}dashboards/list`,{
+		await fetch(`https://api.splytin.com/api/v1/dashboards/list`,{
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer ${localStorage.getItem('token')}`
+				//"Authorization": `Bearer ${localStorage.getItem('token')}`
 			},
 		})
 		.then(res => res.json())
@@ -34,11 +34,11 @@ export default function useDashboard() {
 
 	const getDashboard = async (id) => {
 		dashboardErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}dashboards/show/${id}`,{
+		await fetch(`https://api.splytin.com/api/v1/dashboards/show/${id}`,{
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer ${localStorage.getItem('token')}`
+				//"Authorization": `Bearer ${localStorage.getItem('token')}`
 			},
 		})
 		.then(res => res.json())
@@ -57,11 +57,11 @@ export default function useDashboard() {
 
 	const storeDashboard = async (data) => {
 		dashboardErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}dashboards/store`,{
+		await fetch(`https://api.splytin.com/api/v1/dashboards/store`,{
 			method: 'POST',
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer ${localStorage.getItem('token')}`
+				//"Authorization": `Bearer ${localStorage.getItem('token')}`
 			},
 			body: JSON.stringify(data),
 		})
@@ -81,11 +81,11 @@ export default function useDashboard() {
 
 	const updateDashboard = async (id, data) => {
 		dashboardErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}dashboards/update/${id}`,{
+		await fetch(`https://api.splytin.com/api/v1/dashboards/update/${id}`,{
 			method: 'PUT',
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer ${localStorage.getItem('token')}`
+				//"Authorization": `Bearer ${localStorage.getItem('token')}`
 			},
 			body: JSON.stringify(data),
 		})
@@ -105,11 +105,11 @@ export default function useDashboard() {
 
 	const destroyDashboard = async (id) => {
 		dashboardErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}dashboards/delete/${id}`,{
+		await fetch(`https://api.splytin.com/api/v1/dashboards/delete/${id}`,{
 			method: 'DELETE',
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer ${localStorage.getItem('token')}`
+				//"Authorization": `Bearer ${localStorage.getItem('token')}`
 			},
 		})
 		.then(res => res.json())
