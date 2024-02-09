@@ -11,7 +11,7 @@ export default function useDashboard() {
 
 	const getDashboards = async () => {
 		dashboardErrors.value = [];
-		await fetch(`https://api.splytin.com/api/v1/dashboards/list`,{
+		await fetch(`https://api.splytin.com/api/v1/youtube-videos/list`,{
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
@@ -34,7 +34,7 @@ export default function useDashboard() {
 
 	const getDashboard = async (id) => {
 		dashboardErrors.value = [];
-		await fetch(`https://api.splytin.com/api/v1/dashboards/show/${id}`,{
+		await fetch(`https://api.splytin.com/api/v1/youtube-videos/show/${id}`,{
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
@@ -57,7 +57,7 @@ export default function useDashboard() {
 
 	const storeDashboard = async (data) => {
 		dashboardErrors.value = [];
-		await fetch(`https://api.splytin.com/api/v1/dashboards/store`,{
+		await fetch(`https://api.splytin.com/api/v1/youtube-videos/store`,{
 			method: 'POST',
 			headers: {
 				"Content-Type": "application/json",
@@ -81,7 +81,7 @@ export default function useDashboard() {
 
 	const updateDashboard = async (id, data) => {
 		dashboardErrors.value = [];
-		await fetch(`https://api.splytin.com/api/v1/dashboards/update/${id}`,{
+		await fetch(`https://api.splytin.com/api/v1/youtube-videos/update/${id}`,{
 			method: 'PUT',
 			headers: {
 				"Content-Type": "application/json",
@@ -105,7 +105,7 @@ export default function useDashboard() {
 
 	const destroyDashboard = async (id) => {
 		dashboardErrors.value = [];
-		await fetch(`https://api.splytin.com/api/v1/dashboards/delete/${id}`,{
+		await fetch(`https://api.splytin.com/api/v1/youtube-videos/delete/${id}`,{
 			method: 'DELETE',
 			headers: {
 				"Content-Type": "application/json",
