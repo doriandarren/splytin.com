@@ -82,7 +82,7 @@ const tableData = reactive([]); //data for table to display
 const isCreate = ref(false); 
 const isEdit = ref(false); 
 const msftPriceId = ref(0);
-const { msftPrice, msftPrices, msftPriceErrors, getMsftPrices} = useMsftPrice();
+const { msftPrice, msftPrices, msftPriceErrors, getMsftPrices, storeMsftPrice} = useMsftPrice();
 
 
 
@@ -218,25 +218,27 @@ const cancelCreate = () => {
     div_table.style.display = 'block';
 } 
 
-const saveMsftPriceForm = () => {
-    console.log('se guarda desde List');
+const saveMsftPriceForm = async (form) => {
+    // console.log('se guarda desde List');
+    console.log({...form});
+    await storeMsftPrice(form);
 }
 
 
 /** Edit **/
 
 const showEditMsftPrice = (id) => {
-    
-    isEdit.value = true;
-    div_table.style.display = 'none';
     msftPriceId.value = id;
+    isEdit.value = true;
+    div_table.style.display = 'none'; 
 }
+
 const cancelEdit = () => {
     isEdit.value = false;
     div_table.style.display = 'block';
 } 
 
-const updateMsftPriceForm = () => {
+const updateMsftPriceForm = async (id, form) => {
     console.log('se edita desde List');
 }
 
