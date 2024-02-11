@@ -74,7 +74,7 @@ export default function useDashboard() {
 		.then(res => res.json())
 		.then((res) => {
 
-			console.log('------' + res.data);
+			console.log('------', {...res} );
 
 			if (!res.success) {
 				dashboardErrors.value = res.errors;

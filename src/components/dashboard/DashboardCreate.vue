@@ -120,6 +120,18 @@
 
                 <div class="col-span-12">
 
+                    <div class="w-full">
+                        <label class="block mb-1" for="channel_id">Channel id</label>
+                        <input
+                            class="w-full h-10 px-3 text-base placeholder-gray-600 border rounded-lg focus:shadow-outline"
+                            type="text" id="channel_id" v-model.trim="validate.channel_id.$model"
+                            :class="{ 'border-danger': validate.channel_id.$error }" />
+                    </div>
+
+                </div>
+
+                <div class="col-span-12">
+
                     <div>
                         <button class="btn-primary mt-3 sm:w-auto mr-2" type="submit">Guardar</button>
 
@@ -182,6 +194,9 @@ const rules = {
     yt_id: {
         required: helpers.withMessage('requerido', required)
     },
+    channel_id: {
+        required: helpers.withMessage('requerido', required)
+    },
 }
 
 
@@ -195,6 +210,7 @@ const formData = reactive({
     published_at: "2023-01-01",
     view_count: "1",
     yt_id: "1",
+    channel_id: "1",
 });
 
 const validate = useVuelidate(rules, toRefs(formData));
