@@ -239,7 +239,7 @@ const saveDashboardForm = async (form) => {
     // console.log('guarda desde list');
 
     // console.log({...form});
-    await storeDashboard(form);
+    await storeDashboard({...form});
 }
 
 
