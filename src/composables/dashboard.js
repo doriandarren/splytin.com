@@ -60,6 +60,8 @@ export default function useDashboard() {
 	const storeDashboard = async (data) => {
 		dashboardErrors.value = [];
 
+		console.log(data);
+
 		await fetch(`https://api.splytin.com/api/v1/youtube-videos/store`,{
 			method: 'POST',
 			headers: {
@@ -72,7 +74,7 @@ export default function useDashboard() {
 		.then(res => res.json())
 		.then((res) => {
 
-			console.log(res.data);
+			console.log('------' + res.data);
 
 			if (!res.success) {
 				dashboardErrors.value = res.errors;
