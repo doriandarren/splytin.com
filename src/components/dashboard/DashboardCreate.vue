@@ -11,7 +11,7 @@
                 <!-- title, comment_count, etag, favorite_count, kind, like_count, published_at, view_count -->
 
 
-                <div class="col-span-12 md:col-span-6 lg:col-span-12">
+                <div class="col-span-12 md:col-span-12 lg:col-span-12">
                     <div class="w-full">
                         <label class="block mb-1" for="title">Titulo</label>
                         <input
@@ -21,7 +21,7 @@
                     </div>
                 </div>
 
-                <div class="col-span-6">
+                <div class="col-span-12 md:col-span-3 lg:col-span-3">
                     <div class="w-full">
                         <label class="block mb-1" for="comment_count">Comment count</label>
                         <input
@@ -31,7 +31,7 @@
                     </div>
                 </div>
 
-                <div class="col-span-6">
+                <div class="col-span-12 md:col-span-3 lg:col-span-3">
                     <div class="w-full">
                         <label class="block mb-1" for="etag">Etag</label>
                         <input
@@ -42,7 +42,7 @@
                 </div>
 
 
-                <div class="col-span-12">
+                <div class="col-span-12 md:col-span-3 lg:col-span-3">
 
                     <div class="w-full">
                         <label class="block mb-1" for="favorite_count">Favorite count</label>
@@ -55,7 +55,7 @@
                 </div>
 
 
-                <div class="col-span-12">
+                <div class="col-span-12 md:col-span-3 lg:col-span-3">
 
                     <div class="w-full">
                         <label class="block mb-1" for="kind">Kind</label>
@@ -68,7 +68,7 @@
                 </div>
 
 
-                <div class="col-span-12">
+                <div class="col-span-12 md:col-span-3 lg:col-span-3">
 
                     <div class="w-full">
                         <label class="block mb-1" for="like_count">Like count</label>
@@ -81,7 +81,7 @@
                 </div>
 
 
-                <div class="col-span-12">
+                <div class="col-span-12 md:col-span-3 lg:col-span-3">
 
                     <div class="w-full">
                         <label class="block mb-1" for="published_at">Published at</label>
@@ -94,7 +94,7 @@
                 </div>
 
 
-                <div class="col-span-12">
+                <div class="col-span-12 md:col-span-3 lg:col-span-3">
 
                     <div class="w-full">
                         <label class="block mb-1" for="view_count">View count</label>
@@ -106,7 +106,7 @@
 
                 </div>
 
-                <div class="col-span-12">
+                <div class="col-span-12 md:col-span-3 lg:col-span-3">
 
                     <div class="w-full">
                         <label class="block mb-1" for="yt_id">YT id</label>
@@ -118,7 +118,7 @@
 
                 </div>
 
-                <div class="col-span-12">
+                <div class="col-span-12 md:col-span-3 lg:col-span-3">
 
                     <div class="w-full">
                         <label class="block mb-1" for="channel_id">Channel id</label>
@@ -202,7 +202,7 @@ const rules = {
 
 const formData = reactive({
     title: "nuevo titilo",
-    comment_count: "1",
+    comment_count: "3",
     etag: "2",
     favorite_count: "3",
     kind: "4",
