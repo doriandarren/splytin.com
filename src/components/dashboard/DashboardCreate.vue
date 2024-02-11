@@ -195,14 +195,14 @@ const rules = {
 
 
 const formData = reactive({
-    title: "",
-    comment_count: "",
-    etag: "",
-    favorite_count: "",
-    kind: "",
-    like_count: "",
-    published_at: "",
-    view_count: "",
+    title: "nuevo titilo",
+    comment_count: "1",
+    etag: "2",
+    favorite_count: "3",
+    kind: "4",
+    like_count: "5",
+    published_at: "2023-01-01",
+    view_count: "1",
 });
 
 const validate = useVuelidate(rules, toRefs(formData));

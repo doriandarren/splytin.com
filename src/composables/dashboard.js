@@ -16,6 +16,7 @@ export default function useDashboard() {
 			headers: {
 				"Content-Type": "application/json",
 				//"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer 22|2IRnvFfFoyQunUk8u9B8rb05QRnJA9wJd9xCIg7C`
 			},
 		})
 		.then(res => res.json())
@@ -39,6 +40,7 @@ export default function useDashboard() {
 			headers: {
 				"Content-Type": "application/json",
 				//"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer 22|2IRnvFfFoyQunUk8u9B8rb05QRnJA9wJd9xCIg7C`
 			},
 		})
 		.then(res => res.json())
@@ -57,16 +59,21 @@ export default function useDashboard() {
 
 	const storeDashboard = async (data) => {
 		dashboardErrors.value = [];
+
 		await fetch(`https://api.splytin.com/api/v1/youtube-videos/store`,{
 			method: 'POST',
 			headers: {
 				"Content-Type": "application/json",
 				//"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer 22|2IRnvFfFoyQunUk8u9B8rb05QRnJA9wJd9xCIg7C`
 			},
 			body: JSON.stringify(data),
 		})
 		.then(res => res.json())
 		.then((res) => {
+
+			console.log(res.data);
+
 			if (!res.success) {
 				dashboardErrors.value = res.errors;
 			}else{
@@ -75,6 +82,7 @@ export default function useDashboard() {
 		})
 		.catch((e) => {
 			dashboardErrors.value.push(t("errors.error_internal"));
+			console.log(e);
 		});
 	}
 
@@ -86,6 +94,7 @@ export default function useDashboard() {
 			headers: {
 				"Content-Type": "application/json",
 				//"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer 22|2IRnvFfFoyQunUk8u9B8rb05QRnJA9wJd9xCIg7C`
 			},
 			body: JSON.stringify(data),
 		})
@@ -110,6 +119,7 @@ export default function useDashboard() {
 			headers: {
 				"Content-Type": "application/json",
 				//"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer 22|2IRnvFfFoyQunUk8u9B8rb05QRnJA9wJd9xCIg7C`
 			},
 		})
 		.then(res => res.json())

@@ -238,7 +238,7 @@ const cancelCreate = () => {
 const saveDashboardForm = async (form) => {
     // console.log('guarda desde list');
 
-    console.log({...form});
+    // console.log({...form});
     await storeDashboard(form);
 }
 
