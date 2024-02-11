@@ -95,7 +95,7 @@
                             class="w-full h-10 px-3 text-base placeholder-gray-600 border rounded-lg focus:shadow-outline"
                             type="text" 
                             id="symbol" 
-                            v-model.trim="validate.symbolymbol.$model"
+                            v-model.trim="validate.symbol.$model"
                             :class="{'border-danger': validate.symbol.$error}"
                         />
                     </div>
@@ -164,7 +164,7 @@ const formData = reactive({
     symbol: "",
 });
 
-const validate = useVuelidate(rules, toRefs(FormData));
+const validate = useVuelidate(rules, toRefs(formData));
 
 const save = async () => {
     validate.value.$touch();
