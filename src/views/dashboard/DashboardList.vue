@@ -13,6 +13,7 @@
             <Edit
             @cancelEdit="cancelEdit"
             @updateDashboardForm="updateDashboardForm"
+            :dashboardId="dashboardId"
             />
         </div>
 
@@ -83,10 +84,11 @@ import useDashboard from '@/composables/dashboard';
 const table = ref(null); //reference to your table element
 const tabulator = ref(null); //variable to hold your table
 const tableData = reactive([]); //data for table to display
+const dashboardId = ref(0);
 
 const isCreate = ref(false);
 const isEdit = ref(false);
-const {dashboard, dashboards, dashboardErrors, getDashboards} = useDashboard();
+const {dashboard, dashboards, dashboardErrors, getDashboards, storeDashboard} = useDashboard();
 
 
 
@@ -233,8 +235,11 @@ const cancelCreate = () => {
     isCreate.value = false;
     div_table.style.display = 'block'; 
 }
-const saveDashboardForm = () => {
-    console.log('guarda desde list');
+const saveDashboardForm = async (form) => {
+    // console.log('guarda desde list');
+
+    console.log({...form});
+    await storeDashboard(form);
 }
 
 
@@ -249,6 +254,7 @@ const saveDashboardForm = () => {
 
 const showEditDashboard = (id) => {
     console.log('Editamos', id);
+    dashboardId.value = id;
     isEdit.value = true;
     div_table.style.display = 'none';
 }
@@ -258,7 +264,7 @@ const cancelEdit = () => {
     div_table.style.display = 'block'; 
 }
 
-const updateDashboardForm = () => {
+const updateDashboardForm = async (id, form) => {
     console.log('guarda desde list');
 }
 
