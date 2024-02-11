@@ -221,7 +221,7 @@ const cancelCreate = () => {
 const saveMsftPriceForm = async (form) => {
     // console.log('se guarda desde List');
     console.log({...form});
-    await storeMsftPrice(form);
+    await storeMsftPrice({...form});
 }
 
 

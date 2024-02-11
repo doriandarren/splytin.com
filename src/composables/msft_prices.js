@@ -33,6 +33,7 @@ export default function useMsftPrice() {
 			headers: {
 				"Content-Type": "application/json",
 				//"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer 22|2IRnvFfFoyQunUk8u9B8rb05QRnJA9wJd9xCIg7C`
 			},
 		})
 		.then(res => res.json())
@@ -56,6 +57,7 @@ export default function useMsftPrice() {
 			headers: {
 				"Content-Type": "application/json",
 				//"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer 22|2IRnvFfFoyQunUk8u9B8rb05QRnJA9wJd9xCIg7C`
 			},
 		})
 		.then(res => res.json())
@@ -79,6 +81,7 @@ export default function useMsftPrice() {
 			headers: {
 				"Content-Type": "application/json",
 				//"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer 22|2IRnvFfFoyQunUk8u9B8rb05QRnJA9wJd9xCIg7C`
 			},
 			body: JSON.stringify(data),
 		})
@@ -103,6 +106,7 @@ export default function useMsftPrice() {
 			headers: {
 				"Content-Type": "application/json",
 				//"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer 22|2IRnvFfFoyQunUk8u9B8rb05QRnJA9wJd9xCIg7C`
 			},
 			body: JSON.stringify(data),
 		})
@@ -127,6 +131,7 @@ export default function useMsftPrice() {
 			headers: {
 				"Content-Type": "application/json",
 				//"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer 22|2IRnvFfFoyQunUk8u9B8rb05QRnJA9wJd9xCIg7C`
 			},
 		})
 		.then(res => res.json())
