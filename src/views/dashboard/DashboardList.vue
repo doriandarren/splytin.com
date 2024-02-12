@@ -226,20 +226,33 @@ const initTabulator = async () => {
  * 
  * 
  */
+
+//MUESTRA EL FORMULARIO MEDIANTE EL BOTON//
 const showCreateDashboard = () => {
     isCreate.value = true;
     div_table.style.display = 'none'; 
 }
 
+//CANCELAR FORMULARIO SE ENVIA AL COMPONENTE//
 const cancelCreate = () => {
     isCreate.value = false;
     div_table.style.display = 'block'; 
 }
+
+//GUARDAR FORMULARIO SE ENVIA AL COMPONENTE//
 const saveDashboardForm = async (form) => {
     // console.log('guarda desde list');
 
     // console.log({...form});
     await storeDashboard({...form});
+    isCreate.value = false;
+    div_table.style.display = 'block';
+
+    await getDashboards();
+    tableData.value = dashboards.value; 
+    
+    tabulator.value.setData(tableData.value);
+
 }
 
 
