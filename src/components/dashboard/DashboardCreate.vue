@@ -201,18 +201,37 @@ const rules = {
 }
 
 
+/////SOLAMENTE PARA TEST////
+
+// const formData = reactive({
+//     title: "nuevo titilo",
+//     comment_count: "3",
+//     etag: "2",
+//     favorite_count: "3",
+//     kind: "4",
+//     like_count: "5",
+//     published_at: "2023-01-01",
+//     view_count: "1",
+//     yt_id: "1",
+//     channel_id: "1",
+// });
+
+
+
 const formData = reactive({
-    title: "nuevo titilo",
-    comment_count: "3",
-    etag: "2",
-    favorite_count: "3",
-    kind: "4",
-    like_count: "5",
-    published_at: "2023-01-01",
-    view_count: "1",
+    title: "",
+    comment_count: "",
+    etag: "",
+    favorite_count: "",
+    kind: "",
+    like_count: "",
+    published_at: "",
+    view_count: "",
     yt_id: "1",
     channel_id: "1",
 });
+
+
 
 const validate = useVuelidate(rules, toRefs(formData));
 
