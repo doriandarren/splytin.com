@@ -194,18 +194,19 @@ const initTabulator = async () => {
 
 }
 
-/** Create **/
+/** Create **/ 
 
+// MUESTRA EL FORMULARIO MEDIANTE EL BOTON
 const showCreateMsftPrices = () => {
     isCreate.value = true;
     div_table.style.display = 'none';
 }
-
+// CANCELAR FORMULARIO SE ENVIA AL COMPONENTE
 const cancelCreate = () => {
     isCreate.value = false;
     div_table.style.display = 'block';
 }
-
+// GUARDAR FORMULARIO SE ENVIA AL COMPONENTE
 const saveMsftPriceForm = async (form) => {
     // console.log('se guarda desde List');
     // console.log({...form});

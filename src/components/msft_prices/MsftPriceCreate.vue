@@ -143,15 +143,24 @@ const rules = {
     }
 }
 
+// solamente para test
 
+// const formData = reactive({
+//     day_of_week: "4",
+//     is_first: "1",
+//     is_last: "1",
+//     is_open: "1",
+//     price_usd: "30.40",
+//     symbol: "APPL",
+// });
 
 const formData = reactive({
-    day_of_week: "4",
-    is_first: "1",
-    is_last: "1",
-    is_open: "1",
-    price_usd: "30.40",
-    symbol: "APPL",
+    day_of_week: "",
+    is_first: "",
+    is_last: "",
+    is_open: "",
+    price_usd: "",
+    symbol: "",
 });
 
 const validate = useVuelidate(rules, toRefs(formData));
