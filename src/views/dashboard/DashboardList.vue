@@ -253,7 +253,7 @@ const saveDashboardForm = async (form) => {
 // 'cancelEdit', 'updateDashboardForm'
 
 const showEditDashboard = (id) => {
-    console.log('Editamos', id);
+    // console.log('Editamos', id);
     dashboardId.value = id;
     isEdit.value = true;
     div_table.style.display = 'none';
@@ -289,11 +289,7 @@ onMounted(async () => {
 
     
     await getDashboards();
-
-
-    tableData.value = dashboards.value;
-
-    
+    tableData.value = dashboards.value;    
 
 
     await initTabulator();

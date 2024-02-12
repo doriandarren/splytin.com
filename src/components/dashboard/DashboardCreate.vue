@@ -4,13 +4,13 @@
 
         <form @submit.prevent="save">
 
-
+            <!-- contenedor     -->
             <div class="grid grid-cols-12 gap-6">
 
 
                 <!-- title, comment_count, etag, favorite_count, kind, like_count, published_at, view_count -->
 
-
+                <!-- empieza la columna -->
                 <div class="col-span-12 md:col-span-12 lg:col-span-12">
                     <div class="w-full">
                         <label class="block mb-1" for="title">Titulo</label>
@@ -20,6 +20,7 @@
                             :class="{ 'border-danger': validate.title.$error }" />
                     </div>
                 </div>
+                <!-- termina la columna -->
 
                 <div class="col-span-12 md:col-span-3 lg:col-span-3">
                     <div class="w-full">
