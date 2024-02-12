@@ -222,17 +222,18 @@ const saveMsftPriceForm = async (form) => {
 
 /** Edit **/
 
+// MUESTRA EL FORMULARIO MEDIANTE EL BOTON
 const showEditMsftPrice = (id) => {
     msftPriceId.value = id;
     isEdit.value = true;
     div_table.style.display = 'none';
 }
-
+// CANCELAR FORMULARIO SE ENVIA AL COMPONENTE
 const cancelEdit = () => {
     isEdit.value = false;
     div_table.style.display = 'block';
 }
-
+// GUARDAR FORMULARIO SE ENVIA AL COMPONENTE
 const updateMsftPriceForm = async (id, form) => {
     console.log('se edita desde List');
 }

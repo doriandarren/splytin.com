@@ -116,10 +116,13 @@ import { required, minLength, maxLength, email, url, integer } from '@vuelidate/
 import { useVuelidate } from '@vuelidate/core';
 import { helpers } from '@vuelidate/validators';
 import { reactive, toRefs, onMounted } from 'vue';
+import useMsftPrice from '@/composables/msft_prices';
 
 const props = defineProps(['msftPriceId']);
 
 const emit = defineEmits(['cancelEdit', 'updateMsftPriceForm']);
+
+const { msftPrice, getMsftPrice } = useMsftPrice();
 
 const rules = {
     day_of_week: {
@@ -151,6 +154,8 @@ const formData = reactive({
     symbol: "",
 });
 
+
+
 const validate = useVuelidate(rules, toRefs(formData));
 
 
@@ -158,7 +163,7 @@ const save = async () => {
     validate.value.$touch();
     if (validate.value.$invalid) {
         //TODO
-        console.log('no pasa');
+        
     } else {
         emit('updateMsftPriceForm', id, formData);
     }
@@ -168,7 +173,14 @@ const save = async () => {
 
 onMounted( async () => {
     console.log(props.msftPriceId);
-
+    await getMsftPrice(props.msftPriceId);
+    console.log(msftPrice.value);
+    formData.day_of_week = msftPrice.value.day_of_week;
+    formData.is_first= msftPrice.value.is_first;
+    formData.is_last= msftPrice.value.is_last;
+    formData.is_open= msftPrice.value.is_open;
+    formData.price_usd= msftPrice.value.price_usd;
+    formData.symbol= msftPrice.value.symbol;
     
 });
 
