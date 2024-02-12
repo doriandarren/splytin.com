@@ -240,14 +240,6 @@ const saveDashboardForm = async (form) => {
 
     // console.log({...form});
     await storeDashboard({...form});
-    
-
-    isCreate.value = false;
-    div_table.style.display = 'block';
-
-    await getDashboards();
-    tableData.value = dashboards.value;
-    tabulator.value.setData(tableData.value);
 }
 
 
