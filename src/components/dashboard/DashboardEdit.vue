@@ -169,11 +169,12 @@ import { required, minLength, maxLength, email, url, integer } from '@vuelidate/
 import { useVuelidate } from '@vuelidate/core';
 import { helpers } from '@vuelidate/validators';
 import { toRefs, reactive, onMounted } from 'vue';
+import useDashboard from '@/composables/dashboard';
 
 
 const emit = defineEmits(['cancelEdit', 'updateDashboardForm']);
-
 const props = defineProps(['dashboardId']);
+const {dashboard, getDashboard} = useDashboard();
 
 const rules = {
     title: {
@@ -221,6 +222,7 @@ const formData = reactive({
     channel_id: "",
 });
 
+
 const validate = useVuelidate(rules, toRefs(formData));
 
 const save = () => {
@@ -234,7 +236,21 @@ const save = () => {
 
 onMounted( async() => {
     console.log(props.dashboardId);
+
+    await getDashboard(props.dashboardId);
+    console.log(dashboard.value);
+    formData.title = dashboard.value.title;
+
     
+    formData.comment_count = dashboard.value.comment_count;
+    formData.etag = dashboard.value.etag;
+    formData.favorite_count = dashboard.value.favorite_count;
+    formData.kind = dashboard.value.kind;
+    formData.like_count = dashboard.value.like_count;
+    formData.published_at = dashboard.value.published_at;
+    formData.view_count = dashboard.value.view_count;
+    formData.yt_id = dashboard.value.yt_id;
+    formData.channel_id = dashboard.value.channel_id;
 })
 
 

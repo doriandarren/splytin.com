@@ -263,8 +263,8 @@ const saveDashboardForm = async (form) => {
  * 
  */
 
-// 'cancelEdit', 'updateDashboardForm'
 
+//MUESTRA EL FORMULARIO MEDIANTE EL BOTON//
 const showEditDashboard = (id) => {
     // console.log('Editamos', id);
     dashboardId.value = id;
@@ -272,11 +272,13 @@ const showEditDashboard = (id) => {
     div_table.style.display = 'none';
 }
 
+//CANCELAR FORMULARIO SE ENVIA AL COMPONENTE//
 const cancelEdit = () => {
     isEdit.value = false;
     div_table.style.display = 'block'; 
 }
 
+//GUARDAR FORMULARIO SE ENVIA AL COMPONENTE//
 const updateDashboardForm = async (id, form) => {
     console.log('guarda desde list');
 }
