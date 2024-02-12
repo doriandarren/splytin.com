@@ -4,9 +4,24 @@
 
         <form @submit.prevent="save">
 
+            <!-- contenedor -->
             <div class="grid grid-cols-12 gap-6">
 
-                <div class="col-span-12 md:col-span-6 lg:col-span-12">
+                <!-- Empieza la columna -->
+                <div class="col-span-12 md:col-span-3 lg:col-span-3">
+
+                    <div class="w-full">
+                        <label class="block mb-1" for="symbol">Symbol</label>
+                        <input
+                            class="w-full h-10 px-3 text-base placeholder-gray-600 border rounded-lg focus:shadow-outline"
+                            type="text" id="symbol" v-model.trim="validate.symbol.$model"
+                            :class="{ 'border-danger': validate.symbol.$error }" />
+                    </div>
+                </div>
+                <!-- Termina la columna -->
+
+
+                <div class="col-span-12 md:col-span-3 lg:col-span-3">
 
                     <div class="w-full">
                         <label class="block mb-1" for="day_of_week">Day of week</label>
@@ -21,7 +36,8 @@
 
 
 
-                <div class="col-span-6">
+
+                <div class="col-span-12 md:col-span-3 lg:col-span-3">
 
                     <div class="w-full">
                         <label class="block mb-1" for="is_first">Is first</label>
@@ -33,7 +49,7 @@
 
                 </div>
 
-                <div class="col-span-6">
+                <div class="col-span-12 md:col-span-3 lg:col-span-3">
 
                     <div class="w-full">
                         <label class="block mb-1" for="is_last">Is last</label>
@@ -46,7 +62,7 @@
                 </div>
 
 
-                <div class="col-span-12">
+                <div class="col-span-12 md:col-span-3 lg:col-span-3">
                     <div class="w-full">
                         <label class="block mb-1" for="is_open">Is open</label>
                         <input
@@ -58,7 +74,7 @@
                 </div>
 
 
-                <div class="col-span-12">
+                <div class="col-span-12 md:col-span-3 lg:col-span-3">
 
                     <div class="w-full">
                         <label class="block mb-1" for="price_usd">Price usd</label>
@@ -69,19 +85,8 @@
                     </div>
                 </div>
 
-                <!-- day_of_week, is_first, is_last, is_open, price_usd, symbol -->
 
 
-                <div class="col-span-12">
-
-                    <div class="w-full">
-                        <label class="block mb-1" for="symbol">Symbol</label>
-                        <input
-                            class="w-full h-10 px-3 text-base placeholder-gray-600 border rounded-lg focus:shadow-outline"
-                            type="text" id="symbol" v-model.trim="validate.symbol.$model"
-                            :class="{ 'border-danger': validate.symbol.$error }" />
-                    </div>
-                </div>
 
 
                 <div class="col-span-12">
@@ -90,7 +95,7 @@
                         <button class="btn-primary sm:w-auto mr-2 mt-3" type="submit">Guardar</button>
 
                         <button class="btn-danger sm:w-auto mr-2 mt-3"
-                            @click.prevent="emit('cancelCreate')">Cancelar</button>
+                            @click.prevent="emit('cancelEdit')">Cancelar</button>
                     </div>
 
                 </div>
@@ -110,11 +115,9 @@
 import { required, minLength, maxLength, email, url, integer } from '@vuelidate/validators';
 import { useVuelidate } from '@vuelidate/core';
 import { helpers } from '@vuelidate/validators';
-import { reactive, toRefs } from 'vue'
+import { reactive, toRefs, onMounted } from 'vue';
 
 const props = defineProps(['msftPriceId']);
-
-console.log('Editamos', props.msftPriceId);
 
 const emit = defineEmits(['cancelEdit', 'updateMsftPriceForm']);
 
@@ -162,6 +165,13 @@ const save = async () => {
 
 
 }
+
+onMounted( async () => {
+    console.log(props.msftPriceId);
+
+    
+});
+
 
 </script>
 

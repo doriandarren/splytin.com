@@ -1,22 +1,11 @@
 <template>
-    
-
-    <div v-if="isCreate" >
-        <Create
-            @cancelCreate="cancelCreate"
-            @saveMsftPriceForm="saveMsftPriceForm"
-            
-        />
+    <div v-if="isCreate">
+        <Create @cancelCreate="cancelCreate" @saveMsftPriceForm="saveMsftPriceForm" />
     </div>
 
     <div v-if="isEdit">
-        <Edit
-            @cancelEdit="cancelEdit"
-            @updateMsftPriceForm="updateMsftPriceForm"
-            :msftPriceId="msftPriceId"
-        
-        />
-    
+        <Edit @cancelEdit="cancelEdit" @updateMsftPriceForm="updateMsftPriceForm" :msftPriceId="msftPriceId" />
+
     </div>
 
 
@@ -61,7 +50,6 @@
         </div>
 
     </div>
-
 </template>
 
 <script setup>
@@ -79,10 +67,10 @@ const tabulator = ref(null); //variable to hold your table
 const tableData = reactive([]); //data for table to display
 
 
-const isCreate = ref(false); 
-const isEdit = ref(false); 
+const isCreate = ref(false);
+const isEdit = ref(false);
 const msftPriceId = ref(0);
-const { msftPrice, msftPrices, msftPriceErrors, getMsftPrices, storeMsftPrice} = useMsftPrice();
+const { msftPrice, msftPrices, msftPriceErrors, getMsftPrices, storeMsftPrice } = useMsftPrice();
 
 
 
@@ -216,12 +204,18 @@ const showCreateMsftPrices = () => {
 const cancelCreate = () => {
     isCreate.value = false;
     div_table.style.display = 'block';
-} 
+}
 
 const saveMsftPriceForm = async (form) => {
     // console.log('se guarda desde List');
-    console.log({...form});
-    await storeMsftPrice({...form});
+    // console.log({...form});
+    await storeMsftPrice({ ...form });
+    isCreate.value = false;
+    div_table.style.display = 'block';
+    await getMsftPrices();
+    tableData.value = msftPrices.value;
+
+    tabulator.value.setData(tableData.value);
 }
 
 
@@ -230,13 +224,13 @@ const saveMsftPriceForm = async (form) => {
 const showEditMsftPrice = (id) => {
     msftPriceId.value = id;
     isEdit.value = true;
-    div_table.style.display = 'none'; 
+    div_table.style.display = 'none';
 }
 
 const cancelEdit = () => {
     isEdit.value = false;
     div_table.style.display = 'block';
-} 
+}
 
 const updateMsftPriceForm = async (id, form) => {
     console.log('se edita desde List');
@@ -271,4 +265,5 @@ table {
 td,
 th {
     border: black 1px solid;
-}</style>
+}
+</style>
