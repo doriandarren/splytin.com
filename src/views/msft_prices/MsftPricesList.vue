@@ -236,10 +236,8 @@ const cancelEdit = () => {
 // GUARDAR FORMULARIO SE ENVIA AL COMPONENTE
 const updateMsftPriceForm = async (id, form) => {
 
-
-    
     await updateMsftPrice(id, {...form})
-    isCreate.value = false;
+    isEdit.value = false;
     div_table.style.display = 'block';
     await getMsftPrices();
     tableData.value = msftPrices.value;
