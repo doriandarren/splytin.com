@@ -104,9 +104,7 @@
 
 
         </form>
-
-
-
+        
     </div>
 </template>
 
@@ -165,14 +163,16 @@ const save = async () => {
         //TODO
         
     } else {
-        emit('updateMsftPriceForm', id, formData);
+
+        //updateMsftPriceForm(pepid, fomData);
+        emit('updateMsftPriceForm', props.msftPriceId, formData);
     }
 
 
 }
 
 onMounted( async () => {
-    console.log(props.msftPriceId);
+    // console.log(props.msftPriceId);
     await getMsftPrice(props.msftPriceId);
     console.log(msftPrice.value);
     formData.day_of_week = msftPrice.value.day_of_week;
