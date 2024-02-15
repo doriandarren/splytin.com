@@ -230,15 +230,14 @@ const save = () => {
     if (validate.value.$invalid) {
         //TODO
     } else {
-        emit('updateDashboardForm', id, formData);
+        emit('updateDashboardForm', props.dashboardId, formData);
     }
 }
 
 onMounted( async() => {
-    console.log(props.dashboardId);
+    // console.log("valor del ID: ", props.dashboardId);
 
     await getDashboard(props.dashboardId);
-    console.log(dashboard.value);
     formData.title = dashboard.value.title;
 
     

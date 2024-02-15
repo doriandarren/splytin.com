@@ -3,21 +3,14 @@
     <div>
 
         <div v-if="isCreate">
-            <Create 
-                @cancelCreate="cancelCreate"
-                @saveDashboardForm="saveDashboardForm"
-            />
+            <Create @cancelCreate="cancelCreate" @saveDashboardForm="saveDashboardForm" />
         </div>
 
         <div v-if="isEdit">
-            <Edit
-            @cancelEdit="cancelEdit"
-            @updateDashboardForm="updateDashboardForm"
-            :dashboardId="dashboardId"
-            />
+            <Edit @cancelEdit="cancelEdit" @updateDashboardForm="updateDashboardForm" :dashboardId="dashboardId" />
         </div>
 
-        
+
 
         <div class="intro-y box p-5 mt-5" id="div_table">
 
@@ -88,7 +81,7 @@ const dashboardId = ref(0);
 
 const isCreate = ref(false);
 const isEdit = ref(false);
-const {dashboard, dashboards, dashboardErrors, getDashboards, storeDashboard} = useDashboard();
+const { dashboard, dashboards, dashboardErrors, getDashboards, storeDashboard, updateDashboard, destroyDashboard } = useDashboard();
 
 
 
@@ -208,7 +201,7 @@ const initTabulator = async () => {
                 },
                 cellClick: (e, cell) => {
                     e.preventDefault();
-                    console.log('Eliminamos')
+                    showDeleteDashboard(cell.getData().id);
                 }
             },
 
@@ -230,13 +223,13 @@ const initTabulator = async () => {
 //MUESTRA EL FORMULARIO MEDIANTE EL BOTON//
 const showCreateDashboard = () => {
     isCreate.value = true;
-    div_table.style.display = 'none'; 
+    div_table.style.display = 'none';
 }
 
 //CANCELAR FORMULARIO SE ENVIA AL COMPONENTE//
 const cancelCreate = () => {
     isCreate.value = false;
-    div_table.style.display = 'block'; 
+    div_table.style.display = 'block';
 }
 
 //GUARDAR FORMULARIO SE ENVIA AL COMPONENTE//
@@ -244,13 +237,13 @@ const saveDashboardForm = async (form) => {
     // console.log('guarda desde list');
 
     // console.log({...form});
-    await storeDashboard({...form});
+    await storeDashboard({ ...form });
     isCreate.value = false;
     div_table.style.display = 'block';
 
     await getDashboards();
-    tableData.value = dashboards.value; 
-    
+    tableData.value = dashboards.value;
+
     tabulator.value.setData(tableData.value);
 
 }
@@ -275,21 +268,53 @@ const showEditDashboard = (id) => {
 //CANCELAR FORMULARIO SE ENVIA AL COMPONENTE//
 const cancelEdit = () => {
     isEdit.value = false;
-    div_table.style.display = 'block'; 
+    div_table.style.display = 'block';
 }
 
 //GUARDAR FORMULARIO SE ENVIA AL COMPONENTE//
 const updateDashboardForm = async (id, form) => {
-    console.log('guarda desde list');
+    console.log('guarda desde list', id, form);
+
+    await updateDashboard(id, { ...form });
+    isEdit.value = false;
+    div_table.style.display = 'block';
+
+    await getDashboards();
+    tableData.value = dashboards.value;
+
+    tabulator.value.setData(tableData.value);
 }
 
 
 
 
 
+//DELETE//
+
+const showDeleteDashboard = async (id) => {
+    console.log('Eliminamos', id);
 
 
+    Swal.fire({
+        icon: 'warning',
+        title: t("message.are_you_sure"),
+        text: t("delete") + (description !== '' ? ': ' + description : ''),
+        showCancelButton: true,
+        confirmButtonText: t("delete"),
+        confirmButtonColor: import.meta.env.VITE_SWEETALERT_COLOR_BTN_SUCCESS,
+    }).then(async (result) => {
+        if (result.isConfirmed) {
+            await destroyDashboard(id);
 
+            await getDashboards();
+            tableData.value = dashboards.value;
+
+            tabulator.value.setData(tableData.value);
+            Swal.fire(t("message.record_deleted"), '', 'success');
+        }
+
+    });
+}
 
 
 
@@ -302,9 +327,9 @@ const updateDashboardForm = async (id, form) => {
 
 onMounted(async () => {
 
-    
+
     await getDashboards();
-    tableData.value = dashboards.value;    
+    tableData.value = dashboards.value;
 
 
     await initTabulator();
