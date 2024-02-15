@@ -88,7 +88,7 @@ const dashboardId = ref(0);
 
 const isCreate = ref(false);
 const isEdit = ref(false);
-const {dashboard, dashboards, dashboardErrors, getDashboards, storeDashboard} = useDashboard();
+const {dashboard, dashboards, dashboardErrors, getDashboards, storeDashboard, updateDashboard} = useDashboard();
 
 
 
@@ -280,7 +280,16 @@ const cancelEdit = () => {
 
 //GUARDAR FORMULARIO SE ENVIA AL COMPONENTE//
 const updateDashboardForm = async (id, form) => {
-    console.log('guarda desde list');
+    console.log('guarda desde list', id, form);
+
+    await updateDashboard(id, {...form});
+    isEdit.value = false;
+    div_table.style.display = 'block';
+
+    await getDashboards();
+    tableData.value = dashboards.value; 
+    
+    tabulator.value.setData(tableData.value);
 }
 
 
