@@ -70,7 +70,7 @@ const tableData = reactive([]); //data for table to display
 const isCreate = ref(false);
 const isEdit = ref(false);
 const msftPriceId = ref(0);
-const { msftPrice, msftPrices, msftPriceErrors, getMsftPrices, storeMsftPrice, updateMsftPrice } = useMsftPrice();
+const { msftPrice, msftPrices, msftPriceErrors, getMsftPrices, storeMsftPrice, updateMsftPrice, destroyMsftPrice } = useMsftPrice();
 
 
 
@@ -184,7 +184,7 @@ const initTabulator = async () => {
                 },
                 cellClick: (e, cell) => {
                     e.preventDefault();
-                    console.log('eliminamos')
+                    showDeleteMsftPrice(cell.getData().id);
                 }
             },
 
@@ -194,7 +194,7 @@ const initTabulator = async () => {
 
 }
 
-/** Create **/ 
+/** Create **/
 
 // MUESTRA EL FORMULARIO MEDIANTE EL BOTON
 const showCreateMsftPrices = () => {
@@ -236,17 +236,46 @@ const cancelEdit = () => {
 // GUARDAR FORMULARIO SE ENVIA AL COMPONENTE
 const updateMsftPriceForm = async (id, form) => {
 
-    await updateMsftPrice(id, {...form})
+    await updateMsftPrice(id, { ...form })
     isEdit.value = false;
     div_table.style.display = 'block';
     await getMsftPrices();
     tableData.value = msftPrices.value;
 
     tabulator.value.setData(tableData.value);
-    
+
+}
+
+/** DELETE **/
+
+const showDeleteMsftPrice = async (id) => {
+    console.log('eliminar', id);
+
+
+
+    Swal.fire({
+        icon: 'warning',
+        title: t("message.are_you_sure"),
+        text: t("delete") + (description !== '' ? ': ' + description : ''),
+        showCancelButton: true,
+        confirmButtonText: t("delete"),
+        confirmButtonColor: import.meta.env.VITE_SWEETALERT_COLOR_BTN_SUCCESS,
+    }).then(async (result) => {
+        if (result.isConfirmed) {
+            await destroyMsftPrice(id)
+            await getMsftPrices();
+            tableData.value = msftPrices.value;
+            tabulator.value.setData(tableData.value);
+            Swal.fire(t("message.record_deleted"), '', 'success');
+        }
+
+    });
+
+
 }
 
 // 'cancelEdit','updateMsftPriceForm'
+
 
 
 onMounted(async () => {
