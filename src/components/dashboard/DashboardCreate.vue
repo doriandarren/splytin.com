@@ -227,8 +227,8 @@ const formData = reactive({
     like_count: "",
     published_at: "",
     view_count: "",
-    yt_id: "1",
-    channel_id: "1",
+    yt_id: "",
+    channel_id: "",
 });
 
 
