@@ -58,6 +58,9 @@ import { TabulatorFull as Tabulator } from 'tabulator-tables'; //import Tabulato
 import Create from '@/components/msft_prices/MsftPriceCreate.vue';
 import Edit from '@/components/msft_prices/MsftPriceEdit.vue';
 import useMsftPrice from '@/composables/msft_prices';
+import Swal from 'sweetalert2';
+import { useI18n } from 'vue-i18n';
+
 
 
 // CREAMOS VARIABLES
@@ -71,6 +74,7 @@ const isCreate = ref(false);
 const isEdit = ref(false);
 const msftPriceId = ref(0);
 const { msftPrice, msftPrices, msftPriceErrors, getMsftPrices, storeMsftPrice, updateMsftPrice, destroyMsftPrice } = useMsftPrice();
+const { t } = useI18n();
 
 
 
@@ -248,7 +252,7 @@ const updateMsftPriceForm = async (id, form) => {
 
 /** DELETE **/
 
-const showDeleteMsftPrice = async (id) => {
+const showDeleteMsftPrice = async (id, description='') => {
     console.log('eliminar', id);
 
 
