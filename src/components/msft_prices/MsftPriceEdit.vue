@@ -33,10 +33,6 @@
 
                 </div>
 
-
-
-
-
                 <div class="col-span-12 md:col-span-3 lg:col-span-3">
 
                     <div class="w-full">
@@ -84,9 +80,6 @@
                             :class="{ 'border-danger': validate.price_usd.$error }" />
                     </div>
                 </div>
-
-
-
 
 
                 <div class="col-span-12">
@@ -152,10 +145,7 @@ const formData = reactive({
     symbol: "",
 });
 
-
-
 const validate = useVuelidate(rules, toRefs(formData));
-
 
 const save = async () => {
     validate.value.$touch();
@@ -183,7 +173,6 @@ onMounted( async () => {
     formData.symbol= msftPrice.value.symbol;
     
 });
-
 
 </script>
 

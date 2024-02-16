@@ -61,8 +61,6 @@ import useMsftPrice from '@/composables/msft_prices';
 import Swal from 'sweetalert2';
 import { useI18n } from 'vue-i18n';
 
-
-
 // CREAMOS VARIABLES
 
 const table = ref(null); //reference to your table element
@@ -255,11 +253,9 @@ const updateMsftPriceForm = async (id, form) => {
 const showDeleteMsftPrice = async (id, description='') => {
     console.log('eliminar', id);
 
-
-
     Swal.fire({
         icon: 'warning',
-        title: t("message.are_you_sure"),
+        title: t("Estas seguro?"),
         text: t("delete") + (description !== '' ? ': ' + description : ''),
         showCancelButton: true,
         confirmButtonText: t("delete"),
@@ -270,7 +266,7 @@ const showDeleteMsftPrice = async (id, description='') => {
             await getMsftPrices();
             tableData.value = msftPrices.value;
             tabulator.value.setData(tableData.value);
-            Swal.fire(t("message.record_deleted"), '', 'success');
+            Swal.fire(t("Registro eliminado"), '', 'success');
         }
 
     });
@@ -279,8 +275,6 @@ const showDeleteMsftPrice = async (id, description='') => {
 }
 
 // 'cancelEdit','updateMsftPriceForm'
-
-
 
 onMounted(async () => {
 
@@ -295,7 +289,6 @@ onMounted(async () => {
     await initTabulator();
 
 })
-
 
 
 </script>
