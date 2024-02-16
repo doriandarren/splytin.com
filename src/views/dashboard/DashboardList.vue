@@ -301,10 +301,10 @@ const showDeleteDashboard = async (id, description='') => {
 
     Swal.fire({
         icon: 'warning',
-        title: t("message.are_you_sure"),
+        title: t("¿Estás segur@?"),
         text: t("delete") + (description !== '' ? ': ' + description : ''),
         showCancelButton: true,
-        confirmButtonText: t("delete"),
+        confirmButtonText: t("Eliminar"),
         confirmButtonColor: import.meta.env.VITE_SWEETALERT_COLOR_BTN_SUCCESS,
     }).then(async (result) => {
         if (result.isConfirmed) {
@@ -314,7 +314,7 @@ const showDeleteDashboard = async (id, description='') => {
             tableData.value = dashboards.value;
 
             tabulator.value.setData(tableData.value);
-            Swal.fire(t("message.record_deleted"), '', 'success');
+            Swal.fire(t("Eliminado"), '', 'success');
         }
 
     });
