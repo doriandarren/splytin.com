@@ -69,6 +69,9 @@ import { TabulatorFull as Tabulator } from 'tabulator-tables';
 import Create from '@/components/dashboard/DashboardCreate.vue';
 import Edit from '@/components/dashboard/DashboardEdit.vue';
 import useDashboard from '@/composables/dashboard';
+import Swal from 'sweetalert2';
+import { useI18n } from 'vue-i18n';
+
 
 
 
@@ -83,6 +86,7 @@ const isCreate = ref(false);
 const isEdit = ref(false);
 const { dashboard, dashboards, dashboardErrors, getDashboards, storeDashboard, updateDashboard, destroyDashboard } = useDashboard();
 
+const { t } = useI18n();
 
 
 const filter = reactive({
@@ -291,7 +295,7 @@ const updateDashboardForm = async (id, form) => {
 
 //DELETE//
 
-const showDeleteDashboard = async (id) => {
+const showDeleteDashboard = async (id, description='') => {
     console.log('Eliminamos', id);
 
 
