@@ -78,10 +78,16 @@
 
                         <div class="w-full">
                             <label class="block mb-1" for="like_count">Like count</label>
-                            <input
+
+                            <select id="like_count"
                                 class="w-full h-10 px-3 text-base placeholder-gray-600 border rounded-lg focus:shadow-outline"
-                                type="text" id="like_count" v-model.trim="validate.like_count.$model"
-                                :class="{ 'border-danger': validate.like_count.$error }" />
+                                :class="{ 'border-danger': validate.like_count.$error }"
+                                v-model.trim="validate.like_count.$model">
+                                <option value="">Seleccione</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+                            
                         </div>
 
                     </div>
@@ -174,7 +180,7 @@ import useDashboard from '@/composables/dashboard';
 
 const emit = defineEmits(['cancelEdit', 'updateDashboardForm']);
 const props = defineProps(['dashboardId']);
-const {dashboard, getDashboard} = useDashboard();
+const { dashboard, getDashboard } = useDashboard();
 
 const rules = {
     title: {
@@ -234,13 +240,13 @@ const save = () => {
     }
 }
 
-onMounted( async() => {
+onMounted(async () => {
     // console.log("valor del ID: ", props.dashboardId);
 
     await getDashboard(props.dashboardId);
     formData.title = dashboard.value.title;
 
-    
+
     formData.comment_count = dashboard.value.comment_count;
     formData.etag = dashboard.value.etag;
     formData.favorite_count = dashboard.value.favorite_count;
