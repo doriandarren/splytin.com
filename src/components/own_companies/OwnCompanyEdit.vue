@@ -1,7 +1,7 @@
 <template>
     <div>
 
-        <h1>Own company List</h1>
+        <h1>Own company Edit</h1>
 
     </div>
 </template>

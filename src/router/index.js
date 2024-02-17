@@ -438,6 +438,11 @@ const router = createRouter({
       name: 'companies',
       component: () => import('@/views/companies/CompaniesList.vue')
     },
+    {
+      path: '/own_companies',
+      name: 'own_companies',
+      component: () => import('@/views/own_companies/OwnCompanyList.vue')
+    },
 
    
   ]
