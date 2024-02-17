@@ -38,15 +38,26 @@
 
 
 
-
                 <div class="col-span-12 md:col-span-3 lg:col-span-3">
 
                     <div class="w-full">
                         <label class="block mb-1" for="is_first">Is first</label>
-                        <input
+                        <!-- <input
                             class="w-full h-10 px-3 text-base placeholder-gray-600 border rounded-lg focus:shadow-outline"
                             type="text" id="is_first" v-model.trim="validate.is_first.$model"
-                            :class="{ 'border-danger': validate.is_first.$error }" />
+                            :class="{ 'border-danger': validate.is_first.$error }" /> -->
+
+                        <select
+                            class="w-full h-10 px-3 text-base placeholder-gray-600 border rounded-lg focus:shadow-outline"
+                            :class="{ 'border-danger': validate.is_first.$error }"
+                            v-model.trim="validate.is_first.$model"
+                            id="is_first"
+                            >
+                            <option value="">Seleccione</option>
+                            <option value="1">Si</option>
+                            <option value="0">No</option>
+
+                        </select>
                     </div>
 
                 </div>
@@ -87,7 +98,7 @@
                     </div>
                 </div>
 
-               
+
 
 
 

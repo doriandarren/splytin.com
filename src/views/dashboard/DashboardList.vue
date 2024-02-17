@@ -305,7 +305,7 @@ const showDeleteDashboard = async (id, description='') => {
         text: t("delete") + (description !== '' ? ': ' + description : ''),
         showCancelButton: true,
         confirmButtonText: t("Eliminar"),
-        confirmButtonColor: import.meta.env.VITE_SWEETALERT_COLOR_BTN_SUCCESS,
+        confirmButtonColor: '#FF3701',
     }).then(async (result) => {
         if (result.isConfirmed) {
             await destroyDashboard(id);
