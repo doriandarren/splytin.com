@@ -17,7 +17,8 @@
                         <input
                             class="w-full h-10 px-3 text-base placeholder-gray-600 border rounded-lg focus:shadow-outline"
                             type="text" id="title" v-model.trim="validate.title.$model"
-                            :class="{ 'border-danger': validate.title.$error }" />
+                            :class="{ 'border-danger': validate.title.$error }" 
+                        />
                     </div>
                 </div>
                 <!-- termina la columna -->
@@ -28,7 +29,8 @@
                         <input
                             class="w-full h-10 px-3 text-base placeholder-gray-600 border rounded-lg focus:shadow-outline"
                             type="text" id="comment_count" v-model.trim="validate.comment_count.$model"
-                            :class="{ 'border-danger': validate.comment_count.$error }" />
+                            :class="{ 'border-danger': validate.comment_count.$error }" 
+                        />
                     </div>
                 </div>
 
@@ -38,7 +40,8 @@
                         <input
                             class="w-full h-10 px-3 text-base placeholder-gray-600 border rounded-lg focus:shadow-outline"
                             type="text" id="etag" v-model.trim="validate.etag.$model"
-                            :class="{ 'border-danger': validate.etag.$error }" />
+                            :class="{ 'border-danger': validate.etag.$error }" 
+                        />
                     </div>
                 </div>
 
@@ -50,7 +53,8 @@
                         <input
                             class="w-full h-10 px-3 text-base placeholder-gray-600 border rounded-lg focus:shadow-outline"
                             type="text" id="favorite_count" v-model.trim="validate.favorite_count.$model"
-                            :class="{ 'border-danger': validate.favorite_count.$error }" />
+                            :class="{ 'border-danger': validate.favorite_count.$error }" 
+                        />
                     </div>
 
                 </div>
@@ -63,7 +67,8 @@
                         <input
                             class="w-full h-10 px-3 text-base placeholder-gray-600 border rounded-lg focus:shadow-outline"
                             type="text" id="kind" v-model.trim="validate.kind.$model"
-                            :class="{ 'border-danger': validate.kind.$error }" />
+                            :class="{ 'border-danger': validate.kind.$error }" 
+                        />
                     </div>
 
                 </div>
@@ -73,10 +78,22 @@
 
                     <div class="w-full">
                         <label class="block mb-1" for="like_count">Like count</label>
-                        <input
+                        <!-- <input
                             class="w-full h-10 px-3 text-base placeholder-gray-600 border rounded-lg focus:shadow-outline"
                             type="text" id="like_count" v-model.trim="validate.like_count.$model"
-                            :class="{ 'border-danger': validate.like_count.$error }" />
+                            :class="{ 'border-danger': validate.like_count.$error }" 
+                        /> -->
+
+                        <select 
+                            id="like_count"
+                            class="w-full h-10 px-3 text-base placeholder-gray-600 border rounded-lg focus:shadow-outline"
+                            :class="{ 'border-danger': validate.like_count.$error }"
+                            v-model.trim="validate.like_count.$model"
+                        >
+                            <option value="">Seleccione</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
                     </div>
 
                 </div>
@@ -88,8 +105,9 @@
                         <label class="block mb-1" for="published_at">Published at</label>
                         <input
                             class="w-full h-10 px-3 text-base placeholder-gray-600 border rounded-lg focus:shadow-outline"
-                            type="text" id="published_at" v-model.trim="validate.published_at.$model"
-                            :class="{ 'border-danger': validate.published_at.$error }" />
+                            type="date" id="published_at" v-model.trim="validate.published_at.$model"
+                            :class="{ 'border-danger': validate.published_at.$error }"
+                        />
                     </div>
 
                 </div>
@@ -102,7 +120,8 @@
                         <input
                             class="w-full h-10 px-3 text-base placeholder-gray-600 border rounded-lg focus:shadow-outline"
                             type="text" id="view_count" v-model.trim="validate.view_count.$model"
-                            :class="{ 'border-danger': validate.view_count.$error }" />
+                            :class="{ 'border-danger': validate.view_count.$error }" 
+                        />
                     </div>
 
                 </div>
@@ -114,7 +133,8 @@
                         <input
                             class="w-full h-10 px-3 text-base placeholder-gray-600 border rounded-lg focus:shadow-outline"
                             type="text" id="yt_id" v-model.trim="validate.yt_id.$model"
-                            :class="{ 'border-danger': validate.yt_id.$error }" />
+                            :class="{ 'border-danger': validate.yt_id.$error }" 
+                        />
                     </div>
 
                 </div>
@@ -126,7 +146,8 @@
                         <input
                             class="w-full h-10 px-3 text-base placeholder-gray-600 border rounded-lg focus:shadow-outline"
                             type="text" id="channel_id" v-model.trim="validate.channel_id.$model"
-                            :class="{ 'border-danger': validate.channel_id.$error }" />
+                            :class="{ 'border-danger': validate.channel_id.$error }" 
+                        />
                     </div>
 
                 </div>
