@@ -6,5 +6,8 @@
     },
     "title": {
       "config": "Configuración"
+    },
+    "message":{
+      "are_you_sure": "¿Estás seguro?"
     }
 }
