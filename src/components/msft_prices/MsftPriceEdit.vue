@@ -37,10 +37,16 @@
 
                     <div class="w-full">
                         <label class="block mb-1" for="is_first">Is first</label>
-                        <input
+                        
+                        <select
                             class="w-full h-10 px-3 text-base placeholder-gray-600 border rounded-lg focus:shadow-outline"
-                            type="text" id="is_first" v-model.trim="validate.is_first.$model"
-                            :class="{ 'border-danger': validate.is_first.$error }" />
+                            :class="{ 'border-danger': validate.is_first.$error }" v-model.trim="validate.is_first.$model"
+                            id="is_first">
+                            <option value="">Seleccione</option>
+                            <option value="1">Si</option>
+                            <option value="0">No</option>
+
+                        </select>
                     </div>
 
                 </div>
@@ -87,8 +93,7 @@
                     <div>
                         <button class="btn-primary sm:w-auto mr-2 mt-3" type="submit">Guardar</button>
 
-                        <button class="btn-danger sm:w-auto mr-2 mt-3"
-                            @click.prevent="emit('cancelEdit')">Cancelar</button>
+                        <button class="btn-danger sm:w-auto mr-2 mt-3" @click.prevent="emit('cancelEdit')">Cancelar</button>
                     </div>
 
                 </div>
@@ -97,7 +102,7 @@
 
 
         </form>
-        
+
     </div>
 </template>
 
@@ -151,7 +156,7 @@ const save = async () => {
     validate.value.$touch();
     if (validate.value.$invalid) {
         //TODO
-        
+
     } else {
 
         //updateMsftPriceForm(pepid, fomData);
@@ -161,17 +166,17 @@ const save = async () => {
 
 }
 
-onMounted( async () => {
+onMounted(async () => {
     // console.log(props.msftPriceId);
     await getMsftPrice(props.msftPriceId);
     console.log(msftPrice.value);
     formData.day_of_week = msftPrice.value.day_of_week;
-    formData.is_first= msftPrice.value.is_first;
-    formData.is_last= msftPrice.value.is_last;
-    formData.is_open= msftPrice.value.is_open;
-    formData.price_usd= msftPrice.value.price_usd;
-    formData.symbol= msftPrice.value.symbol;
-    
+    formData.is_first = msftPrice.value.is_first;
+    formData.is_last = msftPrice.value.is_last;
+    formData.is_open = msftPrice.value.is_open;
+    formData.price_usd = msftPrice.value.price_usd;
+    formData.symbol = msftPrice.value.symbol;
+
 });
 
 </script>
