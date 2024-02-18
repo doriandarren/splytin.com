@@ -436,7 +436,7 @@ const router = createRouter({
     {
       path: '/companies',
       name: 'companies',
-      component: () => import('@/views/companies/CompaniesList.vue')
+      component: () => import('@/views/companies/CompanyList.vue')
     },
 
    
