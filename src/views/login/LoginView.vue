@@ -1,4 +1,12 @@
 
+
+<!-- own_companies = id code name address cif email website phone code_zip 
+
+companies = id code name adress cif email website phone code_zip 
+
+projects = id own_company_id company_id name total_hours current_hours started_at finished_at description  -->
+
+
 <template>
     <div class="m-10 p-10 border rounded-lg">
         <h1>LOGIN</h1>
