@@ -5,7 +5,7 @@
 		<!-- BEGIN: Page Layout Create -->
 		<div v-animate v-if="isCreate">
 			<Create
-				@saveCompanyForm="saveCompanyForm"
+				@saveProjectHourForm="saveProjectHourForm"
 				@cancelCreate="cancelCreate"
 			/>
 		</div>
@@ -13,9 +13,9 @@
 		<!-- BEGIN: Page Layout Update -->
 		<div v-animate v-if="isEdit">
 			<Edit
-				:companyId="companyId"
+				:projectHourId="projectHourId"
 				@cancelEdit="cancelEdit"
-				@updateCompanyForm="updateCompanyForm"
+				@updateProjectHourForm="updateProjectHourForm"
 			/>
 		</div>
 
@@ -39,7 +39,7 @@
 					</div>
 				</form>
 				<div class="flex mt-5 sm:mt-0">
-					<button class="btn-primary w-1/2 sm:w-auto mr-2" @click.prevent="showCreateCompany">
+					<button class="btn-primary w-1/2 sm:w-auto mr-2" @click.prevent="showCreateProjectHour">
 						<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 50 50"><path fill="currentColor" d="M25 42c-9.4 0-17-7.6-17-17S15.6 8 25 8s17 7.6 17 17s-7.6 17-17 17m0-32c-8.3 0-15 6.7-15 15s6.7 15 15 15s15-6.7 15-15s-6.7-15-15-15"/><path fill="currentColor" d="M16 24h18v2H16z"/><path fill="currentColor" d="M24 16h2v18h-2z"/></svg>
 					</button>
 				</div>
@@ -60,9 +60,9 @@
 	import { useI18n } from 'vue-i18n';
 	import { Toast } from '@/utils/toast';
 	import Swal from 'sweetalert2';
-	import useCompanies from "@/composables/companies";
-	import Create from "@/components/companies/CompanyCreate.vue";
-	import Edit from "@/components/companies/CompanyEdit.vue";
+	import useProjectHours from "@/composables/project_hours";
+	import Create from "@/components/project_hours/ProjectHourCreate.vue";
+	import Edit from "@/components/project_hours/ProjectHourEdit.vue";
 
 	// Tabulator
 	const table = ref(null);
@@ -72,14 +72,14 @@
 	// Views
 	const isCreate = ref(false);
 	const isEdit = ref(false);
-	const companyId = ref(0);
+	const projectHourId = ref(0);
 
 	const { t } = useI18n();
-	const { companies, getCompanies, storeCompany, updateCompany, destroyCompany} = useCompanies();
+	const { projectHours, getProjectHours, storeProjectHour, updateProjectHour, destroyProjectHour} = useProjectHours();
 
 
 	const filter = reactive({
-		field: "code",
+		field: "projec_id",
 		type: "like",
 		value: "",
 	});
@@ -89,29 +89,25 @@
 		//tabulator.value.setFilter(filter.field, filter.type, filter.value);
 		tabulator.value.setFilter([
 			[
-				{field: 'code', type: 'like', value: filter.value},
+				{field: 'projec_id', type: 'like', value: filter.value},
 				{field: 'name', type: 'like', value: filter.value},
-				{field: 'address', type: 'like', value: filter.value},
-				{field: 'cif', type: 'like', value: filter.value},
-				{field: 'email', type: 'like', value: filter.value},
-				{field: 'website', type: 'like', value: filter.value},
-				{field: 'phone', type: 'like', value: filter.value},
-				{field: 'code_zip', type: 'like', value: filter.value},
+				{field: 'hours', type: 'like', value: filter.value},
+				{field: 'invoice_at', type: 'like', value: filter.value},
 			]
 		]);
 	};
 
 	// On reset filter
 	const onResetFilter = () => {
-		filter.field = "code";
+		filter.field = "projec_id";
 		filter.type = "like";
 		filter.value = "";
 		onFilter();
 	};
 
 	const findData = async() => {
-		await getCompanies();
-		return toRaw(companies.value);
+		await getProjectHours();
+		return toRaw(projectHours.value);
 	}
 
 	// Table
@@ -134,10 +130,10 @@
 					headerSort: false,
 				},
 				{
-					title: t("code"),
+					title: t("projec_id"),
 					minWidth: 200,
 					responsive: 0,
-					field: "code",
+					field: "projec_id",
 					vertAlign: "middle",
 					headerHozAlign:"left",
 				},
@@ -150,50 +146,18 @@
 					headerHozAlign:"left",
 				},
 				{
-					title: t("address"),
+					title: t("hours"),
 					minWidth: 200,
 					responsive: 0,
-					field: "address",
+					field: "hours",
 					vertAlign: "middle",
 					headerHozAlign:"left",
 				},
 				{
-					title: t("cif"),
+					title: t("invoice_at"),
 					minWidth: 200,
 					responsive: 0,
-					field: "cif",
-					vertAlign: "middle",
-					headerHozAlign:"left",
-				},
-				{
-					title: t("email"),
-					minWidth: 200,
-					responsive: 0,
-					field: "email",
-					vertAlign: "middle",
-					headerHozAlign:"left",
-				},
-				{
-					title: t("website"),
-					minWidth: 200,
-					responsive: 0,
-					field: "website",
-					vertAlign: "middle",
-					headerHozAlign:"left",
-				},
-				{
-					title: t("phone"),
-					minWidth: 200,
-					responsive: 0,
-					field: "phone",
-					vertAlign: "middle",
-					headerHozAlign:"left",
-				},
-				{
-					title: t("code_zip"),
-					minWidth: 200,
-					responsive: 0,
-					field: "code_zip",
+					field: "invoice_at",
 					vertAlign: "middle",
 					headerHozAlign:"left",
 				},
@@ -212,7 +176,7 @@
 						return `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600 hover:text-blue-400" viewBox="0 0 24 24"><path fill="currentColor" d="m7 17.013l4.413-.015l9.632-9.54c.378-.378.586-.88.586-1.414s-.208-1.036-.586-1.414l-1.586-1.586c-.756-.756-2.075-.752-2.825-.003L7 12.583zM18.045 4.458l1.589 1.583l-1.597 1.582l-1.586-1.585zM9 13.417l6.03-5.973l1.586 1.586l-6.029 5.971L9 15.006z"/><path fill="currentColor" d="M5 21h14c1.103 0 2-.897 2-2v-8.668l-2 2V19H8.158c-.026 0-.053.01-.079.01c-.033 0-.066-.009-.1-.01H5V5h6.847l2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2"/></svg>`;
 					},
 					cellClick: (e, cell) => {
-						showEditCompany(cell.getData().id);
+						showEditProjectHour(cell.getData().id);
 						e.preventDefault();
 					},
 				},
@@ -231,8 +195,8 @@
 						return `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-600 hover:text-red-400" viewBox="0 0 24 24"><path fill="currentColor" d="M7 21q-.825 0-1.412-.587T5 19V6H4V4h5V3h6v1h5v2h-1v13q0 .825-.587 1.413T17 21zM17 6H7v13h10zM9 17h2V8H9zm4 0h2V8h-2zM7 6v13z"/></svg>`;
 					},
 					cellClick: (e, cell) => {
-						//deleteCompany(cell.getData().id, cell.getData().name);
-						showDeleteCompany(cell.getData().id);
+						//deleteProjectHour(cell.getData().id, cell.getData().name);
+						showDeleteProjectHour(cell.getData().id);
 						e.preventDefault();
 					},
 				},
@@ -241,7 +205,7 @@
 	}
 
 	//Store
-	const showCreateCompany = () => {
+	const showCreateProjectHour = () => {
 		isCreate.value = true;
 		div_table.style.display = 'none';
 	}
@@ -251,12 +215,12 @@
 		div_table.style.display = 'block';
 	}
 
-	const saveCompanyForm = async (form) => {
+	const saveProjectHourForm = async (form) => {
 		isCreate.value = false;
 		div_table.style.display = 'block';
 		loading.value = true;
-		await storeCompany({ ...form });
-		//await getCompanies();
+		await storeProjectHour({ ...form });
+		//await getProjectHours();
 		tableData.value = await findData();
 		tabulator.value.setData(tableData.value);
 		loading.value = false;
@@ -264,10 +228,10 @@
 	}
 
 	//Edit
-	const showEditCompany = (id) => {
+	const showEditProjectHour = (id) => {
 		isEdit.value = true;
 		div_table.style.display = 'none';
-		companyId.value = id;
+		projectHourId.value = id;
 	}
 
 	const cancelEdit = async() => {
@@ -275,12 +239,12 @@
 		div_table.style.display = 'block';
 	}
 
-	const updateCompanyForm = async (id, data) => {
+	const updateProjectHourForm = async (id, data) => {
 		isEdit.value = false;
 		div_table.style.display = 'block';
 		loading.value = true;
-		await updateCompany(id, data);
-		//await getCompanies();
+		await updateProjectHour(id, data);
+		//await getProjectHours();
 		tableData.value = await findData();
 		tabulator.value.setData(tableData.value);
 		loading.value = false;
@@ -288,7 +252,7 @@
 	}
 
 	// Delete
-	const showDeleteCompany = async (id, description='') => {
+	const showDeleteProjectHour = async (id, description='') => {
 		Swal.fire({
 			icon: 'warning',
 			title: t("message.are_you_sure"),
@@ -298,8 +262,8 @@
 			confirmButtonColor: import.meta.env.VITE_SWEETALERT_COLOR_BTN_SUCCESS,
 		}).then(async(result) => {
 			if (result.isConfirmed) {
-				await destroyCompany(id);
-				await getCompanies();
+				await destroyProjectHour(id);
+				await getProjectHours();
 				Swal.fire(t("message.record_deleted"), '', 'success');
 			}
 

@@ -10,19 +10,41 @@
 
 				<div class="col-span-12 md:col-span-6 lg:col-span-4">
 					<div class="input-form">
-						<label for="code" class="form-label w-full">
-							{{ $t("code") }} *
+						<label for="own_company_id" class="form-label w-full">
+							{{ $t("own_company_id") }} *
 						</label>
 						<input
-							v-model.trim="validate.code.$model"
-							id="code"
+							v-model.trim="validate.own_company_id.$model"
+							id="own_company_id"
 							type="text"
-							name="code"
+							name="own_company_id"
 							class="form-control"
-							:class="{ 'border-danger': validate.code.$error }"
+							:class="{ 'border-danger': validate.own_company_id.$error }"
 						/>
-						<template v-if="validate.code.$error">
-							<div v-for="(error, index) in validate.code.$errors" :key="index" class="text-danger mt-2">
+						<template v-if="validate.own_company_id.$error">
+							<div v-for="(error, index) in validate.own_company_id.$errors" :key="index" class="text-danger mt-2">
+								{{ error.$message }}
+							</div>
+						</template>
+					</div>
+				</div>
+
+
+				<div class="col-span-12 md:col-span-6 lg:col-span-4">
+					<div class="input-form">
+						<label for="company_id" class="form-label w-full">
+							{{ $t("company_id") }} *
+						</label>
+						<input
+							v-model.trim="validate.company_id.$model"
+							id="company_id"
+							type="text"
+							name="company_id"
+							class="form-control"
+							:class="{ 'border-danger': validate.company_id.$error }"
+						/>
+						<template v-if="validate.company_id.$error">
+							<div v-for="(error, index) in validate.company_id.$errors" :key="index" class="text-danger mt-2">
 								{{ error.$message }}
 							</div>
 						</template>
@@ -54,19 +76,19 @@
 
 				<div class="col-span-12 md:col-span-6 lg:col-span-4">
 					<div class="input-form">
-						<label for="address" class="form-label w-full">
-							{{ $t("address") }} *
+						<label for="total_hours" class="form-label w-full">
+							{{ $t("total_hours") }} *
 						</label>
 						<input
-							v-model.trim="validate.address.$model"
-							id="address"
+							v-model.trim="validate.total_hours.$model"
+							id="total_hours"
 							type="text"
-							name="address"
+							name="total_hours"
 							class="form-control"
-							:class="{ 'border-danger': validate.address.$error }"
+							:class="{ 'border-danger': validate.total_hours.$error }"
 						/>
-						<template v-if="validate.address.$error">
-							<div v-for="(error, index) in validate.address.$errors" :key="index" class="text-danger mt-2">
+						<template v-if="validate.total_hours.$error">
+							<div v-for="(error, index) in validate.total_hours.$errors" :key="index" class="text-danger mt-2">
 								{{ error.$message }}
 							</div>
 						</template>
@@ -76,19 +98,19 @@
 
 				<div class="col-span-12 md:col-span-6 lg:col-span-4">
 					<div class="input-form">
-						<label for="cif" class="form-label w-full">
-							{{ $t("cif") }} *
+						<label for="current_hours" class="form-label w-full">
+							{{ $t("current_hours") }} *
 						</label>
 						<input
-							v-model.trim="validate.cif.$model"
-							id="cif"
+							v-model.trim="validate.current_hours.$model"
+							id="current_hours"
 							type="text"
-							name="cif"
+							name="current_hours"
 							class="form-control"
-							:class="{ 'border-danger': validate.cif.$error }"
+							:class="{ 'border-danger': validate.current_hours.$error }"
 						/>
-						<template v-if="validate.cif.$error">
-							<div v-for="(error, index) in validate.cif.$errors" :key="index" class="text-danger mt-2">
+						<template v-if="validate.current_hours.$error">
+							<div v-for="(error, index) in validate.current_hours.$errors" :key="index" class="text-danger mt-2">
 								{{ error.$message }}
 							</div>
 						</template>
@@ -98,19 +120,19 @@
 
 				<div class="col-span-12 md:col-span-6 lg:col-span-4">
 					<div class="input-form">
-						<label for="email" class="form-label w-full">
-							{{ $t("email") }} *
+						<label for="started_at" class="form-label w-full">
+							{{ $t("started_at") }} *
 						</label>
 						<input
-							v-model.trim="validate.email.$model"
-							id="email"
+							v-model.trim="validate.started_at.$model"
+							id="started_at"
 							type="text"
-							name="email"
+							name="started_at"
 							class="form-control"
-							:class="{ 'border-danger': validate.email.$error }"
+							:class="{ 'border-danger': validate.started_at.$error }"
 						/>
-						<template v-if="validate.email.$error">
-							<div v-for="(error, index) in validate.email.$errors" :key="index" class="text-danger mt-2">
+						<template v-if="validate.started_at.$error">
+							<div v-for="(error, index) in validate.started_at.$errors" :key="index" class="text-danger mt-2">
 								{{ error.$message }}
 							</div>
 						</template>
@@ -120,19 +142,19 @@
 
 				<div class="col-span-12 md:col-span-6 lg:col-span-4">
 					<div class="input-form">
-						<label for="website" class="form-label w-full">
-							{{ $t("website") }} *
+						<label for="finished_at" class="form-label w-full">
+							{{ $t("finished_at") }} *
 						</label>
 						<input
-							v-model.trim="validate.website.$model"
-							id="website"
+							v-model.trim="validate.finished_at.$model"
+							id="finished_at"
 							type="text"
-							name="website"
+							name="finished_at"
 							class="form-control"
-							:class="{ 'border-danger': validate.website.$error }"
+							:class="{ 'border-danger': validate.finished_at.$error }"
 						/>
-						<template v-if="validate.website.$error">
-							<div v-for="(error, index) in validate.website.$errors" :key="index" class="text-danger mt-2">
+						<template v-if="validate.finished_at.$error">
+							<div v-for="(error, index) in validate.finished_at.$errors" :key="index" class="text-danger mt-2">
 								{{ error.$message }}
 							</div>
 						</template>
@@ -142,41 +164,19 @@
 
 				<div class="col-span-12 md:col-span-6 lg:col-span-4">
 					<div class="input-form">
-						<label for="phone" class="form-label w-full">
-							{{ $t("phone") }} *
+						<label for="description" class="form-label w-full">
+							{{ $t("description") }} *
 						</label>
 						<input
-							v-model.trim="validate.phone.$model"
-							id="phone"
+							v-model.trim="validate.description.$model"
+							id="description"
 							type="text"
-							name="phone"
+							name="description"
 							class="form-control"
-							:class="{ 'border-danger': validate.phone.$error }"
+							:class="{ 'border-danger': validate.description.$error }"
 						/>
-						<template v-if="validate.phone.$error">
-							<div v-for="(error, index) in validate.phone.$errors" :key="index" class="text-danger mt-2">
-								{{ error.$message }}
-							</div>
-						</template>
-					</div>
-				</div>
-
-
-				<div class="col-span-12 md:col-span-6 lg:col-span-4">
-					<div class="input-form">
-						<label for="code_zip" class="form-label w-full">
-							{{ $t("code_zip") }} *
-						</label>
-						<input
-							v-model.trim="validate.code_zip.$model"
-							id="code_zip"
-							type="text"
-							name="code_zip"
-							class="form-control"
-							:class="{ 'border-danger': validate.code_zip.$error }"
-						/>
-						<template v-if="validate.code_zip.$error">
-							<div v-for="(error, index) in validate.code_zip.$errors" :key="index" class="text-danger mt-2">
+						<template v-if="validate.description.$error">
+							<div v-for="(error, index) in validate.description.$errors" :key="index" class="text-danger mt-2">
 								{{ error.$message }}
 							</div>
 						</template>
@@ -218,44 +218,44 @@
 	import { useI18n } from 'vue-i18n';
 
 	const { t } = useI18n();
-	const emit = defineEmits(['cancelCreate', 'saveCompanyForm']);
+	const emit = defineEmits(['cancelCreate', 'saveProjectForm']);
 
 	const rules = {
-		code: {
+		own_company_id: {
+			required: helpers.withMessage(t("form.required"), required),
+		},
+		company_id: {
 			required: helpers.withMessage(t("form.required"), required),
 		},
 		name: {
 			required: helpers.withMessage(t("form.required"), required),
 		},
-		address: {
+		total_hours: {
 			required: helpers.withMessage(t("form.required"), required),
 		},
-		cif: {
+		current_hours: {
 			required: helpers.withMessage(t("form.required"), required),
 		},
-		email: {
+		started_at: {
 			required: helpers.withMessage(t("form.required"), required),
 		},
-		website: {
+		finished_at: {
 			required: helpers.withMessage(t("form.required"), required),
 		},
-		phone: {
-			required: helpers.withMessage(t("form.required"), required),
-		},
-		code_zip: {
+		description: {
 			required: helpers.withMessage(t("form.required"), required),
 		},
 	};
 
 	const formData = reactive({
-		code: "",
+		own_company_id: "",
+		company_id: "",
 		name: "",
-		address: "",
-		cif: "",
-		email: "",
-		website: "",
-		phone: "",
-		code_zip: "",
+		total_hours: "",
+		current_hours: "",
+		started_at: "",
+		finished_at: "",
+		description: "",
 	});
 
 	const validate = useVuelidate(rules, toRefs(formData));
@@ -265,7 +265,7 @@
 		if (validate.value.$invalid) {
 			//TODO
 		} else {
-			emit('saveCompanyForm', formData);
+			emit('saveProjectForm', formData);
 		}
 	};
 

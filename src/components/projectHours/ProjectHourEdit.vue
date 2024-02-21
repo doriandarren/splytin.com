@@ -1,0 +1,179 @@
+<template>
+
+	<!-- BEGIN: Card -->
+	<div class="card">
+		<!-- BEGIN: Form -->
+		<form class="validate-form" @submit.prevent="save">
+
+			<!-- BEGIN: container -->
+			<div class="grid grid-cols-12 gap-6">
+
+				<div class="col-span-12 md:col-span-6 lg:col-span-4">
+					<div class="input-form">
+						<label for="projec_id" class="form-label w-full">
+							{{ $t("projec_id") }} *
+						</label>
+						<input
+							v-model.trim="validate.projec_id.$model"
+							id="projec_id"
+							type="text"
+							name="projec_id"
+							class="form-control"
+							:class="{ 'border-danger': validate.projec_id.$error }"
+						/>
+						<template v-if="validate.projec_id.$error">
+							<div v-for="(error, index) in validate.projec_id.$errors" :key="index" class="text-danger mt-2">
+						{{ error.$message }}
+							</div>
+						</template>
+					</div>
+				</div>
+
+
+				<div class="col-span-12 md:col-span-6 lg:col-span-4">
+					<div class="input-form">
+						<label for="name" class="form-label w-full">
+							{{ $t("name") }} *
+						</label>
+						<input
+							v-model.trim="validate.name.$model"
+							id="name"
+							type="text"
+							name="name"
+							class="form-control"
+							:class="{ 'border-danger': validate.name.$error }"
+						/>
+						<template v-if="validate.name.$error">
+							<div v-for="(error, index) in validate.name.$errors" :key="index" class="text-danger mt-2">
+						{{ error.$message }}
+							</div>
+						</template>
+					</div>
+				</div>
+
+
+				<div class="col-span-12 md:col-span-6 lg:col-span-4">
+					<div class="input-form">
+						<label for="hours" class="form-label w-full">
+							{{ $t("hours") }} *
+						</label>
+						<input
+							v-model.trim="validate.hours.$model"
+							id="hours"
+							type="text"
+							name="hours"
+							class="form-control"
+							:class="{ 'border-danger': validate.hours.$error }"
+						/>
+						<template v-if="validate.hours.$error">
+							<div v-for="(error, index) in validate.hours.$errors" :key="index" class="text-danger mt-2">
+						{{ error.$message }}
+							</div>
+						</template>
+					</div>
+				</div>
+
+
+				<div class="col-span-12 md:col-span-6 lg:col-span-4">
+					<div class="input-form">
+						<label for="invoice_at" class="form-label w-full">
+							{{ $t("invoice_at") }} *
+						</label>
+						<input
+							v-model.trim="validate.invoice_at.$model"
+							id="invoice_at"
+							type="text"
+							name="invoice_at"
+							class="form-control"
+							:class="{ 'border-danger': validate.invoice_at.$error }"
+						/>
+						<template v-if="validate.invoice_at.$error">
+							<div v-for="(error, index) in validate.invoice_at.$errors" :key="index" class="text-danger mt-2">
+						{{ error.$message }}
+							</div>
+						</template>
+					</div>
+				</div>
+
+
+				<!-- BEGIN: Buttons -->
+				<div class="col-span-12 md:col-span-12 lg:col-span-12">
+					<div class="flex justify-center">
+						<button type="submit" class="btn btn-primary mr-5">
+							{{ $t("save") }}
+						</button>
+						<button @click.prevent="emit('cancelEdit')" class="btn btn-danger">
+							{{ $t("cancel") }}
+						</button>
+					</div>
+				</div>
+				<!-- END: Buttons -->
+
+			</div>
+			<!-- END: container -->
+
+		</form>
+		<!-- END: Form -->
+
+	</div>
+	<!-- END: Card -->
+
+</template>
+
+
+<script setup>
+
+	import { onMounted, reactive, toRefs } from 'vue';
+	import useProjectHours from '@/composables/project_hours';
+	import { required, minLength, maxLength, email, url, integer } from '@vuelidate/validators';
+	import { useVuelidate } from '@vuelidate/core';
+	import { helpers } from '@vuelidate/validators';
+	import { useI18n } from 'vue-i18n';
+
+	const { projectHour, getProjectHour } = useProjectHours();
+	const { t } = useI18n();
+	const props = defineProps(['projectHourId']);
+	const emit = defineEmits(['cancelEdit', 'updateProjectHourForm']);
+
+	const rules = {
+		projec_id: {
+			required: helpers.withMessage(t("form.required"), required),
+		},
+		name: {
+			required: helpers.withMessage(t("form.required"), required),
+		},
+		hours: {
+			required: helpers.withMessage(t("form.required"), required),
+		},
+		invoice_at: {
+			required: helpers.withMessage(t("form.required"), required),
+		},
+	};
+
+	const formData = reactive({
+		projec_id: "",
+		name: "",
+		hours: "",
+		invoice_at: "",
+	});
+
+	const validate = useVuelidate(rules, toRefs(formData));
+
+	const save = () => {
+		validate.value.$touch();
+		if (validate.value.$invalid) {
+			//TODO
+		} else {
+			emit('updateProjectHourForm', projectHour.value.id, formData);
+		}
+	};
+
+	onMounted(async () => {
+		await getProjectHour(props.projectHourId);
+		formData.projec_id = projectHour.value.projec_id;
+		formData.name = projectHour.value.name;
+		formData.hours = projectHour.value.hours;
+		formData.invoice_at = projectHour.value.invoice_at;
+	});
+
+</script>

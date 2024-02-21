@@ -1,15 +1,15 @@
 # Spytin Web
-own_companies = code name address cif email website phone code_zip 
+ownCompanies = code name address cif email website phone code_zip 
 
 companies = code name adress cif email website phone code_zip 
 
 projects = own_company_id company_id name total_hours current_hours started_at finished_at description
 
-invoice_headers = own_companies_id copany_id project_id number date
+invoiceHeader = own_companies_id copany_id project_id number date
 
-project_hours = projec_id name hours invoice_at
+projectHours = projec_id name hours invoice_at
 
-invoice_lines = invoice_header_id project_hour_id vat unit_prices total description
+invoiceLines = invoice_header_id project_hour_id vat unit_prices total description
 
 
 
