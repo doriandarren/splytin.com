@@ -5,7 +5,7 @@ companies = code name adress cif email website phone code_zip
 
 projects = own_company_id company_id name total_hours current_hours started_at finished_at description
 
-invoice_header = own_companies_id copany_id project_id number date
+invoice_headers = own_companies_id copany_id project_id number date
 
 project_hours = projec_id name hours invoice_at
 
