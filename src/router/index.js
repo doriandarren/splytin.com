@@ -451,7 +451,7 @@ const router = createRouter({
     {
       path: '/project_hours',
       name: 'project_hours',
-      component: () => import('@/views/projectHours/ProjectHoursList.vue')
+      component: () => import('@/views/projectHours/ProjectHourList.vue')
     },
     {
       path: '/invoice_headers',
