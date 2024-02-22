@@ -443,6 +443,16 @@ const router = createRouter({
       name: 'own_companies',
       component: () => import('@/views/own_companies/OwnCompanyList.vue')
     },
+    {
+      path: '/projects',
+      name: 'projects',
+      component: () => import('@/views/projects/ProjectsList.vue')
+    },
+    {
+      path: '/projectHours',
+      name: 'projectHours',
+      component: () => import('@/views/projectHours/ProjectHoursList.vue')
+    },
 
    
   ]
