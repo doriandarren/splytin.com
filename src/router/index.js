@@ -446,7 +446,7 @@ const router = createRouter({
     {
       path: '/projects',
       name: 'projects',
-      component: () => import('@/views/projects/ProjectsList.vue')
+      component: () => import('@/views/projects/ProjectList.vue')
     },
     {
       path: '/project_hours',
