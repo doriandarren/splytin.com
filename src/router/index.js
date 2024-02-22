@@ -454,9 +454,9 @@ const router = createRouter({
       component: () => import('@/views/projectHours/ProjectHoursList.vue')
     },
     {
-      path: '/invoice_header',
-      name: 'invoice_header',
-      component: () => import('@/views/invoice_header/InvoiceHeaderList.vue')
+      path: '/invoice_headers',
+      name: 'invoice_headers',
+      component: () => import('@/views/invoice_headers/InvoiceHeaderList.vue')
     },
     {
       path: '/invoice_lines',
