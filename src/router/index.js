@@ -461,7 +461,7 @@ const router = createRouter({
     {
       path: '/invoice_lines',
       name: 'invoice_lines',
-      component: () => import('@/views/invoice_lines/InvoiceLinesList.vue')
+      component: () => import('@/views/invoice_lines/InvoiceLineList.vue')
     },
 
    
