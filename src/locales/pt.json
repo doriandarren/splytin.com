@@ -9,5 +9,10 @@
     },
     "message":{
       "are_you_sure": "¿Tem certeza?"
+    },
+    "search": "QQQQ",
+    "name": "PPPP",
+    "form": {
+      "required": "ERRRE"
     }
   }

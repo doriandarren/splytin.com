@@ -9,5 +9,14 @@
     },
     "message":{
       "are_you_sure": "¿Estás seguro?"
+    },
+    "search": "Buscar",
+    "name": "Nombre",
+    "form": {
+      "required": "Requerido"
+    },
+    "errors":{
+      "error_internal": "Error Interno"
     }
+  
 }
