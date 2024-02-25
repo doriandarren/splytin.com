@@ -10,9 +10,19 @@
     "message":{
       "are_you_sure": "¿Tem certeza?"
     },
-    "search": "QQQQ",
-    "name": "PPPP",
+    "search": "Buscar",
+    "name": "Nombre",
     "form": {
-      "required": "ERRRE"
-    }
+      "required": "Requerido"
+    },
+    "errors":{
+      "error_internal": "Error Interno"
+    },
+    "code": "Código",
+    "address": "Dirección",
+    "cif": "Código de identificación fiscal",
+    "email": "Correo electrónico",
+    "website": "Sitio web",
+    "phone": "Teléfono",
+    "code_zip": "Código postal"
   }

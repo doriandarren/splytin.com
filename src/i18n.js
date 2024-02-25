@@ -3,7 +3,8 @@ import { createI18n } from 'vue-i18n';
 
 let i18n;
 
-export const SUPPORT_LOCALES = ['pt', 'en', 'es'];
+//export const SUPPORT_LOCALES = ['pt', 'en', 'es'];
+export const SUPPORT_LOCALES = ['es'];
 
 export function setI18nLanguage(locale) {
   loadLocaleMessages(locale);
@@ -32,13 +33,13 @@ export async function loadLocaleMessages(locale) {
 
 export default function setupI18n() {
   if(!i18n) {
-    let locale = localStorage.getItem('lang') || 'pt';
+    let locale = localStorage.getItem('lang') || 'es';
 
     i18n = createI18n({
       globalInjection: true,
       legacy: false,
       locale: locale,
-      fallbackLocale: 'pt'
+      fallbackLocale: 'es'
     });
 
     setI18nLanguage(locale);
