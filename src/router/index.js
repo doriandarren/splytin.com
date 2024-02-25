@@ -417,9 +417,6 @@ const router = createRouter({
           component: () => import('@/views/tailwind/resources/blocks/testimonial/Testimonial3.vue')
         },
 
-
-
-
       ]
     },
 
