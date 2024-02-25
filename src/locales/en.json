@@ -9,5 +9,10 @@
     },
     "message":{
       "are_you_sure": "Are you sure?"
+    },
+    "search": "Search",
+    "name": "Name",
+    "form": {
+      "required": "Required"
     }
 }
