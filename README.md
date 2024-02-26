@@ -7,9 +7,7 @@ MILE --> projects = own_company_id company_id name total_hours current_hours sta
 
 DILAN --> invoiceHeaders = own_companies_id company_id project_id number date
 
-MILE --> projectHours = projec_id name hours invoice_at
-
-OJO --> Arreglar --> projec_id a project_id
+MILE --> projectHours = project_id name hours invoice_at
 
 DILAN -->invoiceLines = invoice_header_id project_hour_id vat unit_prices total description
 
