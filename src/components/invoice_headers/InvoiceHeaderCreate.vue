@@ -32,19 +32,19 @@
 
 				<div class="col-span-12 md:col-span-6 lg:col-span-4">
 					<div class="input-form">
-						<label for="copany_id" class="form-label w-full">
-							{{ $t("copany_id") }} *
+						<label for="company_id" class="form-label w-full">
+							{{ $t("company_id") }} *
 						</label>
 						<input
-							v-model.trim="validate.copany_id.$model"
-							id="copany_id"
+							v-model.trim="validate.company_id.$model"
+							id="company_id"
 							type="text"
-							name="copany_id"
+							name="company_id"
 							class="form-control"
-							:class="{ 'border-danger': validate.copany_id.$error }"
+							:class="{ 'border-danger': validate.company_id.$error }"
 						/>
-						<template v-if="validate.copany_id.$error">
-							<div v-for="(error, index) in validate.copany_id.$errors" :key="index" class="text-danger mt-2">
+						<template v-if="validate.company_id.$error">
+							<div v-for="(error, index) in validate.company_id.$errors" :key="index" class="text-danger mt-2">
 								{{ error.$message }}
 							</div>
 						</template>
@@ -158,7 +158,7 @@
 		own_companies_id: {
 			required: helpers.withMessage(t("form.required"), required),
 		},
-		copany_id: {
+		company_id: {
 			required: helpers.withMessage(t("form.required"), required),
 		},
 		project_id: {
@@ -174,7 +174,7 @@
 
 	const formData = reactive({
 		own_companies_id: "",
-		copany_id: "",
+		company_id: "",
 		project_id: "",
 		number: "",
 		date: "",

@@ -1,18 +1,15 @@
 # Spytin Web
 DILAN --> own_companies = code name address cif email website phone code_zip 
 
-MILE --> companies = code name adress cif email website phone code_zip 
+MILE --> companies = code name address cif email website phone code_zip 
 
 MILE --> projects = own_company_id company_id name total_hours current_hours started_at finished_at description
 
-DILAN --> invoiceHeader = own_companies_id copany_id project_id number date
-
-OJO --> Arreglar --> copany a company
+DILAN --> invoiceHeaders = own_companies_id company_id project_id number date
 
 MILE --> projectHours = projec_id name hours invoice_at
 
 OJO --> Arreglar --> projec_id a project_id
-
 
 DILAN -->invoiceLines = invoice_header_id project_hour_id vat unit_prices total description
 

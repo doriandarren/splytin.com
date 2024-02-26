@@ -90,7 +90,7 @@
 		tabulator.value.setFilter([
 			[
 				{field: 'own_companies_id', type: 'like', value: filter.value},
-				{field: 'copany_id', type: 'like', value: filter.value},
+				{field: 'company_id', type: 'like', value: filter.value},
 				{field: 'project_id', type: 'like', value: filter.value},
 				{field: 'number', type: 'like', value: filter.value},
 				{field: 'date', type: 'like', value: filter.value},
@@ -139,10 +139,10 @@
 					headerHozAlign:"left",
 				},
 				{
-					title: t("copany_id"),
+					title: t("company_id"),
 					minWidth: 200,
 					responsive: 0,
-					field: "copany_id",
+					field: "company_id",
 					vertAlign: "middle",
 					headerHozAlign:"left",
 				},
