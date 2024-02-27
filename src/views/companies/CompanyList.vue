@@ -111,6 +111,7 @@
 
 	const findData = async() => {
 		await getCompanies();
+		console.log(companies.value);
 		return toRaw(companies.value);
 	}
 
@@ -173,14 +174,14 @@
 					vertAlign: "middle",
 					headerHozAlign:"left",
 				},
-				{
-					title: t("website"),
-					minWidth: 200,
-					responsive: 0,
-					field: "website",
-					vertAlign: "middle",
-					headerHozAlign:"left",
-				},
+				// {
+				// 	title: t("website"),
+				// 	minWidth: 200,
+				// 	responsive: 0,
+				// 	field: "website",
+				// 	vertAlign: "middle",
+				// 	headerHozAlign:"left",
+				// },
 				{
 					title: t("phone"),
 					minWidth: 200,
@@ -189,14 +190,14 @@
 					vertAlign: "middle",
 					headerHozAlign:"left",
 				},
-				{
-					title: t("code_zip"),
-					minWidth: 200,
-					responsive: 0,
-					field: "code_zip",
-					vertAlign: "middle",
-					headerHozAlign:"left",
-				},
+				// {
+				// 	title: t("code_zip"),
+				// 	minWidth: 200,
+				// 	responsive: 0,
+				// 	field: "code_zip",
+				// 	vertAlign: "middle",
+				// 	headerHozAlign:"left",
+				// },
 				{
 					title: "",
 					minWidth: 80,
@@ -254,12 +255,12 @@
 	const saveCompanyForm = async (form) => {
 		isCreate.value = false;
 		div_table.style.display = 'block';
-		loading.value = true;
+		// loading.value = true;
 		await storeCompany({ ...form });
 		//await getCompanies();
 		tableData.value = await findData();
 		tabulator.value.setData(tableData.value);
-		loading.value = false;
+		// loading.value = false;
 		await Toast(t("message.record_saved"), 'success');
 	}
 

@@ -10,19 +10,19 @@
 
 				<div class="col-span-12 md:col-span-6 lg:col-span-4">
 					<div class="input-form">
-						<label for="projec_id" class="form-label w-full">
-							{{ $t("projec_id") }} *
+						<label for="project_id" class="form-label w-full">
+							{{ $t("project_id") }} *
 						</label>
 						<input
 							v-model.trim="validate.projec_id.$model"
-							id="projec_id"
+							id="project_id"
 							type="text"
-							name="projec_id"
+							name="project_id"
 							class="form-control"
-							:class="{ 'border-danger': validate.projec_id.$error }"
+							:class="{ 'border-danger': validate.project_id.$error }"
 						/>
-						<template v-if="validate.projec_id.$error">
-							<div v-for="(error, index) in validate.projec_id.$errors" :key="index" class="text-danger mt-2">
+						<template v-if="validate.project_id.$error">
+							<div v-for="(error, index) in validate.project_id.$errors" :key="index" class="text-danger mt-2">
 								{{ error.$message }}
 							</div>
 						</template>
@@ -133,7 +133,7 @@
 	const emit = defineEmits(['cancelCreate', 'saveProjectHourForm']);
 
 	const rules = {
-		projec_id: {
+		project_id: {
 			required: helpers.withMessage(t("form.required"), required),
 		},
 		name: {
@@ -148,7 +148,7 @@
 	};
 
 	const formData = reactive({
-		projec_id: "",
+		project_id: "",
 		name: "",
 		hours: "",
 		invoice_at: "",

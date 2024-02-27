@@ -79,7 +79,7 @@
 
 
 	const filter = reactive({
-		field: "projec_id",
+		field: "project_id",
 		type: "like",
 		value: "",
 	});
@@ -89,7 +89,7 @@
 		//tabulator.value.setFilter(filter.field, filter.type, filter.value);
 		tabulator.value.setFilter([
 			[
-				{field: 'projec_id', type: 'like', value: filter.value},
+				{field: 'project_id', type: 'like', value: filter.value},
 				{field: 'name', type: 'like', value: filter.value},
 				{field: 'hours', type: 'like', value: filter.value},
 				{field: 'invoice_at', type: 'like', value: filter.value},
@@ -99,7 +99,7 @@
 
 	// On reset filter
 	const onResetFilter = () => {
-		filter.field = "projec_id";
+		filter.field = "project_id";
 		filter.type = "like";
 		filter.value = "";
 		onFilter();
@@ -130,10 +130,10 @@
 					headerSort: false,
 				},
 				{
-					title: t("projec_id"),
+					title: t("project_id"),
 					minWidth: 200,
 					responsive: 0,
-					field: "projec_id",
+					field: "project_id",
 					vertAlign: "middle",
 					headerHozAlign:"left",
 				},
