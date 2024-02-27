@@ -1,5 +1,5 @@
 # Spytin Web
-DILAN --> own_companies = code name address cif email website phone code_zip 
+DILAN --> ownCompanies = code name address cif email website phone code_zip 
 
 MILE --> companies = code name address cif email website phone code_zip 
 
