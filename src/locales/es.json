@@ -8,7 +8,8 @@
       "config": "Configuración"
     },
     "message":{
-      "are_you_sure": "¿Estás seguro?"
+      "are_you_sure": "¿Estás seguro?",
+      "record_save": "Registro guardado"
     },
     "search": "Buscar",
     "save": "Guardar",
