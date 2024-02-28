@@ -103,7 +103,7 @@ const videoUrl2 = ref('https://www.youtube.com/embed/');
 const videoUrl3 = ref('https://www.youtube.com/embed/');
 const videoUrl4 = ref('https://www.youtube.com/embed/');
 
-
+const sessionLogErrors = ref([]);
 
 
 const findData = async () => {
