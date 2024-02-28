@@ -9,7 +9,8 @@
     },
     "message":{
       "are_you_sure": "¿Estás seguro?",
-      "record_saved": "Registro guardado"
+      "record_saved": "Registro guardado",
+      "record_delete": "Registro eliminado"
     },
     "search": "Buscar",
     "save": "Guardar",
