@@ -15,7 +15,7 @@ export default function useProjectHour() {
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer 1|kXAK8rlItGnX95dYLslQlmWy0RpQyDVpmohXjXk10c2882cf`
 			},
 		})
 		.then(res => res.json())
@@ -38,7 +38,7 @@ export default function useProjectHour() {
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer 1|kXAK8rlItGnX95dYLslQlmWy0RpQyDVpmohXjXk10c2882cf`
 			},
 		})
 		.then(res => res.json())
@@ -61,7 +61,7 @@ export default function useProjectHour() {
 			method: 'POST',
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer 1|kXAK8rlItGnX95dYLslQlmWy0RpQyDVpmohXjXk10c2882cf`
 			},
 			body: JSON.stringify(data),
 		})
@@ -85,7 +85,7 @@ export default function useProjectHour() {
 			method: 'PUT',
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer 1|kXAK8rlItGnX95dYLslQlmWy0RpQyDVpmohXjXk10c2882cf`
 			},
 			body: JSON.stringify(data),
 		})
@@ -109,7 +109,7 @@ export default function useProjectHour() {
 			method: 'DELETE',
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer 1|kXAK8rlItGnX95dYLslQlmWy0RpQyDVpmohXjXk10c2882cf`
 			},
 		})
 		.then(res => res.json())
