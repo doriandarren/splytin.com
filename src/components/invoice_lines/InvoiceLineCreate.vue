@@ -1,5 +1,4 @@
 <template>
-
 	<!-- BEGIN: Card -->
 	<div class="card">
 		<!-- BEGIN: Form -->

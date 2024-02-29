@@ -236,12 +236,12 @@
 	const saveInvoiceLineForm = async (form) => {
 		isCreate.value = false;
 		div_table.style.display = 'block';
-		loading.value = true;
+		// loading.value = true;
 		await storeInvoiceLine({ ...form });
 		//await getInvoiceLines();
 		tableData.value = await findData();
 		tabulator.value.setData(tableData.value);
-		loading.value = false;
+		// loading.value = false;
 		await Toast(t("message.record_saved"), 'success');
 	}
 
@@ -260,12 +260,12 @@
 	const updateInvoiceLineForm = async (id, data) => {
 		isEdit.value = false;
 		div_table.style.display = 'block';
-		loading.value = true;
+		// loading.value = true;
 		await updateInvoiceLine(id, data);
 		//await getInvoiceLines();
 		tableData.value = await findData();
 		tabulator.value.setData(tableData.value);
-		loading.value = false;
+		// loading.value = false;
 		await Toast(t("message.record_updated"), 'success');
 	}
 

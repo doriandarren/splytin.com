@@ -218,12 +218,12 @@
 	const saveProjectHourForm = async (form) => {
 		isCreate.value = false;
 		div_table.style.display = 'block';
-		loading.value = true;
+		// loading.value = true;
 		await storeProjectHour({ ...form });
 		//await getProjectHours();
 		tableData.value = await findData();
 		tabulator.value.setData(tableData.value);
-		loading.value = false;
+		// loading.value = false;
 		await Toast(t("message.record_saved"), 'success');
 	}
 
@@ -242,12 +242,12 @@
 	const updateProjectHourForm = async (id, data) => {
 		isEdit.value = false;
 		div_table.style.display = 'block';
-		loading.value = true;
+		// loading.value = true;
 		await updateProjectHour(id, data);
 		//await getProjectHours();
 		tableData.value = await findData();
 		tabulator.value.setData(tableData.value);
-		loading.value = false;
+		// loading.value = false;
 		await Toast(t("message.record_updated"), 'success');
 	}
 

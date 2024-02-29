@@ -254,7 +254,7 @@
 	const saveProjectForm = async (form) => {
 		isCreate.value = false;
 		div_table.style.display = 'block';
-		loading.value = true;
+		// loading.value = true;
 		await storeProject({ ...form });
 		//await getProjects();
 		tableData.value = await findData();
@@ -278,12 +278,12 @@
 	const updateProjectForm = async (id, data) => {
 		isEdit.value = false;
 		div_table.style.display = 'block';
-		loading.value = true;
+		// loading.value = true;
 		await updateProject(id, data);
 		//await getProjects();
 		tableData.value = await findData();
 		tabulator.value.setData(tableData.value);
-		loading.value = false;
+		// loading.value = false;
 		await Toast(t("message.record_updated"), 'success');
 	}
 
