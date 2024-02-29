@@ -15,6 +15,7 @@ export default function useProject() {
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
+				// "Authorization": `Bearer ${localStorage.getItem('token')}`
 				"Authorization": `Bearer 1|kXAK8rlItGnX95dYLslQlmWy0RpQyDVpmohXjXk10c2882cf`
 			},
 		})
@@ -38,6 +39,7 @@ export default function useProject() {
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
+				// "Authorization": `Bearer ${localStorage.getItem('token')}`
 				"Authorization": `Bearer 1|kXAK8rlItGnX95dYLslQlmWy0RpQyDVpmohXjXk10c2882cf`
 			},
 		})
@@ -61,6 +63,7 @@ export default function useProject() {
 			method: 'POST',
 			headers: {
 				"Content-Type": "application/json",
+				// "Authorization": `Bearer ${localStorage.getItem('token')}`
 				"Authorization": `Bearer 1|kXAK8rlItGnX95dYLslQlmWy0RpQyDVpmohXjXk10c2882cf`
 			},
 			body: JSON.stringify(data),
@@ -85,6 +88,7 @@ export default function useProject() {
 			method: 'PUT',
 			headers: {
 				"Content-Type": "application/json",
+				// "Authorization": `Bearer ${localStorage.getItem('token')}`
 				"Authorization": `Bearer 1|kXAK8rlItGnX95dYLslQlmWy0RpQyDVpmohXjXk10c2882cf`
 			},
 			body: JSON.stringify(data),
@@ -109,6 +113,7 @@ export default function useProject() {
 			method: 'DELETE',
 			headers: {
 				"Content-Type": "application/json",
+				// "Authorization": `Bearer ${localStorage.getItem('token')}`
 				"Authorization": `Bearer 1|kXAK8rlItGnX95dYLslQlmWy0RpQyDVpmohXjXk10c2882cf`
 			},
 		})

@@ -15,6 +15,7 @@ export default function useInvoiceLine() {
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
+				// "Authorization": `Bearer ${localStorage.getItem('token')}`
 				"Authorization": `Bearer 1|kXAK8rlItGnX95dYLslQlmWy0RpQyDVpmohXjXk10c2882cf`
 			},
 		})
@@ -38,6 +39,7 @@ export default function useInvoiceLine() {
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
+				// "Authorization": `Bearer ${localStorage.getItem('token')}`
 				"Authorization": `Bearer 1|kXAK8rlItGnX95dYLslQlmWy0RpQyDVpmohXjXk10c2882cf`
 			},
 		})
@@ -61,7 +63,8 @@ export default function useInvoiceLine() {
 			method: 'POST',
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer ${localStorage.getItem('token')}`
+				// "Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer 1|kXAK8rlItGnX95dYLslQlmWy0RpQyDVpmohXjXk10c2882cf`
 			},
 			body: JSON.stringify(data),
 		})
@@ -85,7 +88,9 @@ export default function useInvoiceLine() {
 			method: 'PUT',
 			headers: {
 				"Content-Type": "application/json",
+				// "Authorization": `Bearer ${localStorage.getItem('token')}`
 				"Authorization": `Bearer 1|kXAK8rlItGnX95dYLslQlmWy0RpQyDVpmohXjXk10c2882cf`
+				
 			},
 			body: JSON.stringify(data),
 		})
@@ -109,7 +114,8 @@ export default function useInvoiceLine() {
 			method: 'DELETE',
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer 1|kXAK8rlItGnX95dYLslQlmWy0RpQyDVpmohXjXk10c2882cf`
+				// "Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer ${localStorage.getItem('token')}`
 			},
 		})
 		.then(res => res.json())
