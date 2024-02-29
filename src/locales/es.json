@@ -44,7 +44,12 @@
     "project_hours": "Horas proyecto",
     "total": "Total",
     "description": "Descripción",
-    "project_hour_id": "Hora proyecto Id"
+    "project_hour_id": "Hora proyecto Id",
+    "own_company_id": "Compañia ID",
+    "total_hours": "Horas Totales",
+    "current_hours": "Horas Actuales",
+    "started_at": "Fecha Inicio",
+    "finished_at": "Fecha Finalizado"
     
 
 

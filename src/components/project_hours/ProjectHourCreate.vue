@@ -14,7 +14,7 @@
 							{{ $t("project_id") }} *
 						</label>
 						<input
-							v-model.trim="validate.projec_id.$model"
+							v-model.trim="validate.project_id.$model"
 							id="project_id"
 							type="text"
 							name="project_id"
