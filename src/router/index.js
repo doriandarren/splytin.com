@@ -15,22 +15,6 @@ const router = createRouter({
       component: () => import('@/views/categories/CategoryList.vue')
     },
 
-
-
-
-
-
-
-    {
-      path: '/login',
-      name: 'login',
-      component: () => import('@/views/login/LoginView.vue')
-    },
-    {
-      path: '/dashboard',
-      name: 'dashboard',
-      component: () => import('@/views/dashboard/DashboardList.vue')
-    },
     {
       path: '/resources',
       name: 'resources',
@@ -433,46 +417,78 @@ const router = createRouter({
       ]
     },
 
+
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('@/views/login/LoginView.vue')
+    },
     {
       path: '/test',
       name: 'test',
       component: () => import('@/views/dev/TestView.vue')
     },
+
+
+
+
+    /** Rutas protegidas */
     {
-      path: '/msft-prices',
-      name: 'msft-prices',
-      component: () => import('@/views/msft_prices/MsftPricesList.vue')
+      path: '/',
+      name: 'main',
+      component: () => import('@/components/template/private/Main.vue'),
+      redirect: '/dashboard',
+      children: [
+        {
+          path: '/dashboard',
+          name: 'dashboard',
+          component: () => import('@/views/dashboard/DashboardList.vue')
+        },
+        
+        {
+          path: '/msft-prices',
+          name: 'msft-prices',
+          component: () => import('@/views/msft_prices/MsftPricesList.vue')
+        },
+        {
+          path: '/companies',
+          name: 'companies',
+          component: () => import('@/views/companies/CompanyList.vue')
+        },
+        {
+          path: '/own_companies',
+          name: 'own_companies',
+          component: () => import('@/views/own_companies/OwnCompanyList.vue')
+        },
+        {
+          path: '/projects',
+          name: 'projects',
+          component: () => import('@/views/projects/ProjectList.vue')
+        },
+        {
+          path: '/project_hours',
+          name: 'project_hours',
+          component: () => import('@/views/project_hours/ProjectHourList.vue')
+        },
+        {
+          path: '/invoice_headers',
+          name: 'invoice_headers',
+          component: () => import('@/views/invoice_headers/InvoiceHeaderList.vue')
+        },
+        {
+          path: '/invoice_lines',
+          name: 'invoice_lines',
+          component: () => import('@/views/invoice_lines/InvoiceLineList.vue')
+        },
+
+      ]
+
     },
-    {
-      path: '/companies',
-      name: 'companies',
-      component: () => import('@/views/companies/CompanyList.vue')
-    },
-    {
-      path: '/own_companies',
-      name: 'own_companies',
-      component: () => import('@/views/own_companies/OwnCompanyList.vue')
-    },
-    {
-      path: '/projects',
-      name: 'projects',
-      component: () => import('@/views/projects/ProjectList.vue')
-    },
-    {
-      path: '/project_hours',
-      name: 'project_hours',
-      component: () => import('@/views/project_hours/ProjectHourList.vue')
-    },
-    {
-      path: '/invoice_headers',
-      name: 'invoice_headers',
-      component: () => import('@/views/invoice_headers/InvoiceHeaderList.vue')
-    },
-    {
-      path: '/invoice_lines',
-      name: 'invoice_lines',
-      component: () => import('@/views/invoice_lines/InvoiceLineList.vue')
-    },
+
+
+
+
+
 
    
   ]

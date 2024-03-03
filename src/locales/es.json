@@ -16,6 +16,7 @@
     "search": "Buscar",
     "save": "Guardar",
     "cancel": "Cancelar",
+    "delete": "Borrar",
     "name": "Nombre",
     "form": {
       "required": "Requerido"
