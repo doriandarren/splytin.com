@@ -1,46 +1,43 @@
 <template>
-    <div>
-
-        <!-- Barra superior -->
-        <header class="bg-blue-500 py-4 px-6 flex justify-between items-center">
-            <div>
-                <h1 class="text-white text-lg font-semibold">Splytin</h1>
-            </div>
-            <nav>
-                <ul class="flex space-x-4 text-white">
-                    <li><a href="#" class="hover:underline">Inicio</a></li>
-                    <li><a href="#" class="hover:underline">Acerca</a></li>
-                    <li><a href="#" class="hover:underline">Contacto</a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <!-- Contenedor principal -->
-        <div class="flex">
-            <!-- Menú lateral izquierdo -->
-            <aside class="bg-gray-800 text-gray-100 w-64 min-h-screen">
-                <ul class="py-4">
-                    <li><a href="#" class="block py-2 px-4 hover:bg-gray-700">Inicio</a></li>
-                    <li><a href="#" class="block py-2 px-4 hover:bg-gray-700">Categoría 1</a></li>
-                    <li><a href="#" class="block py-2 px-4 hover:bg-gray-700">Categoría 2</a></li>
-                    <li><a href="#" class="block py-2 px-4 hover:bg-gray-700">Categoría 3</a></li>
-                </ul>
-            </aside>
-
-            <!-- Contenido principal -->
-            <main class="flex-1 p-4">
-                <RouterView />
-            </main>
-        </div>
-
-        
-
+    <div class="flex flex-col h-screen">
+      <!-- Barra superior -->
+      <header class="bg-blue-500 text-white p-4 text-lg font-semibold">
+        Barra Superior
+        <!-- Botón para dispositivos móviles -->
+        <button @click="toggleSidebar" class="md:hidden">
+          <span>Menú</span>
+        </button>
+      </header>
+  
+      <!-- Contenido principal y menú lateral -->
+      <div class="flex flex-1 overflow-hidden">
+        <!-- Menú lateral -->
+        <nav :class="{'block': isSidebarOpen, 'hidden': !isSidebarOpen}" class="bg-blue-100 w-64 p-5 md:block">
+          Menú Lateral
+          <ul class="mt-4">
+            <li><a href="#" class="block py-2 hover:bg-blue-200">Inicio</a></li>
+            <li><a href="#" class="block py-2 hover:bg-blue-200">Perfil</a></li>
+            <li><a href="#" class="block py-2 hover:bg-blue-200">Mensajes</a></li>
+            <li><a href="#" class="block py-2 hover:bg-blue-200">Configuración</a></li>
+          </ul>
+        </nav>
+  
+        <!-- Contenido -->
+        <main class="flex-1 p-5 overflow-auto">
+          <RouterView />
+        </main>
+      </div>
     </div>
-</template>
-
+  </template>
 <script setup>
 
-console.log("PASA por protegido");
+import { ref } from 'vue';
+
+const isSidebarOpen = ref(false);
+
+function toggleSidebar() {
+  isSidebarOpen.value = !isSidebarOpen.value;
+}
 
 </script>
 
