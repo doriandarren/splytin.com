@@ -104,7 +104,7 @@
 						<input
 							v-model.trim="validate.date.$model"
 							id="date"
-							type="text"
+							type="date"
 							name="date"
 							class="form-control"
 							:class="{ 'border-danger': validate.date.$error }"

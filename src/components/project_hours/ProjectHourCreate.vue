@@ -82,7 +82,7 @@
 						<input
 							v-model.trim="validate.invoice_at.$model"
 							id="invoice_at"
-							type="text"
+							type="date"
 							name="invoice_at"
 							class="form-control"
 							:class="{ 'border-danger': validate.invoice_at.$error }"

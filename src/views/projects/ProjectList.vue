@@ -259,7 +259,7 @@
 		//await getProjects();
 		tableData.value = await findData();
 		tabulator.value.setData(tableData.value);
-		loading.value = false;
+		// loading.value = false;
 		await Toast(t("message.record_saved"), 'success');
 	}
 
