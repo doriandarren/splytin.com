@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import { useAuthenticationStore } from '@/stores/auth/authentication.js';
 
-const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
+
+const routes = [
     {
       path: '/',
       name: 'home',
@@ -436,6 +436,7 @@ const router = createRouter({
       name: 'main',
       component: () => import('@/components/template/private/Main.vue'),
       redirect: '/dashboard',
+      meta: { requiresAuth: true },
       children: [
         {
           path: '/dashboard',
@@ -488,9 +489,44 @@ const router = createRouter({
 
     },
 
-    
-  ]
+];
+
+
+
+const router = createRouter({
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes,
 })
+
+
+
+
+router.beforeEach(async(to, from, next) => {
+
+  document.title = `${to.name} - ${import.meta.env.VITE_APP_TITLE}`;
+
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    
+    const useAuthentication = useAuthenticationStore();
+
+    let response = await useAuthentication.currentUser();
+
+    try {
+      if(response){
+        next();
+      }else{
+        next({name: "login" });
+      }
+    } catch (e) {
+        console.log(e);
+        next({name: "login" });
+    }
+  
+  }else{
+    next();
+  }
+
+});
 
 
 export default router
