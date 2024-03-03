@@ -9,12 +9,7 @@ const router = createRouter({
       component: () => import('@/views/home/HomeView.vue')
     },
 
-    {
-      path: '/categories',
-      name: 'categories',
-      component: () => import('@/views/categories/CategoryList.vue')
-    },
-
+    /** Resouces */
     {
       path: '/resources',
       name: 'resources',
@@ -418,11 +413,14 @@ const router = createRouter({
     },
 
 
+    /** Login */
     {
       path: '/login',
       name: 'login',
       component: () => import('@/views/login/LoginView.vue')
     },
+
+    /** test */
     {
       path: '/test',
       name: 'test',
@@ -444,7 +442,11 @@ const router = createRouter({
           name: 'dashboard',
           component: () => import('@/views/dashboard/DashboardList.vue')
         },
-        
+        {
+          path: '/categories',
+          name: 'categories',
+          component: () => import('@/views/categories/CategoryList.vue')
+        },
         {
           path: '/msft-prices',
           name: 'msft-prices',
@@ -481,16 +483,12 @@ const router = createRouter({
           component: () => import('@/views/invoice_lines/InvoiceLineList.vue')
         },
 
+
       ]
 
     },
 
-
-
-
-
-
-   
+    
   ]
 })
 
