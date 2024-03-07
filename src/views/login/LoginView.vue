@@ -79,7 +79,7 @@ projects = id own_company_id company_id name total_hours current_hours started_a
         }
 
 
-        fetch('https://api.splytin.com/api/v1/login', {
+        fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}auth/login`, {
             method:"POST",
             body: JSON.stringify(data),
             headers: {

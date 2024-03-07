@@ -257,7 +257,7 @@
 		div_table.style.display = 'block';
 		// loading.value = true;
 		await storeCompany({ ...form });
-		//await getCompanies();
+		// await getCompanies();
 		tableData.value = await findData();
 		tabulator.value.setData(tableData.value);
 		// loading.value = false;
@@ -279,12 +279,12 @@
 	const updateCompanyForm = async (id, data) => {
 		isEdit.value = false;
 		div_table.style.display = 'block';
-		loading.value = true;
+		// loading.value = true;
 		await updateCompany(id, data);
 		//await getCompanies();
 		tableData.value = await findData();
 		tabulator.value.setData(tableData.value);
-		loading.value = false;
+		// loading.value = false;
 		await Toast(t("message.record_updated"), 'success');
 	}
 

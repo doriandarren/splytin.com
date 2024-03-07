@@ -15,8 +15,7 @@ export default function useInvoiceHeader() {
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
-				// "Authorization": `Bearer ${localStorage.getItem('token')}`
-				"Authorization": `Bearer 1|kXAK8rlItGnX95dYLslQlmWy0RpQyDVpmohXjXk10c2882cf`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`	
 			},
 		})
 		.then(res => res.json())
@@ -39,8 +38,7 @@ export default function useInvoiceHeader() {
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
-				// "Authorization": `Bearer ${localStorage.getItem('token')}`
-				"Authorization": `Bearer 1|kXAK8rlItGnX95dYLslQlmWy0RpQyDVpmohXjXk10c2882cf`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
 			},
 		})
 		.then(res => res.json())
@@ -63,8 +61,7 @@ export default function useInvoiceHeader() {
 			method: 'POST',
 			headers: {
 				"Content-Type": "application/json",
-				// "Authorization": `Bearer ${localStorage.getItem('token')}`
-				"Authorization": `Bearer 1|kXAK8rlItGnX95dYLslQlmWy0RpQyDVpmohXjXk10c2882cf`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
 			},
 			body: JSON.stringify(data),
 		})
@@ -88,9 +85,7 @@ export default function useInvoiceHeader() {
 			method: 'PUT',
 			headers: {
 				"Content-Type": "application/json",
-				// "Authorization": `Bearer ${localStorage.getItem('token')}`
-				"Authorization": `Bearer 1|kXAK8rlItGnX95dYLslQlmWy0RpQyDVpmohXjXk10c2882cf`
-			},
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`},
 			body: JSON.stringify(data),
 		})
 		.then(res => res.json())
@@ -113,8 +108,7 @@ export default function useInvoiceHeader() {
 			method: 'DELETE',
 			headers: {
 				"Content-Type": "application/json",
-				// "Authorization": `Bearer ${localStorage.getItem('token')}`
-				"Authorization": `Bearer 1|kXAK8rlItGnX95dYLslQlmWy0RpQyDVpmohXjXk10c2882cf`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
 			},
 		})
 		.then(res => res.json())

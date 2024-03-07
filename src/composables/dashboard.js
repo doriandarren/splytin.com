@@ -11,49 +11,48 @@ export default function useDashboard() {
 
 	const getDashboards = async () => {
 		dashboardErrors.value = [];
-		await fetch(`https://api.splytin.com/api/v1/youtube-videos/list`,{
+		await fetch(`https://api.splytin.com/api/v1/youtube-videos/list`, {
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
-				//"Authorization": `Bearer ${localStorage.getItem('token')}`
-				"Authorization": `Bearer 22|2IRnvFfFoyQunUk8u9B8rb05QRnJA9wJd9xCIg7C`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
+
 			},
 		})
-		.then(res => res.json())
-		.then((res) => {
-			if (!res.success) {
-				dashboardErrors.value = res.errors;
-			}else{
-				dashboards.value = res.data;
-			}
-		})
-		.catch((e) => {
-			dashboardErrors.value.push(t("errors.error_internal"));
-		});
+			.then(res => res.json())
+			.then((res) => {
+				if (!res.success) {
+					dashboardErrors.value = res.errors;
+				} else {
+					dashboards.value = res.data;
+				}
+			})
+			.catch((e) => {
+				dashboardErrors.value.push(t("errors.error_internal"));
+			});
 	}
 
 
 	const getDashboard = async (id) => {
 		dashboardErrors.value = [];
-		await fetch(`https://api.splytin.com/api/v1/youtube-videos/show/${id}`,{
+		await fetch(`https://api.splytin.com/api/v1/youtube-videos/show/${id}`, {
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
-				//"Authorization": `Bearer ${localStorage.getItem('token')}`
-				"Authorization": `Bearer 22|2IRnvFfFoyQunUk8u9B8rb05QRnJA9wJd9xCIg7C`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
 			},
 		})
-		.then(res => res.json())
-		.then((res) => {
-			if (!res.success) {
-				dashboardErrors.value = res.errors;
-			}else{
-				dashboard.value = res.data;
-			}
-		})
-		.catch((e) => {
-			dashboardErrors.value.push(t("errors.error_internal"));
-		});
+			.then(res => res.json())
+			.then((res) => {
+				if (!res.success) {
+					dashboardErrors.value = res.errors;
+				} else {
+					dashboard.value = res.data;
+				}
+			})
+			.catch((e) => {
+				dashboardErrors.value.push(t("errors.error_internal"));
+			});
 	}
 
 
@@ -62,77 +61,74 @@ export default function useDashboard() {
 
 		console.log(data);
 
-		await fetch(`https://api.splytin.com/api/v1/youtube-videos/store`,{
+		await fetch(`https://api.splytin.com/api/v1/youtube-videos/store`, {
 			method: 'POST',
 			headers: {
 				"Content-Type": "application/json",
-				//"Authorization": `Bearer ${localStorage.getItem('token')}`
-				"Authorization": `Bearer 22|2IRnvFfFoyQunUk8u9B8rb05QRnJA9wJd9xCIg7C`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
 			},
 			body: JSON.stringify(data),
 		})
-		.then(res => res.json())
-		.then((res) => {
+			.then(res => res.json())
+			.then((res) => {
 
-			if (!res.success) {
-				dashboardErrors.value = res.errors;
-			}else{
-				dashboard.value = res.data;
-			}
-		})
-		.catch((e) => {
-			dashboardErrors.value.push(t("errors.error_internal"));
-			console.log(e);
-		});
+				if (!res.success) {
+					dashboardErrors.value = res.errors;
+				} else {
+					dashboard.value = res.data;
+				}
+			})
+			.catch((e) => {
+				dashboardErrors.value.push(t("errors.error_internal"));
+				console.log(e);
+			});
 	}
 
 
 	const updateDashboard = async (id, data) => {
 		dashboardErrors.value = [];
-		await fetch(`https://api.splytin.com/api/v1/youtube-videos/update/${id}`,{
+		await fetch(`https://api.splytin.com/api/v1/youtube-videos/update/${id}`, {
 			method: 'PUT',
 			headers: {
 				"Content-Type": "application/json",
-				//"Authorization": `Bearer ${localStorage.getItem('token')}`
-				"Authorization": `Bearer 22|2IRnvFfFoyQunUk8u9B8rb05QRnJA9wJd9xCIg7C`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
 			},
 			body: JSON.stringify(data),
 		})
-		.then(res => res.json())
-		.then((res) => {
-			if (!res.success) {
-				dashboardErrors.value = res.errors;
-			}else{
-				dashboard.value = res.data;
-			}
-		})
-		.catch((e) => {
-			dashboardErrors.value.push(t("errors.error_internal"));
-		});
+			.then(res => res.json())
+			.then((res) => {
+				if (!res.success) {
+					dashboardErrors.value = res.errors;
+				} else {
+					dashboard.value = res.data;
+				}
+			})
+			.catch((e) => {
+				dashboardErrors.value.push(t("errors.error_internal"));
+			});
 	}
 
 
 	const destroyDashboard = async (id) => {
 		dashboardErrors.value = [];
-		await fetch(`https://api.splytin.com/api/v1/youtube-videos/delete/${id}`,{
+		await fetch(`https://api.splytin.com/api/v1/youtube-videos/delete/${id}`, {
 			method: 'DELETE',
 			headers: {
 				"Content-Type": "application/json",
-				//"Authorization": `Bearer ${localStorage.getItem('token')}`
-				"Authorization": `Bearer 22|2IRnvFfFoyQunUk8u9B8rb05QRnJA9wJd9xCIg7C`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
 			},
 		})
-		.then(res => res.json())
-		.then((res) => {
-			if (!res.success) {
-				dashboardErrors.value = res.errors;
-			}else{
-				dashboard.value = res.data;
-			}
-		})
-		.catch((e) => {
-			dashboardErrors.value.push(t("errors.error_internal"));
-		});
+			.then(res => res.json())
+			.then((res) => {
+				if (!res.success) {
+					dashboardErrors.value = res.errors;
+				} else {
+					dashboard.value = res.data;
+				}
+			})
+			.catch((e) => {
+				dashboardErrors.value.push(t("errors.error_internal"));
+			});
 	}
 
 

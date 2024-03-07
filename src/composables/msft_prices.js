@@ -32,8 +32,7 @@ export default function useMsftPrice() {
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
-				//"Authorization": `Bearer ${localStorage.getItem('token')}`
-				"Authorization": `Bearer 22|2IRnvFfFoyQunUk8u9B8rb05QRnJA9wJd9xCIg7C`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
 			},
 		})
 		.then(res => res.json())
@@ -56,8 +55,7 @@ export default function useMsftPrice() {
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
-				//"Authorization": `Bearer ${localStorage.getItem('token')}`
-				"Authorization": `Bearer 22|2IRnvFfFoyQunUk8u9B8rb05QRnJA9wJd9xCIg7C`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
 			},
 		})
 		.then(res => res.json())
@@ -80,8 +78,7 @@ export default function useMsftPrice() {
 			method: 'POST',
 			headers: {
 				"Content-Type": "application/json",
-				//"Authorization": `Bearer ${localStorage.getItem('token')}`
-				"Authorization": `Bearer 22|2IRnvFfFoyQunUk8u9B8rb05QRnJA9wJd9xCIg7C`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
 			},
 			body: JSON.stringify(data),
 		})
@@ -105,8 +102,7 @@ export default function useMsftPrice() {
 			method: 'PUT',
 			headers: {
 				"Content-Type": "application/json",
-				//"Authorization": `Bearer ${localStorage.getItem('token')}`
-				"Authorization": `Bearer 22|2IRnvFfFoyQunUk8u9B8rb05QRnJA9wJd9xCIg7C`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
 			},
 			body: JSON.stringify(data),
 		})
@@ -130,8 +126,7 @@ export default function useMsftPrice() {
 			method: 'DELETE',
 			headers: {
 				"Content-Type": "application/json",
-				//"Authorization": `Bearer ${localStorage.getItem('token')}`
-				"Authorization": `Bearer 22|2IRnvFfFoyQunUk8u9B8rb05QRnJA9wJd9xCIg7C`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
 			},
 		})
 		.then(res => res.json())
