@@ -5,13 +5,14 @@
 <div class="container mx-auto flex justify-between items-center">
   
   <div class="flex items-center flex-shrink-0 text-white mr-6">
-    <img src="./assets/LogoSplytin.png" alt="Logo" class="w-10 h-10 mr-3">
+    <img src="../../../assets/LogoSplytin.png" alt="Logo" class="w-10 h-10 mr-3">
     <span class="font-semibold text-xl tracking-tight">
       <RouterLink to="/" class="text-white text-4xl font-semibold">
         Splytin
       </RouterLink>
     </span>
   </div>
+
 
   <!-- Botón de Menú (Visible en Pantallas Pequeñas) -->
   <div class="lg:hidden">
