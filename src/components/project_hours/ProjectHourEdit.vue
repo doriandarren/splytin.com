@@ -32,19 +32,19 @@
 
 				<div class="col-span-12 md:col-span-6 lg:col-span-4">
 					<div class="input-form">
-						<label for="invoice_id" class="form-label w-full">
-							{{ $t("invoice_id") }} *
+						<label for="invoice_header_id" class="form-label w-full">
+							{{ $t("invoice_header_id") }} *
 						</label>
 						<input
-							v-model.trim="validate.invoice_id.$model"
-							id="invoice_id"
+							v-model.trim="validate.invoice_header_id.$model"
+							id="invoice_header_id"
 							type="text"
-							name="invoice_id"
+							name="invoice_header_id"
 							class="form-control"
-							:class="{ 'border-danger': validate.invoice_id.$error }"
+							:class="{ 'border-danger': validate.invoice_header_id.$error }"
 						/>
-						<template v-if="validate.invoice_id.$error">
-							<div v-for="(error, index) in validate.invoice_id.$errors" :key="index" class="text-danger mt-2">
+						<template v-if="validate.invoice_header_id.$error">
+							<div v-for="(error, index) in validate.invoice_header_id.$errors" :key="index" class="text-danger mt-2">
 						{{ error.$message }}
 							</div>
 						</template>
@@ -183,7 +183,7 @@
 		project_id: {
 			required: helpers.withMessage(t("form.required"), required),
 		},
-		invoice_id: {
+		invoice_header_id: {
 			required: helpers.withMessage(t("form.required"), required),
 		},
 		name: {
@@ -202,7 +202,7 @@
 
 	const formData = reactive({
 		project_id: "",
-		invoice_id: "",
+		invoice_header_id: "",
 		name: "",
 		hours: "",
 		invoice_at: "",
@@ -223,7 +223,7 @@
 	onMounted(async () => {
 		await getProjectHour(props.projectHourId);
 		formData.project_id = projectHour.value.project_id;
-		formData.invoice_id = projectHour.value.invoice_id;
+		formData.invoice_header_id = projectHour.value.invoice_header_id;
 		formData.name = projectHour.value.name;
 		formData.hours = projectHour.value.hours;
 		formData.invoice_at = projectHour.value.invoice_at;
