@@ -247,16 +247,28 @@
 		},
 	};
 
+	// const formData = reactive({
+	// 	code: "",
+	// 	name: "",
+	// 	address: "",
+	// 	cif: "",
+	// 	email: "",
+	// 	website: "https://",
+	// 	phone: "",
+	// 	code_zip: "",
+	// });
+
 	const formData = reactive({
-		code: "",
-		name: "",
-		address: "",
-		cif: "",
-		email: "",
-		website: "https://",
-		phone: "",
-		code_zip: "",
+		code: "678678",
+		name: "Splytin S.L",
+		address: "calle nuevo mexico",
+		cif: "ES84567",
+		email: "webmaster@splytin.com",
+		website: "https://splytin.com",
+		phone: "3435544249",
+		code_zip: "08950",
 	});
+
 
 	const validate = useVuelidate(rules, toRefs(formData));
 

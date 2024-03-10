@@ -247,15 +247,27 @@
 		},
 	};
 
+	// const formData = reactive({
+	// 	code: "",
+	// 	name: "",
+	// 	address: "",
+	// 	cif: "",
+	// 	email: "",
+	// 	website: "https://",
+	// 	phone: "",
+	// 	code_zip: "",
+	// });
+
+
 	const formData = reactive({
-		code: "",
-		name: "",
-		address: "",
-		cif: "",
-		email: "",
-		website: "https://",
-		phone: "",
-		code_zip: "",
+		code: "1234",
+		name: "compañia tirame algo S.L",
+		address: "calle la bondad 25, 8-4",
+		cif: "ES242424",
+		email: "info@tiramealgo.com",
+		website: "https://tiramealgo.com",
+		phone: "555555",
+		code_zip: "09050",
 	});
 
 	const validate = useVuelidate(rules, toRefs(formData));
