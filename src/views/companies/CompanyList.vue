@@ -79,7 +79,7 @@
 
 
 	const filter = reactive({
-		field: "code",
+		field: "country_id",
 		type: "like",
 		value: "",
 	});
@@ -89,21 +89,23 @@
 		//tabulator.value.setFilter(filter.field, filter.type, filter.value);
 		tabulator.value.setFilter([
 			[
-				{field: 'code', type: 'like', value: filter.value},
+				{field: 'country_id', type: 'like', value: filter.value},
 				{field: 'name', type: 'like', value: filter.value},
+				{field: 'tax', type: 'like', value: filter.value},
 				{field: 'address', type: 'like', value: filter.value},
-				{field: 'cif', type: 'like', value: filter.value},
+				{field: 'state', type: 'like', value: filter.value},
+				{field: 'municipality', type: 'like', value: filter.value},
 				{field: 'email', type: 'like', value: filter.value},
-				{field: 'website', type: 'like', value: filter.value},
 				{field: 'phone', type: 'like', value: filter.value},
-				{field: 'code_zip', type: 'like', value: filter.value},
+				{field: 'zip_code', type: 'like', value: filter.value},
+				{field: 'website', type: 'like', value: filter.value},
 			]
 		]);
 	};
 
 	// On reset filter
 	const onResetFilter = () => {
-		filter.field = "code";
+		filter.field = "country_id";
 		filter.type = "like";
 		filter.value = "";
 		onFilter();
@@ -111,7 +113,6 @@
 
 	const findData = async() => {
 		await getCompanies();
-		console.log(companies.value);
 		return toRaw(companies.value);
 	}
 
@@ -135,10 +136,10 @@
 					headerSort: false,
 				},
 				{
-					title: t("code"),
+					title: t("country_id"),
 					minWidth: 200,
 					responsive: 0,
-					field: "code",
+					field: "country_id",
 					vertAlign: "middle",
 					headerHozAlign:"left",
 				},
@@ -151,10 +152,34 @@
 					headerHozAlign:"left",
 				},
 				{
-					title: t("cif"),
+					title: t("tax"),
 					minWidth: 200,
 					responsive: 0,
-					field: "cif",
+					field: "tax",
+					vertAlign: "middle",
+					headerHozAlign:"left",
+				},
+				{
+					title: t("address"),
+					minWidth: 200,
+					responsive: 0,
+					field: "address",
+					vertAlign: "middle",
+					headerHozAlign:"left",
+				},
+				{
+					title: t("state"),
+					minWidth: 200,
+					responsive: 0,
+					field: "state",
+					vertAlign: "middle",
+					headerHozAlign:"left",
+				},
+				{
+					title: t("municipality"),
+					minWidth: 200,
+					responsive: 0,
+					field: "municipality",
 					vertAlign: "middle",
 					headerHozAlign:"left",
 				},
@@ -163,6 +188,30 @@
 					minWidth: 200,
 					responsive: 0,
 					field: "email",
+					vertAlign: "middle",
+					headerHozAlign:"left",
+				},
+				{
+					title: t("phone"),
+					minWidth: 200,
+					responsive: 0,
+					field: "phone",
+					vertAlign: "middle",
+					headerHozAlign:"left",
+				},
+				{
+					title: t("zip_code"),
+					minWidth: 200,
+					responsive: 0,
+					field: "zip_code",
+					vertAlign: "middle",
+					headerHozAlign:"left",
+				},
+				{
+					title: t("website"),
+					minWidth: 200,
+					responsive: 0,
+					field: "website",
 					vertAlign: "middle",
 					headerHozAlign:"left",
 				},
@@ -223,12 +272,10 @@
 	const saveCompanyForm = async (form) => {
 		isCreate.value = false;
 		div_table.style.display = 'block';
-		// loading.value = true;
 		await storeCompany({ ...form });
-		// await getCompanies();
+		//await getCompanies();
 		tableData.value = await findData();
 		tabulator.value.setData(tableData.value);
-		// loading.value = false;
 		await Toast(t("message.record_saved"), 'success');
 	}
 
@@ -247,12 +294,10 @@
 	const updateCompanyForm = async (id, data) => {
 		isEdit.value = false;
 		div_table.style.display = 'block';
-		// loading.value = true;
 		await updateCompany(id, data);
 		//await getCompanies();
 		tableData.value = await findData();
 		tabulator.value.setData(tableData.value);
-		// loading.value = false;
 		await Toast(t("message.record_updated"), 'success');
 	}
 
