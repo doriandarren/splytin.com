@@ -13,7 +13,7 @@ company_id name total_hours current_hours started_at finished_at description
 
 
 projectHours
-project_id invoice_id name hours invoice_at description
+project_id invoice_header_id name hours invoice_at description
 
 
 invoiceHeaders
