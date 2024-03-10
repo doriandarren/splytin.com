@@ -1,11 +1,13 @@
 # Spytin Web
 
-ownCompanies 
-code name address cif email website phone code_zip 
+ownCompanies
+country_id name tax address state municipality email phone zip_code website
 
 
 companies
-code name address cif email website phone code_zip 
+country_id name tax address state municipality email phone zip_code website
+
+
 
 
 projects
@@ -13,7 +15,7 @@ company_id name total_hours current_hours started_at finished_at description
 
 
 projectHours
-project_id invoice_header_id name hours invoice_at description
+project_id invoice_id hours invoice_at is_generated description
 
 
 invoiceHeaders
