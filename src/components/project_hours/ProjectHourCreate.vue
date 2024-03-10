@@ -32,6 +32,28 @@
 
 				<div class="col-span-12 md:col-span-6 lg:col-span-4">
 					<div class="input-form">
+						<label for="invoice_id" class="form-label w-full">
+							{{ $t("invoice_id") }} *
+						</label>
+						<input
+							v-model.trim="validate.invoice_id.$model"
+							id="invoice_id"
+							type="text"
+							name="invoice_id"
+							class="form-control"
+							:class="{ 'border-danger': validate.invoice_id.$error }"
+						/>
+						<template v-if="validate.invoice_id.$error">
+							<div v-for="(error, index) in validate.invoice_id.$errors" :key="index" class="text-danger mt-2">
+								{{ error.$message }}
+							</div>
+						</template>
+					</div>
+				</div>
+
+
+				<div class="col-span-12 md:col-span-6 lg:col-span-4">
+					<div class="input-form">
 						<label for="name" class="form-label w-full">
 							{{ $t("name") }} *
 						</label>
@@ -82,13 +104,35 @@
 						<input
 							v-model.trim="validate.invoice_at.$model"
 							id="invoice_at"
-							type="date"
+							type="text"
 							name="invoice_at"
 							class="form-control"
 							:class="{ 'border-danger': validate.invoice_at.$error }"
 						/>
 						<template v-if="validate.invoice_at.$error">
 							<div v-for="(error, index) in validate.invoice_at.$errors" :key="index" class="text-danger mt-2">
+								{{ error.$message }}
+							</div>
+						</template>
+					</div>
+				</div>
+
+
+				<div class="col-span-12 md:col-span-6 lg:col-span-4">
+					<div class="input-form">
+						<label for="description" class="form-label w-full">
+							{{ $t("description") }} *
+						</label>
+						<input
+							v-model.trim="validate.description.$model"
+							id="description"
+							type="text"
+							name="description"
+							class="form-control"
+							:class="{ 'border-danger': validate.description.$error }"
+						/>
+						<template v-if="validate.description.$error">
+							<div v-for="(error, index) in validate.description.$errors" :key="index" class="text-danger mt-2">
 								{{ error.$message }}
 							</div>
 						</template>
@@ -136,6 +180,9 @@
 		project_id: {
 			required: helpers.withMessage(t("form.required"), required),
 		},
+		invoice_id: {
+			required: helpers.withMessage(t("form.required"), required),
+		},
 		name: {
 			required: helpers.withMessage(t("form.required"), required),
 		},
@@ -145,13 +192,18 @@
 		invoice_at: {
 			required: helpers.withMessage(t("form.required"), required),
 		},
+		description: {
+			required: helpers.withMessage(t("form.required"), required),
+		},
 	};
 
 	const formData = reactive({
 		project_id: "",
+		invoice_id: "",
 		name: "",
 		hours: "",
 		invoice_at: "",
+		description: "",
 	});
 
 	const validate = useVuelidate(rules, toRefs(formData));

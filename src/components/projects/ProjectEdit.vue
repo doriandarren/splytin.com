@@ -10,28 +10,6 @@
 
 				<div class="col-span-12 md:col-span-6 lg:col-span-4">
 					<div class="input-form">
-						<label for="own_company_id" class="form-label w-full">
-							{{ $t("own_company_id") }} *
-						</label>
-						<input
-							v-model.trim="validate.own_company_id.$model"
-							id="own_company_id"
-							type="text"
-							name="own_company_id"
-							class="form-control"
-							:class="{ 'border-danger': validate.own_company_id.$error }"
-						/>
-						<template v-if="validate.own_company_id.$error">
-							<div v-for="(error, index) in validate.own_company_id.$errors" :key="index" class="text-danger mt-2">
-						{{ error.$message }}
-							</div>
-						</template>
-					</div>
-				</div>
-
-
-				<div class="col-span-12 md:col-span-6 lg:col-span-4">
-					<div class="input-form">
 						<label for="company_id" class="form-label w-full">
 							{{ $t("company_id") }} *
 						</label>
@@ -224,9 +202,6 @@
 	const emit = defineEmits(['cancelEdit', 'updateProjectForm']);
 
 	const rules = {
-		own_company_id: {
-			required: helpers.withMessage(t("form.required"), required),
-		},
 		company_id: {
 			required: helpers.withMessage(t("form.required"), required),
 		},
@@ -251,7 +226,6 @@
 	};
 
 	const formData = reactive({
-		own_company_id: "",
 		company_id: "",
 		name: "",
 		total_hours: "",
@@ -274,7 +248,6 @@
 
 	onMounted(async () => {
 		await getProject(props.projectId);
-		formData.own_company_id = project.value.own_company_id;
 		formData.company_id = project.value.company_id;
 		formData.name = project.value.name;
 		formData.total_hours = project.value.total_hours;

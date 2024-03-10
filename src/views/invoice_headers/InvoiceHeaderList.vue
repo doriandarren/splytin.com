@@ -79,7 +79,7 @@
 
 
 	const filter = reactive({
-		field: "own_companies_id",
+		field: "invoice_counter_id",
 		type: "like",
 		value: "",
 	});
@@ -89,18 +89,26 @@
 		//tabulator.value.setFilter(filter.field, filter.type, filter.value);
 		tabulator.value.setFilter([
 			[
-				{field: 'own_companies_id', type: 'like', value: filter.value},
+				{field: 'invoice_counter_id', type: 'like', value: filter.value},
+				{field: 'own_company_id', type: 'like', value: filter.value},
 				{field: 'company_id', type: 'like', value: filter.value},
-				{field: 'project_id', type: 'like', value: filter.value},
 				{field: 'number', type: 'like', value: filter.value},
 				{field: 'date', type: 'like', value: filter.value},
+				{field: 'due_date', type: 'like', value: filter.value},
+				{field: 'month', type: 'like', value: filter.value},
+				{field: 'year', type: 'like', value: filter.value},
+				{field: 'description', type: 'like', value: filter.value},
+				{field: 'vat_quote', type: 'like', value: filter.value},
+				{field: 'total_without_vat', type: 'like', value: filter.value},
+				{field: 'total_with_vat', type: 'like', value: filter.value},
+				{field: 'has_paid', type: 'like', value: filter.value},
 			]
 		]);
 	};
 
 	// On reset filter
 	const onResetFilter = () => {
-		filter.field = "own_companies_id";
+		filter.field = "invoice_counter_id";
 		filter.type = "like";
 		filter.value = "";
 		onFilter();
@@ -131,10 +139,18 @@
 					headerSort: false,
 				},
 				{
-					title: t("own_companies_id"),
+					title: t("invoice_counter_id"),
 					minWidth: 200,
 					responsive: 0,
-					field: "own_companies_id",
+					field: "invoice_counter_id",
+					vertAlign: "middle",
+					headerHozAlign:"left",
+				},
+				{
+					title: t("own_company_id"),
+					minWidth: 200,
+					responsive: 0,
+					field: "own_company_id",
 					vertAlign: "middle",
 					headerHozAlign:"left",
 				},
@@ -143,14 +159,6 @@
 					minWidth: 200,
 					responsive: 0,
 					field: "company_id",
-					vertAlign: "middle",
-					headerHozAlign:"left",
-				},
-				{
-					title: t("project_id"),
-					minWidth: 200,
-					responsive: 0,
-					field: "project_id",
 					vertAlign: "middle",
 					headerHozAlign:"left",
 				},
@@ -167,6 +175,70 @@
 					minWidth: 200,
 					responsive: 0,
 					field: "date",
+					vertAlign: "middle",
+					headerHozAlign:"left",
+				},
+				{
+					title: t("due_date"),
+					minWidth: 200,
+					responsive: 0,
+					field: "due_date",
+					vertAlign: "middle",
+					headerHozAlign:"left",
+				},
+				{
+					title: t("month"),
+					minWidth: 200,
+					responsive: 0,
+					field: "month",
+					vertAlign: "middle",
+					headerHozAlign:"left",
+				},
+				{
+					title: t("year"),
+					minWidth: 200,
+					responsive: 0,
+					field: "year",
+					vertAlign: "middle",
+					headerHozAlign:"left",
+				},
+				{
+					title: t("description"),
+					minWidth: 200,
+					responsive: 0,
+					field: "description",
+					vertAlign: "middle",
+					headerHozAlign:"left",
+				},
+				{
+					title: t("vat_quote"),
+					minWidth: 200,
+					responsive: 0,
+					field: "vat_quote",
+					vertAlign: "middle",
+					headerHozAlign:"left",
+				},
+				{
+					title: t("total_without_vat"),
+					minWidth: 200,
+					responsive: 0,
+					field: "total_without_vat",
+					vertAlign: "middle",
+					headerHozAlign:"left",
+				},
+				{
+					title: t("total_with_vat"),
+					minWidth: 200,
+					responsive: 0,
+					field: "total_with_vat",
+					vertAlign: "middle",
+					headerHozAlign:"left",
+				},
+				{
+					title: t("has_paid"),
+					minWidth: 200,
+					responsive: 0,
+					field: "has_paid",
 					vertAlign: "middle",
 					headerHozAlign:"left",
 				},
@@ -227,12 +299,10 @@
 	const saveInvoiceHeaderForm = async (form) => {
 		isCreate.value = false;
 		div_table.style.display = 'block';
-		// loading.value = true;
 		await storeInvoiceHeader({ ...form });
 		//await getInvoiceHeaders();
 		tableData.value = await findData();
 		tabulator.value.setData(tableData.value);
-		// loading.value = false;
 		await Toast(t("message.record_saved"), 'success');
 	}
 
@@ -251,12 +321,10 @@
 	const updateInvoiceHeaderForm = async (id, data) => {
 		isEdit.value = false;
 		div_table.style.display = 'block';
-		// loading.value = true;
 		await updateInvoiceHeader(id, data);
 		//await getInvoiceHeaders();
 		tableData.value = await findData();
 		tabulator.value.setData(tableData.value);
-		// loading.value = false;
 		await Toast(t("message.record_updated"), 'success');
 	}
 

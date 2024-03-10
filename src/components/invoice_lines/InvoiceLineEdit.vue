@@ -32,28 +32,6 @@
 
 				<div class="col-span-12 md:col-span-6 lg:col-span-4">
 					<div class="input-form">
-						<label for="project_hour_id" class="form-label w-full">
-							{{ $t("project_hour_id") }} *
-						</label>
-						<input
-							v-model.trim="validate.project_hour_id.$model"
-							id="project_hour_id"
-							type="text"
-							name="project_hour_id"
-							class="form-control"
-							:class="{ 'border-danger': validate.project_hour_id.$error }"
-						/>
-						<template v-if="validate.project_hour_id.$error">
-							<div v-for="(error, index) in validate.project_hour_id.$errors" :key="index" class="text-danger mt-2">
-						{{ error.$message }}
-							</div>
-						</template>
-					</div>
-				</div>
-
-
-				<div class="col-span-12 md:col-span-6 lg:col-span-4">
-					<div class="input-form">
 						<label for="vat" class="form-label w-full">
 							{{ $t("vat") }} *
 						</label>
@@ -183,9 +161,6 @@
 		invoice_header_id: {
 			required: helpers.withMessage(t("form.required"), required),
 		},
-		project_hour_id: {
-			required: helpers.withMessage(t("form.required"), required),
-		},
 		vat: {
 			required: helpers.withMessage(t("form.required"), required),
 		},
@@ -202,7 +177,6 @@
 
 	const formData = reactive({
 		invoice_header_id: "",
-		project_hour_id: "",
 		vat: "",
 		unit_prices: "",
 		total: "",
@@ -223,7 +197,6 @@
 	onMounted(async () => {
 		await getInvoiceLine(props.invoiceLineId);
 		formData.invoice_header_id = invoiceLine.value.invoice_header_id;
-		formData.project_hour_id = invoiceLine.value.project_hour_id;
 		formData.vat = invoiceLine.value.vat;
 		formData.unit_prices = invoiceLine.value.unit_prices;
 		formData.total = invoiceLine.value.total;

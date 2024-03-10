@@ -10,19 +10,41 @@
 
 				<div class="col-span-12 md:col-span-6 lg:col-span-4">
 					<div class="input-form">
-						<label for="projec_id" class="form-label w-full">
-							{{ $t("projec_id") }} *
+						<label for="project_id" class="form-label w-full">
+							{{ $t("project_id") }} *
 						</label>
 						<input
 							v-model.trim="validate.project_id.$model"
-							id="projec_id"
+							id="project_id"
 							type="text"
-							name="projec_id"
+							name="project_id"
 							class="form-control"
-							:class="{ 'border-danger': validate.projec_id.$error }"
+							:class="{ 'border-danger': validate.project_id.$error }"
 						/>
-						<template v-if="validate.projec_id.$error">
-							<div v-for="(error, index) in validate.projec_id.$errors" :key="index" class="text-danger mt-2">
+						<template v-if="validate.project_id.$error">
+							<div v-for="(error, index) in validate.project_id.$errors" :key="index" class="text-danger mt-2">
+						{{ error.$message }}
+							</div>
+						</template>
+					</div>
+				</div>
+
+
+				<div class="col-span-12 md:col-span-6 lg:col-span-4">
+					<div class="input-form">
+						<label for="invoice_id" class="form-label w-full">
+							{{ $t("invoice_id") }} *
+						</label>
+						<input
+							v-model.trim="validate.invoice_id.$model"
+							id="invoice_id"
+							type="text"
+							name="invoice_id"
+							class="form-control"
+							:class="{ 'border-danger': validate.invoice_id.$error }"
+						/>
+						<template v-if="validate.invoice_id.$error">
+							<div v-for="(error, index) in validate.invoice_id.$errors" :key="index" class="text-danger mt-2">
 						{{ error.$message }}
 							</div>
 						</template>
@@ -96,6 +118,28 @@
 				</div>
 
 
+				<div class="col-span-12 md:col-span-6 lg:col-span-4">
+					<div class="input-form">
+						<label for="description" class="form-label w-full">
+							{{ $t("description") }} *
+						</label>
+						<input
+							v-model.trim="validate.description.$model"
+							id="description"
+							type="text"
+							name="description"
+							class="form-control"
+							:class="{ 'border-danger': validate.description.$error }"
+						/>
+						<template v-if="validate.description.$error">
+							<div v-for="(error, index) in validate.description.$errors" :key="index" class="text-danger mt-2">
+						{{ error.$message }}
+							</div>
+						</template>
+					</div>
+				</div>
+
+
 				<!-- BEGIN: Buttons -->
 				<div class="col-span-12 md:col-span-12 lg:col-span-12">
 					<div class="flex justify-center">
@@ -136,7 +180,10 @@
 	const emit = defineEmits(['cancelEdit', 'updateProjectHourForm']);
 
 	const rules = {
-		projec_id: {
+		project_id: {
+			required: helpers.withMessage(t("form.required"), required),
+		},
+		invoice_id: {
 			required: helpers.withMessage(t("form.required"), required),
 		},
 		name: {
@@ -148,13 +195,18 @@
 		invoice_at: {
 			required: helpers.withMessage(t("form.required"), required),
 		},
+		description: {
+			required: helpers.withMessage(t("form.required"), required),
+		},
 	};
 
 	const formData = reactive({
-		projec_id: "",
+		project_id: "",
+		invoice_id: "",
 		name: "",
 		hours: "",
 		invoice_at: "",
+		description: "",
 	});
 
 	const validate = useVuelidate(rules, toRefs(formData));
@@ -170,10 +222,12 @@
 
 	onMounted(async () => {
 		await getProjectHour(props.projectHourId);
-		formData.projec_id = projectHour.value.projec_id;
+		formData.project_id = projectHour.value.project_id;
+		formData.invoice_id = projectHour.value.invoice_id;
 		formData.name = projectHour.value.name;
 		formData.hours = projectHour.value.hours;
 		formData.invoice_at = projectHour.value.invoice_at;
+		formData.description = projectHour.value.description;
 	});
 
 </script>

@@ -90,7 +90,6 @@
 		tabulator.value.setFilter([
 			[
 				{field: 'invoice_header_id', type: 'like', value: filter.value},
-				{field: 'project_hour_id', type: 'like', value: filter.value},
 				{field: 'vat', type: 'like', value: filter.value},
 				{field: 'unit_prices', type: 'like', value: filter.value},
 				{field: 'total', type: 'like', value: filter.value},
@@ -136,14 +135,6 @@
 					minWidth: 200,
 					responsive: 0,
 					field: "invoice_header_id",
-					vertAlign: "middle",
-					headerHozAlign:"left",
-				},
-				{
-					title: t("project_hour_id"),
-					minWidth: 200,
-					responsive: 0,
-					field: "project_hour_id",
 					vertAlign: "middle",
 					headerHozAlign:"left",
 				},
@@ -236,12 +227,10 @@
 	const saveInvoiceLineForm = async (form) => {
 		isCreate.value = false;
 		div_table.style.display = 'block';
-		// loading.value = true;
 		await storeInvoiceLine({ ...form });
 		//await getInvoiceLines();
 		tableData.value = await findData();
 		tabulator.value.setData(tableData.value);
-		// loading.value = false;
 		await Toast(t("message.record_saved"), 'success');
 	}
 
@@ -260,12 +249,10 @@
 	const updateInvoiceLineForm = async (id, data) => {
 		isEdit.value = false;
 		div_table.style.display = 'block';
-		// loading.value = true;
 		await updateInvoiceLine(id, data);
 		//await getInvoiceLines();
 		tableData.value = await findData();
 		tabulator.value.setData(tableData.value);
-		// loading.value = false;
 		await Toast(t("message.record_updated"), 'success');
 	}
 

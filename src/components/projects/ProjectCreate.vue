@@ -10,28 +10,6 @@
 
 				<div class="col-span-12 md:col-span-6 lg:col-span-4">
 					<div class="input-form">
-						<label for="own_company_id" class="form-label w-full">
-							{{ $t("own_company_id") }} *
-						</label>
-						<input
-							v-model.trim="validate.own_company_id.$model"
-							id="own_company_id"
-							type="text"
-							name="own_company_id"
-							class="form-control"
-							:class="{ 'border-danger': validate.own_company_id.$error }"
-						/>
-						<template v-if="validate.own_company_id.$error">
-							<div v-for="(error, index) in validate.own_company_id.$errors" :key="index" class="text-danger mt-2">
-								{{ error.$message }}
-							</div>
-						</template>
-					</div>
-				</div>
-
-
-				<div class="col-span-12 md:col-span-6 lg:col-span-4">
-					<div class="input-form">
 						<label for="company_id" class="form-label w-full">
 							{{ $t("company_id") }} *
 						</label>
@@ -126,7 +104,7 @@
 						<input
 							v-model.trim="validate.started_at.$model"
 							id="started_at"
-							type="date"
+							type="text"
 							name="started_at"
 							class="form-control"
 							:class="{ 'border-danger': validate.started_at.$error }"
@@ -148,7 +126,7 @@
 						<input
 							v-model.trim="validate.finished_at.$model"
 							id="finished_at"
-							type="date"
+							type="text"
 							name="finished_at"
 							class="form-control"
 							:class="{ 'border-danger': validate.finished_at.$error }"
@@ -221,9 +199,6 @@
 	const emit = defineEmits(['cancelCreate', 'saveProjectForm']);
 
 	const rules = {
-		own_company_id: {
-			required: helpers.withMessage(t("form.required"), required),
-		},
 		company_id: {
 			required: helpers.withMessage(t("form.required"), required),
 		},
@@ -248,7 +223,6 @@
 	};
 
 	const formData = reactive({
-		own_company_id: "",
 		company_id: "",
 		name: "",
 		total_hours: "",
