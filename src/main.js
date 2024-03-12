@@ -22,6 +22,13 @@ import 'sweetalert2/dist/sweetalert2.min.css';
 import i18n from './i18n';
 
 
+//Table
+import VueGoodTablePlugin from 'vue-good-table-next';
+
+// import the styles
+import 'vue-good-table-next/dist/vue-good-table-next.css'
+
+
 
 const app = createApp(App)
 
@@ -31,6 +38,8 @@ app.use(router)
 app.use(VueSweetalert2)
 
 app.use(i18n())
+
+app.use(VueGoodTablePlugin)
 
 app.directive('animate', animateDirective);
 

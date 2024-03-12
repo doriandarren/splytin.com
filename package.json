@@ -12,8 +12,9 @@
     "@vuelidate/validators": "^2.0.4",
     "animate.css": "^4.1.1",
     "pinia": "^2.1.7",
-    "tabulator-tables": "^5.5.4",
+    "tabulator-tables": "^5.6.1",
     "vue": "^3.3.4",
+    "vue-good-table-next": "^0.2.1",
     "vue-i18n": "^9.9.0",
     "vue-router": "^4.2.5",
     "vue-sweetalert2": "^5.0.5"

@@ -8,8 +8,6 @@ companies
 country_id name tax address state municipality email phone zip_code website
 
 
-
-
 projects
 company_id name total_hours current_hours started_at finished_at description
 
