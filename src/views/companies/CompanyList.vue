@@ -13,7 +13,7 @@
 		</div>
 
 		<!-- BEGIN: Table -->
-		<div v-animate class="p-5 border rounded-md shadow-sm">
+		<div v-animate class="p-5 border rounded-md shadow-sm" id="div_table">
 			<div class="flex flex-col sm:flex-row sm:items-end xl:items-start justify-end">
 				<div class="flex mt-5 mb-5 sm:mt-0">
 					<button class="btn-primary w-1/2 sm:w-auto" @click.prevent="showCreateCompany">
@@ -168,15 +168,14 @@
 		{ label: t("country_id"), field: 'country_id' },
 		{ label: t("name"), field: 'name' },
 		{ label: t("tax"), field: 'tax' },
-		{ label: t("address"), field: 'address' },
-		{ label: t("state"), field: 'state' },
-		{ label: t("municipality"), field: 'municipality' },
-		{ label: t("email"), field: 'email' },
-		{ label: t("phone"), field: 'phone' },
-		{ label: t("zip_code"), field: 'zip_code' },
-		{ label: t("website"), field: 'website' },
-		{ label: t("state"), field: 'state' },
-		{ label: t("state"), field: 'state' },
+		//{ label: t("address"), field: 'address' },
+		//{ label: t("state"), field: 'state' },
+		//{ label: t("municipality"), field: 'municipality' },
+		//{ label: t("email"), field: 'email' },
+		//{ label: t("phone"), field: 'phone' },
+		//{ label: t("zip_code"), field: 'zip_code' },
+		//{ label: t("website"), field: 'website' },
+		//{ label: t("state"), field: 'state' },
 		{ label: t('Actions'), field: 'actions', sortable: false, searchable: false, width: '100px',},
 	];
 
