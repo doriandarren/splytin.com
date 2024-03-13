@@ -28,10 +28,11 @@ projects = id own_company_id company_id name total_hours current_hours started_a
           />
           <div class="absolute inset-y-0 right-0 flex items-center px-2">
               <button type="button" @click="togglePasswordVisibility">
-                  <img 
+                    ver
+                  <!-- <img 
                       :src="showPassword ? 'path/to/eye-closed-icon.svg' : 'path/to/eye-open-icon.svg'" 
                       alt="Show/Hide password"
-                  />
+                  /> -->
               </button>
           </div>
       </div>
