@@ -18,6 +18,13 @@
     "cancel": "Cancelar",
     "delete": "Borrar",
     "name": "Nombre",
+    "setting_table":{
+      "next_table": "Sig",
+      "prev_table": "Prev",
+      "rows_per_page": "Páginas",
+      "of": "de",
+      "search": "Buscar"
+    },
     "form": {
       "required": "Requerido"
     },

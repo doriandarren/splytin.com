@@ -15,7 +15,7 @@ export default function useOwnCompany() {
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
 			},
 		})
 		.then(res => res.json())
@@ -38,7 +38,7 @@ export default function useOwnCompany() {
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
 			},
 		})
 		.then(res => res.json())
@@ -61,7 +61,7 @@ export default function useOwnCompany() {
 			method: 'POST',
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
 			},
 			body: JSON.stringify(data),
 		})
@@ -85,7 +85,7 @@ export default function useOwnCompany() {
 			method: 'PUT',
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
 			},
 			body: JSON.stringify(data),
 		})
@@ -109,7 +109,7 @@ export default function useOwnCompany() {
 			method: 'DELETE',
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
 			},
 		})
 		.then(res => res.json())
