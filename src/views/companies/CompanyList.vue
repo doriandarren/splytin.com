@@ -12,11 +12,11 @@
 			<Edit :companyId="companyId" @cancelEdit="cancelEdit" @updateCompanyForm="updateCompanyForm" />
 		</div>
 
-		<div v-animate class="p-5 border rounded-md shadow-sm" id="div_table">
-			<div class="flex flex-col sm:flex-row sm:items-end xl:items-start">
-
-				<div class="flex mt-5 sm:mt-0">
-					<button class="btn-primary w-1/2 sm:w-auto mr-2" @click.prevent="showCreateCompany">
+		<!-- BEGIN: Table -->
+		<div v-animate class="p-5 border rounded-md shadow-sm">
+			<div class="flex flex-col sm:flex-row sm:items-end xl:items-start justify-end">
+				<div class="flex mt-5 mb-5 sm:mt-0">
+					<button class="btn-primary w-1/2 sm:w-auto" @click.prevent="showCreateCompany">
 						<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 50 50">
 							<path fill="currentColor"
 								d="M25 42c-9.4 0-17-7.6-17-17S15.6 8 25 8s17 7.6 17 17s-7.6 17-17 17m0-32c-8.3 0-15 6.7-15 15s6.7 15 15 15s15-6.7 15-15s-6.7-15-15-15" />
@@ -27,7 +27,6 @@
 				</div>
 			</div>
 			<div class="overflow-x-auto scrollbar-hidden">
-
 				<VueGoodTable 
 					:columns="columns" 
 					:rows="rows" 

@@ -221,3 +221,28 @@ npm install @vuelidate/core @vuelidate/validators
 
 
 ```
+
+
+
+## VueGoodTablePlugin
+
+Guide: [Install](https://borisflesch.github.io/vue-good-table-next/guide/).
+
+
+```sh
+
+
+npm install --save vue-good-table-next
+
+
+- into app:
+
+import VueGoodTablePlugin from 'vue-good-table-next';
+
+// import the styles
+import 'vue-good-table-next/dist/vue-good-table-next.css'
+
+Vue.use(VueGoodTablePlugin);
+
+
+```
