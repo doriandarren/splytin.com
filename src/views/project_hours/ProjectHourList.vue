@@ -3,7 +3,7 @@
 	<!-- BEGIN: Page Layout Create -->
 	<div v-animate v-if="isCreate">
 		<Create
-			@saveProjectForm="saveProjectForm"
+			@saveProjectHourForm="saveProjectHourForm"
 			@cancelCreate="cancelCreate"
 		/>
 	</div>
@@ -11,9 +11,9 @@
 	<!-- BEGIN: Page Layout Update -->
 	<div v-animate v-if="isEdit">
 		<Edit
-			:projectId="projectId"
+			:projectHourId="projectHourId"
 			@cancelEdit="cancelEdit"
-			@updateProjectForm="updateProjectForm"
+			@updateProjectHourForm="updateProjectHourForm"
 		/>
 	</div>
 
@@ -74,9 +74,9 @@
 	import { useI18n } from 'vue-i18n';
 	import { Toast } from '@/utils/toast';
 	import Swal from 'sweetalert2';
-	import useProjects from "@/composables/projects";
-	import Create from "@/components/projects/ProjectCreate.vue";
-	import Edit from "@/components/projects/ProjectEdit.vue";
+	import useProjectHours from "@/composables/project_hours";
+	import Create from "@/components/project_hours/ProjectHourCreate.vue";
+	import Edit from "@/components/project_hours/ProjectHourEdit.vue";
 
 	// Tabulator
 	const rows = ref([]);
@@ -84,30 +84,29 @@
 	// Views
 	const isCreate = ref(false);
 	const isEdit = ref(false);
-	const projectId = ref(0);
+	const projectHourId = ref(0);
 
 	const { t } = useI18n();
-	const { projects, getProjects, storeProject, updateProject, destroyProject} = useProjects();
+	const { projectHours, getProjectHours, storeProjectHour, updateProjectHour, destroyProjectHour} = useProjectHours();
 
 
 	const findData = async() => {
-		await getProjects();
-		return toRaw(projects.value);
+		await getProjectHours();
+		return toRaw(projectHours.value);
 	}
 
 	// Table
 	const columns = [
-		{ title: t("company_id"), field: 'company_id' },
-		{ title: t("name"), field: 'name' },
-		{ title: t("total_hours"), field: 'total_hours' },
-		{ title: t("current_hours"), field: 'current_hours' },
-		{ title: t("started_at"), field: 'started_at' },
-		{ title: t("finished_at"), field: 'finished_at' },
+		{ title: t("project_id"), field: 'project_id' },
+		{ title: t("invoice_id"), field: 'invoice_id' },
+		{ title: t("hours"), field: 'hours' },
+		{ title: t("invoice_at"), field: 'invoice_at' },
+		{ title: t("is_generated"), field: 'is_generated' },
 		{ title: t("description"), field: 'description' },
 		{ label: t('Actions'), field: 'actions', sortable: false, searchable: false, width: '100px',},
 	];
 	//Store
-	const showCreateProject = () => {
+	const showCreateProjectHour = () => {
 		isCreate.value = true;
 		div_table.style.display = 'none';
 	}
@@ -117,19 +116,19 @@
 		div_table.style.display = 'block';
 	}
 
-	const saveProjectForm = async (form) => {
+	const saveProjectHourForm = async (form) => {
 		isCreate.value = false;
 		div_table.style.display = 'block';
-		await storeProject({ ...form });
+		await storeProjectHour({ ...form });
 		rows.value = await findData();
 		await Toast(t("message.record_saved"), 'success');
 	}
 
 	//Edit
-	const showEditProject = (id) => {
+	const showEditProjectHour = (id) => {
 		isEdit.value = true;
 		div_table.style.display = 'none';
-		projectId.value = id;
+		projectHourId.value = id;
 	}
 
 	const cancelEdit = async() => {
@@ -137,16 +136,16 @@
 		div_table.style.display = 'block';
 	}
 
-	const updateProjectForm = async (id, data) => {
+	const updateProjectHourForm = async (id, data) => {
 		isEdit.value = false;
 		div_table.style.display = 'block';
-		await updateProject(id, data);
+		await updateProjectHour(id, data);
 		rows.value = await findData();
 		await Toast(t("message.record_updated"), 'success');
 	}
 
 	// Delete
-	const showDeleteProject = async (id, description='') => {
+	const showDeleteProjectHour = async (id, description='') => {
 		Swal.fire({
 			icon: 'warning',
 			title: t("message.are_you_sure"),
@@ -156,7 +155,7 @@
 			confirmButtonColor: import.meta.env.VITE_SWEETALERT_COLOR_BTN_SUCCESS,
 		}).then(async(result) => {
 			if (result.isConfirmed) {
-				await destroyProject(id);
+				await destroyProjectHour(id);
 		rows.value = await findData();
 				Swal.fire(t("message.record_deleted"), '', 'success');
 			}

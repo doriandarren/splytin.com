@@ -63,7 +63,22 @@
     "total_hours": "Horas Totales",
     "current_hours": "Horas Actuales",
     "started_at": "Fecha Inicio",
-    "finished_at": "Fecha Finalizado"
+    "finished_at": "Fecha Finalizado",
+    "country_id": "Id De Pais",
+    "tax": "CIF",
+    "state": "Estado",
+    "municipality": "Municipio",
+    "zip_code": "Codigo Postal",
+    "Actions": "Acciones",
+    "is_generated": "Está Generado",
+    "invoice_counter_id": "ID Contador De Factura",
+    "due_date": "Fecha De Vencimiento",
+    "month": "Días",
+    "year": "Año",
+    "vat_quote": "IVA",
+    "total_without_vat": "Total Sin IVA",
+    "total_with_vat": "Total sin IVA",
+    "has_paid": "Ha Pagado"
     
 
 
