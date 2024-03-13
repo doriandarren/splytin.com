@@ -32,41 +32,19 @@
 
 				<div class="col-span-12 md:col-span-6 lg:col-span-4">
 					<div class="input-form">
-						<label for="invoice_header_id" class="form-label w-full">
-							{{ $t("invoice_header_id") }} *
+						<label for="invoice_id" class="form-label w-full">
+							{{ $t("invoice_id") }} *
 						</label>
 						<input
-							v-model.trim="validate.invoice_header_id.$model"
-							id="invoice_header_id"
+							v-model.trim="validate.invoice_id.$model"
+							id="invoice_id"
 							type="text"
-							name="invoice_header_id"
+							name="invoice_id"
 							class="form-control"
-							:class="{ 'border-danger': validate.invoice_header_id.$error }"
+							:class="{ 'border-danger': validate.invoice_id.$error }"
 						/>
-						<template v-if="validate.invoice_header_id.$error">
-							<div v-for="(error, index) in validate.invoice_header_id.$errors" :key="index" class="text-danger mt-2">
-						{{ error.$message }}
-							</div>
-						</template>
-					</div>
-				</div>
-
-
-				<div class="col-span-12 md:col-span-6 lg:col-span-4">
-					<div class="input-form">
-						<label for="name" class="form-label w-full">
-							{{ $t("name") }} *
-						</label>
-						<input
-							v-model.trim="validate.name.$model"
-							id="name"
-							type="text"
-							name="name"
-							class="form-control"
-							:class="{ 'border-danger': validate.name.$error }"
-						/>
-						<template v-if="validate.name.$error">
-							<div v-for="(error, index) in validate.name.$errors" :key="index" class="text-danger mt-2">
+						<template v-if="validate.invoice_id.$error">
+							<div v-for="(error, index) in validate.invoice_id.$errors" :key="index" class="text-danger mt-2">
 						{{ error.$message }}
 							</div>
 						</template>
@@ -111,6 +89,28 @@
 						/>
 						<template v-if="validate.invoice_at.$error">
 							<div v-for="(error, index) in validate.invoice_at.$errors" :key="index" class="text-danger mt-2">
+						{{ error.$message }}
+							</div>
+						</template>
+					</div>
+				</div>
+
+
+				<div class="col-span-12 md:col-span-6 lg:col-span-4">
+					<div class="input-form">
+						<label for="is_generated" class="form-label w-full">
+							{{ $t("is_generated") }} *
+						</label>
+						<input
+							v-model.trim="validate.is_generated.$model"
+							id="is_generated"
+							type="text"
+							name="is_generated"
+							class="form-control"
+							:class="{ 'border-danger': validate.is_generated.$error }"
+						/>
+						<template v-if="validate.is_generated.$error">
+							<div v-for="(error, index) in validate.is_generated.$errors" :key="index" class="text-danger mt-2">
 						{{ error.$message }}
 							</div>
 						</template>
@@ -183,16 +183,16 @@
 		project_id: {
 			required: helpers.withMessage(t("form.required"), required),
 		},
-		invoice_header_id: {
-			required: helpers.withMessage(t("form.required"), required),
-		},
-		name: {
+		invoice_id: {
 			required: helpers.withMessage(t("form.required"), required),
 		},
 		hours: {
 			required: helpers.withMessage(t("form.required"), required),
 		},
 		invoice_at: {
+			required: helpers.withMessage(t("form.required"), required),
+		},
+		is_generated: {
 			required: helpers.withMessage(t("form.required"), required),
 		},
 		description: {
@@ -202,10 +202,10 @@
 
 	const formData = reactive({
 		project_id: "",
-		invoice_header_id: "",
-		name: "",
+		invoice_id: "",
 		hours: "",
 		invoice_at: "",
+		is_generated: "",
 		description: "",
 	});
 
@@ -223,10 +223,10 @@
 	onMounted(async () => {
 		await getProjectHour(props.projectHourId);
 		formData.project_id = projectHour.value.project_id;
-		formData.invoice_header_id = projectHour.value.invoice_header_id;
-		formData.name = projectHour.value.name;
+		formData.invoice_id = projectHour.value.invoice_id;
 		formData.hours = projectHour.value.hours;
 		formData.invoice_at = projectHour.value.invoice_at;
+		formData.is_generated = projectHour.value.is_generated;
 		formData.description = projectHour.value.description;
 	});
 

@@ -143,7 +143,7 @@
 				<div class="col-span-12 md:col-span-6 lg:col-span-4">
 					<div class="input-form">
 						<label for="description" class="form-label w-full">
-							{{ $t("description") }}
+							{{ $t("description") }} *
 						</label>
 						<input
 							v-model.trim="validate.description.$model"
@@ -221,7 +221,7 @@
 			required: helpers.withMessage(t("form.required"), required),
 		},
 		description: {
-			// required: helpers.withMessage(t("form.required"), required),
+			required: helpers.withMessage(t("form.required"), required),
 		},
 	};
 

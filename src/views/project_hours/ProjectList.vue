@@ -3,7 +3,7 @@
 	<!-- BEGIN: Page Layout Create -->
 	<div v-animate v-if="isCreate">
 		<Create
-			@saveInvoiceHeaderForm="saveInvoiceHeaderForm"
+			@saveProjectForm="saveProjectForm"
 			@cancelCreate="cancelCreate"
 		/>
 	</div>
@@ -11,9 +11,9 @@
 	<!-- BEGIN: Page Layout Update -->
 	<div v-animate v-if="isEdit">
 		<Edit
-			:invoiceHeaderId="invoiceHeaderId"
+			:projectId="projectId"
 			@cancelEdit="cancelEdit"
-			@updateInvoiceHeaderForm="updateInvoiceHeaderForm"
+			@updateProjectForm="updateProjectForm"
 		/>
 	</div>
 
@@ -74,9 +74,9 @@
 	import { useI18n } from 'vue-i18n';
 	import { Toast } from '@/utils/toast';
 	import Swal from 'sweetalert2';
-	import useInvoiceHeaders from "@/composables/invoice_headers";
-	import Create from "@/components/invoice_headers/InvoiceHeaderCreate.vue";
-	import Edit from "@/components/invoice_headers/InvoiceHeaderEdit.vue";
+	import useProjects from "@/composables/projects";
+	import Create from "@/components/projects/ProjectCreate.vue";
+	import Edit from "@/components/projects/ProjectEdit.vue";
 
 	// Tabulator
 	const rows = ref([]);
@@ -84,36 +84,30 @@
 	// Views
 	const isCreate = ref(false);
 	const isEdit = ref(false);
-	const invoiceHeaderId = ref(0);
+	const projectId = ref(0);
 
 	const { t } = useI18n();
-	const { invoiceHeaders, getInvoiceHeaders, storeInvoiceHeader, updateInvoiceHeader, destroyInvoiceHeader} = useInvoiceHeaders();
+	const { projects, getProjects, storeProject, updateProject, destroyProject} = useProjects();
 
 
 	const findData = async() => {
-		await getInvoiceHeaders();
-		return toRaw(invoiceHeaders.value);
+		await getProjects();
+		return toRaw(projects.value);
 	}
 
 	// Table
 	const columns = [
-		{ title: t("invoice_counter_id"), field: 'invoice_counter_id' },
-		{ title: t("own_company_id"), field: 'own_company_id' },
 		{ title: t("company_id"), field: 'company_id' },
-		{ title: t("number"), field: 'number' },
-		{ title: t("date"), field: 'date' },
-		{ title: t("due_date"), field: 'due_date' },
-		{ title: t("month"), field: 'month' },
-		{ title: t("year"), field: 'year' },
+		{ title: t("name"), field: 'name' },
+		{ title: t("total_hours"), field: 'total_hours' },
+		{ title: t("current_hours"), field: 'current_hours' },
+		{ title: t("started_at"), field: 'started_at' },
+		{ title: t("finished_at"), field: 'finished_at' },
 		{ title: t("description"), field: 'description' },
-		{ title: t("vat_quote"), field: 'vat_quote' },
-		{ title: t("total_without_vat"), field: 'total_without_vat' },
-		{ title: t("total_with_vat"), field: 'total_with_vat' },
-		{ title: t("has_paid"), field: 'has_paid' },
 		{ label: t('Actions'), field: 'actions', sortable: false, searchable: false, width: '100px',},
 	];
 	//Store
-	const showCreateInvoiceHeader = () => {
+	const showCreateProject = () => {
 		isCreate.value = true;
 		div_table.style.display = 'none';
 	}
@@ -123,19 +117,19 @@
 		div_table.style.display = 'block';
 	}
 
-	const saveInvoiceHeaderForm = async (form) => {
+	const saveProjectForm = async (form) => {
 		isCreate.value = false;
 		div_table.style.display = 'block';
-		await storeInvoiceHeader({ ...form });
+		await storeProject({ ...form });
 		rows.value = await findData();
 		await Toast(t("message.record_saved"), 'success');
 	}
 
 	//Edit
-	const showEditInvoiceHeader = (id) => {
+	const showEditProject = (id) => {
 		isEdit.value = true;
 		div_table.style.display = 'none';
-		invoiceHeaderId.value = id;
+		projectId.value = id;
 	}
 
 	const cancelEdit = async() => {
@@ -143,16 +137,16 @@
 		div_table.style.display = 'block';
 	}
 
-	const updateInvoiceHeaderForm = async (id, data) => {
+	const updateProjectForm = async (id, data) => {
 		isEdit.value = false;
 		div_table.style.display = 'block';
-		await updateInvoiceHeader(id, data);
+		await updateProject(id, data);
 		rows.value = await findData();
 		await Toast(t("message.record_updated"), 'success');
 	}
 
 	// Delete
-	const showDeleteInvoiceHeader = async (id, description='') => {
+	const showDeleteProject = async (id, description='') => {
 		Swal.fire({
 			icon: 'warning',
 			title: t("message.are_you_sure"),
@@ -162,7 +156,7 @@
 			confirmButtonColor: import.meta.env.VITE_SWEETALERT_COLOR_BTN_SUCCESS,
 		}).then(async(result) => {
 			if (result.isConfirmed) {
-				await destroyInvoiceHeader(id);
+				await destroyProject(id);
 		rows.value = await findData();
 				Swal.fire(t("message.record_deleted"), '', 'success');
 			}
