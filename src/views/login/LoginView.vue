@@ -1,39 +1,39 @@
 <template>
     <div class="m-10 p-10 border rounded-lg">
-        <h1>LOGIN</h1>
+        <h1>{{ $t("login_form.title") }}</h1>
 
         <div class="w-full mb-5">
-            <label class="block mb-1" for="correo">Correo</label>
+            <label class="block mb-1" for="correo">{{ $t("login_form.email") }}</label>
             <input class="w-full h-10 px-3 text-base placeholder-gray-600 border rounded-lg focus:shadow-outline"
                 type="text" id="correo" v-model="correo" />
         </div>
 
 
         <div class="w-full">
+
+            <label class="block mb-1" for="correo">{{ $t("login_form.password") }}</label>
+
             <div class="relative">
-          <input 
-              class="w-full h-10 px-3 text-base placeholder-gray-600 border rounded-lg focus:shadow-outline"
-              :type="showPassword ? 'text' : 'password'" 
-              id="password"
-              v-model="password"
-          />
-          <div class="absolute inset-y-0 right-0 flex items-center px-2">
-              <button type="button" @click="togglePasswordVisibility">
-                    ver
-                  <!-- <img 
+                <input class="w-full h-10 px-3 text-base placeholder-gray-600 border rounded-lg focus:shadow-outline"
+                    :type="showPassword ? 'text' : 'password'" id="password" v-model="password" />
+                <div class="absolute inset-y-0 right-0 flex items-center px-2">
+                    <button type="button" @click="togglePasswordVisibility">
+                        ver
+                        <!-- <img 
                       :src="showPassword ? 'path/to/eye-closed-icon.svg' : 'path/to/eye-open-icon.svg'" 
                       alt="Show/Hide password"
                   /> -->
-              </button>
-          </div>
-      </div>
+                    </button>
+                </div>
+            </div>
+
         </div>
 
         <div class="mt-5 flex flex-row justify-center">
             <button
                 class="h-10 px-5 text-green-100 transition-colors duration-150 bg-green-700 rounded-lg focus:shadow-outline hover:bg-green-800"
                 @click="submit">
-                Sign In
+                {{ $t("login_form.sign_in") }}
             </button>
         </div>
 

@@ -25,6 +25,12 @@
       "of": "de",
       "search": "Buscar"
     },
+    "login_form":{
+      "title": "Login",
+      "email" : "Correo",
+      "password" : "Contraseña",
+      "sign_in": "Login"
+    },
     "form": {
       "required": "Requerido"
     },
