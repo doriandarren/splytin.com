@@ -54,7 +54,7 @@
 
           <li>
             <RouterLink :to="{ name: 'companies' }" class="block py-2 hover:bg-blue-200">
-              companies
+              Companies
             </RouterLink>
           </li>
 
@@ -66,7 +66,7 @@
 
           <li>
             <RouterLink :to="{ name: 'projects' }" class="block py-2 hover:bg-blue-200">
-              projects
+              Projects
             </RouterLink>
           </li>
 
