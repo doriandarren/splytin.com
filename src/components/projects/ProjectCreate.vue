@@ -104,7 +104,7 @@
 						<input
 							v-model.trim="validate.started_at.$model"
 							id="started_at"
-							type="text"
+							type="date"
 							name="started_at"
 							class="form-control"
 							:class="{ 'border-danger': validate.started_at.$error }"
@@ -126,7 +126,7 @@
 						<input
 							v-model.trim="validate.finished_at.$model"
 							id="finished_at"
-							type="text"
+							type="date"
 							name="finished_at"
 							class="form-control"
 							:class="{ 'border-danger': validate.finished_at.$error }"
