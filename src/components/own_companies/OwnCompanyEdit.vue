@@ -10,20 +10,30 @@
 
 				<div class="col-span-12 md:col-span-6 lg:col-span-4">
 					<div class="input-form">
-						<label for="country_id" class="form-label w-full">
+						<label for="company_id" class="form-label w-full">
 							{{ $t("country_id") }} *
 						</label>
-						<input
+						<!-- <input
 							v-model.trim="validate.country_id.$model"
-							id="country_id"
-							type="text"
+							id="country_id" 
+							type="text" 
 							name="country_id"
-							class="form-control"
-							:class="{ 'border-danger': validate.country_id.$error }"
-						/>
+							class="form-control" :class="{ 'border-danger': validate.country_id.$error }" 
+						/> -->
+						<select v-model.trim="validate.country_id.$model" 
+							id="country_id" name="country_id"
+							class="form-control" :class="{ 'border-danger': validate.country_id.$error }">
+
+							<option v-for="country in countries" :key="country.id" :value="country.id">
+								{{ country.common_name }} - {{ country.phone_code }}
+							</option>
+							
+						</select>
+
 						<template v-if="validate.country_id.$error">
-							<div v-for="(error, index) in validate.country_id.$errors" :key="index" class="text-danger mt-2">
-						{{ error.$message }}
+							<div v-for="(error, index) in validate.country_id.$errors" :key="index"
+								class="text-danger mt-2">
+								{{ error.$message }}
 							</div>
 						</template>
 					</div>
@@ -35,17 +45,11 @@
 						<label for="name" class="form-label w-full">
 							{{ $t("name") }} *
 						</label>
-						<input
-							v-model.trim="validate.name.$model"
-							id="name"
-							type="text"
-							name="name"
-							class="form-control"
-							:class="{ 'border-danger': validate.name.$error }"
-						/>
+						<input v-model.trim="validate.name.$model" id="name" type="text" name="name"
+							class="form-control" :class="{ 'border-danger': validate.name.$error }" />
 						<template v-if="validate.name.$error">
 							<div v-for="(error, index) in validate.name.$errors" :key="index" class="text-danger mt-2">
-						{{ error.$message }}
+								{{ error.$message }}
 							</div>
 						</template>
 					</div>
@@ -57,17 +61,11 @@
 						<label for="tax" class="form-label w-full">
 							{{ $t("tax") }} *
 						</label>
-						<input
-							v-model.trim="validate.tax.$model"
-							id="tax"
-							type="text"
-							name="tax"
-							class="form-control"
-							:class="{ 'border-danger': validate.tax.$error }"
-						/>
+						<input v-model.trim="validate.tax.$model" id="tax" type="text" name="tax" class="form-control"
+							:class="{ 'border-danger': validate.tax.$error }" />
 						<template v-if="validate.tax.$error">
 							<div v-for="(error, index) in validate.tax.$errors" :key="index" class="text-danger mt-2">
-						{{ error.$message }}
+								{{ error.$message }}
 							</div>
 						</template>
 					</div>
@@ -79,17 +77,12 @@
 						<label for="address" class="form-label w-full">
 							{{ $t("address") }} *
 						</label>
-						<input
-							v-model.trim="validate.address.$model"
-							id="address"
-							type="text"
-							name="address"
-							class="form-control"
-							:class="{ 'border-danger': validate.address.$error }"
-						/>
+						<input v-model.trim="validate.address.$model" id="address" type="text" name="address"
+							class="form-control" :class="{ 'border-danger': validate.address.$error }" />
 						<template v-if="validate.address.$error">
-							<div v-for="(error, index) in validate.address.$errors" :key="index" class="text-danger mt-2">
-						{{ error.$message }}
+							<div v-for="(error, index) in validate.address.$errors" :key="index"
+								class="text-danger mt-2">
+								{{ error.$message }}
 							</div>
 						</template>
 					</div>
@@ -109,9 +102,10 @@
 							class="form-control"
 							:class="{ 'border-danger': validate.state.$error }"
 						/>
+						
 						<template v-if="validate.state.$error">
 							<div v-for="(error, index) in validate.state.$errors" :key="index" class="text-danger mt-2">
-						{{ error.$message }}
+								{{ error.$message }}
 							</div>
 						</template>
 					</div>
@@ -123,17 +117,13 @@
 						<label for="municipality" class="form-label w-full">
 							{{ $t("municipality") }} *
 						</label>
-						<input
-							v-model.trim="validate.municipality.$model"
-							id="municipality"
-							type="text"
-							name="municipality"
-							class="form-control"
-							:class="{ 'border-danger': validate.municipality.$error }"
-						/>
+						<input v-model.trim="validate.municipality.$model" id="municipality" type="text"
+							name="municipality" class="form-control"
+							:class="{ 'border-danger': validate.municipality.$error }" />
 						<template v-if="validate.municipality.$error">
-							<div v-for="(error, index) in validate.municipality.$errors" :key="index" class="text-danger mt-2">
-						{{ error.$message }}
+							<div v-for="(error, index) in validate.municipality.$errors" :key="index"
+								class="text-danger mt-2">
+								{{ error.$message }}
 							</div>
 						</template>
 					</div>
@@ -145,17 +135,11 @@
 						<label for="email" class="form-label w-full">
 							{{ $t("email") }} *
 						</label>
-						<input
-							v-model.trim="validate.email.$model"
-							id="email"
-							type="text"
-							name="email"
-							class="form-control"
-							:class="{ 'border-danger': validate.email.$error }"
-						/>
+						<input v-model.trim="validate.email.$model" id="email" type="text" name="email"
+							class="form-control" :class="{ 'border-danger': validate.email.$error }" />
 						<template v-if="validate.email.$error">
 							<div v-for="(error, index) in validate.email.$errors" :key="index" class="text-danger mt-2">
-						{{ error.$message }}
+								{{ error.$message }}
 							</div>
 						</template>
 					</div>
@@ -167,17 +151,11 @@
 						<label for="phone" class="form-label w-full">
 							{{ $t("phone") }} *
 						</label>
-						<input
-							v-model.trim="validate.phone.$model"
-							id="phone"
-							type="text"
-							name="phone"
-							class="form-control"
-							:class="{ 'border-danger': validate.phone.$error }"
-						/>
+						<input v-model.trim="validate.phone.$model" id="phone" type="text" name="phone"
+							class="form-control" :class="{ 'border-danger': validate.phone.$error }" />
 						<template v-if="validate.phone.$error">
 							<div v-for="(error, index) in validate.phone.$errors" :key="index" class="text-danger mt-2">
-						{{ error.$message }}
+								{{ error.$message }}
 							</div>
 						</template>
 					</div>
@@ -189,17 +167,12 @@
 						<label for="zip_code" class="form-label w-full">
 							{{ $t("zip_code") }} *
 						</label>
-						<input
-							v-model.trim="validate.zip_code.$model"
-							id="zip_code"
-							type="text"
-							name="zip_code"
-							class="form-control"
-							:class="{ 'border-danger': validate.zip_code.$error }"
-						/>
+						<input v-model.trim="validate.zip_code.$model" id="zip_code" type="text" name="zip_code"
+							class="form-control" :class="{ 'border-danger': validate.zip_code.$error }" />
 						<template v-if="validate.zip_code.$error">
-							<div v-for="(error, index) in validate.zip_code.$errors" :key="index" class="text-danger mt-2">
-						{{ error.$message }}
+							<div v-for="(error, index) in validate.zip_code.$errors" :key="index"
+								class="text-danger mt-2">
+								{{ error.$message }}
 							</div>
 						</template>
 					</div>
@@ -211,17 +184,12 @@
 						<label for="website" class="form-label w-full">
 							{{ $t("website") }} *
 						</label>
-						<input
-							v-model.trim="validate.website.$model"
-							id="website"
-							type="text"
-							name="website"
-							class="form-control"
-							:class="{ 'border-danger': validate.website.$error }"
-						/>
+						<input v-model.trim="validate.website.$model" id="website" type="text" name="website"
+							class="form-control" :class="{ 'border-danger': validate.website.$error }" />
 						<template v-if="validate.website.$error">
-							<div v-for="(error, index) in validate.website.$errors" :key="index" class="text-danger mt-2">
-						{{ error.$message }}
+							<div v-for="(error, index) in validate.website.$errors" :key="index"
+								class="text-danger mt-2">
+								{{ error.$message }}
 							</div>
 						</template>
 					</div>
@@ -255,87 +223,92 @@
 
 <script setup>
 
-	import { onMounted, reactive, toRefs } from 'vue';
-	import useOwnCompanies from '@/composables/own_companies';
-	import { required, minLength, maxLength, email, url, integer } from '@vuelidate/validators';
-	import { useVuelidate } from '@vuelidate/core';
-	import { helpers } from '@vuelidate/validators';
-	import { useI18n } from 'vue-i18n';
+import { onMounted, reactive, toRefs } from 'vue';
+import useOwnCompanies from '@/composables/own_companies';
+import { required, minLength, maxLength, email, url, integer } from '@vuelidate/validators';
+import { useVuelidate } from '@vuelidate/core';
+import { helpers } from '@vuelidate/validators';
+import { useI18n } from 'vue-i18n';
+import useCountry from "@/composables/countries";
 
-	const { ownCompany, getOwnCompany } = useOwnCompanies();
-	const { t } = useI18n();
-	const props = defineProps(['ownCompanyId']);
-	const emit = defineEmits(['cancelEdit', 'updateOwnCompanyForm']);
 
-	const rules = {
-		country_id: {
-			required: helpers.withMessage(t("form.required"), required),
-		},
-		name: {
-			required: helpers.withMessage(t("form.required"), required),
-		},
-		tax: {
-			required: helpers.withMessage(t("form.required"), required),
-		},
-		address: {
-			required: helpers.withMessage(t("form.required"), required),
-		},
-		state: {
-			required: helpers.withMessage(t("form.required"), required),
-		},
-		municipality: {
-			required: helpers.withMessage(t("form.required"), required),
-		},
-		email: {
-			required: helpers.withMessage(t("form.required"), required),
-		},
-		phone: {
-			required: helpers.withMessage(t("form.required"), required),
-		},
-		zip_code: {
-			required: helpers.withMessage(t("form.required"), required),
-		},
-		website: {
-			required: helpers.withMessage(t("form.required"), required),
-		},
-	};
+const { ownCompany, getOwnCompany } = useOwnCompanies();
+const { t } = useI18n();
+const props = defineProps(['ownCompanyId']);
+const emit = defineEmits(['cancelEdit', 'updateOwnCompanyForm']);
 
-	const formData = reactive({
-		country_id: "",
-		name: "",
-		tax: "",
-		address: "",
-		state: "",
-		municipality: "",
-		email: "",
-		phone: "",
-		zip_code: "",
-		website: "",
-	});
+const {countries, getCountries} = useCountry();
 
-	const validate = useVuelidate(rules, toRefs(formData));
+const rules = {
+	country_id: {
+		required: helpers.withMessage(t("form.required"), required),
+	},
+	name: {
+		required: helpers.withMessage(t("form.required"), required),
+	},
+	tax: {
+		required: helpers.withMessage(t("form.required"), required),
+	},
+	address: {
+		required: helpers.withMessage(t("form.required"), required),
+	},
+	state: {
+		required: helpers.withMessage(t("form.required"), required),
+	},
+	municipality: {
+		required: helpers.withMessage(t("form.required"), required),
+	},
+	email: {
+		required: helpers.withMessage(t("form.required"), required),
+	},
+	phone: {
+		required: helpers.withMessage(t("form.required"), required),
+	},
+	zip_code: {
+		required: helpers.withMessage(t("form.required"), required),
+	},
+	website: {
+		required: helpers.withMessage(t("form.required"), required),
+	},
+};
 
-	const save = () => {
-		validate.value.$touch();
-		if (validate.value.$invalid) {
-			//TODO
-		} else {
-			emit('updateOwnCompanyForm', ownCompany.value.id, formData);
-		}
-	};
+const formData = reactive({
+	country_id: "",
+	name: "",
+	tax: "",
+	address: "",
+	state: "",
+	municipality: "",
+	email: "",
+	phone: "",
+	zip_code: "",
+	website: "",
+});
 
-	onMounted(async () => {
-		await getOwnCompany(props.ownCompanyId);
-		formData.country_id = ownCompany.value.country_id;
-		formData.name = ownCompany.value.name;
-		formData.tax = ownCompany.value.tax;
-		formData.address = ownCompany.value.address;
-		formData.state = ownCompany.value.state;
-		formData.municipality = ownCompany.value.municipality;
-		formData.email = ownCompany.value.email;
-		formData.phone = ownCompany.value.phone;
-		formData.zip_code = ownCompany.value.zip_code;
-		formData.website = ownCompany.value.website;
-	});
+const validate = useVuelidate(rules, toRefs(formData));
+
+const save = () => {
+	validate.value.$touch();
+	if (validate.value.$invalid) {
+		//TODO
+	} else {
+		emit('updateOwnCompanyForm', ownCompany.value.id, formData);
+	}
+};
+
+onMounted(async () => {
+	await getOwnCompany(props.ownCompanyId);
+	formData.country_id = ownCompany.value.country_id;
+	formData.name = ownCompany.value.name;
+	formData.tax = ownCompany.value.tax;
+	formData.address = ownCompany.value.address;
+	formData.state = ownCompany.value.state;
+	formData.municipality = ownCompany.value.municipality;
+	formData.email = ownCompany.value.email;
+	formData.phone = ownCompany.value.phone;
+	formData.zip_code = ownCompany.value.zip_code;
+	formData.website = ownCompany.value.website;
+	await getCountries();
+});
 
 </script>

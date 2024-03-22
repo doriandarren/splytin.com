@@ -97,7 +97,7 @@
 
 	// Table
 	const columns = [
-		{ title: t("country_id"), field: 'country_id' },
+		{ title: t('country_id'), field: 'country_id' },
 		{ title: t("name"), field: 'name' },
 		{ title: t("tax"), field: 'tax' },
 		{ title: t("address"), field: 'address' },
