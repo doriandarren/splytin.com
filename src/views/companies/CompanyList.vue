@@ -97,16 +97,16 @@
 
 	// Table
 	const columns = [
-		{ title: t('country_id'), field: 'country_id' },
-		{ title: t("name"), field: 'name' },
-		{ title: t("tax"), field: 'tax' },
-		{ title: t("address"), field: 'address' },
-		{ title: t("state"), field: 'state' },
-		{ title: t("municipality"), field: 'municipality' },
-		{ title: t("email"), field: 'email' },
-		{ title: t("phone"), field: 'phone' },
-		{ title: t("zip_code"), field: 'zip_code' },
-		{ title: t("website"), field: 'website' },
+		{ label: "AAAA", field: 'country_id' },
+		{ label: t("name"), field: 'name' },
+		{ label: t("tax"), field: 'tax' },
+		{ label: t("address"), field: 'address' },
+		{ label: t("state"), field: 'state' },
+		{ label: t("municipality"), field: 'municipality' },
+		{ label: t("email"), field: 'email' },
+		{ label: t("phone"), field: 'phone' },
+		{ label: t("zip_code"), field: 'zip_code' },
+		{ label: t("website"), field: 'website' },
 		{ label: t('Actions'), field: 'actions', sortable: false, searchable: false, width: '100px',},
 	];
 	//Store
