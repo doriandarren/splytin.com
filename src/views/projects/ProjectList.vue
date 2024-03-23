@@ -97,13 +97,13 @@
 
 	// Table
 	const columns = [
-		{ title: t("company_id"), field: 'company_id' },
-		{ title: t("name"), field: 'name' },
-		{ title: t("total_hours"), field: 'total_hours' },
-		{ title: t("current_hours"), field: 'current_hours' },
-		{ title: t("started_at"), field: 'started_at' },
-		{ title: t("finished_at"), field: 'finished_at' },
-		{ title: t("description"), field: 'description' },
+		{ label: t("company_id"), field: 'company_id' },
+		{ label: t("name"), field: 'name' },
+		{ label: t("total_hours"), field: 'total_hours' },
+		{ label: t("current_hours"), field: 'current_hours' },
+		{ label: t("started_at"), field: 'started_at' },
+		{ label: t("finished_at"), field: 'finished_at' },
+		{ label: t("description"), field: 'description' },
 		{ label: t('Actions'), field: 'actions', sortable: false, searchable: false, width: '100px',},
 	];
 	//Store

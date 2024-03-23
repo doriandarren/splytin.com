@@ -97,12 +97,12 @@
 
 	// Table
 	const columns = [
-		{ title: t("project_id"), field: 'project_id' },
-		{ title: t("invoice_id"), field: 'invoice_id' },
-		{ title: t("hours"), field: 'hours' },
-		{ title: t("invoice_at"), field: 'invoice_at' },
-		{ title: t("is_generated"), field: 'is_generated' },
-		{ title: t("description"), field: 'description' },
+		{ label: t("project_id"), field: 'project_id' },
+		{ label: t("invoice_id"), field: 'invoice_id' },
+		{ label: t("hours"), field: 'hours' },
+		{ label: t("invoice_at"), field: 'invoice_at' },
+		{ label: t("is_generated"), field: 'is_generated' },
+		{ label: t("description"), field: 'description' },
 		{ label: t('Actions'), field: 'actions', sortable: false, searchable: false, width: '100px',},
 	];
 	//Store

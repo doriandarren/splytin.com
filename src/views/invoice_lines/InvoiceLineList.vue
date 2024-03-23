@@ -97,11 +97,11 @@
 
 	// Table
 	const columns = [
-		{ title: t("invoice_header_id"), field: 'invoice_header_id' },
-		{ title: t("vat"), field: 'vat' },
-		{ title: t("unit_prices"), field: 'unit_prices' },
-		{ title: t("total"), field: 'total' },
-		{ title: t("description"), field: 'description' },
+		{ label: t("invoice_header_id"), field: 'invoice_header_id' },
+		{ label: t("vat"), field: 'vat' },
+		{ label: t("unit_prices"), field: 'unit_prices' },
+		{ label: t("total"), field: 'total' },
+		{ label: t("description"), field: 'description' },
 		{ label: t('Actions'), field: 'actions', sortable: false, searchable: false, width: '100px',},
 	];
 	//Store
