@@ -26,7 +26,7 @@
 							class="form-control" :class="{ 'border-danger': validate.country_id.$error }">
 
 							<option v-for="country in countries" :key="country.id" :value="country.id">
-								{{ country.common_name }} - {{ country.phone_code }}
+								{{ country.common_name }}
 							</option>
 							
 						</select>

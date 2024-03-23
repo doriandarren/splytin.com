@@ -32,7 +32,7 @@
 								:key="country.id" 
 								:value="country.id"
 							>
-								{{ country.common_name }} - {{ country.phone_code }}
+								{{ country.common_name }}
 							</option>
 
 							<!-- <option value="">ES</option>
