@@ -97,19 +97,19 @@
 
 	// Table
 	const columns = [
-		{ title: t("invoice_counter_id"), field: 'invoice_counter_id' },
-		{ title: t("own_company_id"), field: 'own_company_id' },
-		{ title: t("company_id"), field: 'company_id' },
-		{ title: t("number"), field: 'number' },
-		{ title: t("date"), field: 'date' },
-		{ title: t("due_date"), field: 'due_date' },
-		{ title: t("month"), field: 'month' },
-		{ title: t("year"), field: 'year' },
-		{ title: t("description"), field: 'description' },
-		{ title: t("vat_quote"), field: 'vat_quote' },
-		{ title: t("total_without_vat"), field: 'total_without_vat' },
-		{ title: t("total_with_vat"), field: 'total_with_vat' },
-		{ title: t("has_paid"), field: 'has_paid' },
+		{ label: t("invoice_counter_id"), field: 'invoice_counter_id' },
+		{ label: t("own_company_id"), field: 'own_company_id' },
+		{ label: t("company_id"), field: 'company_id' },
+		{ label: t("number"), field: 'number' },
+		{ label: t("date"), field: 'date' },
+		{ label: t("due_date"), field: 'due_date' },
+		{ label: t("month"), field: 'month' },
+		{ label: t("year"), field: 'year' },
+		{ label: t("description"), field: 'description' },
+		{ label: t("vat_quote"), field: 'vat_quote' },
+		{ label: t("total_without_vat"), field: 'total_without_vat' },
+		{ label: t("total_with_vat"), field: 'total_with_vat' },
+		{ label: t("has_paid"), field: 'has_paid' },
 		{ label: t('Actions'), field: 'actions', sortable: false, searchable: false, width: '100px',},
 	];
 	//Store
