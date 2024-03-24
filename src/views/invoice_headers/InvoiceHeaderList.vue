@@ -110,7 +110,7 @@
 		{ label: t("total_without_vat"), field: 'total_without_vat' },
 		{ label: t("total_with_vat"), field: 'total_with_vat' },
 		{ label: t("has_paid"), field: 'has_paid' },
-		{ label: t('Actions'), field: 'actions', sortable: false, searchable: false, width: '100px',},
+		{ label: t('actions'), field: 'actions', sortable: false, searchable: false, width: '100px',},
 	];
 	//Store
 	const showCreateInvoiceHeader = () => {
