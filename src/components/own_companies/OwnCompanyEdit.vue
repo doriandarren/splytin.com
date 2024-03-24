@@ -13,16 +13,12 @@
 						<label for="company_id" class="form-label w-full">
 							{{ $t("country_id") }} *
 						</label>
-						<!-- <input
-							v-model.trim="validate.country_id.$model"
+						<select 
+							v-model.trim="validate.country_id.$model" 
 							id="country_id" 
-							type="text" 
 							name="country_id"
-							class="form-control" :class="{ 'border-danger': validate.country_id.$error }" 
-						/> -->
-						<select v-model.trim="validate.country_id.$model" 
-							id="country_id" name="country_id"
-							class="form-control" :class="{ 'border-danger': validate.country_id.$error }">
+							class="form-control" 
+							:class="{ 'border-danger': validate.country_id.$error }">
 
 							<option v-for="country in countries" :key="country.id" :value="country.id">
 								{{ country.common_name }}
