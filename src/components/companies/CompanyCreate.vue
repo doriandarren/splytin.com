@@ -281,7 +281,7 @@ const formData = reactive({
 	email: "",
 	phone: "",
 	zip_code: "",
-	website: "",
+	website: "https://",
 });
 
 const validate = useVuelidate(rules, toRefs(formData));

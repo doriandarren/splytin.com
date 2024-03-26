@@ -13,16 +13,13 @@
 						<label for="invoice_counter_id" class="form-label w-full">
 							{{ $t("invoice_counter_id") }} *
 						</label>
-						<input
-							v-model.trim="validate.invoice_counter_id.$model"
-							id="invoice_counter_id"
-							type="text"
-							name="invoice_counter_id"
-							class="form-control"
-							:class="{ 'border-danger': validate.invoice_counter_id.$error }"
-						/>
+						<input v-model.trim="validate.invoice_counter_id.$model" id="invoice_counter_id" type="text"
+							name="invoice_counter_id" class="form-control"
+							:class="{ 'border-danger': validate.invoice_counter_id.$error }" />
+
 						<template v-if="validate.invoice_counter_id.$error">
-							<div v-for="(error, index) in validate.invoice_counter_id.$errors" :key="index" class="text-danger mt-2">
+							<div v-for="(error, index) in validate.invoice_counter_id.$errors" :key="index"
+								class="text-danger mt-2">
 								{{ error.$message }}
 							</div>
 						</template>
@@ -35,16 +32,22 @@
 						<label for="own_company_id" class="form-label w-full">
 							{{ $t("own_company_id") }} *
 						</label>
-						<input
-							v-model.trim="validate.own_company_id.$model"
-							id="own_company_id"
-							type="text"
-							name="own_company_id"
-							class="form-control"
-							:class="{ 'border-danger': validate.own_company_id.$error }"
-						/>
+						<!-- <input v-model.trim="validate.own_company_id.$model" id="own_company_id" type="text"
+							name="own_company_id" class="form-control"
+							:class="{ 'border-danger': validate.own_company_id.$error }" /> -->
+
+						<select v-model.trim="validate.invoice_counter_id.$model" id="invoice_counter_id" type="text"
+							name="invoice_counter_id" class="form-control"
+							:class="{ 'border-danger': validate.invoice_counter_id.$error }">
+
+							<option v-for="company in company" :key="company.id" :value="company.id">
+								{{ company.common_name }}
+							</option>
+
+						</select>
 						<template v-if="validate.own_company_id.$error">
-							<div v-for="(error, index) in validate.own_company_id.$errors" :key="index" class="text-danger mt-2">
+							<div v-for="(error, index) in validate.own_company_id.$errors" :key="index"
+								class="text-danger mt-2">
 								{{ error.$message }}
 							</div>
 						</template>
@@ -57,16 +60,11 @@
 						<label for="company_id" class="form-label w-full">
 							{{ $t("company_id") }} *
 						</label>
-						<input
-							v-model.trim="validate.company_id.$model"
-							id="company_id"
-							type="text"
-							name="company_id"
-							class="form-control"
-							:class="{ 'border-danger': validate.company_id.$error }"
-						/>
+						<input v-model.trim="validate.company_id.$model" id="company_id" type="text" name="company_id"
+							class="form-control" :class="{ 'border-danger': validate.company_id.$error }" />
 						<template v-if="validate.company_id.$error">
-							<div v-for="(error, index) in validate.company_id.$errors" :key="index" class="text-danger mt-2">
+							<div v-for="(error, index) in validate.company_id.$errors" :key="index"
+								class="text-danger mt-2">
 								{{ error.$message }}
 							</div>
 						</template>
@@ -79,16 +77,11 @@
 						<label for="number" class="form-label w-full">
 							{{ $t("number") }} *
 						</label>
-						<input
-							v-model.trim="validate.number.$model"
-							id="number"
-							type="text"
-							name="number"
-							class="form-control"
-							:class="{ 'border-danger': validate.number.$error }"
-						/>
+						<input v-model.trim="validate.number.$model" id="number" type="text" name="number"
+							class="form-control" :class="{ 'border-danger': validate.number.$error }" />
 						<template v-if="validate.number.$error">
-							<div v-for="(error, index) in validate.number.$errors" :key="index" class="text-danger mt-2">
+							<div v-for="(error, index) in validate.number.$errors" :key="index"
+								class="text-danger mt-2">
 								{{ error.$message }}
 							</div>
 						</template>
@@ -101,14 +94,8 @@
 						<label for="date" class="form-label w-full">
 							{{ $t("date") }} *
 						</label>
-						<input
-							v-model.trim="validate.date.$model"
-							id="date"
-							type="text"
-							name="date"
-							class="form-control"
-							:class="{ 'border-danger': validate.date.$error }"
-						/>
+						<input v-model.trim="validate.date.$model" id="date" type="text" name="date"
+							class="form-control" :class="{ 'border-danger': validate.date.$error }" />
 						<template v-if="validate.date.$error">
 							<div v-for="(error, index) in validate.date.$errors" :key="index" class="text-danger mt-2">
 								{{ error.$message }}
@@ -123,16 +110,11 @@
 						<label for="due_date" class="form-label w-full">
 							{{ $t("due_date") }} *
 						</label>
-						<input
-							v-model.trim="validate.due_date.$model"
-							id="due_date"
-							type="text"
-							name="due_date"
-							class="form-control"
-							:class="{ 'border-danger': validate.due_date.$error }"
-						/>
+						<input v-model.trim="validate.due_date.$model" id="due_date" type="text" name="due_date"
+							class="form-control" :class="{ 'border-danger': validate.due_date.$error }" />
 						<template v-if="validate.due_date.$error">
-							<div v-for="(error, index) in validate.due_date.$errors" :key="index" class="text-danger mt-2">
+							<div v-for="(error, index) in validate.due_date.$errors" :key="index"
+								class="text-danger mt-2">
 								{{ error.$message }}
 							</div>
 						</template>
@@ -145,14 +127,8 @@
 						<label for="month" class="form-label w-full">
 							{{ $t("month") }} *
 						</label>
-						<input
-							v-model.trim="validate.month.$model"
-							id="month"
-							type="text"
-							name="month"
-							class="form-control"
-							:class="{ 'border-danger': validate.month.$error }"
-						/>
+						<input v-model.trim="validate.month.$model" id="month" type="text" name="month"
+							class="form-control" :class="{ 'border-danger': validate.month.$error }" />
 						<template v-if="validate.month.$error">
 							<div v-for="(error, index) in validate.month.$errors" :key="index" class="text-danger mt-2">
 								{{ error.$message }}
@@ -167,14 +143,8 @@
 						<label for="year" class="form-label w-full">
 							{{ $t("year") }} *
 						</label>
-						<input
-							v-model.trim="validate.year.$model"
-							id="year"
-							type="text"
-							name="year"
-							class="form-control"
-							:class="{ 'border-danger': validate.year.$error }"
-						/>
+						<input v-model.trim="validate.year.$model" id="year" type="text" name="year"
+							class="form-control" :class="{ 'border-danger': validate.year.$error }" />
 						<template v-if="validate.year.$error">
 							<div v-for="(error, index) in validate.year.$errors" :key="index" class="text-danger mt-2">
 								{{ error.$message }}
@@ -189,16 +159,12 @@
 						<label for="description" class="form-label w-full">
 							{{ $t("description") }} *
 						</label>
-						<input
-							v-model.trim="validate.description.$model"
-							id="description"
-							type="text"
-							name="description"
-							class="form-control"
-							:class="{ 'border-danger': validate.description.$error }"
-						/>
+						<input v-model.trim="validate.description.$model" id="description" type="text"
+							name="description" class="form-control"
+							:class="{ 'border-danger': validate.description.$error }" />
 						<template v-if="validate.description.$error">
-							<div v-for="(error, index) in validate.description.$errors" :key="index" class="text-danger mt-2">
+							<div v-for="(error, index) in validate.description.$errors" :key="index"
+								class="text-danger mt-2">
 								{{ error.$message }}
 							</div>
 						</template>
@@ -211,16 +177,11 @@
 						<label for="vat_quote" class="form-label w-full">
 							{{ $t("vat_quote") }} *
 						</label>
-						<input
-							v-model.trim="validate.vat_quote.$model"
-							id="vat_quote"
-							type="text"
-							name="vat_quote"
-							class="form-control"
-							:class="{ 'border-danger': validate.vat_quote.$error }"
-						/>
+						<input v-model.trim="validate.vat_quote.$model" id="vat_quote" type="text" name="vat_quote"
+							class="form-control" :class="{ 'border-danger': validate.vat_quote.$error }" />
 						<template v-if="validate.vat_quote.$error">
-							<div v-for="(error, index) in validate.vat_quote.$errors" :key="index" class="text-danger mt-2">
+							<div v-for="(error, index) in validate.vat_quote.$errors" :key="index"
+								class="text-danger mt-2">
 								{{ error.$message }}
 							</div>
 						</template>
@@ -233,16 +194,12 @@
 						<label for="total_without_vat" class="form-label w-full">
 							{{ $t("total_without_vat") }} *
 						</label>
-						<input
-							v-model.trim="validate.total_without_vat.$model"
-							id="total_without_vat"
-							type="text"
-							name="total_without_vat"
-							class="form-control"
-							:class="{ 'border-danger': validate.total_without_vat.$error }"
-						/>
+						<input v-model.trim="validate.total_without_vat.$model" id="total_without_vat" type="text"
+							name="total_without_vat" class="form-control"
+							:class="{ 'border-danger': validate.total_without_vat.$error }" />
 						<template v-if="validate.total_without_vat.$error">
-							<div v-for="(error, index) in validate.total_without_vat.$errors" :key="index" class="text-danger mt-2">
+							<div v-for="(error, index) in validate.total_without_vat.$errors" :key="index"
+								class="text-danger mt-2">
 								{{ error.$message }}
 							</div>
 						</template>
@@ -255,16 +212,12 @@
 						<label for="total_with_vat" class="form-label w-full">
 							{{ $t("total_with_vat") }} *
 						</label>
-						<input
-							v-model.trim="validate.total_with_vat.$model"
-							id="total_with_vat"
-							type="text"
-							name="total_with_vat"
-							class="form-control"
-							:class="{ 'border-danger': validate.total_with_vat.$error }"
-						/>
+						<input v-model.trim="validate.total_with_vat.$model" id="total_with_vat" type="text"
+							name="total_with_vat" class="form-control"
+							:class="{ 'border-danger': validate.total_with_vat.$error }" />
 						<template v-if="validate.total_with_vat.$error">
-							<div v-for="(error, index) in validate.total_with_vat.$errors" :key="index" class="text-danger mt-2">
+							<div v-for="(error, index) in validate.total_with_vat.$errors" :key="index"
+								class="text-danger mt-2">
 								{{ error.$message }}
 							</div>
 						</template>
@@ -277,16 +230,11 @@
 						<label for="has_paid" class="form-label w-full">
 							{{ $t("has_paid") }} *
 						</label>
-						<input
-							v-model.trim="validate.has_paid.$model"
-							id="has_paid"
-							type="text"
-							name="has_paid"
-							class="form-control"
-							:class="{ 'border-danger': validate.has_paid.$error }"
-						/>
+						<input v-model.trim="validate.has_paid.$model" id="has_paid" type="text" name="has_paid"
+							class="form-control" :class="{ 'border-danger': validate.has_paid.$error }" />
 						<template v-if="validate.has_paid.$error">
-							<div v-for="(error, index) in validate.has_paid.$errors" :key="index" class="text-danger mt-2">
+							<div v-for="(error, index) in validate.has_paid.$errors" :key="index"
+								class="text-danger mt-2">
 								{{ error.$message }}
 							</div>
 						</template>
@@ -321,86 +269,90 @@
 
 <script setup>
 
-	import { onMounted, reactive, toRefs } from 'vue';
-	import { required, minLength, maxLength, email, url, integer } from '@vuelidate/validators';
-	import { useVuelidate } from '@vuelidate/core';
-	import { helpers } from '@vuelidate/validators';
-	import { useI18n } from 'vue-i18n';
+import { onMounted, reactive, toRefs } from 'vue';
+import { required, minLength, maxLength, email, url, integer } from '@vuelidate/validators';
+import { useVuelidate } from '@vuelidate/core';
+import { helpers } from '@vuelidate/validators';
+import { useI18n } from 'vue-i18n';
+import useCompany from "@/composables/company";
 
-	const { t } = useI18n();
-	const emit = defineEmits(['cancelCreate', 'saveInvoiceHeaderForm']);
 
-	const rules = {
-		invoice_counter_id: {
-			required: helpers.withMessage(t("form.required"), required),
-		},
-		own_company_id: {
-			required: helpers.withMessage(t("form.required"), required),
-		},
-		company_id: {
-			required: helpers.withMessage(t("form.required"), required),
-		},
-		number: {
-			required: helpers.withMessage(t("form.required"), required),
-		},
-		date: {
-			required: helpers.withMessage(t("form.required"), required),
-		},
-		due_date: {
-			required: helpers.withMessage(t("form.required"), required),
-		},
-		month: {
-			required: helpers.withMessage(t("form.required"), required),
-		},
-		year: {
-			required: helpers.withMessage(t("form.required"), required),
-		},
-		description: {
-			required: helpers.withMessage(t("form.required"), required),
-		},
-		vat_quote: {
-			required: helpers.withMessage(t("form.required"), required),
-		},
-		total_without_vat: {
-			required: helpers.withMessage(t("form.required"), required),
-		},
-		total_with_vat: {
-			required: helpers.withMessage(t("form.required"), required),
-		},
-		has_paid: {
-			required: helpers.withMessage(t("form.required"), required),
-		},
-	};
+const { t } = useI18n();
+const emit = defineEmits(['cancelCreate', 'saveInvoiceHeaderForm']);
 
-	const formData = reactive({
-		invoice_counter_id: "",
-		own_company_id: "",
-		company_id: "",
-		number: "",
-		date: "",
-		due_date: "",
-		month: "",
-		year: "",
-		description: "",
-		vat_quote: "",
-		total_without_vat: "",
-		total_with_vat: "",
-		has_paid: "",
-	});
+const { company, getCompany } = useCompany();
 
-	const validate = useVuelidate(rules, toRefs(formData));
+const rules = {
+	invoice_counter_id: {
+		required: helpers.withMessage(t("form.required"), required),
+	},
+	own_company_id: {
+		required: helpers.withMessage(t("form.required"), required),
+	},
+	company_id: {
+		required: helpers.withMessage(t("form.required"), required),
+	},
+	number: {
+		required: helpers.withMessage(t("form.required"), required),
+	},
+	date: {
+		required: helpers.withMessage(t("form.required"), required),
+	},
+	due_date: {
+		required: helpers.withMessage(t("form.required"), required),
+	},
+	month: {
+		required: helpers.withMessage(t("form.required"), required),
+	},
+	year: {
+		required: helpers.withMessage(t("form.required"), required),
+	},
+	description: {
+		required: helpers.withMessage(t("form.required"), required),
+	},
+	vat_quote: {
+		required: helpers.withMessage(t("form.required"), required),
+	},
+	total_without_vat: {
+		required: helpers.withMessage(t("form.required"), required),
+	},
+	total_with_vat: {
+		required: helpers.withMessage(t("form.required"), required),
+	},
+	has_paid: {
+		required: helpers.withMessage(t("form.required"), required),
+	},
+};
 
-	const save = () => {
-		validate.value.$touch();
-		if (validate.value.$invalid) {
-			//TODO
-		} else {
-			emit('saveInvoiceHeaderForm', formData);
-		}
-	};
+const formData = reactive({
+	invoice_counter_id: "",
+	own_company_id: "",
+	company_id: "",
+	number: "",
+	date: "",
+	due_date: "",
+	month: "",
+	year: "",
+	description: "",
+	vat_quote: "",
+	total_without_vat: "",
+	total_with_vat: "",
+	has_paid: "",
+});
 
-	onMounted(async () => {
-		// TODO here implements...
-	});
+const validate = useVuelidate(rules, toRefs(formData));
+
+const save = () => {
+	validate.value.$touch();
+	if (validate.value.$invalid) {
+		//TODO
+	} else {
+		emit('saveInvoiceHeaderForm', formData);
+	}
+};
+
+onMounted(async () => {
+	await getCompany();
+});
 
 </script>
