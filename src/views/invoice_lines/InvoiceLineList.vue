@@ -102,7 +102,7 @@
 		{ label: t("unit_prices"), field: 'unit_prices' },
 		{ label: t("total"), field: 'total' },
 		{ label: t("description"), field: 'description' },
-		{ label: t('Actions'), field: 'actions', sortable: false, searchable: false, width: '100px',},
+		{ label: t('actions'), field: 'actions', sortable: false, searchable: false, width: '100px',},
 	];
 	//Store
 	const showCreateInvoiceLine = () => {

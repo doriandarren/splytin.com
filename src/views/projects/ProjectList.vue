@@ -104,7 +104,7 @@
 		{ label: t("started_at"), field: 'started_at' },
 		{ label: t("finished_at"), field: 'finished_at' },
 		{ label: t("description"), field: 'description' },
-		{ label: t('Actions'), field: 'actions', sortable: false, searchable: false, width: '100px',},
+		{ label: t('actions'), field: 'actions', sortable: false, searchable: false, width: '100px',},
 	];
 	//Store
 	const showCreateProject = () => {

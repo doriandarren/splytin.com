@@ -108,7 +108,7 @@
 		{ label: t("phone"), field: 'phone' },
 		{ label: t("zip_code"), field: 'zip_code' },
 		{ label: t("website"), field: 'website' },
-		{ label: t('Actions'), field: 'actions', sortable: false, searchable: false, width: '100px',},
+		{ label: t('actions'), field: 'actions', sortable: false, searchable: false, width: '100px',},
 	];
 	//Store
 	const showCreateOwnCompany = () => {
