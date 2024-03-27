@@ -40,7 +40,7 @@
 				</div>
 
 
-				<div class="col-span-12 md:col-span-6 lg:col-span-4">
+				<div class="col-span-12 md:col-span-6 lg:col-span-8">
 					<div class="input-form">
 						<label for="name" class="form-label w-full">
 							{{ $t("name") }} *
@@ -110,7 +110,7 @@
 				</div>
 
 
-				<div class="col-span-12 md:col-span-6 lg:col-span-4">
+				<div class="col-span-12 md:col-span-6 lg:col-span-12">
 					<div class="input-form">
 						<label for="description" class="form-label w-full">
 							{{ $t("description") }} 
