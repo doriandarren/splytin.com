@@ -32,19 +32,33 @@
 						<label for="own_company_id" class="form-label w-full">
 							{{ $t("own_company_id") }} *
 						</label>
-						<!-- <input v-model.trim="validate.own_company_id.$model" id="own_company_id" type="text"
-							name="own_company_id" class="form-control"
-							:class="{ 'border-danger': validate.own_company_id.$error }" /> -->
 
-						<select v-model.trim="validate.invoice_counter_id.$model" id="invoice_counter_id" type="text"
-							name="invoice_counter_id" class="form-control"
-							:class="{ 'border-danger': validate.invoice_counter_id.$error }">
-
-							<option v-for="company in company" :key="company.id" :value="company.id">
-								{{ company.common_name }}
+						<!-- <input
+                            v-model.trim="validate.own_company_id.$model"
+                            id="own_company_id"
+                            type="text"
+                            name="own_company_id"
+                            class="form-control"
+                            :class="{ 'border-danger': validate.own_company_id.$error }"
+                        /> -->
+						<select
+							v-model.trim="validate.own_company_id.$model"
+                            id="own_company_id"
+                            name="own_company_id"
+                            class="form-control"
+                            :class="{ 'border-danger': validate.own_company_id.$error }"
+						>
+							<option 
+                				v-for="item in ownCompanies" 
+                				:key="item.id" 
+                				:value="item.id"
+              				>
+                				{{ item.name }}
 							</option>
 
 						</select>
+
+
 						<template v-if="validate.own_company_id.$error">
 							<div v-for="(error, index) in validate.own_company_id.$errors" :key="index"
 								class="text-danger mt-2">
@@ -60,8 +74,17 @@
 						<label for="company_id" class="form-label w-full">
 							{{ $t("company_id") }} *
 						</label>
-						<input v-model.trim="validate.company_id.$model" id="company_id" type="text" name="company_id"
-							class="form-control" :class="{ 'border-danger': validate.company_id.$error }" />
+						
+							<select
+							v-model.trim="validate.company_id.$model" id="company_id" name="company_id"
+							class="form-control" :class="{ 'border-danger': validate.company_id.$error }">
+
+							<option v-for="item in companies" :key="item.id" :value="item.id">
+								{{ item.name }}
+							</option>
+
+						</select>
+
 						<template v-if="validate.company_id.$error">
 							<div v-for="(error, index) in validate.company_id.$errors" :key="index"
 								class="text-danger mt-2">
@@ -94,7 +117,7 @@
 						<label for="date" class="form-label w-full">
 							{{ $t("date") }} *
 						</label>
-						<input v-model.trim="validate.date.$model" id="date" type="text" name="date"
+						<input v-model.trim="validate.date.$model" id="date" type="date" name="date"
 							class="form-control" :class="{ 'border-danger': validate.date.$error }" />
 						<template v-if="validate.date.$error">
 							<div v-for="(error, index) in validate.date.$errors" :key="index" class="text-danger mt-2">
@@ -110,8 +133,10 @@
 						<label for="due_date" class="form-label w-full">
 							{{ $t("due_date") }} *
 						</label>
-						<input v-model.trim="validate.due_date.$model" id="due_date" type="text" name="due_date"
+						<input v-model.trim="validate.due_date.$model" id="due_date" type="date" name="due_date"
 							class="form-control" :class="{ 'border-danger': validate.due_date.$error }" />
+					
+
 						<template v-if="validate.due_date.$error">
 							<div v-for="(error, index) in validate.due_date.$errors" :key="index"
 								class="text-danger mt-2">
@@ -274,13 +299,15 @@ import { required, minLength, maxLength, email, url, integer } from '@vuelidate/
 import { useVuelidate } from '@vuelidate/core';
 import { helpers } from '@vuelidate/validators';
 import { useI18n } from 'vue-i18n';
-import useCompany from "@/composables/company";
+import useCompany from "@/composables/companies";
+import useOwnCompany from "@/composables/own_companies";
 
 
 const { t } = useI18n();
 const emit = defineEmits(['cancelCreate', 'saveInvoiceHeaderForm']);
 
-const { company, getCompany } = useCompany();
+const { companies, getCompanies } = useCompany();
+const { ownCompanies, getOwnCompanies } = useOwnCompany();
 
 const rules = {
 	invoice_counter_id: {
@@ -352,7 +379,8 @@ const save = () => {
 };
 
 onMounted(async () => {
-	await getCompany();
+	await getCompanies();
+	await getOwnCompanies();
 });
 
 </script>

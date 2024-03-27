@@ -13,22 +13,20 @@
 						<label for="company_id" class="form-label w-full">
 							{{ $t("company_id") }} *
 						</label>
-						<!-- <input
-							v-model.trim="validate.company_id.$model"
-							id="company_id"
-							type="text"
-							name="company_id"
-							class="form-control"
-							:class="{ 'border-danger': validate.company_id.$error }"
-						/> -->
 						<select v-model.trim="validate.company_id.$model" 
 							id="company_id"
 							name="company_id"
-							class="form-control" :class="{ 'border-danger': validate.company_id.$error }">
+							class="form-control" 
+							:class="{ 'border-danger': validate.company_id.$error }"
+						>
 
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
+							<option 
+                				v-for="item in companies" 
+                				:key="item.id" 
+                				:value="item.id"
+              				>
+                				{{ item.name }}
+							</option>
 						</select>
 
 
@@ -76,23 +74,6 @@
 				</div>
 
 
-				<div class="col-span-12 md:col-span-6 lg:col-span-4">
-					<div class="input-form">
-						<label for="current_hours" class="form-label w-full">
-							{{ $t("current_hours") }} *
-						</label>
-						<input v-model.trim="validate.current_hours.$model" id="current_hours" type="text"
-							name="current_hours" class="form-control"
-							:class="{ 'border-danger': validate.current_hours.$error }" />
-						<template v-if="validate.current_hours.$error">
-							<div v-for="(error, index) in validate.current_hours.$errors" :key="index"
-								class="text-danger mt-2">
-								{{ error.$message }}
-							</div>
-						</template>
-					</div>
-				</div>
-
 
 				<div class="col-span-12 md:col-span-6 lg:col-span-4">
 					<div class="input-form">
@@ -132,7 +113,7 @@
 				<div class="col-span-12 md:col-span-6 lg:col-span-4">
 					<div class="input-form">
 						<label for="description" class="form-label w-full">
-							{{ $t("description") }} *
+							{{ $t("description") }} 
 						</label>
 						<input v-model.trim="validate.description.$model" id="description" type="text"
 							name="description" class="form-control"
@@ -179,9 +160,14 @@ import { required, minLength, maxLength, email, url, integer } from '@vuelidate/
 import { useVuelidate } from '@vuelidate/core';
 import { helpers } from '@vuelidate/validators';
 import { useI18n } from 'vue-i18n';
+import useCompany from "@/composables/companies";
+
 
 const { t } = useI18n();
 const emit = defineEmits(['cancelCreate', 'saveProjectForm']);
+
+const {companies, getCompanies} = useCompany();
+
 
 const rules = {
 	company_id: {
@@ -193,9 +179,6 @@ const rules = {
 	total_hours: {
 		required: helpers.withMessage(t("form.required"), required),
 	},
-	current_hours: {
-		required: helpers.withMessage(t("form.required"), required),
-	},
 	started_at: {
 		required: helpers.withMessage(t("form.required"), required),
 	},
@@ -203,7 +186,7 @@ const rules = {
 		required: helpers.withMessage(t("form.required"), required),
 	},
 	description: {
-		required: helpers.withMessage(t("form.required"), required),
+		//required: helpers.withMessage(t("form.required"), required),
 	},
 };
 
@@ -211,7 +194,6 @@ const formData = reactive({
 	company_id: "",
 	name: "",
 	total_hours: "",
-	current_hours: "",
 	started_at: "",
 	finished_at: "",
 	description: "",
@@ -230,6 +212,7 @@ const save = () => {
 
 onMounted(async () => {
 	// TODO here implements...
+	await getCompanies();
 });
 
 </script>

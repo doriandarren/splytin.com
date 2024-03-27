@@ -47,7 +47,6 @@
     "project_id": "Proyecto Id",
     "hours": "Horas",
     "invoice_at": "Fecha factura",
-    "own_companies_id": "Compañias propias Id",
     "company_id": "Compañia Id",
     "number": "Número",
     "date": "Fecha",
@@ -59,7 +58,7 @@
     "total": "Total",
     "description": "Descripción",
     "project_hour_id": "Hora proyecto Id",
-    "own_company_id": "Compañia ID",
+    "own_company_id": "Compañias propias Id",
     "total_hours": "Horas Totales",
     "current_hours": "Horas Actuales",
     "started_at": "Fecha Inicio",
@@ -69,17 +68,16 @@
     "state": "Estado",
     "municipality": "Municipio",
     "zip_code": "Codigo Postal",
-    "actions": "Acciones",
     "is_generated": "Está Generado",
     "invoice_counter_id": "ID Contador De Factura",
     "due_date": "Fecha De Vencimiento",
     "month": "Días",
     "year": "Año",
     "vat_quote": "IVA",
-    "total_without_vat": "Total Sin IVA",
-    "total_with_vat": "Total sin IVA",
+    "total_without_vat": "Total sin IVA",
+    "total_with_vat": "Total con IVA",
     "has_paid": "Ha Pagado",
-    "Actions": "Acciones"
+    "actions": "Acciones"
     
 
 

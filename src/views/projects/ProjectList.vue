@@ -97,7 +97,7 @@
 
 	// Table
 	const columns = [
-		{ label: t("company_id"), field: 'company_id' },
+		{ label: t("company_id"), field: 'company.name' },
 		{ label: t("name"), field: 'name' },
 		{ label: t("total_hours"), field: 'total_hours' },
 		{ label: t("current_hours"), field: 'current_hours' },

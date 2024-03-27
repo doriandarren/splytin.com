@@ -57,14 +57,32 @@
 						<label for="company_id" class="form-label w-full">
 							{{ $t("company_id") }} *
 						</label>
-						<input
+						<!-- <input
 							v-model.trim="validate.company_id.$model"
 							id="company_id"
 							type="text"
 							name="company_id"
 							class="form-control"
 							:class="{ 'border-danger': validate.company_id.$error }"
-						/>
+						/> -->
+
+						<select 
+						v-model.trim="validate.company_id.$model"
+							id="company_id"
+							type="text"
+							name="company_id"
+							class="form-control"
+							:class="{ 'border-danger': validate.company_id.$error }"
+						>
+
+						<option 
+                			v-for="country in countries" 
+                			:key="country.id" 
+                			:value="country.id"
+              			>
+                			{{ country.common_name }}
+						</option>
+						</select>
 						<template v-if="validate.company_id.$error">
 							<div v-for="(error, index) in validate.company_id.$errors" :key="index" class="text-danger mt-2">
 						{{ error.$message }}
@@ -104,7 +122,7 @@
 						<input
 							v-model.trim="validate.date.$model"
 							id="date"
-							type="text"
+							type="date"
 							name="date"
 							class="form-control"
 							:class="{ 'border-danger': validate.date.$error }"
@@ -126,7 +144,7 @@
 						<input
 							v-model.trim="validate.due_date.$model"
 							id="due_date"
-							type="text"
+							type="date"
 							name="due_date"
 							class="form-control"
 							:class="{ 'border-danger': validate.due_date.$error }"
@@ -327,11 +345,16 @@
 	import { useVuelidate } from '@vuelidate/core';
 	import { helpers } from '@vuelidate/validators';
 	import { useI18n } from 'vue-i18n';
+	import useCompany from "@/composables/companies";
+
 
 	const { invoiceHeader, getInvoiceHeader } = useInvoiceHeaders();
 	const { t } = useI18n();
 	const props = defineProps(['invoiceHeaderId']);
 	const emit = defineEmits(['cancelEdit', 'updateInvoiceHeaderForm']);
+
+	const {companies, getCompanies} = useCountry();
+
 
 	const rules = {
 		invoice_counter_id: {
@@ -417,6 +440,9 @@
 		formData.total_without_vat = invoiceHeader.value.total_without_vat;
 		formData.total_with_vat = invoiceHeader.value.total_with_vat;
 		formData.has_paid = invoiceHeader.value.has_paid;
+
+		await getCountries();
+
 	});
 
 </script>

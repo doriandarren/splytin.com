@@ -13,14 +13,31 @@
 						<label for="company_id" class="form-label w-full">
 							{{ $t("company_id") }} *
 						</label>
-						<input
+						<!-- <input
 							v-model.trim="validate.company_id.$model"
 							id="company_id"
 							type="text"
 							name="company_id"
 							class="form-control"
 							:class="{ 'border-danger': validate.company_id.$error }"
-						/>
+						/> -->
+						<select
+						v-model.trim="validate.company_id.$model"
+							id="company_id"
+							name="company_id"
+							class="form-control"
+							:class="{ 'border-danger': validate.company_id.$error }"
+						>
+
+							<option 
+                				v-for="item in companies" 
+                				:key="item.id" 
+                				:value="item.id"
+              				>
+                				{{ item.name }}
+							</option>
+
+						</select>
 						<template v-if="validate.company_id.$error">
 							<div v-for="(error, index) in validate.company_id.$errors" :key="index" class="text-danger mt-2">
 						{{ error.$message }}
@@ -76,28 +93,6 @@
 
 				<div class="col-span-12 md:col-span-6 lg:col-span-4">
 					<div class="input-form">
-						<label for="current_hours" class="form-label w-full">
-							{{ $t("current_hours") }} *
-						</label>
-						<input
-							v-model.trim="validate.current_hours.$model"
-							id="current_hours"
-							type="text"
-							name="current_hours"
-							class="form-control"
-							:class="{ 'border-danger': validate.current_hours.$error }"
-						/>
-						<template v-if="validate.current_hours.$error">
-							<div v-for="(error, index) in validate.current_hours.$errors" :key="index" class="text-danger mt-2">
-						{{ error.$message }}
-							</div>
-						</template>
-					</div>
-				</div>
-
-
-				<div class="col-span-12 md:col-span-6 lg:col-span-4">
-					<div class="input-form">
 						<label for="started_at" class="form-label w-full">
 							{{ $t("started_at") }} *
 						</label>
@@ -143,7 +138,7 @@
 				<div class="col-span-12 md:col-span-6 lg:col-span-4">
 					<div class="input-form">
 						<label for="description" class="form-label w-full">
-							{{ $t("description") }} *
+							{{ $t("description") }} 
 						</label>
 						<input
 							v-model.trim="validate.description.$model"
@@ -195,11 +190,16 @@
 	import { useVuelidate } from '@vuelidate/core';
 	import { helpers } from '@vuelidate/validators';
 	import { useI18n } from 'vue-i18n';
+	import useCompany from "@/composables/companies";
+
 
 	const { project, getProject } = useProjects();
 	const { t } = useI18n();
 	const props = defineProps(['projectId']);
 	const emit = defineEmits(['cancelEdit', 'updateProjectForm']);
+
+	const {companies, getCompanies} = useCompany();
+
 
 	const rules = {
 		company_id: {
@@ -211,9 +211,6 @@
 		total_hours: {
 			required: helpers.withMessage(t("form.required"), required),
 		},
-		current_hours: {
-			required: helpers.withMessage(t("form.required"), required),
-		},
 		started_at: {
 			required: helpers.withMessage(t("form.required"), required),
 		},
@@ -221,7 +218,7 @@
 			required: helpers.withMessage(t("form.required"), required),
 		},
 		description: {
-			required: helpers.withMessage(t("form.required"), required),
+			// required: helpers.withMessage(t("form.required"), required),
 		},
 	};
 
@@ -229,7 +226,6 @@
 		company_id: "",
 		name: "",
 		total_hours: "",
-		current_hours: "",
 		started_at: "",
 		finished_at: "",
 		description: "",
@@ -251,10 +247,12 @@
 		formData.company_id = project.value.company_id;
 		formData.name = project.value.name;
 		formData.total_hours = project.value.total_hours;
-		formData.current_hours = project.value.current_hours;
 		formData.started_at = project.value.started_at;
 		formData.finished_at = project.value.finished_at;
 		formData.description = project.value.description;
+
+		await getCompanies();
+
 	});
 
 </script>
