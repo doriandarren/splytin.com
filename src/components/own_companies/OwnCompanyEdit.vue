@@ -36,7 +36,7 @@
 				</div>
 
 
-				<div class="col-span-12 md:col-span-6 lg:col-span-4">
+				<div class="col-span-12 md:col-span-6 lg:col-span-5">
 					<div class="input-form">
 						<label for="name" class="form-label w-full">
 							{{ $t("name") }} *
@@ -52,7 +52,7 @@
 				</div>
 
 
-				<div class="col-span-12 md:col-span-6 lg:col-span-4">
+				<div class="col-span-12 md:col-span-6 lg:col-span-3">
 					<div class="input-form">
 						<label for="tax" class="form-label w-full">
 							{{ $t("tax") }} *
@@ -68,7 +68,7 @@
 				</div>
 
 
-				<div class="col-span-12 md:col-span-6 lg:col-span-4">
+				<div class="col-span-12 md:col-span-6 lg:col-span-6">
 					<div class="input-form">
 						<label for="address" class="form-label w-full">
 							{{ $t("address") }} *
@@ -85,7 +85,7 @@
 				</div>
 
 
-				<div class="col-span-12 md:col-span-6 lg:col-span-4">
+				<div class="col-span-12 md:col-span-6 lg:col-span-3">
 					<div class="input-form">
 						<label for="state" class="form-label w-full">
 							{{ $t("state") }} *
@@ -108,7 +108,7 @@
 				</div>
 
 
-				<div class="col-span-12 md:col-span-6 lg:col-span-4">
+				<div class="col-span-12 md:col-span-6 lg:col-span-3">
 					<div class="input-form">
 						<label for="municipality" class="form-label w-full">
 							{{ $t("municipality") }} *
@@ -126,7 +126,7 @@
 				</div>
 
 
-				<div class="col-span-12 md:col-span-6 lg:col-span-4">
+				<div class="col-span-12 md:col-span-6 lg:col-span-8">
 					<div class="input-form">
 						<label for="email" class="form-label w-full">
 							{{ $t("email") }} *
@@ -142,7 +142,7 @@
 				</div>
 
 
-				<div class="col-span-12 md:col-span-6 lg:col-span-4">
+				<div class="col-span-12 md:col-span-6 lg:col-span-2">
 					<div class="input-form">
 						<label for="phone" class="form-label w-full">
 							{{ $t("phone") }} *
@@ -158,7 +158,7 @@
 				</div>
 
 
-				<div class="col-span-12 md:col-span-6 lg:col-span-4">
+				<div class="col-span-12 md:col-span-6 lg:col-span-2">
 					<div class="input-form">
 						<label for="zip_code" class="form-label w-full">
 							{{ $t("zip_code") }} *
@@ -175,7 +175,7 @@
 				</div>
 
 
-				<div class="col-span-12 md:col-span-6 lg:col-span-4">
+				<div class="col-span-12 md:col-span-6 lg:col-span-12">
 					<div class="input-form">
 						<label for="website" class="form-label w-full">
 							{{ $t("website") }} *
