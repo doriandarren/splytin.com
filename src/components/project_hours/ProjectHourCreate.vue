@@ -8,19 +8,36 @@
 			<!-- BEGIN: container -->
 			<div class="grid grid-cols-12 gap-6">
 
-				<div class="col-span-12 md:col-span-6 lg:col-span-4">
+				<div class="col-span-12 md:col-span-6 lg:col-span-6">
 					<div class="input-form">
 						<label for="project_id" class="form-label w-full">
 							{{ $t("project_id") }} *
 						</label>
-						<input
+						<!-- <input
 							v-model.trim="validate.project_id.$model"
 							id="project_id"
 							type="text"
 							name="project_id"
 							class="form-control"
 							:class="{ 'border-danger': validate.project_id.$error }"
-						/>
+						/> -->
+						<select
+							v-model.trim="validate.project_id.$model"
+							id="project_id"
+							type="text"
+							name="project_id"
+							class="form-control"
+							:class="{ 'border-danger': validate.project_id.$error }"
+						>
+							<option 
+                				v-for="item in companies" 
+                				:key="item.id" 
+                				:value="item.id"
+              					>
+                				{{ item.name }}
+							</option>
+
+						</select>
 						<template v-if="validate.project_id.$error">
 							<div v-for="(error, index) in validate.project_id.$errors" :key="index" class="text-danger mt-2">
 								{{ error.$message }}
@@ -30,7 +47,7 @@
 				</div>
 
 
-				<div class="col-span-12 md:col-span-6 lg:col-span-4">
+				<div class="col-span-12 md:col-span-6 lg:col-span-6">
 					<div class="input-form">
 						<label for="invoice_id" class="form-label w-full">
 							{{ $t("invoice_id") }} *
@@ -82,7 +99,7 @@
 						<input
 							v-model.trim="validate.invoice_at.$model"
 							id="invoice_at"
-							type="text"
+							type="date"
 							name="invoice_at"
 							class="form-control"
 							:class="{ 'border-danger': validate.invoice_at.$error }"
@@ -104,7 +121,7 @@
 						<input
 							v-model.trim="validate.is_generated.$model"
 							id="is_generated"
-							type="text"
+							type="date"
 							name="is_generated"
 							class="form-control"
 							:class="{ 'border-danger': validate.is_generated.$error }"
@@ -118,7 +135,7 @@
 				</div>
 
 
-				<div class="col-span-12 md:col-span-6 lg:col-span-4">
+				<div class="col-span-12 md:col-span-6 lg:col-span-12">
 					<div class="input-form">
 						<label for="description" class="form-label w-full">
 							{{ $t("description") }} *
@@ -172,9 +189,14 @@
 	import { useVuelidate } from '@vuelidate/core';
 	import { helpers } from '@vuelidate/validators';
 	import { useI18n } from 'vue-i18n';
+	import useCompany from "@/composables/companies";
+
 
 	const { t } = useI18n();
 	const emit = defineEmits(['cancelCreate', 'saveProjectHourForm']);
+
+	const {companies, getCompanies} = useCompany();
+
 
 	const rules = {
 		project_id: {
@@ -219,6 +241,8 @@
 
 	onMounted(async () => {
 		// TODO here implements...
+		await getCompanies();
+
 	});
 
 </script>
