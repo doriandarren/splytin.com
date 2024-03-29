@@ -100,7 +100,6 @@
 		{ label: t("company_id"), field: 'company.name' },
 		{ label: t("name"), field: 'name' },
 		{ label: t("total_hours"), field: 'total_hours' },
-		{ label: t("current_hours"), field: 'current_hours' },
 		{ label: t("started_at"), field: 'started_at' },
 		{ label: t("finished_at"), field: 'finished_at' },
 		{ label: t("description"), field: 'description' },
