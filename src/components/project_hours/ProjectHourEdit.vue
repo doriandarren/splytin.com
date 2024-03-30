@@ -8,7 +8,7 @@
 			<!-- BEGIN: container -->
 			<div class="grid grid-cols-12 gap-6">
 
-				<div class="col-span-12 md:col-span-6 lg:col-span-4">
+				<div class="col-span-12 md:col-span-6 lg:col-span-6">
 					<div class="input-form">
 						<label for="project_id" class="form-label w-full">
 							{{ $t("project_id") }} *
@@ -30,29 +30,8 @@
 				</div>
 
 
-				<div class="col-span-12 md:col-span-6 lg:col-span-4">
-					<div class="input-form">
-						<label for="invoice_id" class="form-label w-full">
-							{{ $t("invoice_id") }} *
-						</label>
-						<input
-							v-model.trim="validate.invoice_id.$model"
-							id="invoice_id"
-							type="text"
-							name="invoice_id"
-							class="form-control"
-							:class="{ 'border-danger': validate.invoice_id.$error }"
-						/>
-						<template v-if="validate.invoice_id.$error">
-							<div v-for="(error, index) in validate.invoice_id.$errors" :key="index" class="text-danger mt-2">
-						{{ error.$message }}
-							</div>
-						</template>
-					</div>
-				</div>
 
-
-				<div class="col-span-12 md:col-span-6 lg:col-span-4">
+				<div class="col-span-12 md:col-span-6 lg:col-span-2">
 					<div class="input-form">
 						<label for="hours" class="form-label w-full">
 							{{ $t("hours") }} *
@@ -74,7 +53,7 @@
 				</div>
 
 
-				<div class="col-span-12 md:col-span-6 lg:col-span-4">
+				<div class="col-span-12 md:col-span-6 lg:col-span-2">
 					<div class="input-form">
 						<label for="invoice_at" class="form-label w-full">
 							{{ $t("invoice_at") }} *
@@ -96,29 +75,7 @@
 				</div>
 
 
-				<div class="col-span-12 md:col-span-6 lg:col-span-4">
-					<div class="input-form">
-						<label for="is_generated" class="form-label w-full">
-							{{ $t("is_generated") }} *
-						</label>
-						<input
-							v-model.trim="validate.is_generated.$model"
-							id="is_generated"
-							type="text"
-							name="is_generated"
-							class="form-control"
-							:class="{ 'border-danger': validate.is_generated.$error }"
-						/>
-						<template v-if="validate.is_generated.$error">
-							<div v-for="(error, index) in validate.is_generated.$errors" :key="index" class="text-danger mt-2">
-						{{ error.$message }}
-							</div>
-						</template>
-					</div>
-				</div>
-
-
-				<div class="col-span-12 md:col-span-6 lg:col-span-4">
+				<div class="col-span-12 md:col-span-6 lg:col-span-12">
 					<div class="input-form">
 						<label for="description" class="form-label w-full">
 							{{ $t("description") }} *
@@ -183,16 +140,10 @@
 		project_id: {
 			required: helpers.withMessage(t("form.required"), required),
 		},
-		invoice_id: {
-			required: helpers.withMessage(t("form.required"), required),
-		},
 		hours: {
 			required: helpers.withMessage(t("form.required"), required),
 		},
 		invoice_at: {
-			required: helpers.withMessage(t("form.required"), required),
-		},
-		is_generated: {
 			required: helpers.withMessage(t("form.required"), required),
 		},
 		description: {
@@ -202,10 +153,8 @@
 
 	const formData = reactive({
 		project_id: "",
-		invoice_id: "",
 		hours: "",
 		invoice_at: "",
-		is_generated: "",
 		description: "",
 	});
 
