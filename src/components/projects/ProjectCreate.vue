@@ -8,7 +8,7 @@
 			<!-- BEGIN: container -->
 			<div class="grid grid-cols-12 gap-6">
 
-				<div class="col-span-12 md:col-span-6 lg:col-span-4">
+				<div class="col-span-12 md:col-span-6 lg:col-span-6">
 					<div class="input-form">
 						<label for="company_id" class="form-label w-full">
 							{{ $t("company_id") }} *
@@ -40,7 +40,7 @@
 				</div>
 
 
-				<div class="col-span-12 md:col-span-6 lg:col-span-8">
+				<div class="col-span-12 md:col-span-6 lg:col-span-6">
 					<div class="input-form">
 						<label for="name" class="form-label w-full">
 							{{ $t("name") }} *
