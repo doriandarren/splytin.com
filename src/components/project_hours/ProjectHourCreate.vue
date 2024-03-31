@@ -16,13 +16,12 @@
 						<select
 							v-model.trim="validate.project_id.$model"
 							id="project_id"
-							type="text"
 							name="project_id"
 							class="form-control"
 							:class="{ 'border-danger': validate.project_id.$error }"
 						>
 							<option 
-                				v-for="item in companies" 
+                				v-for="item in projects" 
                 				:key="item.id" 
                 				:value="item.id"
               					>
@@ -86,7 +85,7 @@
 				<div class="col-span-12 md:col-span-6 lg:col-span-12">
 					<div class="input-form">
 						<label for="description" class="form-label w-full">
-							{{ $t("description") }} *
+							{{ $t("description") }}
 						</label>
 						<input
 							v-model.trim="validate.description.$model"
@@ -137,13 +136,13 @@
 	import { useVuelidate } from '@vuelidate/core';
 	import { helpers } from '@vuelidate/validators';
 	import { useI18n } from 'vue-i18n';
-	import useCompany from "@/composables/companies";
+	import useProject from "@/composables/projects";
 
 
 	const { t } = useI18n();
 	const emit = defineEmits(['cancelCreate', 'saveProjectHourForm']);
 
-	const {companies, getCompanies} = useCompany();
+	const {projects, getProjects} = useProject();
 
 
 	const rules = {
@@ -181,7 +180,7 @@
 
 	onMounted(async () => {
 		// TODO here implements...
-		await getCompanies();
+		await getProjects();
 
 	});
 

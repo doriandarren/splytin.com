@@ -26,11 +26,11 @@
     <div class="flex flex-1 overflow-hidden">
       <!-- Menú lateral -->
       <nav :class="{ 'block': isSidebarOpen, 'hidden': !isSidebarOpen }" class="bg-blue-100 w-64 p-5 md:block">
-        Menú Lateral
+
         <ul class="mt-4">
           <li>
             <RouterLink :to="{ name: 'dashboard' }" class="block py-2 hover:bg-blue-200">
-              Inicio
+              Dashboard
             </RouterLink>
           </li>
 

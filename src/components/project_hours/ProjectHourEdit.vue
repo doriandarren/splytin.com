@@ -16,7 +16,6 @@
 						<input
 							v-model.trim="validate.project_id.$model"
 							id="project_id"
-							type="text"
 							name="project_id"
 							class="form-control"
 							:class="{ 'border-danger': validate.project_id.$error }"
@@ -78,7 +77,7 @@
 				<div class="col-span-12 md:col-span-6 lg:col-span-12">
 					<div class="input-form">
 						<label for="description" class="form-label w-full">
-							{{ $t("description") }} *
+							{{ $t("description") }}
 						</label>
 						<input
 							v-model.trim="validate.description.$model"
