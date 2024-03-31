@@ -30,61 +30,43 @@
         <ul class="mt-4">
           <li>
             <RouterLink :to="{ name: 'dashboard' }" class="block py-2 hover:bg-blue-200">
-              Dashboard
+              {{ $t('dashboard') }}
             </RouterLink>
           </li>
 
-          <!-- <li>
-              <RouterLink 
-                :to="{ name: 'categories' }" 
-                class="block py-2 hover:bg-blue-200"
-              >
-              Categories
-              </RouterLink>
-            </li> -->
-
-          <!-- <li>
-              <RouterLink 
-                :to="{ name: 'msft-prices' }" 
-                class="block py-2 hover:bg-blue-200"
-              >
-              Msft Prices
-              </RouterLink>
-            </li> -->
-
           <li>
             <RouterLink :to="{ name: 'companies' }" class="block py-2 hover:bg-blue-200">
-              Companies
+              {{ $t('companies') }}
             </RouterLink>
           </li>
 
           <li>
             <RouterLink :to="{ name: 'own_companies' }" class="block py-2 hover:bg-blue-200">
-              Own Companies
+              {{ $t('own_companies') }}
             </RouterLink>
           </li>
 
           <li>
             <RouterLink :to="{ name: 'projects' }" class="block py-2 hover:bg-blue-200">
-              Projects
+              {{ $t('projects') }}
             </RouterLink>
           </li>
 
           <li>
             <RouterLink :to="{ name: 'project_hours' }" class="block py-2 hover:bg-blue-200">
-              Project Hours
+              {{ $t('project_hours') }}
             </RouterLink>
           </li>
 
           <li>
             <RouterLink :to="{ name: 'invoice_headers' }" class="block py-2 hover:bg-blue-200">
-              Invoice Headers
+              {{ $t('invoice_headers') }}
             </RouterLink>
           </li>
 
           <li>
             <RouterLink :to="{ name: 'invoice_lines' }" class="block py-2 hover:bg-blue-200">
-              Invoice Lines
+              {{ $t('invoice_lines')}}
             </RouterLink>
           </li>
 
@@ -102,8 +84,10 @@
 
 
 import { ref } from 'vue';
+import { useI18n } from 'vue-i18n';
 
 const isSidebarOpen = ref(false);
+const { t } = useI18n();
 
 function toggleSidebar() {
   isSidebarOpen.value = !isSidebarOpen.value;

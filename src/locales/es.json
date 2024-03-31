@@ -45,13 +45,16 @@
     "phone": "Teléfono",
     "code_zip": "Código postal",
     "project_id": "Proyecto Id",
+    "projects": "Proyectos",
     "hours": "Horas",
     "invoice_at": "Fecha factura",
     "company_id": "Compañia Id",
+    "companies": "Compañias",
     "number": "Número",
     "date": "Fecha",
     "invoice_id": "Factura Id",
     "invoice_header_id": "Factura cabecera Id",
+    "invoice_headers": "Facturas",
     "vat": "IVA",
     "unit_prices": "Precio unidad",
     "project_hours": "Horas proyecto",
@@ -59,6 +62,7 @@
     "description": "Descripción",
     "project_hour_id": "Hora proyecto Id",
     "own_company_id": "Compañias propias Id",
+    "own_companies": "Compañias propias",
     "total_hours": "Horas Totales",
     "current_hours": "Horas Actuales",
     "started_at": "Fecha Inicio",
@@ -70,6 +74,7 @@
     "zip_code": "Codigo Postal",
     "is_generated": "Está Generado",
     "invoice_counter_id": "ID Contador De Factura",
+    "invoice_lines": "Factura lineas",
     "due_date": "Fecha De Vencimiento",
     "month": "Días",
     "year": "Año",
@@ -77,7 +82,8 @@
     "total_without_vat": "Total sin IVA",
     "total_with_vat": "Total con IVA",
     "has_paid": "Ha Pagado",
-    "actions": "Acciones"
+    "actions": "Acciones",
+    "dashboard": "Inicio"
     
 
 
