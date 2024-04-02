@@ -9,13 +9,15 @@
       <div>
         <div class="container mx-auto flex justify-between items-center">
           <div class="flex items-center">
-            <a href="/" class="text-lg font-semibold">Splytin</a>
+            <a href="/" class="text-lg hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              Splytin
+            </a>
             <!-- Cualquier otro elemento que quieras a la izquierda -->
           </div>
           <div>
             <!-- El botón queda a la derecha debido a justify-between en el contenedor padre -->
             <button @click="logOut" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-              Log Out
+              {{ $t('logout') }}
             </button>
           </div>
         </div>
