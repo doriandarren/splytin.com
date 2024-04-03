@@ -1,5 +1,5 @@
 <template>
-    <div class="m-10 p-10 border rounded-lg">
+    <div v-animate class="m-10 p-10 border rounded-lg">
         <h1>{{ $t("login_form.title") }}</h1>
 
         <div class="w-full mb-5">
