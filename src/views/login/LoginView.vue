@@ -1,4 +1,7 @@
 <template>
+
+    <Preloader v-if="loading" />
+
     <div v-animate class="m-10 p-10 border rounded-lg">
         <h1>{{ $t("login_form.title") }}</h1>
 
@@ -48,7 +51,11 @@
 <script setup>
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+import Preloader from '@/components/preloader/Preloader.vue';
 
+
+//init
+const loading = ref(false);
 
 
 const correo = ref('');
@@ -64,6 +71,8 @@ function togglePasswordVisibility() {
 
 const submit = () => {
     message.value = '';
+    //set value
+    loading.value = true; 
 
     if (!correo.value || !password.value) {
         message.value = 'los dos campos son requeridos';
@@ -92,9 +101,10 @@ const submit = () => {
 
             if (response.success && response.token) {
                 // message.value = 'datos correctos';
-
+                loading.value = false;
                 localStorage.setItem('splytin_token', response.token);
                 router.push('/dashboard');
+                
             } else {
                 message.value = 'datos incorrectos';
             }

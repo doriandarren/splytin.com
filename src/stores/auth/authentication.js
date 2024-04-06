@@ -1,8 +1,6 @@
 import { defineStore } from "pinia";
-import { computed, ref } from "vue";
+import { ref } from "vue";
 import { useRoute, useRouter } from 'vue-router';
-
-
 
 
 export const useAuthenticationStore = defineStore('authentication', () => {
@@ -31,13 +29,13 @@ export const useAuthenticationStore = defineStore('authentication', () => {
     })
       .then(res => res.json())
       .then(data => {
-        if (localStorage.getItem('token_admin_gf')) {
-          localStorage.removeItem('token_admin_gf');
+        if (localStorage.getItem('splytin_token')) {
+          localStorage.removeItem('splytin_token');
         }
 
         if (data.success) {
           this.user = data.user;
-          localStorage.setItem('token_admin_gf', data.token);
+          localStorage.setItem('splytin_token', data.token);
         } else {
           this.authErrors = data.errors;
         }
@@ -54,18 +52,16 @@ export const useAuthenticationStore = defineStore('authentication', () => {
   
 
     let response;
-    let errors;
 
     await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}auth/user`, {
       method: "GET",
       headers: {
         'Content-Type': "application/json",
-        'Authorization': `Bearer ${localStorage.getItem('token_admin_gf')}`
+        'Authorization': `Bearer ${localStorage.getItem('splytin_token')}`
       },
     })
       .then(data => data.json())
       .then(data => {
-
         response = data;
       })
       .catch((e) => {
@@ -77,44 +73,6 @@ export const useAuthenticationStore = defineStore('authentication', () => {
 
   }
 
-
-
-  // async function currentUser() {
-  
-  //   return new Promise(async (resolve, reject) => {
-  //     try {
-  //       const response = await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}office/auth/user`, {
-  //         method: "GET",
-  //         headers: {
-  //           'Content-Type': "application/json",
-  //           'Authorization': `Bearer ${localStorage.getItem('token_admin_gf')}`
-  //         },
-  //       });
-  
-  //       if (!response.success) {
-  //         // Manejar errores de HTTP
-  //         reject(new Error(`Error al consultar la API: ${response.statusText}`));
-  //         return;
-  //       }
-  
-  //       const datos = await response.json();
-  //       resolve(datos);
-  //     } catch (error) {
-  //       reject(new Error(`Error al consultar la API: ${error.message}`));
-  //     }
-  //   });
-  
-  // }
-
-  
-
-
-
-
-
-
-
-
   async function logout() {
 
     try {
@@ -122,29 +80,29 @@ export const useAuthenticationStore = defineStore('authentication', () => {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${localStorage.getItem('token_admin_gf')}`
+          "Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
         }
       });
       const response = await res.json();
 
       if (response.success) {
+
         this.token = null;
         this.user = null;
+        localStorage.removeItem('splytin_token');
+
       } else {
-        this.errors = response.errors;
+        this.authErrors = response.errors;
       }
 
-    } catch (error) {
+    } catch (e) {
       console.log(e);
-      this.errors = e;
+      this.authErrors = e;
       this.token = null;
       this.user = null;
     }
 
   }
-
-
-
 
   return {
     token,

@@ -87,9 +87,14 @@
 
 import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
+import { useAuthenticationStore } from '@/stores/auth/authentication';
+
 
 const isSidebarOpen = ref(false);
 const { t } = useI18n();
+
+const { authErrors, currentUser, logout } = useAuthenticationStore();
+
 
 function toggleSidebar() {
   isSidebarOpen.value = !isSidebarOpen.value;
@@ -97,8 +102,12 @@ function toggleSidebar() {
 
 
 
-const logOut = () => {
-  console.log('Log Out');
+const logOut = async() => {
+    
+  await logout();
+
+  console.log(authErrors);
+
 }
 
 </script>

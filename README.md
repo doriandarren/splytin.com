@@ -1,31 +1,5 @@
 # Spytin Web
 
-ownCompanies
-country_id name tax address state municipality email phone zip_code website
-
-
-companies
-country_id name tax address state municipality email phone zip_code website
-
-
-projects
-company_id name total_hours current_hours started_at finished_at description
-
-
-projectHours
-project_id invoice_id hours invoice_at is_generated description
-
-
-invoiceHeaders
-invoice_counter_id own_company_id company_id number date due_date month year description vat_quote total_without_vat total_with_vat has_paid
-
-
-invoiceLines
-invoice_header_id vat unit_prices total description
-
-
-
-
 ## Project Setup
 
 ```sh
@@ -244,5 +218,43 @@ import 'vue-good-table-next/dist/vue-good-table-next.css'
 
 Vue.use(VueGoodTablePlugin);
 
+
+```
+
+
+
+
+## Preloader:
+
+```sh 
+
+<template>
+    
+    ...
+    
+    <Preloader v-if="loading" />
+    
+    ...
+
+</template>
+
+
+
+
+<script setup>
+    ...
+
+    //import 
+    import Preloader from '@/components/preloader/Preloader.vue';
+
+    //init
+    const loading = ref(false);
+
+    //set value
+    loading.value = true; 
+
+    ...
+
+</script>
 
 ```
