@@ -67,7 +67,7 @@ const router = useRouter();
 
 const authStore = useAuthenticationStore();
 const {login} = authStore;
-const { authErrors } = storeToRefs(authStore);
+const { user, authErrors } = storeToRefs(authStore);
 
 
 const showPassword = ref(false);
@@ -97,11 +97,16 @@ const submit = async () => {
 
 
 
-    await login(correo.value, password.value);
-    //await login();
     loading.value = false; 
+    await login(correo.value, password.value);
+    
+    if (user.success) {
+        loading.value = false;
+        router.push('/dashboard');
+    }
+    
 
-    console.log(authErrors.value);
+    //console.log(authErrors.value);
 
 
 
