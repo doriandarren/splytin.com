@@ -16,7 +16,10 @@
           </div>
           <div>
             <!-- El botón queda a la derecha debido a justify-between en el contenedor padre -->
-            <button @click="logOut" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <button 
+              @click="submit" 
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            >
               {{ $t('logout') }}
             </button>
           </div>
@@ -93,7 +96,7 @@ import { useAuthenticationStore } from '@/stores/auth/authentication';
 const isSidebarOpen = ref(false);
 const { t } = useI18n();
 
-const { authErrors, currentUser, logout } = useAuthenticationStore();
+const { logout } = useAuthenticationStore();
 
 
 function toggleSidebar() {
@@ -101,13 +104,8 @@ function toggleSidebar() {
 }
 
 
-
-const logOut = async() => {
-    
+const submit = async() => {
   await logout();
-
-  console.log(authErrors);
-
 }
 
 </script>

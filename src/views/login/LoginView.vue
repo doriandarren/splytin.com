@@ -49,9 +49,11 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, toRefs } from 'vue';
+import { storeToRefs } from 'pinia';
 import { useRouter } from 'vue-router';
 import Preloader from '@/components/preloader/Preloader.vue';
+import { useAuthenticationStore } from '@/stores/auth/authentication';
 
 
 //init
@@ -63,13 +65,19 @@ const password = ref('');
 const message = ref('');
 const router = useRouter();
 
+const authStore = useAuthenticationStore();
+const {login} = authStore;
+const { authErrors } = storeToRefs(authStore);
+
+
 const showPassword = ref(false);
 
 function togglePasswordVisibility() {
     showPassword.value = !showPassword.value;
 }
 
-const submit = () => {
+const submit = async () => {
+
     message.value = '';
     //set value
     loading.value = true; 
@@ -80,37 +88,50 @@ const submit = () => {
     }
 
     //Splytin2023
-    let data = {
-        email: correo.value,
-        password: password.value
-    }
+    // let data = {
+    //     email: correo.value,
+    //     password: password.value
+    // }
 
 
-    fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}auth/login`, {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-            "Content-Type": "application/json"
-        },
-    })
-        .then((res) => res.json())
-        .then((response) => {
-
-            console.log(response.token);
 
 
-            if (response.success && response.token) {
-                // message.value = 'datos correctos';
-                loading.value = false;
-                localStorage.setItem('splytin_token', response.token);
-                router.push('/dashboard');
-                
-            } else {
-                message.value = 'datos incorrectos';
-            }
+
+    //await login(correo.value, password.value);
+    await login();
+    loading.value = false; 
+
+    console.log(authErrors.value);
 
 
-        });
+
+
+
+
+
+    // fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}auth/login`, {
+    //     method: "POST",
+    //     body: JSON.stringify(data),
+    //     headers: {
+    //         "Content-Type": "application/json"
+    //     },
+    // })
+    //     .then((res) => res.json())
+    //     .then((response) => {
+
+    //         console.log(response.token);
+
+
+    //         if (response.success && response.token) {
+    //             // message.value = 'datos correctos';
+    //             loading.value = false;
+    //             localStorage.setItem('splytin_token', response.token);
+    //             router.push('/dashboard');
+
+    //         } else {
+    //             message.value = 'datos incorrectos';
+    //         }
+    //     });
 }
 
 </script>

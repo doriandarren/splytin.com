@@ -457,7 +457,7 @@ const routes = [
     name: 'main',
     component: () => import('@/components/template/private/Main.vue'),
     redirect: '/dashboard',
-    //meta: { requiresAuth: true },
+    meta: { requiresAuth: true },
     children: [
       {
         path: '/dashboard',
@@ -528,9 +528,9 @@ router.beforeEach(async (to, from, next) => {
 
   if (to.matched.some(record => record.meta.requiresAuth)) {
 
-    const useAuthentication = useAuthenticationStore();
+    const {currentUser} = useAuthenticationStore();
 
-    let response = await useAuthentication.currentUser();
+    let response = await currentUser();
 
     try {
       if (response) {
