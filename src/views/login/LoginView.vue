@@ -97,8 +97,8 @@ const submit = async () => {
 
 
 
-    //await login(correo.value, password.value);
-    await login();
+    await login(correo.value, password.value);
+    //await login();
     loading.value = false; 
 
     console.log(authErrors.value);
