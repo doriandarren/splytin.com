@@ -7,6 +7,7 @@ export const useAuthenticationStore = defineStore('authentication', () => {
 
   const token = ref(null);
   const user = ref(null);
+  const loginResponse = ref(null);
   const authErrors = ref([]);
 
   const router = useRouter();
@@ -30,10 +31,11 @@ export const useAuthenticationStore = defineStore('authentication', () => {
         if (localStorage.getItem('splytin_token')) {
           localStorage.removeItem('splytin_token');
         }
-
         
+        
+
         if (data.success) {
-          user.value = data.user;
+          loginResponse.value = data;
           localStorage.setItem('splytin_token', data.token);
         } else {
           authErrors.value = data.errors;
@@ -114,6 +116,7 @@ export const useAuthenticationStore = defineStore('authentication', () => {
   return {
     token,
     user,
+    loginResponse,
     authErrors,
     login,
     currentUser,
