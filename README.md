@@ -71,6 +71,23 @@ File tailwind.config.js edit:
   ],
 ...
 
+then file assets -> main.css: 
+
+...
+/*
+ |--------------------------------------------------------------------------
+ | Tailwind Directives
+ |--------------------------------------------------------------------------
+ |
+ | Import TailwindCSS directives and swipe out at build-time with all of
+ | the styles it generates based on your configured design system.
+ |
+ */ 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+...
+
 
 ```
 
