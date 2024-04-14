@@ -99,9 +99,6 @@ const submit = async () => {
 
     loading.value = false; 
     await login(correo.value, password.value);
-
-
-    console.log(loginResponse);
     
     if (loginResponse.value.success) {
         loading.value = false;
