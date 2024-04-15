@@ -16,7 +16,6 @@
     </div>
 
 
-
     <section class="text-gray-600 body-font pt-10">
       <div class="container mx-auto">
         <div class="flex flex-wrap w-full flex-col items-center text-center mb-10">
