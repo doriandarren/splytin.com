@@ -435,12 +435,6 @@ const routes = [
 
 
 
-
-
-
-
-
-
   /** test */
   {
     path: '/test',
@@ -508,6 +502,13 @@ const routes = [
 
     ]
 
+  },
+
+
+  { 
+    path: '/:path(.*)', 
+    name: "NotFound",
+    component: () => import('@/views/sessions/404.vue'), 
   },
 
 ];

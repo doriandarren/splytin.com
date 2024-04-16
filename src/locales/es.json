@@ -13,6 +13,8 @@
       "record_deleted": "Registro eliminado",
       "record_updated": "Registro actualizado"
     },
+    "page_not_found": "Página no encontrada",
+    "home": "Inicio",
     "search": "Buscar",
     "save": "Guardar",
     "cancel": "Cancelar",

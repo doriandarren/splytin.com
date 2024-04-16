@@ -116,7 +116,7 @@ npm install animate.css --save
 
 ### i18n
 
-Guide: [Tailwind Install](https://dev.to/lucasferreiralimax/how-implementation-a-i18n-in-vue-3-4cen).
+Guide: [I18n](https://dev.to/lucasferreiralimax/how-implementation-a-i18n-in-vue-3-4cen).
 
 
 ```sh
