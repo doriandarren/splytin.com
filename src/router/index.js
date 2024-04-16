@@ -3,12 +3,9 @@ import { useAuthenticationStore } from '@/stores/auth/authentication.js';
 
 
 const routes = [
-
-
-
   {
     path: '/',
-    name: 'home',
+    name: 'master',
     component: () => import('@/components/template/public/Main.vue'),
     children: [
       {
