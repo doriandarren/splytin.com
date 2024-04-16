@@ -11,7 +11,7 @@ export default function useCountry() {
 
 	const getCountries = async () => {
 		countryErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}countries/list`,{
+		await fetch(`${import.meta.env.VITE_API_URL}countries/list`,{
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
@@ -34,7 +34,7 @@ export default function useCountry() {
 
 	const getCountry = async (id) => {
 		countryErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}countries/show/${id}`,{
+		await fetch(`${import.meta.env.VITE_API_URL}countries/show/${id}`,{
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
@@ -57,7 +57,7 @@ export default function useCountry() {
 
 	const storeCountry = async (data) => {
 		countryErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}countries/store`,{
+		await fetch(`${import.meta.env.VITE_API_URL}countries/store`,{
 			method: 'POST',
 			headers: {
 				"Content-Type": "application/json",
@@ -81,7 +81,7 @@ export default function useCountry() {
 
 	const updateCountry = async (id, data) => {
 		countryErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}countries/update/${id}`,{
+		await fetch(`${import.meta.env.VITE_API_URL}countries/update/${id}`,{
 			method: 'PUT',
 			headers: {
 				"Content-Type": "application/json",
@@ -105,7 +105,7 @@ export default function useCountry() {
 
 	const destroyCountry = async (id) => {
 		countryErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}countries/delete/${id}`,{
+		await fetch(`${import.meta.env.VITE_API_URL}countries/delete/${id}`,{
 			method: 'DELETE',
 			headers: {
 				"Content-Type": "application/json",

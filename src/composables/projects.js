@@ -11,7 +11,7 @@ export default function useProject() {
 
 	const getProjects = async () => {
 		projectErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}projects/list`,{
+		await fetch(`${import.meta.env.VITE_API_URL}projects/list`,{
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
@@ -34,7 +34,7 @@ export default function useProject() {
 
 	const getProject = async (id) => {
 		projectErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}projects/show/${id}`,{
+		await fetch(`${import.meta.env.VITE_API_URL}projects/show/${id}`,{
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
@@ -57,7 +57,7 @@ export default function useProject() {
 
 	const storeProject = async (data) => {
 		projectErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}projects/store`,{
+		await fetch(`${import.meta.env.VITE_API_URL}projects/store`,{
 			method: 'POST',
 			headers: {
 				"Content-Type": "application/json",
@@ -81,7 +81,7 @@ export default function useProject() {
 
 	const updateProject = async (id, data) => {
 		projectErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}projects/update/${id}`,{
+		await fetch(`${import.meta.env.VITE_API_URL}projects/update/${id}`,{
 			method: 'PUT',
 			headers: {
 				"Content-Type": "application/json",
@@ -105,7 +105,7 @@ export default function useProject() {
 
 	const destroyProject = async (id) => {
 		projectErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}projects/delete/${id}`,{
+		await fetch(`${import.meta.env.VITE_API_URL}projects/delete/${id}`,{
 			method: 'DELETE',
 			headers: {
 				"Content-Type": "application/json",

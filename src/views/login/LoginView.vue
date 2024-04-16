@@ -115,7 +115,7 @@ const submit = async () => {
 
 
 
-    // fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}auth/login`, {
+    // fetch(`${import.meta.env.VITE_API_URL}auth/login`, {
     //     method: "POST",
     //     body: JSON.stringify(data),
     //     headers: {
