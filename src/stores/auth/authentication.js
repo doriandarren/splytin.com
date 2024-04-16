@@ -44,6 +44,9 @@ export const useAuthenticationStore = defineStore('authentication', () => {
       .catch((e) => {
         console.log("Error:", e);
         authErrors.value = e;
+        if (localStorage.getItem('splytin_token')) {
+          localStorage.removeItem('splytin_token');
+        }
       })
 
   }
@@ -69,6 +72,9 @@ export const useAuthenticationStore = defineStore('authentication', () => {
         response = data;
       })
       .catch((e) => {
+        if (localStorage.getItem('splytin_token')) {
+          localStorage.removeItem('splytin_token');
+        }
         router.push('/login');
         console.log("Error:", e);
       });
@@ -105,6 +111,9 @@ export const useAuthenticationStore = defineStore('authentication', () => {
       }
 
     } catch (e) {
+      if (localStorage.getItem('splytin_token')) {
+        localStorage.removeItem('splytin_token');
+      }
       authErrors.value = e;
       token.value = null;
       user.value = null;
