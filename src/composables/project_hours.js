@@ -11,7 +11,7 @@ export default function useProjectHour() {
 
 	const getProjectHours = async () => {
 		projectHourErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}project-hours/list`,{
+		await fetch(`${import.meta.env.VITE_API_URL}project-hours/list`,{
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
@@ -34,7 +34,7 @@ export default function useProjectHour() {
 
 	const getProjectHour = async (id) => {
 		projectHourErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}project-hours/show/${id}`,{
+		await fetch(`${import.meta.env.VITE_API_URL}project-hours/show/${id}`,{
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
@@ -57,7 +57,7 @@ export default function useProjectHour() {
 
 	const storeProjectHour = async (data) => {
 		projectHourErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}project-hours/store`,{
+		await fetch(`${import.meta.env.VITE_API_URL}project-hours/store`,{
 			method: 'POST',
 			headers: {
 				"Content-Type": "application/json",
@@ -81,7 +81,7 @@ export default function useProjectHour() {
 
 	const updateProjectHour = async (id, data) => {
 		projectHourErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}project-hours/update/${id}`,{
+		await fetch(`${import.meta.env.VITE_API_URL}project-hours/update/${id}`,{
 			method: 'PUT',
 			headers: {
 				"Content-Type": "application/json",
@@ -105,7 +105,7 @@ export default function useProjectHour() {
 
 	const destroyProjectHour = async (id) => {
 		projectHourErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}project-hours/delete/${id}`,{
+		await fetch(`${import.meta.env.VITE_API_URL}project-hours/delete/${id}`,{
 			method: 'DELETE',
 			headers: {
 				"Content-Type": "application/json",

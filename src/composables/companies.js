@@ -11,7 +11,7 @@ export default function useCompany() {
 
 	const getCompanies = async () => {
 		companyErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}companies/list`,{
+		await fetch(`${import.meta.env.VITE_API_URL}companies/list`,{
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
@@ -34,7 +34,7 @@ export default function useCompany() {
 
 	const getCompany = async (id) => {
 		companyErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}companies/show/${id}`,{
+		await fetch(`${import.meta.env.VITE_API_URL}companies/show/${id}`,{
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
@@ -57,7 +57,7 @@ export default function useCompany() {
 
 	const storeCompany = async (data) => {
 		companyErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}companies/store`,{
+		await fetch(`${import.meta.env.VITE_API_URL}companies/store`,{
 			method: 'POST',
 			headers: {
 				"Content-Type": "application/json",
@@ -81,7 +81,7 @@ export default function useCompany() {
 
 	const updateCompany = async (id, data) => {
 		companyErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}companies/update/${id}`,{
+		await fetch(`${import.meta.env.VITE_API_URL}companies/update/${id}`,{
 			method: 'PUT',
 			headers: {
 				"Content-Type": "application/json",
@@ -105,7 +105,7 @@ export default function useCompany() {
 
 	const destroyCompany = async (id) => {
 		companyErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}companies/delete/${id}`,{
+		await fetch(`${import.meta.env.VITE_API_URL}companies/delete/${id}`,{
 			method: 'DELETE',
 			headers: {
 				"Content-Type": "application/json",

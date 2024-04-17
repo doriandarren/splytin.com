@@ -11,7 +11,7 @@ export default function useInvoiceLine() {
 
 	const getInvoiceLines = async () => {
 		invoiceLineErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}invoice-lines/list`,{
+		await fetch(`${import.meta.env.VITE_API_URL}invoice-lines/list`,{
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
@@ -34,7 +34,7 @@ export default function useInvoiceLine() {
 
 	const getInvoiceLine = async (id) => {
 		invoiceLineErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}invoice-lines/show/${id}`,{
+		await fetch(`${import.meta.env.VITE_API_URL}invoice-lines/show/${id}`,{
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
@@ -57,7 +57,7 @@ export default function useInvoiceLine() {
 
 	const storeInvoiceLine = async (data) => {
 		invoiceLineErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}invoice-lines/store`,{
+		await fetch(`${import.meta.env.VITE_API_URL}invoice-lines/store`,{
 			method: 'POST',
 			headers: {
 				"Content-Type": "application/json",
@@ -81,7 +81,7 @@ export default function useInvoiceLine() {
 
 	const updateInvoiceLine = async (id, data) => {
 		invoiceLineErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}invoice-lines/update/${id}`,{
+		await fetch(`${import.meta.env.VITE_API_URL}invoice-lines/update/${id}`,{
 			method: 'PUT',
 			headers: {
 				"Content-Type": "application/json",
@@ -105,7 +105,7 @@ export default function useInvoiceLine() {
 
 	const destroyInvoiceLine = async (id) => {
 		invoiceLineErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}invoice-lines/delete/${id}`,{
+		await fetch(`${import.meta.env.VITE_API_URL}invoice-lines/delete/${id}`,{
 			method: 'DELETE',
 			headers: {
 				"Content-Type": "application/json",

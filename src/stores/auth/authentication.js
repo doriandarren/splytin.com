@@ -19,7 +19,7 @@ export const useAuthenticationStore = defineStore('authentication', () => {
     user.value = '';
     authErrors.value = [];
 
-    await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}auth/login`, {
+    await fetch(`${import.meta.env.VITE_API_URL}auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -44,6 +44,9 @@ export const useAuthenticationStore = defineStore('authentication', () => {
       .catch((e) => {
         console.log("Error:", e);
         authErrors.value = e;
+        if (localStorage.getItem('splytin_token')) {
+          localStorage.removeItem('splytin_token');
+        }
       })
 
   }
@@ -57,7 +60,7 @@ export const useAuthenticationStore = defineStore('authentication', () => {
 
     let response;
 
-    await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}auth/user`, {
+    await fetch(`${import.meta.env.VITE_API_URL}auth/user`, {
       method: "GET",
       headers: {
         'Content-Type': "application/json",
@@ -69,6 +72,9 @@ export const useAuthenticationStore = defineStore('authentication', () => {
         response = data;
       })
       .catch((e) => {
+        if (localStorage.getItem('splytin_token')) {
+          localStorage.removeItem('splytin_token');
+        }
         router.push('/login');
         console.log("Error:", e);
       });
@@ -83,7 +89,7 @@ export const useAuthenticationStore = defineStore('authentication', () => {
     authErrors.value = [];
 
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}auth/logout`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}auth/logout`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -105,6 +111,9 @@ export const useAuthenticationStore = defineStore('authentication', () => {
       }
 
     } catch (e) {
+      if (localStorage.getItem('splytin_token')) {
+        localStorage.removeItem('splytin_token');
+      }
       authErrors.value = e;
       token.value = null;
       user.value = null;

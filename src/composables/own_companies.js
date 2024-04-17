@@ -11,7 +11,7 @@ export default function useOwnCompany() {
 
 	const getOwnCompanies = async () => {
 		ownCompanyErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}own-companies/list`,{
+		await fetch(`${import.meta.env.VITE_API_URL}own-companies/list`,{
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
@@ -34,7 +34,7 @@ export default function useOwnCompany() {
 
 	const getOwnCompany = async (id) => {
 		ownCompanyErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}own-companies/show/${id}`,{
+		await fetch(`${import.meta.env.VITE_API_URL}own-companies/show/${id}`,{
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
@@ -57,7 +57,7 @@ export default function useOwnCompany() {
 
 	const storeOwnCompany = async (data) => {
 		ownCompanyErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}own-companies/store`,{
+		await fetch(`${import.meta.env.VITE_API_URL}own-companies/store`,{
 			method: 'POST',
 			headers: {
 				"Content-Type": "application/json",
@@ -81,7 +81,7 @@ export default function useOwnCompany() {
 
 	const updateOwnCompany = async (id, data) => {
 		ownCompanyErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}own-companies/update/${id}`,{
+		await fetch(`${import.meta.env.VITE_API_URL}own-companies/update/${id}`,{
 			method: 'PUT',
 			headers: {
 				"Content-Type": "application/json",
@@ -105,7 +105,7 @@ export default function useOwnCompany() {
 
 	const destroyOwnCompany = async (id) => {
 		ownCompanyErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}own-companies/delete/${id}`,{
+		await fetch(`${import.meta.env.VITE_API_URL}own-companies/delete/${id}`,{
 			method: 'DELETE',
 			headers: {
 				"Content-Type": "application/json",

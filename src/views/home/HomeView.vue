@@ -16,7 +16,6 @@
     </div>
 
 
-
     <section class="text-gray-600 body-font pt-10">
       <div class="container mx-auto">
         <div class="flex flex-wrap w-full flex-col items-center text-center mb-10">
@@ -117,7 +116,7 @@ const findData = async () => {
 
 
 
-  //await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}session-logs/list`,{
+  //await fetch(`${import.meta.env.VITE_API_URL}session-logs/list`,{
   await fetch(`https://api.splytin.com/api/v1/youtube-videos/list`, {
     method: 'GET',
     headers: config.headers,

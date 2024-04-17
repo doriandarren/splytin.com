@@ -49,7 +49,7 @@
 </template>
 
 <script setup>
-import { ref, toRefs } from 'vue';
+import { onMounted, ref } from 'vue';
 import { storeToRefs } from 'pinia';
 import { useRouter } from 'vue-router';
 import Preloader from '@/components/preloader/Preloader.vue';
@@ -66,7 +66,7 @@ const message = ref('');
 const router = useRouter();
 
 const authStore = useAuthenticationStore();
-const {login} = authStore;
+const { login, currentUser } = authStore;
 const { loginResponse, authErrors } = storeToRefs(authStore);
 
 
@@ -87,18 +87,8 @@ const submit = async () => {
         return;
     }
 
-    //Splytin2023
-    // let data = {
-    //     email: correo.value,
-    //     password: password.value
-    // }
-
-
-
-
-
-    loading.value = false; 
     await login(correo.value, password.value);
+
     
     if (loginResponse.value.success) {
         loading.value = false;
@@ -106,15 +96,7 @@ const submit = async () => {
     }
     
 
-    //console.log(authErrors.value);
-
-
-
-
-
-
-
-    // fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}auth/login`, {
+    // fetch(`${import.meta.env.VITE_API_URL}auth/login`, {
     //     method: "POST",
     //     body: JSON.stringify(data),
     //     headers: {
@@ -138,6 +120,30 @@ const submit = async () => {
     //         }
     //     });
 }
+
+
+onMounted(async() => {
+
+    if(localStorage.getItem('splytin_token')){
+        loading.value = true; 
+        let response = await currentUser();
+
+        if(response?.data){
+            loading.value = false; 
+            router.push('/dashboard');
+        }else{
+            loading.value = false; 
+            localStorage.removeItem('splytin_token');
+            router.push('/login');
+        }
+
+    }else{
+        loading.value = false; 
+        router.push('/login');
+    }
+
+})
+
 
 </script>
 

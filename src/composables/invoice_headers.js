@@ -11,7 +11,7 @@ export default function useInvoiceHeader() {
 
 	const getInvoiceHeaders = async () => {
 		invoiceHeaderErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}invoice-headers/list`,{
+		await fetch(`${import.meta.env.VITE_API_URL}invoice-headers/list`,{
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
@@ -34,7 +34,7 @@ export default function useInvoiceHeader() {
 
 	const getInvoiceHeader = async (id) => {
 		invoiceHeaderErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}invoice-headers/show/${id}`,{
+		await fetch(`${import.meta.env.VITE_API_URL}invoice-headers/show/${id}`,{
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
@@ -57,7 +57,7 @@ export default function useInvoiceHeader() {
 
 	const storeInvoiceHeader = async (data) => {
 		invoiceHeaderErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}invoice-headers/store`,{
+		await fetch(`${import.meta.env.VITE_API_URL}invoice-headers/store`,{
 			method: 'POST',
 			headers: {
 				"Content-Type": "application/json",
@@ -81,7 +81,7 @@ export default function useInvoiceHeader() {
 
 	const updateInvoiceHeader = async (id, data) => {
 		invoiceHeaderErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}invoice-headers/update/${id}`,{
+		await fetch(`${import.meta.env.VITE_API_URL}invoice-headers/update/${id}`,{
 			method: 'PUT',
 			headers: {
 				"Content-Type": "application/json",
@@ -104,7 +104,7 @@ export default function useInvoiceHeader() {
 
 	const destroyInvoiceHeader = async (id) => {
 		invoiceHeaderErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}invoice-headers/delete/${id}`,{
+		await fetch(`${import.meta.env.VITE_API_URL}invoice-headers/delete/${id}`,{
 			method: 'DELETE',
 			headers: {
 				"Content-Type": "application/json",
