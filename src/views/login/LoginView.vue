@@ -22,10 +22,10 @@
                 <div class="absolute inset-y-0 right-0 flex items-center px-2">
                     <button type="button" @click="togglePasswordVisibility">
                         ver
-                        <!-- <img 
-                      :src="showPassword ? 'path/to/eye-closed-icon.svg' : 'path/to/eye-open-icon.svg'" 
+                        <img 
+                      :src="showPassword ? '+' : '-'" 
                       alt="Show/Hide password"
-                  /> -->
+                  />
                     </button>
                 </div>
             </div>
