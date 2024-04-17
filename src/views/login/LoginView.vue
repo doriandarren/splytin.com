@@ -32,10 +32,6 @@
 
         </div>
 
-
-        <!-- :src="showPassword ? '/icono_eye.svg' : '-'"  -->
-
-
         <div class="mt-5 flex flex-row justify-center">
             <button
                 class="h-10 px-5 text-green-100 transition-colors duration-150 bg-green-700 rounded-lg focus:shadow-outline hover:bg-green-800"
