@@ -23,7 +23,7 @@
                     <button type="button" @click="togglePasswordVisibility">
                         <img 
                             class="w-6 h-6"
-                            :src="showPassword ? '/eye_on.svg' : '/eye_off.svg'"
+                            :src="showPassword ? '/eye_on.svg ' : '/eye_off.svg '"
                             alt="Show/Hide password" 
                         />
                     </button>
