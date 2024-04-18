@@ -275,3 +275,24 @@ Vue.use(VueGoodTablePlugin);
 </script>
 
 ```
+
+
+
+
+## headlessui:
+
+```sh
+
+npm install @headlessui/vue@latest
+
+```
+
+
+
+## heroicons:
+
+```sh
+
+npm install @heroicons/vue
+
+```
