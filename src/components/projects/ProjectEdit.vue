@@ -242,16 +242,23 @@
 		}
 	};
 
+	
+
 	onMounted(async () => {
 		await getProject(props.projectId);
 		formData.company_id = project.value.company_id;
 		formData.name = project.value.name;
 		formData.total_hours = project.value.total_hours;
-		formData.started_at = project.value.started_at;
-		formData.finished_at = project.value.finished_at;
+		formData.started_at = project.value.started_at.split(' ')[0];
+		formData.finished_at = project.value.finished_at.split(' ')[0];
 		formData.description = project.value.description;
-
+		
+		
+	
+	
 		await getCompanies();
+
+
 
 	});
 

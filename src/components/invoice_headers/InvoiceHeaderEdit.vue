@@ -431,8 +431,8 @@
 		formData.own_company_id = invoiceHeader.value.own_company_id;
 		formData.company_id = invoiceHeader.value.company_id;
 		formData.number = invoiceHeader.value.number;
-		formData.date = invoiceHeader.value.date;
-		formData.due_date = invoiceHeader.value.due_date;
+		formData.date = invoiceHeader.value.date.split(' ')[0];
+		formData.due_date = invoiceHeader.value.due_date.split(' ')[0];
 		formData.month = invoiceHeader.value.month;
 		formData.year = invoiceHeader.value.year;
 		formData.description = invoiceHeader.value.description;

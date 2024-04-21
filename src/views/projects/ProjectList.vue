@@ -164,6 +164,16 @@
 
 	}
 
+	/**
+	 * Ex: 2024-04-07 00:00:00 -> convert 07-04-2024
+	 * 
+	 * @param {'2024-04-07 00:00:00'} date 
+	 */
+	 const formattedDate = (date) => {
+      const [year, month, day] = date.split(' ')[0].split('-');
+      return `${day}-${month}-${year}`;
+    }
+
 	onMounted(async () => {
 		rows.value = await findData();
 	});

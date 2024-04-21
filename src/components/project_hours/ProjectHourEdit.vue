@@ -174,7 +174,7 @@
 		formData.invoice_id = projectHour.value.invoice_id;
 		formData.hours = projectHour.value.hours;
 		formData.invoice_at = projectHour.value.invoice_at;
-		formData.is_generated = projectHour.value.is_generated;
+		formData.is_generated = projectHour.value.is_generated.split(' ')[0];
 		formData.description = projectHour.value.description;
 	});
 
