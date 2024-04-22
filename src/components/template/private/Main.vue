@@ -198,13 +198,13 @@ import {
     Bars3Icon, 
     BellIcon, 
     CalendarIcon,
-    ChartPieIcon,
     Cog6ToothIcon,
     DocumentDuplicateIcon,
-    FolderIcon,
     HomeModernIcon,
-    UsersIcon,
     XMarkIcon,
+    DocumentTextIcon,
+    BuildingLibraryIcon,
+    BuildingOffice2Icon,
 } from '@heroicons/vue/24/outline';
 import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/vue/20/solid';
 import { useRouter } from "vue-router";
@@ -221,12 +221,12 @@ const { logout } = useAuthenticationStore();
 
 const navigation = ref([
   { name: t('dashboard'), href: 'dashboard', icon: HomeModernIcon, current: true },
-  { name: t('companies'), href: 'companies', icon: UsersIcon, current: false },
-  { name: t('own_companies'), href: 'own_companies' , icon: FolderIcon, current: false },
-  { name: t('projects'), href: 'projects', icon: CalendarIcon, current: false },
-  { name: t('project_hours'), href: 'project_hours', icon: DocumentDuplicateIcon, current: false },
-  { name: t('invoice_headers'), href: 'invoice_headers', icon: ChartPieIcon, current: false },
-  { name: t('invoice_lines'), href: 'invoice_lines', icon: ChartPieIcon, current: false },
+  { name: t('companies'), href: 'companies', icon: BuildingLibraryIcon, current: false },
+  { name: t('own_companies'), href: 'own_companies' , icon: BuildingOffice2Icon, current: false },
+  { name: t('projects'), href: 'projects', icon: DocumentDuplicateIcon, current: false },
+  { name: t('project_hours'), href: 'project_hours', icon:  CalendarIcon, current: false },
+  { name: t('invoice_headers'), href: 'invoice_headers', icon: DocumentDuplicateIcon, current: false },
+  { name: t('invoice_lines'), href: 'invoice_lines', icon: DocumentTextIcon, current: false },
 ]);
 
 
