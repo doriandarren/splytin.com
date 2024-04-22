@@ -54,20 +54,6 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li>
-                                            <div class="text-xs font-semibold leading-6 text-gray-400">Your teams</div>
-                                            <ul role="list" class="-mx-2 mt-2 space-y-1">
-                                                <li v-for="team in teams" :key="team.name">
-                                                    <a :href="team.href"
-                                                        :class="[team.current ? 'bg-gray-800 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800', 'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold']">
-                                                        <span
-                                                            class="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-gray-700 bg-gray-800 text-[0.625rem] font-medium text-gray-400 group-hover:text-white">{{
-                                                            team.initial }}</span>
-                                                        <span class="truncate">{{ team.name }}</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
                                         <li class="mt-auto">
                                             <a href="#"
                                                 class="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-400 hover:bg-gray-800 hover:text-white">
@@ -104,20 +90,6 @@
                             </li>
                           </ul>
                         </li>
-                        <!-- <li>
-                            <div class="text-xs font-semibold leading-6 text-gray-400">Your teams</div>
-                            <ul role="list" class="-mx-2 mt-2 space-y-1">
-                                <li v-for="team in teams" :key="team.name">
-                                    <a :href="team.href"
-                                        :class="[team.current ? 'bg-gray-800 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800', 'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold']">
-                                        <span
-                                            class="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-gray-700 bg-gray-800 text-[0.625rem] font-medium text-gray-400 group-hover:text-white">{{
-                                            team.initial }}</span>
-                                        <span class="truncate">{{ team.name }}</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li> -->
                         <li class="mt-auto">
                             <a href="#"
                                 class="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-400 hover:bg-gray-800 hover:text-white">
@@ -257,11 +229,28 @@ const navigation = [
   { name: t('invoice_lines'), href: 'invoice_lines', icon: ChartPieIcon, current: false },
 ];
 
-// const teams = [
-//     { id: 1, name: 'Heroicons', href: '#', initial: 'H', current: false },
-//     { id: 2, name: 'Tailwind Labs', href: '#', initial: 'T', current: false },
-//     { id: 3, name: 'Workcation', href: '#', initial: 'W', current: false },
-// ]
+
+// const navigation = ref([
+//   { name: t('dashboard'), href: 'dashboard', icon: HomeModernIcon, current: true },
+//   { 
+//     name: t('companies'), 
+//     href: 'companies', 
+//     icon: UsersIcon, 
+//     current: false,
+//     children: [
+//       { name: t('subcompany1'), href: 'dashboard', icon: UsersIcon, current: false },
+//       { name: t('subcompany2'), href: 'dashboard', icon: UsersIcon, current: false }
+//     ]
+//   },
+//   { name: t('own_companies'), href: 'own_companies', icon: FolderIcon, current: false },
+//   { name: t('projects'), href: 'projects', icon: CalendarIcon, current: false },
+//   { name: t('project_hours'), href: 'project_hours', icon: DocumentDuplicateIcon, current: false },
+//   { name: t('invoice_headers'), href: 'invoice_headers', icon: ChartPieIcon, current: false },
+//   { name: t('invoice_lines'), href: 'invoice_lines', icon: ChartPieIcon, current: false },
+// ]);
+
+
+
 
 const userNavigation = [
     { name: t('logout'), href: '#', onClick: () => submit() },
