@@ -104,7 +104,7 @@
                             </li>
                           </ul>
                         </li>
-                        <li>
+                        <!-- <li>
                             <div class="text-xs font-semibold leading-6 text-gray-400">Your teams</div>
                             <ul role="list" class="-mx-2 mt-2 space-y-1">
                                 <li v-for="team in teams" :key="team.name">
@@ -117,7 +117,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> -->
                         <li class="mt-auto">
                             <a href="#"
                                 class="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-400 hover:bg-gray-800 hover:text-white">
@@ -182,9 +182,13 @@
                                 <MenuItems
                                     class="absolute right-0 z-10 mt-2.5 w-32 origin-top-right rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none">
                                     <MenuItem v-for="item in userNavigation" :key="item.name" v-slot="{ active }">
-                                    <a :href="item.href"
-                                        :class="[active ? 'bg-gray-50' : '', 'block px-3 py-1 text-sm leading-6 text-gray-900']">{{
-                                        item.name }}</a>
+                                      <a 
+                                        :href="item.href"
+                                        :class="[active ? 'bg-gray-50' : '', 'block px-3 py-1 text-sm leading-6 text-gray-900']"
+                                        @click="item.onClick"
+                                      >
+                                      {{ item.name }}
+                                      </a>
                                     </MenuItem>
                                 </MenuItems>
                             </transition>
@@ -253,13 +257,14 @@ const navigation = [
   { name: t('invoice_lines'), href: 'invoice_lines', icon: ChartPieIcon, current: false },
 ];
 
-const teams = [
-    { id: 1, name: 'Heroicons', href: '#', initial: 'H', current: false },
-    { id: 2, name: 'Tailwind Labs', href: '#', initial: 'T', current: false },
-    { id: 3, name: 'Workcation', href: '#', initial: 'W', current: false },
-]
+// const teams = [
+//     { id: 1, name: 'Heroicons', href: '#', initial: 'H', current: false },
+//     { id: 2, name: 'Tailwind Labs', href: '#', initial: 'T', current: false },
+//     { id: 3, name: 'Workcation', href: '#', initial: 'W', current: false },
+// ]
+
 const userNavigation = [
-    { name: t('logout'), href: '#' },
+    { name: t('logout'), href: '#', onClick: () => submit() },
 ]
 
 const sidebarOpen = ref(false);
