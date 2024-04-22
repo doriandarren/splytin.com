@@ -218,19 +218,19 @@ import {
     TransitionChild,
     TransitionRoot,
 } from '@headlessui/vue'
-import {
-    Bars3Icon,
-    BellIcon,
+import { 
+    Bars3Icon, 
+    BellIcon, 
     CalendarIcon,
     ChartPieIcon,
     Cog6ToothIcon,
     DocumentDuplicateIcon,
     FolderIcon,
-    HomeIcon,
+    HomeModernIcon,
     UsersIcon,
     XMarkIcon,
-} from '@heroicons/vue/24/outline'
-import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/vue/20/solid'
+} from '@heroicons/vue/24/outline';
+import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/vue/20/solid';
 import { useRouter } from "vue-router";
 import { useI18n } from 'vue-i18n';
 
@@ -239,7 +239,7 @@ const router = useRouter();
 const { t } = useI18n();
 
 const navigation = [
-  { name: t('dashboard'), href: 'dashboard', icon: HomeIcon, current: true },
+  { name: t('dashboard'), href: 'dashboard', icon: HomeModernIcon, current: true },
   { name: t('companies'), href: 'companies', icon: UsersIcon, current: false },
   { name: t('own_companies'), href: 'own_companies' , icon: FolderIcon, current: false },
   { name: t('projects'), href: 'projects', icon: CalendarIcon, current: false },
