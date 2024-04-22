@@ -219,7 +219,7 @@ const { logout } = useAuthenticationStore();
 
 
 
-const navigation = [
+const navigation = ref([
   { name: t('dashboard'), href: 'dashboard', icon: HomeModernIcon, current: true },
   { name: t('companies'), href: 'companies', icon: UsersIcon, current: false },
   { name: t('own_companies'), href: 'own_companies' , icon: FolderIcon, current: false },
@@ -227,7 +227,7 @@ const navigation = [
   { name: t('project_hours'), href: 'project_hours', icon: DocumentDuplicateIcon, current: false },
   { name: t('invoice_headers'), href: 'invoice_headers', icon: ChartPieIcon, current: false },
   { name: t('invoice_lines'), href: 'invoice_lines', icon: ChartPieIcon, current: false },
-];
+]);
 
 
 // const navigation = ref([
