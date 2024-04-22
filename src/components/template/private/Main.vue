@@ -95,26 +95,14 @@
                 <nav class="flex flex-1 flex-col">
                     <ul role="list" class="flex flex-1 flex-col gap-y-7">
                         <li>
-
-                            <!-- <ul role="list" class="-mx-2 space-y-1">
-                  <li v-for="item in navigation" :key="item.name">
-                    <a :href="item.href" :class="[item.current ? 'bg-gray-800 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800', 'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold']">
-                      <component :is="item.icon" class="h-6 w-6 shrink-0" aria-hidden="true" />
-                      {{ item.name }}
-                    </a>
-                  </li>
-                </ul> -->
                             <ul role="list" class="-mx-2 space-y-1">
-                                <li v-for="item in navigation" :key="item.name">
-                                    <router-link :to="item.to"
-                                        :class="[item.current ? 'bg-gray-800 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800', 'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold']">
-                                        <component :is="item.icon" class="h-6 w-6 shrink-0" aria-hidden="true" />
-                                        {{ item.name }}
-                                    </router-link>
-                                </li>
-                            </ul>
-
-
+                              <li v-for="item in navigation" :key="item.name">
+                                  <router-link :to="{ name: item.href }" :class="[item.current ? 'bg-gray-800 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800', 'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold']">
+                                      <component :is="item.icon" class="h-6 w-6 shrink-0" aria-hidden="true" />
+                                      {{ item.name }}
+                                  </router-link>
+                              </li>
+                          </ul>
                         </li>
                         <li>
                             <div class="text-xs font-semibold leading-6 text-gray-400">Your teams</div>
@@ -250,29 +238,14 @@ import { useI18n } from 'vue-i18n';
 const router = useRouter();
 const { t } = useI18n();
 
-// const navigation = [
-//     { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },
-//     { name: 'Team', href: '#', icon: UsersIcon, current: false },
-//     { name: 'Projects', href: '#', icon: FolderIcon, current: false },
-//     { name: 'Calendar', href: '#', icon: CalendarIcon, current: false },
-//     { name: 'Documents', href: '#', icon: DocumentDuplicateIcon, current: false },
-//     { name: 'Reports', href: '#', icon: ChartPieIcon, current: false },
-// ]
-
 const navigation = [
-  { name: t('dashboard'), to: { name: 'dashboard' }, icon: 'HomeIcon', current: true },
-
-  { name: t('companies'), to: { name: 'companies' }, icon: 'UsersIcon', current: false },
-
-  { name: t('own_companies'), to: { name: 'own_companies' }, icon: 'FolderIcon', current: false },
-
-  { name: t('projects'), to: { name: 'projects' }, icon: 'CalendarIcon', current: false },
-
-  { name: t('project_hours'), to: 'project_hours', icon: 'DocumentDuplicateIcon', current: false },
-
-  { name: t('invoice_headers'), to: { name: 'invoice_headers' }, icon: 'ChartPieIcon', current: false },
-
-  { name: t('invoice_lines'), to: { name: 'invoice_lines' }, icon: 'ChartPieIcon', current: false },
+  { name: t('dashboard'), href: 'dashboard', icon: HomeIcon, current: true },
+  { name: t('companies'), href: 'companies', icon: UsersIcon, current: false },
+  { name: t('own_companies'), href: 'own_companies' , icon: FolderIcon, current: false },
+  { name: t('projects'), href: 'projects', icon: CalendarIcon, current: false },
+  { name: t('project_hours'), href: 'project_hours', icon: DocumentDuplicateIcon, current: false },
+  { name: t('invoice_headers'), href: 'invoice_headers', icon: ChartPieIcon, current: false },
+  { name: t('invoice_lines'), href: 'invoice_lines', icon: ChartPieIcon, current: false },
 ];
 
 const teams = [
@@ -281,7 +254,7 @@ const teams = [
     { id: 3, name: 'Workcation', href: '#', initial: 'W', current: false },
 ]
 const userNavigation = [
-    { name: 'Your profile', href: '#' },
+    { name: 'Your profile---', href: '#' },
     { name: 'Sign out', href: '#' },
 ]
 
