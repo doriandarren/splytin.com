@@ -233,10 +233,15 @@ import {
 import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/vue/20/solid';
 import { useRouter } from "vue-router";
 import { useI18n } from 'vue-i18n';
+import { useAuthenticationStore } from '@/stores/auth/authentication';
+
 
 
 const router = useRouter();
 const { t } = useI18n();
+const { logout } = useAuthenticationStore();
+
+
 
 const navigation = [
   { name: t('dashboard'), href: 'dashboard', icon: HomeModernIcon, current: true },
@@ -257,5 +262,12 @@ const userNavigation = [
     { name: t('logout'), href: '#' },
 ]
 
-const sidebarOpen = ref(false)
+const sidebarOpen = ref(false);
+
+
+const submit = async() => {
+  await logout();
+}
+
+
 </script>
