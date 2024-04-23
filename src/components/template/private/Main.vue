@@ -40,13 +40,14 @@
                                         src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
                                         alt="Your Company" />
                                 </div>
-                                <nav class="flex flex-1 flex-col">
+
+                                <!-- <nav class="flex flex-1 flex-col">
                                     <ul role="list" class="flex flex-1 flex-col gap-y-7">
                                         <li>
                                             <ul role="list" class="-mx-2 space-y-1">
                                                 <li v-for="item in navigation" :key="item.name">
                                                     <a :href="item.href"
-                                                        :class="[item.current ? 'bg-gray-800 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800', 'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold']">
+                :class="[item.current ? 'bg-gray-800 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800', 'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold']">
                                                         <component :is="item.icon" class="h-6 w-6 shrink-0"
                                                             aria-hidden="true" />
                                                         {{ item.name }}
@@ -62,7 +63,45 @@
                                             </a>
                                         </li>
                                     </ul>
+                                </nav> -->
+
+
+                                <nav class="flex flex-1 flex-col">
+                                    <ul role="list" class="flex flex-1 flex-col gap-y-7">
+                                    <li>
+                                        <ul role="list" class="-mx-2 space-y-1">
+                                        <li v-for="item in navigation" :key="item.name">
+                                            <a v-if="!item.children" :href="item.href" :class="[item.current ? 'bg-gray-800 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800', 'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold text-gray-700']">
+                                            <component :is="item.icon" class="h-6 w-6 shrink-0 text-gray-400" aria-hidden="true" />
+                                            {{ item.name }}
+                                            </a>
+                                            <Disclosure as="div" v-else v-slot="{ open }">
+                                            <DisclosureButton :class="[item.current ? 'bg-gray-800 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800', 'flex items-center w-full text-left rounded-md p-2 gap-x-3 text-sm leading-6 font-semibold text-gray-700']">
+                                                <component :is="item.icon" class="h-6 w-6 shrink-0 text-gray-400" aria-hidden="true" />
+                                                {{ item.name }}
+                                                <ChevronRightIcon :class="[open ? 'rotate-90 text-gray-500' : 'text-gray-400', 'ml-auto h-5 w-5 shrink-0']" aria-hidden="true" />
+                                            </DisclosureButton>
+                                            <DisclosurePanel as="ul" class="mt-1 px-2">
+                                                <li v-for="subItem in item.children" :key="subItem.name">
+                                                <!-- 44px -->
+                                                <DisclosureButton as="a" :href="subItem.href" :class="[subItem.current ? 'bg-gray-800 text-white' : 'hover:bg-gray-50', 'block rounded-md py-2 pr-2 pl-9 text-sm leading-6 text-gray-700']">{{ subItem.name }}</DisclosureButton>
+                                                </li>
+                                            </DisclosurePanel>
+                                            </Disclosure>
+                                        </li>
+                                        </ul>
+                                    </li>
+                                    <li class="-mx-6 mt-auto">
+                                        <a href="#" class="flex items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">
+                                        <img class="h-8 w-8 rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
+                                        <span class="sr-only">Your profile</span>
+                                        <span aria-hidden="true">Tom Cook</span>
+                                        </a>
+                                    </li>
+                                    </ul>
                                 </nav>
+
+
                             </div>
                         </DialogPanel>
                     </TransitionChild>
@@ -78,7 +117,9 @@
                     <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
                         alt="Your Company" />
                 </div>
-                <nav class="flex flex-1 flex-col">
+
+
+                <!-- <nav class="flex flex-1 flex-col">
                     <ul role="list" class="flex flex-1 flex-col gap-y-7">
                         <li>
                           <ul role="list" class="-mx-2 space-y-1">
@@ -98,9 +139,50 @@
                             </a>
                         </li>
                     </ul>
+                </nav> -->
+
+
+               
+                <nav class="flex flex-1 flex-col">
+                    <ul role="list" class="flex flex-1 flex-col gap-y-7">
+                    <li>
+                        <ul role="list" class="-mx-2 space-y-1">
+                        <li v-for="item in navigation" :key="item.name">
+                            <a v-if="!item.children" :href="item.href" :class="[item.current ? 'bg-gray-800 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800', 'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold text-gray-700']">
+                            <component :is="item.icon" class="h-6 w-6 shrink-0 text-gray-400" aria-hidden="true" />
+                            {{ item.name }}
+                            </a>
+                            <Disclosure as="div" v-else v-slot="{ open }">
+                            <DisclosureButton :class="[item.current ? 'bg-gray-800 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800', 'flex items-center w-full text-left rounded-md p-2 gap-x-3 text-sm leading-6 font-semibold text-gray-700']">
+                                <component :is="item.icon" class="h-6 w-6 shrink-0 text-gray-400" aria-hidden="true" />
+                                {{ item.name }}
+                                <ChevronRightIcon :class="[open ? 'rotate-90 text-gray-500' : 'text-gray-400', 'ml-auto h-5 w-5 shrink-0']" aria-hidden="true" />
+                            </DisclosureButton>
+                            <DisclosurePanel as="ul" class="mt-1 px-2">
+                                <li v-for="subItem in item.children" :key="subItem.name">
+                                <!-- 44px -->
+                                <DisclosureButton as="a" :href="subItem.href" :class="[subItem.current ? 'bg-gray-800 text-white' : 'hover:bg-gray-50', 'block rounded-md py-2 pr-2 pl-9 text-sm leading-6 text-gray-700']">{{ subItem.name }}</DisclosureButton>
+                                </li>
+                            </DisclosurePanel>
+                            </Disclosure>
+                        </li>
+                        </ul>
+                    </li>
+                    <li class="-mx-6 mt-auto">
+                        <a href="#" class="flex items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">
+                        <img class="h-8 w-8 rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
+                        <span class="sr-only">Your profile</span>
+                        <span aria-hidden="true">Tom Cook</span>
+                        </a>
+                    </li>
+                    </ul>
                 </nav>
             </div>
         </div>
+    
+
+
+
 
         <div class="lg:pl-72">
             <div
@@ -194,6 +276,7 @@ import {
     TransitionChild,
     TransitionRoot,
 } from '@headlessui/vue'
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
 import { 
     Bars3Icon, 
     BellIcon, 
@@ -205,8 +288,9 @@ import {
     DocumentTextIcon,
     BuildingLibraryIcon,
     BuildingOffice2Icon,
+    UsersIcon,
 } from '@heroicons/vue/24/outline';
-import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/vue/20/solid';
+import { ChevronDownIcon, MagnifyingGlassIcon, ChevronRightIcon } from '@heroicons/vue/20/solid';
 import { useRouter } from "vue-router";
 import { useI18n } from 'vue-i18n';
 import { useAuthenticationStore } from '@/stores/auth/authentication';
@@ -227,6 +311,16 @@ const navigation = ref([
   { name: t('project_hours'), href: 'project_hours', icon:  CalendarIcon, current: false },
   { name: t('invoice_headers'), href: 'invoice_headers', icon: DocumentDuplicateIcon, current: false },
   { name: t('invoice_lines'), href: 'invoice_lines', icon: DocumentTextIcon, current: false },
+  {
+    name: 'Teams',
+    icon: UsersIcon,
+    current: false,
+    children: [
+      { name: 'Engineering', href: '#' },
+      { name: 'Human Resources', href: '#' },
+      { name: 'Customer Success', href: '#' },
+    ],
+  },
 ]);
 
 
