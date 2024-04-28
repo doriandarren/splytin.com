@@ -256,7 +256,6 @@ import {
     Bars3Icon, 
     BellIcon, 
     CalendarIcon,
-    Cog6ToothIcon,
     DocumentDuplicateIcon,
     HomeModernIcon,
     XMarkIcon,
