@@ -87,17 +87,7 @@ const submit = async () => {
         return;
     }
 
-    //Splytin2023
-    // let data = {
-    //     email: correo.value,
-    //     password: password.value
-    // }
 
-
-
-
-
-    loading.value = false; 
     await login(correo.value, password.value);
     
     if (loginResponse.value.success) {
@@ -105,6 +95,8 @@ const submit = async () => {
         router.push('/dashboard');
     }
     
+    loading.value = false;
+
 
     //console.log(authErrors.value);
 
