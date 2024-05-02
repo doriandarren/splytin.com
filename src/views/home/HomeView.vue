@@ -16,6 +16,69 @@
     </div>
 
 
+
+   
+  <div class="container mx-auto ">
+    <div class="mx-auto">
+
+
+      <div class="flex flex-wrap w-full bg-gray-100 py-32 px-10 relative mb-4">
+        <div class="flex flex-wrap w-full flex-col items-center text-center mb-10">
+          <h1 class="sm:text-2xl text-2xl font-medium title-font mb-2 text-gray-900">
+            Nuestros Videos
+          </h1>
+        </div>
+        <iframe src="https://www.youtube.com/embed/VVYnVptxKKM" frameborder="0" allowfullscreen width="100%" height="600vh"></iframe>
+
+        <div class="text-center relative z-10 w-full">
+          <h2 class="text-2xl text-gray-900 font-medium title-font mb-2">
+            Nature Ambience Minecraft
+          </h2>
+          <a class="mt-3 text-indigo-500 inline-flex items-center">Leer más
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="flex flex-wrap -mx-2">
+        <div class="px-2 w-1/2">
+          <div class="flex flex-wrap w-full bg-gray-100 sm:py-24 py-16 sm:px-10 px-6 relative">
+            <iframe src="https://www.youtube.com/embed/je-NfsNOP3g" frameborder="0" allowfullscreen width="100%" height="300vh"></iframe>
+            <div class="text-center relative z-10 w-full">
+              <h2 class="text-xl text-gray-900 font-medium title-font mb-2">
+                Relaxing Melodies
+              </h2>
+              <a class="mt-3 text-indigo-500 inline-flex items-center">Leer más
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="px-2 w-1/2">
+          <div class="flex flex-wrap w-full bg-gray-100 sm:py-24 py-16 sm:px-10 px-6 relative">
+            <iframe src="https://www.youtube.com/embed/-o209ByIFcM" frameborder="0" allowfullscreen width="100%" height="300vh"></iframe>
+            <div class="text-center relative z-10 w-full">
+              <h2 class="text-xl text-gray-900 font-medium title-font mb-2">
+                Música que te ayuda a relajar, estudiar, dormir con Night Ambience
+              </h2>
+              <a class="mt-3 text-indigo-500 inline-flex items-center">Leer más
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+
     <section class="text-gray-600 body-font pt-10">
       <div class="container mx-auto">
         <div class="flex flex-wrap w-full flex-col items-center text-center mb-10">
@@ -45,7 +108,11 @@
             <iframe :src="videoUrl4" frameborder="0" allowfullscreen width="100%" height="300vh"></iframe>
           </div>
 
+          
+
         </div>
+
+        <!-- https://www.youtube.com/watch?v=YaoF20yvUXM&t=1807s -->
 
       </div>
     </section>
@@ -101,6 +168,7 @@ const videoUrl1 = ref('https://www.youtube.com/embed/');
 const videoUrl2 = ref('https://www.youtube.com/embed/');
 const videoUrl3 = ref('https://www.youtube.com/embed/');
 const videoUrl4 = ref('https://www.youtube.com/embed/');
+
 
 const sessionLogErrors = ref([]);
 
