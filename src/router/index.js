@@ -498,9 +498,18 @@ const routes = [
       {
         path: '/customers',
         name: 'customers',
-        component: () => import('@/views/customers/Customers.vue')
+        component: () => import('@/views/customers/CustomerList.vue')
       },
-
+      {
+        path: '/providers',
+        name: 'providers',
+        component: () => import('@/views/providers/ProviderList.vue')
+      },
+      {
+        path: '/services',
+        name: 'services',
+        component: () => import('@/views/services/ServiceList.vue')
+      },
 
     ]
 
