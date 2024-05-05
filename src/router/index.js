@@ -495,6 +495,11 @@ const routes = [
         name: 'invoice_lines',
         component: () => import('@/views/invoice_lines/InvoiceLineList.vue')
       },
+      {
+        path: '/customers',
+        name: 'customers',
+        component: () => import('@/views/customers/Customers.vue')
+      },
 
 
     ]
