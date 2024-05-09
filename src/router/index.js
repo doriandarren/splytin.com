@@ -14,6 +14,13 @@ const routes = [
         component: () => import('@/views/home/HomeView.vue')
       },
 
+      {
+        path: '/privacy-policies',
+        name: 'privacy-policies',
+        component: () => import('@/views/home/privacy_policies.vue')
+      },
+      
+
       /** Login */
       {
         path: '/login',
