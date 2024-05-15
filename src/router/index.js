@@ -14,6 +14,13 @@ const routes = [
         component: () => import('@/views/home/HomeView.vue')
       },
 
+      {
+        path: '/privacy-policies',
+        name: 'privacy-policies',
+        component: () => import('@/views/home/privacy_policies.vue')
+      },
+      
+
       /** Login */
       {
         path: '/login',
@@ -495,7 +502,21 @@ const routes = [
         name: 'invoice_lines',
         component: () => import('@/views/invoice_lines/InvoiceLineList.vue')
       },
-
+      {
+        path: '/customers',
+        name: 'customers',
+        component: () => import('@/views/customers/CustomerList.vue')
+      },
+      {
+        path: '/providers',
+        name: 'providers',
+        component: () => import('@/views/providers/ProviderList.vue')
+      },
+      {
+        path: '/services',
+        name: 'services',
+        component: () => import('@/views/services/ServiceList.vue')
+      },
 
     ]
 

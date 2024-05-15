@@ -261,6 +261,9 @@ import {
     BuildingLibraryIcon,
     BuildingOffice2Icon,
     UsersIcon,
+    UserCircleIcon,
+    CurrencyDollarIcon,
+    ServerIcon,
 } from '@heroicons/vue/24/outline';
 import { ChevronDownIcon, MagnifyingGlassIcon, ChevronRightIcon } from '@heroicons/vue/20/solid';
 import { useRouter } from "vue-router";
@@ -283,7 +286,11 @@ const navigation = ref([
   { name: t('project_hours'), href: 'project_hours', icon:  CalendarIcon, current: false },
   { name: t('invoice_headers'), href: 'invoice_headers', icon: DocumentDuplicateIcon, current: false },
   { name: t('invoice_lines'), href: 'invoice_lines', icon: DocumentTextIcon, current: false },
-  {
+  { name: t('customers'), href: 'customers', icon: UserCircleIcon, current: false },
+  { name: t('providers'), href: 'providers', icon: CurrencyDollarIcon, current: false },
+  { name: t('services'), href: 'services', icon: ServerIcon, current: false },
+
+  { 
     name: 'Teams',
     icon: UsersIcon,
     current: false,
