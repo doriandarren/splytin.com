@@ -97,17 +97,11 @@
 
 	// Table
 	const columns = [
-		{ label: t("invoice_counter_id"), field: 'invoice_counter_id' },
 		{ label: t("own_company_id"), field: 'own_company_id' },
 		{ label: t("company_id"), field: 'company_id' },
 		{ label: t("number"), field: 'number' },
 		{ label: t("date"), field: 'date' },
 		{ label: t("due_date"), field: 'due_date' },
-		{ label: t("month"), field: 'month' },
-		{ label: t("year"), field: 'year' },
-		{ label: t("description"), field: 'description' },
-		{ label: t("vat_quote"), field: 'vat_quote' },
-		{ label: t("total_without_vat"), field: 'total_without_vat' },
 		{ label: t("total_with_vat"), field: 'total_with_vat' },
 		{ label: t("has_paid"), field: 'has_paid' },
 		{ label: t('actions'), field: 'actions', sortable: false, searchable: false, width: '100px',},

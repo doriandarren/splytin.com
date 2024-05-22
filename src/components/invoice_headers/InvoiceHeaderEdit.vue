@@ -55,7 +55,7 @@
 				<div class="col-span-12 md:col-span-6 lg:col-span-4">
 					<div class="input-form">
 						<label for="company_id" class="form-label w-full">
-							{{ $t("company_id") }} *
+							{{ $t("country") }} *
 						</label>
 						<!-- <input
 							v-model.trim="validate.company_id.$model"
@@ -346,6 +346,7 @@
 	import { helpers } from '@vuelidate/validators';
 	import { useI18n } from 'vue-i18n';
 	import useCompany from "@/composables/companies";
+	import useCountry from "@/composables/countries";
 
 
 	const { invoiceHeader, getInvoiceHeader } = useInvoiceHeaders();
@@ -353,7 +354,8 @@
 	const props = defineProps(['invoiceHeaderId']);
 	const emit = defineEmits(['cancelEdit', 'updateInvoiceHeaderForm']);
 
-	const {companies, getCompanies} = useCountry();
+	const {companies, getCompanies} = useCompany();
+	const {countries, getCountries} = useCountry();
 
 
 	const rules = {
