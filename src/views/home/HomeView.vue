@@ -34,7 +34,7 @@
           <h2 class="text-2xl text-gray-900 font-medium title-font mb-2">
             Nature Ambience Minecraft
           </h2>
-          <a class="mt-3 text-indigo-500 inline-flex items-center">Leer más
+          <a href="https://www.youtube.com/@FamiliaMusicMDDD" class="mt-3 text-indigo-500 inline-flex items-center">Más videos
             <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
               <path d="M5 12h14M12 5l7 7-7 7"></path>
             </svg>
@@ -49,7 +49,7 @@
               <h2 class="text-xl text-gray-900 font-medium title-font mb-2">
                 Relaxing Melodies
               </h2>
-              <a class="mt-3 text-indigo-500 inline-flex items-center">Leer más
+              <a href="https://www.youtube.com/@FamiliaMusicMDDD" class="mt-3 text-indigo-500 inline-flex items-center">Más videos
                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
                   <path d="M5 12h14M12 5l7 7-7 7"></path>
                 </svg>
@@ -64,7 +64,7 @@
               <h2 class="text-xl text-gray-900 font-medium title-font mb-2">
                 Música que te ayuda a relajar, estudiar, dormir con Night Ambience
               </h2>
-              <a class="mt-3 text-indigo-500 inline-flex items-center">Leer más
+              <a href="https://www.youtube.com/@FamiliaMusicMDDD" class="mt-3 text-indigo-500 inline-flex items-center">Más videos
                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
                   <path d="M5 12h14M12 5l7 7-7 7"></path>
                 </svg>
