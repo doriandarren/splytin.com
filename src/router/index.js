@@ -19,6 +19,12 @@ const routes = [
         name: 'privacy-policies',
         component: () => import('@/views/privacy_policies/PrivacyPolicies.vue')
       },
+
+      {
+        path: '/websocket',
+        name: 'websocket',
+        component: () => import('@/views/websocket/Websocket.vue')
+      },
       
 
       /** Login */
