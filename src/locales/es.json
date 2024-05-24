@@ -28,10 +28,13 @@
       "search": "Buscar"
     },
     "login_form":{
-      "title": "Login",
+      "title": "Entra con tu cuenta",
       "email" : "Correo",
       "password" : "Contraseña",
-      "sign_in": "Login"
+      "sign_in": "Login",
+      "remember_me": "Recuerdame",
+      "forgot_password": "Olvidaste la contraseña?",
+      "Or_continue_with": "Continuar con"
     },
     "form": {
       "required": "Requerido"
