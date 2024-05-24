@@ -6,40 +6,46 @@
         
         <button 
             @click="connect" 
-            class="rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            class="rounded-md bg-blue-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
         >
             Connect
         </button>
 
         <button 
             @click="disconnect" 
-            class="ml-5 rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            class="ml-5 rounded-md bg-red-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
         >
             Disconnect
         </button>
     </div>
     
-    <div class="flex flex-row mt-5">
+    <div class="grid grid-cols-12 mt-5">
 
+      <div class="col-span-4">
         <input 
             v-model="messageInput" 
             placeholder="Escribe un mensaje" 
-            class="rounded-full border-0 px-4 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
+            class="w-full rounded-full border-0 px-4 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6" 
         />
+      </div>
 
+      <div class="col-span-8">
         <button 
             @click="sendMessage"
-            class="ml-5 rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            class="ml-5 rounded-md bg-blue-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
         >
             Send Message
         </button>
-        
+      </div>
+
     </div>
-    
-    
 
+    <div class="mt-5" v-for="(message, index) in messages" :key="index">
+      <div class="text-red-300">
+        {{ message }}
+      </div>
+    </div>
 
-    <div v-for="(message, index) in messages" :key="index">{{ message }}</div>
   </div>
 </template>
 
@@ -53,13 +59,13 @@ let socket;
 
 
 // Tu token JWT
-const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIxIiwiaWF0IjoxNzE2NDEzMDM1LCJleHAiOjE3MTY0OTk0MzV9.iSTiF6Y0fiAYcYIG0XiZ_WFWIgNYSL4WjnbjcEfoaK0';
+const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIxIiwiaWF0IjoxNzE2NTgwMTUzLCJleHAiOjE3MTY2NjY1NTN9.GUGIiDBSgNyeFGlq_L3xycLo959o1v3cw8i8rRTlYjg';
 
 
 const connect = () => {
     
-  socket = new WebSocket('ws://websocket.splytin.com:5000?token=' + token)
-  //socket = new WebSocket('ws://localhost:5000?token=' + token);
+  //socket = new WebSocket('ws://websocket.splytin.com:4000?token=' + token)
+  socket = new WebSocket('ws://localhost:4000?token=' + token);
 
   socket.onopen = () => {
     console.log('Connected to the server');
