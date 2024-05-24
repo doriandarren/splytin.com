@@ -57,8 +57,9 @@ const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIxIiwi
 
 
 const connect = () => {
-  //socket = new WebSocket('ws://websocket.splytin.com:3000?token=' + token)
-  socket = new WebSocket('ws://localhost:3030?token=' + token);
+    
+  socket = new WebSocket('ws://websocket.splytin.com:5000?token=' + token)
+  //socket = new WebSocket('ws://localhost:5000?token=' + token);
 
   socket.onopen = () => {
     console.log('Connected to the server');
