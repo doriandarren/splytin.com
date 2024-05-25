@@ -104,7 +104,7 @@ import { ref, onUnmounted } from 'vue';
 
 const room = ref('');
 const username = ref('');
-const token = ref('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIxIiwiaWF0IjoxNzE2NjY2NDA2LCJleHAiOjE3MTY3NTI4MDZ9.qE1otlk-WL-iCYYqx4SoJ7T24iuw9_N0dLJ2XaEGJQo');
+const token = ref('');
 const newMessage = ref('');
 const messages = ref([]);
 let ws;
