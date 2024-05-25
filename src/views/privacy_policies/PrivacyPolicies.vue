@@ -1,20 +1,16 @@
 <template>
-    <div>
-        <h1>Políticas de Privacidad</h1>
+    <div class="mt-10">
+        <h1 class="h1 text-center">Políticas de Privacidad</h1>
 
         <!-- <p>Fecha de entrada en vigor: [Fecha]</p> -->
 
-        <h1>1. Introducción</h1>
+        <h1 class="h2">1. Introducción</h1>
 
-        <p>Bienvenido a Splytin. Nos comprometemos a proteger y respetar tu privacidad. Esta política de</p>
-
-        <p>privacidad explica cómo recopilamos, utilizamos, y protegemos la información personal que nos proporcionas a</p>
-
-        <p>privacidad explica cómo recopilamos, utilizamos, y protegemos la información personal que nos proporcionas a</p>
-
-        <p>privacidad explica cómo recopilamos, utilizamos, y protegemos la información personal que nos proporcionas a</p>
-
-        <p>través de nuestro sitio web <a href="https://splytin.com/">Enlace</a>.</p>
+        <p class="p">
+            Bienvenido a Splytin. Nos comprometemos a proteger y respetar tu privacidad. Esta política de
+            privacidad explica cómo recopilamos, utilizamos, y protegemos la información personal que nos proporcionas a
+            través de nuestro sitio web <a href="https://splytin.com/">Enlace</a>.
+        </p>
 
         <h1>2. Información que Recopilamos</h1>
   
@@ -22,15 +18,16 @@
 
         <p>Información de contacto: nombre, dirección de correo electrónico, número de teléfono.</p>
 
-        <p>Información de navegación: detalles sobre tus visitas a nuestro sitio web, como datos de tráfico, datos de</p>
+        <p>
+            Información de navegación: detalles sobre tus visitas a nuestro sitio web, como datos de tráfico, datos de 
+            localización, weblogs y otros datos de comunicación.
+        </p>
 
-        <p>Información de navegación: detalles sobre tus visitas a nuestro sitio web, como datos de tráfico, datos de</p>
+        <p>
+            Información de transacciones: detalles de las transacciones que realizas a través 
+            de nuestro sitio web, incluidos los datos de pago.
+        </p>
 
-        <p>localización, weblogs y otros datos de comunicación.</p>
-
-        <p>Información de transacciones: detalles de las transacciones que realizas a través de nuestro sitio web,</p>
-
-        <p>incluidos los datos de pago.</p>
 
         <h1>3. Uso de tu Información</h1>
 
