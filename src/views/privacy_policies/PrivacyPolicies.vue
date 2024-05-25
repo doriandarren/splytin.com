@@ -2,21 +2,21 @@
     <div>
         <h1>Políticas de Privacidad</h1>
 
-        <p>Fecha de entrada en vigor: [Fecha]</p>
+        <!-- <p>Fecha de entrada en vigor: [Fecha]</p> -->
 
-        <h2>1. Introducción</h2>
+        <h1>1. Introducción</h1>
 
-        <p>Bienvenido a [Nombre de tu empresa]. Nos comprometemos a proteger y respetar tu privacidad. Esta política de</p>
-
-        <p>privacidad explica cómo recopilamos, utilizamos, y protegemos la información personal que nos proporcionas a</p>
+        <p>Bienvenido a Splytin. Nos comprometemos a proteger y respetar tu privacidad. Esta política de</p>
 
         <p>privacidad explica cómo recopilamos, utilizamos, y protegemos la información personal que nos proporcionas a</p>
 
         <p>privacidad explica cómo recopilamos, utilizamos, y protegemos la información personal que nos proporcionas a</p>
 
-        <p>través de nuestro sitio web [URL de tu sitio web].</p>
+        <p>privacidad explica cómo recopilamos, utilizamos, y protegemos la información personal que nos proporcionas a</p>
 
-        <h2>2. Información que Recopilamos</h2>
+        <p>través de nuestro sitio web <a href="https://splytin.com/">Enlace</a>.</p>
+
+        <h1>2. Información que Recopilamos</h1>
   
         <p>Podemos recopilar y procesar los siguientes datos personales:</p>
 
@@ -32,7 +32,7 @@
 
         <p>incluidos los datos de pago.</p>
 
-        <h2>3. Uso de tu Información</h2>
+        <h1>3. Uso de tu Información</h1>
 
         <p>Usamos la información que recopilamos para:</p>
 
@@ -46,7 +46,7 @@
 
         <p>Cumplir con nuestras obligaciones legales y contractuales.</p>
 
-        <h2>4. Divulgación de tu Información</h2>
+        <h1>4. Divulgación de tu Información</h1>
 
         <p>Podemos compartir tu información personal con terceros en las siguientes circunstancias:</p>
 
@@ -62,7 +62,7 @@
 
         <p> respuesta a solicitudes válidas por parte de las autoridades públicas.</p>
 
-        <h2>5. Seguridad de tus Datos</h2>
+        <h1>5. Seguridad de tus Datos</h1>
 
         <p>Tomamos medidas razonables para proteger tu información personal contra pérdida, robo, uso indebido, acceso no </p>
 
@@ -70,25 +70,35 @@
 
         <p>la información transmitida a nuestro sitio web.</p>
 
-        <h2>6. Tus Derechos</h2>
+        <h1>6. Tus Derechos</h1>
 
         <p>Tienes derecho a:</p>
 
-        <p>Acceder a la información personal que tenemos sobre ti.
-Solicitar la corrección de datos incorrectos o incompletos.
-Solicitar la eliminación de tu información personal.
-Oponerte al procesamiento de tus datos personales.
-Solicitar la limitación del procesamiento de tus datos personales.
-Solicitar la portabilidad de tus datos personales.
-Para ejercer estos derechos, por favor contáctanos a [Correo electrónico de contacto].</p>
+        <div class="pl-10">
+            <ul class="list-disc">
+                <li>Acceder a la información personal que tenemos sobre ti.</li>
+                <li>Solicitar la corrección de datos incorrectos o incompletos.</li>
+                <li>Solicitar la eliminación de tu información personal.</li>
+                <li>Oponerte al procesamiento de tus datos personales.</li>
+                <li>Solicitar la limitación del procesamiento de tus datos personales.</li>
+                <li>Solicitar la portabilidad de tus datos personales.</li>
+                <li>Para ejercer estos derechos, por favor contáctanos a <a href="email:webmaster@splytin.com">webmaster@splytin.com</a>.</li>
+            </ul>
+        </div>
 
-    <h2>7. Cookies</h2>
+        
+
+        
+
+
+
+    <h1>7. Cookies</h1>
 
     <p>Utilizamos cookies y tecnologías similares para mejorar tu experiencia en nuestro sitio web. Para obtener más </p>
 
-    <p>información sobre cómo usamos las cookies, consulta nuestra [Política de Cookies].</p>
+    <p>información sobre cómo usamos las cookies, consulta nuestra <a href="https://splytin.com/cookies">Enlace</a>.</p>
 
-    <h2>8. Cambios en esta Política de Privacidad</h2>
+    <h1>8. Cambios en esta Política de Privacidad</h1>
 
     <p>Podemos actualizar nuestra política de privacidad de vez en cuando. Te notificaremos sobre cualquier cambio</p>
 
@@ -96,15 +106,13 @@ Para ejercer estos derechos, por favor contáctanos a [Correo electrónico de co
 
     <p>periódicamente para estar informado sobre cómo protegemos tu información.</p>
 
-    <h2>9. Contacto</h2>
+    <h1>9. Contacto</h1>
 
     <p>Si tienes alguna pregunta sobre esta política de privacidad o sobre nuestras prácticas de privacidad, puedes </p>
 
     <p>contactarnos en:</p>
 
-    <p>Correo electrónico: [Correo electrónico de contacto]</p>
-
-    <p>Dirección postal: [Dirección de tu empresa]</p>
+    <p>Correo electrónico: <a href="email:webmaster@splytin.com">webmaster@splytin.com</a></p>
 
 
     </div>

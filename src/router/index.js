@@ -25,6 +25,12 @@ const routes = [
         name: 'websocket',
         component: () => import('@/views/websocket/Websocket.vue')
       },
+
+      {
+        path: '/cookies',
+        name: 'cookies',
+        component: () => import('@/views/cookies/Cookies.vue')
+      },
       
 
       /** Login */
