@@ -61,11 +61,9 @@
 
         <h1>5. Seguridad de tus Datos</h1>
 
-        <p>Tomamos medidas razonables para proteger tu información personal contra pérdida, robo, uso indebido, acceso no </p>
-
-        <p>autorizado, divulgación, alteración y destrucción. Sin embargo, no podemos garantizar la seguridad absoluta de </p>
-
-        <p>la información transmitida a nuestro sitio web.</p>
+        <p>
+            Tomamos medidas razonables para proteger tu información personal contra pérdida, robo, uso indebido, acceso no autorizado, divulgación, alteración y destrucción. Sin embargo, no podemos garantizar la seguridad absoluta de la información transmitida a nuestro sitio web.
+        </p>
 
         <h1>6. Tus Derechos</h1>
 
@@ -91,25 +89,26 @@
 
     <h1>7. Cookies</h1>
 
-    <p>Utilizamos cookies y tecnologías similares para mejorar tu experiencia en nuestro sitio web. Para obtener más </p>
-
-    <p>información sobre cómo usamos las cookies, consulta nuestra <a href="https://splytin.com/cookies">Enlace</a>.</p>
+    <p>
+        Utilizamos cookies y tecnologías similares para mejorar tu experiencia en nuestro sitio web. Para obtener más información sobre cómo usamos las cookies, consulta nuestra <a href="https://splytin.com/cookies">Enlace</a>.
+    </p>
 
     <h1>8. Cambios en esta Política de Privacidad</h1>
 
-    <p>Podemos actualizar nuestra política de privacidad de vez en cuando. Te notificaremos sobre cualquier cambio</p>
-
-    <p>publicando la nueva política de privacidad en nuestro sitio web. Te recomendamos revisar esta política</p>
-
-    <p>periódicamente para estar informado sobre cómo protegemos tu información.</p>
+    <p>
+        Podemos actualizar nuestra política de privacidad de vez en cuando. Te notificaremos sobre cualquier cambio publicando la nueva política de privacidad en nuestro sitio web. Te recomendamos revisar esta política
+        periódicamente para estar informado sobre cómo protegemos tu información.
+    </p>
 
     <h1>9. Contacto</h1>
 
-    <p>Si tienes alguna pregunta sobre esta política de privacidad o sobre nuestras prácticas de privacidad, puedes </p>
+    <p>
+        Si tienes alguna pregunta sobre esta política de privacidad o sobre nuestras prácticas de privacidad, puedes contactarnos en:
+    </p>
 
-    <p>contactarnos en:</p>
-
-    <p>Correo electrónico: <a href="email:webmaster@splytin.com">webmaster@splytin.com</a></p>
+    <p>
+        Correo electrónico: <a href="email:webmaster@splytin.com">webmaster@splytin.com</a>
+    </p>
 
 
     </div>
