@@ -117,7 +117,8 @@ const connectToWebSocket = () => {
 
   //console.log(room.value);
 
-  ws = new WebSocket(`ws://localhost:4000/?token=${token.value}&room=${room.value}`);
+  //ws = new WebSocket(`ws://localhost:4000/?token=${token.value}&room=${room.value}`);
+  ws = new WebSocket(`ws://websocket.splytin.com:4000/?token=${token.value}&room=${room.value}`);
 
   ws.onopen = () => {
     console.log('Connected to WebSocket');
