@@ -14,6 +14,11 @@
 
 
 
+ @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+
+
+
 
 /*
  |--------------------------------------------------------------------------
@@ -65,20 +70,20 @@
         @apply border rounded-md shadow-sm p-5;
     }
 
-    .h1{
-        @apply text-3xl text-blue-400;
+    h1{
+        @apply text-3xl text-blue-400 mt-5;
     }
 
-    .h2{
-        @apply text-2xl text-blue-400;
+    h2{
+        @apply text-2xl text-blue-400 mt-5;
     }
 
-    .h3{
-        @apply text-xl text-blue-400;
+    h3{
+        @apply text-xl text-blue-400 mt-5;
     }
 
-    .p{
-        @apply text-justify;
+    p{
+        @apply text-justify mt-5;
     }
     
 

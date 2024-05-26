@@ -1,71 +1,94 @@
 <template>
     <div class="mt-10">
-        <h1 class="h1 text-center">Políticas de Privacidad</h1>
+        <h1 class="text-center">Políticas de Privacidad</h1>
 
         <!-- <p>Fecha de entrada en vigor: [Fecha]</p> -->
 
-        <h1 class="h2">1. Introducción</h1>
+        <h3>1. Introducción</h3>
 
-        <p class="p">
+        <p>
             Bienvenido a Splytin. Nos comprometemos a proteger y respetar tu privacidad. Esta política de
             privacidad explica cómo recopilamos, utilizamos, y protegemos la información personal que nos proporcionas a
             través de nuestro sitio web <a href="https://splytin.com/">Enlace</a>.
         </p>
 
-        <h1>2. Información que Recopilamos</h1>
+        <h3>2. Información que Recopilamos</h3>
   
         <p>Podemos recopilar y procesar los siguientes datos personales:</p>
 
-        <p>Información de contacto: nombre, dirección de correo electrónico, número de teléfono.</p>
 
-        <p>
-            Información de navegación: detalles sobre tus visitas a nuestro sitio web, como datos de tráfico, datos de 
-            localización, weblogs y otros datos de comunicación.
-        </p>
+        <div class="pl-10">
 
-        <p>
-            Información de transacciones: detalles de las transacciones que realizas a través 
-            de nuestro sitio web, incluidos los datos de pago.
-        </p>
+            <ul class="list-disc">
+
+                <li>Información de contacto: nombre, dirección de correo electrónico, número de teléfono.</li>
+
+                <li>
+                    Información de navegación: detalles sobre tus visitas a nuestro sitio web, como datos de tráfico, datos de 
+                    localización, weblogs y otros datos de comunicación.
+                </li>
+
+                <li>
+                    Información de transacciones: detalles de las transacciones que realizas a través 
+                    de nuestro sitio web, incluidos los datos de pago.
+                </li>
+
+            </ul>
+
+        </div>
 
 
-        <h1>3. Uso de tu Información</h1>
+        
+
+
+        <h3>3. Uso de tu Información</h3>
 
         <p>Usamos la información que recopilamos para:</p>
 
-        <p>Proporcionarte los productos y servicios que solicitas.</p>
 
-        <p>Enviarte información sobre nuestros productos y servicios que puedan interesarte.</p>
 
-        <p>Mejorar nuestro sitio web y nuestros servicios.</p>
 
-        <p>Procesar tus transacciones y gestionar tu cuenta.</p>
+        <div class="pl-10">
 
-        <p>Cumplir con nuestras obligaciones legales y contractuales.</p>
+            <ul class="list-disc">
 
-        <h1>4. Divulgación de tu Información</h1>
+                <li>Proporcionarte los productos y servicios que solicitas.</li>
+
+                <li>Enviarte información sobre nuestros productos y servicios que puedan interesarte.</li>
+
+                <li>Mejorar nuestro sitio web y nuestros servicios.</li>
+
+                <li>Procesar tus transacciones y gestionar tu cuenta.</li>
+
+                <li>Cumplir con nuestras obligaciones legales y contractuales.</li>
+
+            </ul>
+        </div>
+
+
+       
+
+
+
+        <h3>4. Divulgación de tu Información</h3>
 
         <p>Podemos compartir tu información personal con terceros en las siguientes circunstancias:</p>
 
-        <p>Proveedores de servicios: podemos compartir tu información con terceros que nos proporcionan servicios como </p>
+        <p>
+            Proveedores de servicios: podemos compartir tu información con terceros que nos proporcionan servicios como alojamiento web, procesamiento de pagos, análisis de datos, y otros servicios administrativos.
+        </p>
 
-        <p>Proveedores de servicios: podemos compartir tu información con terceros que nos proporcionan servicios como </p>
+        <p> 
+            Obligaciones legales: podemos divulgar tu información personal si estamos obligados a hacerlo por ley o en respuesta a solicitudes válidas por parte de las autoridades públicas.
+        </p>
 
-        <p>Proveedores de servicios: podemos compartir tu información con terceros que nos proporcionan servicios como</p>
-
-        <p> alojamiento web, procesamiento de pagos, análisis de datos, y otros servicios administrativos.</p>
-
-        <p> Obligaciones legales: podemos divulgar tu información personal si estamos obligados a hacerlo por ley o en</p>
-
-        <p> respuesta a solicitudes válidas por parte de las autoridades públicas.</p>
-
-        <h1>5. Seguridad de tus Datos</h1>
+        <h3>5. Seguridad de tus Datos</h3>
 
         <p>
             Tomamos medidas razonables para proteger tu información personal contra pérdida, robo, uso indebido, acceso no autorizado, divulgación, alteración y destrucción. Sin embargo, no podemos garantizar la seguridad absoluta de la información transmitida a nuestro sitio web.
         </p>
 
-        <h1>6. Tus Derechos</h1>
+        <h3>6. Tus Derechos</h3>
 
         <p>Tienes derecho a:</p>
 
@@ -77,37 +100,34 @@
                 <li>Oponerte al procesamiento de tus datos personales.</li>
                 <li>Solicitar la limitación del procesamiento de tus datos personales.</li>
                 <li>Solicitar la portabilidad de tus datos personales.</li>
-                <li>Para ejercer estos derechos, por favor contáctanos a <a href="email:webmaster@splytin.com">webmaster@splytin.com</a>.</li>
+                <li>Para ejercer estos derechos, por favor contáctanos a <a href="email:webmaster@splytin.com">
+                    <span class="italic text-gray-400">webmaster@splytin.com</span>
+                    </a>.
+                </li>
             </ul>
         </div>
 
-        
-
-        
-
-
-
-    <h1>7. Cookies</h1>
+    <h3>7. Cookies</h3>
 
     <p>
-        Utilizamos cookies y tecnologías similares para mejorar tu experiencia en nuestro sitio web. Para obtener más información sobre cómo usamos las cookies, consulta nuestra <a href="https://splytin.com/cookies">Enlace</a>.
+        Utilizamos cookies y tecnologías similares para mejorar tu experiencia en nuestro sitio web. Para obtener más información sobre cómo usamos las cookies, consulta nuestras <a href="https://splytin.com/cookies"><span class="italic text-gray-400">Coockies</span></a>.
     </p>
 
-    <h1>8. Cambios en esta Política de Privacidad</h1>
+    <h3>8. Cambios en esta Política de Privacidad</h3>
 
     <p>
         Podemos actualizar nuestra política de privacidad de vez en cuando. Te notificaremos sobre cualquier cambio publicando la nueva política de privacidad en nuestro sitio web. Te recomendamos revisar esta política
         periódicamente para estar informado sobre cómo protegemos tu información.
     </p>
 
-    <h1>9. Contacto</h1>
+    <h3>9. Contacto</h3>
 
     <p>
         Si tienes alguna pregunta sobre esta política de privacidad o sobre nuestras prácticas de privacidad, puedes contactarnos en:
     </p>
 
     <p>
-        Correo electrónico: <a href="email:webmaster@splytin.com">webmaster@splytin.com</a>
+        Correo electrónico: <span class="italic text-gray-400"><a href="email:webmaster@splytin.com">webmaster@splytin.com</a></span> 
     </p>
 
 
