@@ -1,101 +1,98 @@
 {
-    "languages": {
-      "pt": "Portugués",
-      "en": "Inglés",
-      "es": "Español"
-    },
-    "title": {
-      "config": "Configuración"
-    },
-    "message":{
-      "are_you_sure": "¿Estás seguro?",
-      "record_saved": "Registro guardado",
-      "record_deleted": "Registro eliminado",
-      "record_updated": "Registro actualizado"
-    },
-    "page_not_found": "Página no encontrada",
-    "home": "Inicio",
-    "search": "Buscar",
-    "save": "Guardar",
-    "cancel": "Cancelar",
-    "delete": "Borrar",
-    "name": "Nombre",
-    "setting_table":{
-      "next_table": "Sig",
-      "prev_table": "Prev",
-      "rows_per_page": "Páginas",
-      "of": "de",
-      "search": "Buscar"
-    },
-    "login_form":{
-      "title": "Entra con tu cuenta",
-      "email" : "Correo",
-      "password" : "Contraseña",
-      "sign_in": "Login",
-      "remember_me": "Recuerdame",
-      "forgot_password": "Olvidaste la contraseña?",
-      "Or_continue_with": "Continuar con"
-    },
-    "form": {
-      "required": "Requerido"
-    },
-    "errors":{
-      "error_internal": "Error Interno"
-    },
-    "code": "Código",
-    "address": "Dirección",
-    "cif": "Código identificación fiscal",
-    "email": "Correo electrónico",
-    "website": "Sitio web",
-    "phone": "Teléfono",
-    "code_zip": "Código postal",
-    "project_id": "Proyecto Id",
-    "projects": "Proyectos",
-    "hours": "Horas",
-    "invoice_at": "Fecha factura",
-    "company_id": "Compañia Id",
-    "companies": "Compañias",
-    "number": "Número",
-    "date": "Fecha",
-    "invoice_id": "Factura Id",
-    "invoice_header_id": "Factura cabecera Id",
-    "invoice_headers": "Facturas",
-    "vat": "IVA",
-    "unit_prices": "Precio unidad",
-    "project_hours": "Horas proyecto",
-    "total": "Total",
-    "description": "Descripción",
-    "project_hour_id": "Hora proyecto Id",
-    "own_company_id": "Compañias propias Id",
-    "own_companies": "Compañias propias",
-    "total_hours": "Horas Totales",
-    "current_hours": "Horas Actuales",
-    "started_at": "Fecha Inicio",
-    "finished_at": "Fecha Finalizado",
-    "country_id": "País",
-    "tax": "CIF",
-    "state": "Estado",
-    "municipality": "Municipio",
-    "zip_code": "Codigo Postal",
-    "is_generated": "Está Generado",
-    "invoice_counter_id": "ID Contador De Factura",
-    "invoice_lines": "Factura lineas",
-    "due_date": "Fecha De Vencimiento",
-    "month": "Días",
-    "year": "Año",
-    "vat_quote": "IVA",
-    "total_without_vat": "Total sin IVA",
-    "total_with_vat": "Total con IVA",
-    "has_paid": "Ha Pagado",
-    "actions": "Acciones",
-    "dashboard": "Inicio",
-    "logout": "Cerrar sesión"
-    
-
-
-
-      
-      
-        
+  "languages": {
+    "pt": "Portugués",
+    "en": "Inglés",
+    "es": "Español"
+  },
+  "title": {
+    "config": "Configuración"
+  },
+  "message":{
+    "are_you_sure": "¿Estás seguro?",
+    "record_saved": "Registro guardado",
+    "record_deleted": "Registro eliminado",
+    "record_updated": "Registro actualizado"
+  },
+  "privacity_polices": "Políticas de Privacidad",
+  "coockies": "Cookies",
+  "page_not_found": "Página no encontrada",
+  "actions": "Acciones",
+  "dashboard": "Inicio",
+  "logout": "Cerrar sesión",
+  "resources": "Recursos",
+  "home": "Inicio",
+  "search": "Buscar",
+  "save": "Guardar",
+  "cancel": "Cancelar",
+  "delete": "Borrar",
+  "name": "Nombre",
+  "setting_table":{
+    "next_table": "Sig",
+    "prev_table": "Prev",
+    "rows_per_page": "Páginas",
+    "of": "de",
+    "search": "Buscar"
+  },
+  "login_form":{
+    "title": "Entra con tu cuenta",
+    "email" : "Correo",
+    "password" : "Contraseña",
+    "sign_in": "Login",
+    "remember_me": "Recuerdame",
+    "forgot_password": "Olvidaste la contraseña?",
+    "or_continue_with": "Continuar con"
+  },
+  "form": {
+    "required": "Requerido"
+  },
+  "errors":{
+    "error_internal": "Error Interno"
+  },
+  "code": "Código",
+  "address": "Dirección",
+  "cif": "Código identificación fiscal",
+  "email": "Correo electrónico",
+  "website": "Sitio web",
+  "phone": "Teléfono",
+  "code_zip": "Código postal",
+  "project_id": "Proyecto Id",
+  "projects": "Proyectos",
+  "hours": "Horas",
+  "invoice_at": "Fecha factura",
+  "company_id": "Compañia Id",
+  "companies": "Compañias",
+  "number": "Número",
+  "date": "Fecha",
+  "invoice_id": "Factura Id",
+  "invoice_header_id": "Factura cabecera Id",
+  "invoice_headers": "Facturas",
+  "vat": "IVA",
+  "unit_prices": "Precio unidad",
+  "project_hours": "Horas proyecto",
+  "total": "Total",
+  "description": "Descripción",
+  "project_hour_id": "Hora proyecto Id",
+  "own_company_id": "Compañias propias Id",
+  "own_companies": "Compañias propias",
+  "total_hours": "Horas Totales",
+  "current_hours": "Horas Actuales",
+  "started_at": "Fecha Inicio",
+  "finished_at": "Fecha Finalizado",
+  "country_id": "País",
+  "tax": "CIF",
+  "state": "Estado",
+  "municipality": "Municipio",
+  "zip_code": "Codigo Postal",
+  "is_generated": "Está Generado",
+  "invoice_counter_id": "ID Contador De Factura",
+  "invoice_lines": "Factura lineas",
+  "due_date": "Fecha De Vencimiento",
+  "month": "Días",
+  "year": "Año",
+  "vat_quote": "IVA",
+  "total_without_vat": "Total sin IVA",
+  "total_with_vat": "Total con IVA",
+  "has_paid": "Ha Pagado"
+  
   
 }
