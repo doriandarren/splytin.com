@@ -14,10 +14,10 @@
         <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Interés General</h2>
         <nav class="list-none mb-10">
           <li>
-            <a href="https://splytin.com/privacy-policies" class="text-gray-600 hover:text-gray-800">Políticas de Privacidad</a>
+            <router-link to="/privacy-policies" class="text-gray-600 hover:text-gray-800">{{ $t("privacity_polices") }}</router-link>
           </li>
           <li>
-            <a href="https://splytin.com/coockies" class="text-gray-600 hover:text-gray-800">Coockies</a>
+            <router-link to="/coockies" class="text-gray-600 hover:text-gray-800">{{ $t("coockies") }}</router-link>
           </li>
         </nav>
       </div>
@@ -28,10 +28,7 @@
         <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">{{ $t("resources") }}</h2>
         <nav class="list-none mb-10">
           <li>
-            <a href="https://splytin.com/privacy-policies" class="text-gray-600 hover:text-gray-800">{{ $t("privacity_polices") }}</a>
-          </li>
-          <li>
-            <a href="https://splytin.com/coockies" class="text-gray-600 hover:text-gray-800">{{ $t("coockies") }}</a>
+            <router-link to="/resources" class="text-gray-600 hover:text-gray-800">{{ $t("Tailwind") }}</router-link>
           </li>
         </nav>
       </div>
@@ -80,6 +77,7 @@
     import { ref } from 'vue';
 
     const year = ref(new Date().getFullYear());
+
 
 </script>
 
