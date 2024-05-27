@@ -1,13 +1,6 @@
 <template>
-    <!--
-      This example requires updating your template:
-  
-      ```
-      <html class="h-full bg-white">
-      <body class="h-full">
-      ```
-    -->
     <div>
+        <!-- Mobile Sidebar -->
         <TransitionRoot as="template" :show="sidebarOpen">
             <Dialog as="div" class="relative z-50 lg:hidden" @close="sidebarOpen = false">
                 <TransitionChild as="template" enter="transition-opacity ease-linear duration-300"
@@ -43,40 +36,62 @@
 
                                 <nav class="flex flex-1 flex-col">
                                     <ul role="list" class="flex flex-1 flex-col gap-y-7">
-                                    <li>
-                                        <ul role="list" class="-mx-2 space-y-1">
-                                        <li v-for="item in navigation" :key="item.name">
-                                            <a v-if="!item.children" :href="item.href" :class="[item.current ? 'bg-gray-800 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800', 'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold text-gray-700']">
-                                            <component :is="item.icon" class="h-6 w-6 shrink-0 text-gray-400" aria-hidden="true" />
-                                            {{ item.name }}
-                                            </a>
-                                            <Disclosure as="div" v-else v-slot="{ open }">
-                                            <DisclosureButton :class="[item.current ? 'bg-gray-800 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800', 'flex items-center w-full text-left rounded-md p-2 gap-x-3 text-sm leading-6 font-semibold text-gray-700']">
-                                                <component :is="item.icon" class="h-6 w-6 shrink-0 text-gray-400" aria-hidden="true" />
-                                                {{ item.name }}
-                                                <ChevronRightIcon :class="[open ? 'rotate-90 text-gray-500' : 'text-gray-400', 'ml-auto h-5 w-5 shrink-0']" aria-hidden="true" />
-                                            </DisclosureButton>
-                                            <DisclosurePanel as="ul" class="mt-1 px-2">
-                                                <li v-for="subItem in item.children" :key="subItem.name">
-                                                <!-- 44px -->
-                                                <DisclosureButton as="a" :href="subItem.href" :class="[subItem.current ? 'bg-gray-800 text-white' : 'hover:bg-gray-50', 'block rounded-md py-2 pr-2 pl-9 text-sm leading-6 text-gray-700']">{{ subItem.name }}</DisclosureButton>
+                                        <li>
+                                            <ul role="list" class="-mx-2 space-y-1">
+                                                <li v-for="item in navigation" :key="item.name">
+                                                    <router-link v-if="!item.children" :to="{ name: item.href }"
+                                                        @click="closeSidebar"
+                                                        :class="[currentRoute === item.href ? 'bg-gray-800 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800', 'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold text-gray-700']">
+                                                        <component :is="item.icon"
+                                                            class="h-6 w-6 shrink-0 text-gray-400" aria-hidden="true" />
+                                                        {{ item.name }}
+                                                    </router-link>
+                                                    <div v-else>
+                                                        <button
+                                                            :class="[isDropdownOpen(item.name) ? 'bg-gray-800 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800', 'flex items-center w-full text-left rounded-md p-2 gap-x-3 text-sm leading-6 font-semibold']"
+                                                            @click="toggleDropdown(item.name)">
+                                                            <component :is="item.icon"
+                                                                class="h-6 w-6 shrink-0 text-gray-400"
+                                                                aria-hidden="true" />
+                                                            {{ item.name }}
+                                                            <ChevronRightIcon
+                                                                :class="[isDropdownOpen(item.name) ? 'rotate-90 text-gray-500' : 'text-gray-400', 'ml-auto h-5 w-5 shrink-0']"
+                                                                aria-hidden="true" />
+                                                        </button>
+                                                        <transition
+                                                            enter-active-class="transition-opacity transition-transform ease-in-out duration-300"
+                                                            enter-from-class="opacity-0 transform -translate-y-2"
+                                                            enter-to-class="opacity-100 transform translate-y-0"
+                                                            leave-active-class="transition-opacity transition-transform ease-in-out duration-300"
+                                                            leave-from-class="opacity-100 transform translate-y-0"
+                                                            leave-to-class="opacity-0 transform -translate-y-2">
+                                                            <ul v-if="isDropdownOpen(item.name)" class="mt-1 px-2">
+                                                                <li v-for="subItem in item.children"
+                                                                    :key="subItem.name">
+                                                                    <router-link :to="{ name: subItem.href }"
+                                                                        @click="closeSidebar"
+                                                                        :class="[currentRoute === subItem.href ? 'bg-gray-800 text-white' : 'hover:bg-gray-50', 'block rounded-md py-2 pr-2 pl-9 text-sm leading-6 text-gray-700']">
+                                                                        {{ subItem.name }}
+                                                                    </router-link>
+                                                                </li>
+                                                            </ul>
+                                                        </transition>
+                                                    </div>
                                                 </li>
-                                            </DisclosurePanel>
-                                            </Disclosure>
+                                            </ul>
                                         </li>
-                                        </ul>
-                                    </li>
-                                    <li class="-mx-6 mt-auto">
-                                        <a href="#" class="flex items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">
-                                        <img class="h-8 w-8 rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
-                                        <span class="sr-only">Your profile</span>
-                                        <span aria-hidden="true">Tom Cook</span>
-                                        </a>
-                                    </li>
+                                        <li class="-mx-6 mt-auto">
+                                            <a href="#"
+                                                class="flex items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">
+                                                <img class="h-8 w-8 rounded-full bg-gray-50"
+                                                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                                    alt="" />
+                                                <span class="sr-only">Your profile</span>
+                                                <span aria-hidden="true">Tom Cook</span>
+                                            </a>
+                                        </li>
                                     </ul>
                                 </nav>
-
-
                             </div>
                         </DialogPanel>
                     </TransitionChild>
@@ -93,69 +108,60 @@
                         alt="Your Company" />
                 </div>
 
-
-                <!-- <nav class="flex flex-1 flex-col">
-                    <ul role="list" class="flex flex-1 flex-col gap-y-7">
-                        <li>
-                          <ul role="list" class="-mx-2 space-y-1">
-                            <li v-for="item in navigation" :key="item.name">
-                              <router-link :to="{ name: item.href }" :class="[item.current ? 'bg-gray-800 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800', 'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold']">
-                                  <component :is="item.icon" class="h-6 w-6 shrink-0" aria-hidden="true" />
-                                  {{ item.name }}
-                              </router-link>
-                            </li>
-                          </ul>
-                        </li>
-                        <li class="mt-auto">
-                            <a href="#"
-                                class="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-400 hover:bg-gray-800 hover:text-white">
-                                <Cog6ToothIcon class="h-6 w-6 shrink-0" aria-hidden="true" />
-                                Settings
-                            </a>
-                        </li>
-                    </ul>
-                </nav> -->
-               
                 <nav class="flex flex-1 flex-col">
                     <ul role="list" class="flex flex-1 flex-col gap-y-7">
-                    <li>
-                        <ul role="list" class="-mx-2 space-y-1">
-                        <li v-for="item in navigation" :key="item.name">
-                            <a v-if="!item.children" :href="item.href" :class="[item.current ? 'bg-gray-800 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800', 'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold text-gray-700']">
-                            <component :is="item.icon" class="h-6 w-6 shrink-0 text-gray-400" aria-hidden="true" />
-                            {{ item.name }}
-                            </a>
-                            <Disclosure as="div" v-else v-slot="{ open }">
-                            <DisclosureButton :class="[item.current ? 'bg-gray-800 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800', 'flex items-center w-full text-left rounded-md p-2 gap-x-3 text-sm leading-6 font-semibold text-gray-700']">
-                                <component :is="item.icon" class="h-6 w-6 shrink-0 text-gray-400" aria-hidden="true" />
-                                {{ item.name }}
-                                <ChevronRightIcon :class="[open ? 'rotate-90 text-gray-500' : 'text-gray-400', 'ml-auto h-5 w-5 shrink-0']" aria-hidden="true" />
-                            </DisclosureButton>
-                            <DisclosurePanel as="ul" class="mt-1 px-2">
-                                <li v-for="subItem in item.children" :key="subItem.name">
-                                <!-- 44px -->
-                                <DisclosureButton as="a" :href="subItem.href" :class="[subItem.current ? 'bg-gray-800 text-white' : 'hover:bg-gray-50', 'block rounded-md py-2 pr-2 pl-9 text-sm leading-6 text-gray-700']">{{ subItem.name }}</DisclosureButton>
+                        <li>
+                            <ul role="list" class="-mx-2 space-y-1">
+                                <li v-for="item in navigation" :key="item.name">
+                                    <router-link 
+                                        v-if="!item.children" 
+                                        :to="{ name: item.href }" 
+                                        @click="closeSidebar"
+                                        :class="[
+                                            currentRoute === item.href ? 
+                                            'bg-gray-800 text-white' : 
+                                            'text-gray-400 hover:text-white hover:bg-gray-800', 'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold text-gray-500'
+                                        ]"
+                                    >
+                                        <component :is="item.icon" class="h-6 w-6 shrink-0 text-gray-400"
+                                            aria-hidden="true" />
+                                        {{ item.name }}
+                                    </router-link>
+                                    <div v-else>
+                                        <button
+                                            :class="[isDropdownOpen(item.name) ? 'bg-gray-800 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800', 'flex items-center w-full text-left rounded-md p-2 gap-x-3 text-sm leading-6 font-semibold']"
+                                            @click="toggleDropdown(item.name)">
+                                            <component :is="item.icon" class="h-6 w-6 shrink-0 text-gray-400"
+                                                aria-hidden="true" />
+                                            {{ item.name }}
+                                            <ChevronRightIcon
+                                                :class="[isDropdownOpen(item.name) ? 'rotate-90 text-gray-500' : 'text-gray-400', 'ml-auto h-5 w-5 shrink-0']"
+                                                aria-hidden="true" />
+                                        </button>
+                                        <transition
+                                            enter-active-class="transition-opacity transition-transform ease-in-out duration-300"
+                                            enter-from-class="opacity-0 transform -translate-y-2"
+                                            enter-to-class="opacity-100 transform translate-y-0"
+                                            leave-active-class="transition-opacity transition-transform ease-in-out duration-300"
+                                            leave-from-class="opacity-100 transform translate-y-0"
+                                            leave-to-class="opacity-0 transform -translate-y-2">
+                                            <ul v-if="isDropdownOpen(item.name)" class="mt-1 px-2">
+                                                <li v-for="subItem in item.children" :key="subItem.name">
+                                                    <router-link :to="{ name: subItem.href }" @click="closeSidebar"
+                                                        :class="[currentRoute === subItem.href ? 'bg-gray-800 text-white' : 'hover:bg-gray-50', 'block rounded-md py-2 pr-2 pl-9 text-sm leading-6 text-gray-700']">
+                                                        {{ subItem.name }}
+                                                    </router-link>
+                                                </li>
+                                            </ul>
+                                        </transition>
+                                    </div>
                                 </li>
-                            </DisclosurePanel>
-                            </Disclosure>
+                            </ul>
                         </li>
-                        </ul>
-                    </li>
-                    <!-- <li class="-mx-6 mt-auto">
-                        <a href="#" class="flex items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">
-                        <img class="h-8 w-8 rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
-                        <span class="sr-only">Your profile</span>
-                        <span aria-hidden="true">Tom Cook</span>
-                        </a>
-                    </li> -->
                     </ul>
                 </nav>
             </div>
         </div>
-    
-
-
-
 
         <div class="lg:pl-72">
             <div
@@ -200,6 +206,7 @@
                                     <ChevronDownIcon class="ml-2 h-5 w-5 text-gray-400" aria-hidden="true" />
                                 </span>
                             </MenuButton>
+
                             <transition enter-active-class="transition ease-out duration-100"
                                 enter-from-class="transform opacity-0 scale-95"
                                 enter-to-class="transform opacity-100 scale-100"
@@ -209,13 +216,11 @@
                                 <MenuItems
                                     class="absolute right-0 z-10 mt-2.5 w-32 origin-top-right rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none">
                                     <MenuItem v-for="item in userNavigation" :key="item.name" v-slot="{ active }">
-                                      <a 
-                                        :href="item.href"
+                                    <a :href="item.href"
                                         :class="[active ? 'bg-gray-50' : '', 'block px-3 py-1 text-sm leading-6 text-gray-900']"
-                                        @click="item.onClick"
-                                      >
-                                      {{ item.name }}
-                                      </a>
+                                        @click="item.onClick">
+                                        {{ item.name }}
+                                    </a>
                                     </MenuItem>
                                 </MenuItems>
                             </transition>
@@ -226,11 +231,8 @@
 
             <main class="py-10">
                 <div class="px-4 sm:px-6 lg:px-8">
-
-
                     <!-- Your content -->
                     <RouterView />
-
                 </div>
             </main>
         </div>
@@ -238,7 +240,9 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 import {
     Dialog,
     DialogPanel,
@@ -248,11 +252,11 @@ import {
     MenuItems,
     TransitionChild,
     TransitionRoot,
-} from '@headlessui/vue'
+} from '@headlessui/vue';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
-import { 
-    Bars3Icon, 
-    BellIcon, 
+import {
+    Bars3Icon,
+    BellIcon,
     CalendarIcon,
     DocumentDuplicateIcon,
     HomeModernIcon,
@@ -266,75 +270,98 @@ import {
     ServerIcon,
 } from '@heroicons/vue/24/outline';
 import { ChevronDownIcon, MagnifyingGlassIcon, ChevronRightIcon } from '@heroicons/vue/20/solid';
-import { useRouter } from "vue-router";
-import { useI18n } from 'vue-i18n';
-import { useAuthenticationStore } from '@/stores/auth/authentication';
+
+// Importar traducciones
+const { t } = useI18n()
 
 
 
-const router = useRouter();
-const { t } = useI18n();
-const { logout } = useAuthenticationStore();
+const navigation = [
+    { name: t('dashboard'), href: 'dashboard', icon: HomeModernIcon, current: true },
+    { name: t('companies'), href: 'companies', icon: BuildingLibraryIcon, current: false },
+    { name: t('own_companies'), href: 'own_companies', icon: BuildingOffice2Icon, current: false },
+    { name: t('projects'), href: 'projects', icon: DocumentDuplicateIcon, current: false },
+    { name: t('project_hours'), href: 'project_hours', icon: CalendarIcon, current: false },
+    { name: t('invoice_headers'), href: 'invoice_headers', icon: DocumentDuplicateIcon, current: false },
+    { name: t('invoice_lines'), href: 'invoice_lines', icon: DocumentTextIcon, current: false },
+    { name: t('customers'), href: 'customers', icon: UserCircleIcon, current: false },
+    { name: t('providers'), href: 'providers', icon: CurrencyDollarIcon, current: false },
+    { name: t('services'), href: 'services', icon: ServerIcon, current: false },
 
-
-
-const navigation = ref([
-  { name: t('dashboard'), href: 'dashboard', icon: HomeModernIcon, current: true },
-  { name: t('companies'), href: 'companies', icon: BuildingLibraryIcon, current: false },
-  { name: t('own_companies'), href: 'own_companies' , icon: BuildingOffice2Icon, current: false },
-  { name: t('projects'), href: 'projects', icon: DocumentDuplicateIcon, current: false },
-  { name: t('project_hours'), href: 'project_hours', icon:  CalendarIcon, current: false },
-  { name: t('invoice_headers'), href: 'invoice_headers', icon: DocumentDuplicateIcon, current: false },
-  { name: t('invoice_lines'), href: 'invoice_lines', icon: DocumentTextIcon, current: false },
-  { name: t('customers'), href: 'customers', icon: UserCircleIcon, current: false },
-  { name: t('providers'), href: 'providers', icon: CurrencyDollarIcon, current: false },
-  { name: t('services'), href: 'services', icon: ServerIcon, current: false },
-
-  { 
-    name: 'Teams',
-    icon: UsersIcon,
-    current: false,
-    children: [
-      { name: 'Engineering', href: '#' },
-      { name: 'Human Resources', href: '#' },
-      { name: 'Customer Success', href: '#' },
-    ],
-  },
-]);
-
-
-// const navigation = ref([
-//   { name: t('dashboard'), href: 'dashboard', icon: HomeModernIcon, current: true },
-//   { 
-//     name: t('companies'), 
-//     href: 'companies', 
-//     icon: UsersIcon, 
-//     current: false,
-//     children: [
-//       { name: t('subcompany1'), href: 'dashboard', icon: UsersIcon, current: false },
-//       { name: t('subcompany2'), href: 'dashboard', icon: UsersIcon, current: false }
-//     ]
-//   },
-//   { name: t('own_companies'), href: 'own_companies', icon: FolderIcon, current: false },
-//   { name: t('projects'), href: 'projects', icon: CalendarIcon, current: false },
-//   { name: t('project_hours'), href: 'project_hours', icon: DocumentDuplicateIcon, current: false },
-//   { name: t('invoice_headers'), href: 'invoice_headers', icon: ChartPieIcon, current: false },
-//   { name: t('invoice_lines'), href: 'invoice_lines', icon: ChartPieIcon, current: false },
-// ]);
-
-
-
-
-const userNavigation = [
-    { name: t('logout'), href: '#', onClick: () => submit() },
+    //   { 
+    //     name: 'Teams',
+    //     icon: UsersIcon,
+    //     current: false,
+    //     children: [
+    //       { name: 'Engineering', href: '#' },
+    //       { name: 'Human Resources', href: '#' },
+    //       { name: 'Customer Success', href: '#' },
+    //     ],
+    //   },
 ]
 
-const sidebarOpen = ref(false);
+const userNavigation = [
+    { name: t('logout'), href: '/login' },
+    // { name: t('logout'), href: '#', onClick: () => submit() },
+]
 
-
-const submit = async() => {
-  await logout();
+const submit = async () => {
+    // await logout()
 }
 
+const sidebarOpen = ref(false);
+const openDropdown = ref(null);
 
+const router = useRouter();
+const route = useRoute();
+const currentRoute = ref(route.name);
+
+watch(
+    () => route.name,
+    (newRoute) => {
+        currentRoute.value = newRoute
+        const parentItem = navigation.find((item) => item.children && item.children.some((subItem) => subItem.href === newRoute))
+        if (parentItem) {
+            
+            openDropdown.value = parentItem.name
+        } else {
+            openDropdown.value = null
+        }
+    },
+    { immediate: true }
+)
+
+const setSelected = (name) => {
+    currentRoute.value = name
+    router.push({ name })
+    const parentItem = navigation.find(item => item.children && item.children.some(subItem => subItem.href === name));
+    if (!parentItem) {
+        openDropdown.value = null;
+    }
+}
+
+const toggleDropdown = (name) => {
+    if (openDropdown.value === name) {
+        openDropdown.value = null
+    } else {
+        openDropdown.value = name
+    }
+}
+
+const isDropdownOpen = (name) => {
+    return openDropdown.value === name;
+}
+
+const closeAllDropdowns = () => {
+    openDropdown.value = null;
+}
+
+const closeSidebar = () => {
+    sidebarOpen.value = false;
+    closeAllDropdowns();
+}
 </script>
+
+<style scoped>
+/* Añade estilos específicos aquí si lo deseas */
+</style>
