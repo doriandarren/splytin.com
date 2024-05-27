@@ -20,6 +20,8 @@
 							class="form-control" 
 							:class="{ 'border-danger': validate.country_id.$error }">
 
+							<option value="">{{ $t("form.select") }}</option>
+
 							<option v-for="country in countries" :key="country.id" :value="country.id">
 								{{ country.common_name }}
 							</option>

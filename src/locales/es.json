@@ -45,7 +45,8 @@
     "or_continue_with": "Continuar con"
   },
   "form": {
-    "required": "Requerido"
+    "required": "Requerido",
+    "select": "Seleccione..."
   },
   "errors":{
     "error_internal": "Error Interno"

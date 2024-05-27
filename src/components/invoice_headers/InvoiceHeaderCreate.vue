@@ -48,6 +48,7 @@
                             class="form-control"
                             :class="{ 'border-danger': validate.own_company_id.$error }"
 						>
+							<option value="">{{ $t("form.select") }}</option>
 							<option 
                 				v-for="item in ownCompanies" 
                 				:key="item.id" 
@@ -75,9 +76,12 @@
 							{{ $t("company_id") }} *
 						</label>
 						
-							<select
+						<select
 							v-model.trim="validate.company_id.$model" id="company_id" name="company_id"
-							class="form-control" :class="{ 'border-danger': validate.company_id.$error }">
+							class="form-control" :class="{ 'border-danger': validate.company_id.$error }"
+						>
+
+							<option value="">{{ $t("form.select") }}</option>
 
 							<option v-for="item in companies" :key="item.id" :value="item.id">
 								{{ item.name }}

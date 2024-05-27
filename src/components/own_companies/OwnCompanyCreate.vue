@@ -13,17 +13,11 @@
 						<label for="country_id" class="form-label w-full">
 							{{ $t("country_id") }} *
 						</label>
-						<!-- <input
-							v-model.trim="validate.country_id.$model"
-							id="country_id"
-							type="text"
-							name="country_id"
-							class="form-control"
-							:class="{ 'border-danger': validate.country_id.$error }"
-						/> -->
 						<select v-model.trim="validate.country_id.$model" 
 							id="country_id" name="country_id"
 							class="form-control" :class="{ 'border-danger': validate.country_id.$error }">
+
+							<option value="">{{ $t("form.select") }}</option>
 
 							<option v-for="country in countries" :key="country.id" :value="country.id">
 								{{ country.common_name }}
@@ -263,7 +257,7 @@ const rules = {
 };
 
 const formData = reactive({
-	country_id: "",
+	country_id: "64",
 	name: "",
 	tax: "",
 	address: "",

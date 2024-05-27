@@ -29,9 +29,11 @@
                             <div
                                 class="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-900 px-6 pb-4 ring-1 ring-white/10">
                                 <div class="flex h-16 shrink-0 items-center">
-                                    <img class="h-8 w-auto"
-                                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                                        alt="Your Company" />
+                                    <svg class="h-10 w-10 text-blue-500" id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 815.84 826.5"><defs><radialGradient id="Degradado_sin_nombre_28" cx="419.08" cy="424.75" r="410.59" gradientTransform="translate(0 169.9) scale(1 0.6)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#00b8d4"/></radialGradient></defs><path class="cls-1" d="M678,321.41" transform="translate(-11.16 -11.5)"/><path class="cls-2" d="M767.09,661.05C692.4,768,559.82,838,419.44,838,213,838,42,686.7,11.16,489H142c29.16,126.2,142.51,220.54,277.45,220.54a283,283,0,0,0,150.74-43.25l-390.47-395s-49-48.26-93.22-91.34c75.2-102.18,196.3-168.47,333-168.47C624.35,11.5,794.37,160.61,827,356.23H695.83C665.08,232.21,552.84,140,419.44,140a282.73,282.73,0,0,0-134.21,33.7l377,381.44Z" transform="translate(-11.16 -11.5)"/></svg>
+
+                                    <div class="text-3xl ml-3 text-white">
+                                        Splytin
+                                    </div>
                                 </div>
 
                                 <nav class="flex flex-1 flex-col">
@@ -41,14 +43,14 @@
                                                 <li v-for="item in navigation" :key="item.name">
                                                     <router-link v-if="!item.children" :to="{ name: item.href }"
                                                         @click="closeSidebar"
-                                                        :class="[currentRoute === item.href ? 'bg-gray-800 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800', 'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold text-gray-700']">
+                                                        :class="[currentRoute === item.href ? 'bg-gray-800 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800', 'group flex gap-x-3 rounded-md p-2 text-md leading-6 font-semibold text-gray-300']">
                                                         <component :is="item.icon"
                                                             class="h-6 w-6 shrink-0 text-gray-400" aria-hidden="true" />
                                                         {{ item.name }}
                                                     </router-link>
                                                     <div v-else>
                                                         <button
-                                                            :class="[isDropdownOpen(item.name) ? 'bg-gray-800 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800', 'flex items-center w-full text-left rounded-md p-2 gap-x-3 text-sm leading-6 font-semibold']"
+                                                            :class="[isDropdownOpen(item.name) ? 'bg-gray-800 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800', 'flex items-center w-full text-left rounded-md p-2 gap-x-3 text-md leading-6 font-semibold']"
                                                             @click="toggleDropdown(item.name)">
                                                             <component :is="item.icon"
                                                                 class="h-6 w-6 shrink-0 text-gray-400"
@@ -104,8 +106,15 @@
             <!-- Sidebar component, swap this element with another sidebar if you like -->
             <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-900 px-6 pb-4">
                 <div class="flex h-16 shrink-0 items-center">
-                    <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                        alt="Your Company" />
+                    <!-- <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                        alt="Your Company" /> -->
+
+                    <svg class="h-10 w-10 text-blue-500" id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 815.84 826.5"><defs><radialGradient id="Degradado_sin_nombre_28" cx="419.08" cy="424.75" r="410.59" gradientTransform="translate(0 169.9) scale(1 0.6)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#00b8d4"/></radialGradient></defs><path class="cls-1" d="M678,321.41" transform="translate(-11.16 -11.5)"/><path class="cls-2" d="M767.09,661.05C692.4,768,559.82,838,419.44,838,213,838,42,686.7,11.16,489H142c29.16,126.2,142.51,220.54,277.45,220.54a283,283,0,0,0,150.74-43.25l-390.47-395s-49-48.26-93.22-91.34c75.2-102.18,196.3-168.47,333-168.47C624.35,11.5,794.37,160.61,827,356.23H695.83C665.08,232.21,552.84,140,419.44,140a282.73,282.73,0,0,0-134.21,33.7l377,381.44Z" transform="translate(-11.16 -11.5)"/></svg>
+
+                    <div class="text-3xl ml-3 text-white">
+                        Splytin
+                    </div>
+
                 </div>
 
                 <nav class="flex flex-1 flex-col">
@@ -120,7 +129,7 @@
                                         :class="[
                                             currentRoute === item.href ? 
                                             'bg-gray-800 text-white' : 
-                                            'text-gray-400 hover:text-white hover:bg-gray-800', 'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold text-gray-500'
+                                            'text-gray-400 hover:text-white hover:bg-gray-800', 'group flex gap-x-3 rounded-md p-2 text-md leading-6 font-semibold text-gray-400'
                                         ]"
                                     >
                                         <component :is="item.icon" class="h-6 w-6 shrink-0 text-gray-400"
@@ -129,7 +138,7 @@
                                     </router-link>
                                     <div v-else>
                                         <button
-                                            :class="[isDropdownOpen(item.name) ? 'bg-gray-800 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800', 'flex items-center w-full text-left rounded-md p-2 gap-x-3 text-sm leading-6 font-semibold']"
+                                            :class="[isDropdownOpen(item.name) ? 'bg-gray-800 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800', 'flex items-center w-full text-left rounded-md p-2 gap-x-3 text-md leading-6 font-semibold']"
                                             @click="toggleDropdown(item.name)">
                                             <component :is="item.icon" class="h-6 w-6 shrink-0 text-gray-400"
                                                 aria-hidden="true" />

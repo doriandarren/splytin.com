@@ -57,31 +57,23 @@
 						<label for="company_id" class="form-label w-full">
 							{{ $t("country") }} *
 						</label>
-						<!-- <input
+						<select 
 							v-model.trim="validate.company_id.$model"
 							id="company_id"
 							type="text"
 							name="company_id"
 							class="form-control"
 							:class="{ 'border-danger': validate.company_id.$error }"
-						/> -->
-
-						<select 
-						v-model.trim="validate.company_id.$model"
-							id="company_id"
-							type="text"
-							name="company_id"
-							class="form-control"
-							:class="{ 'border-danger': validate.company_id.$error }"
 						>
-
-						<option 
-                			v-for="country in countries" 
-                			:key="country.id" 
-                			:value="country.id"
-              			>
-                			{{ country.common_name }}
-						</option>
+							<option value="">{{ $t("form.select") }}</option>
+							
+							<option 
+								v-for="country in countries" 
+								:key="country.id" 
+								:value="country.id"
+							>
+								{{ country.common_name }}
+							</option>
 						</select>
 						<template v-if="validate.company_id.$error">
 							<div v-for="(error, index) in validate.company_id.$errors" :key="index" class="text-danger mt-2">

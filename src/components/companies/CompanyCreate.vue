@@ -27,6 +27,7 @@
 							name="country_id"
 							class="form-control" :class="{ 'border-danger': validate.country_id.$error }">
 
+							<option value="">{{ $t("form.select") }}</option>
 							<option 
 								v-for="country in countries" 
 								:key="country.id" 
@@ -272,7 +273,7 @@ const rules = {
 };
 
 const formData = reactive({
-	country_id: "",
+	country_id: "64",
 	name: "",
 	tax: "",
 	address: "",
