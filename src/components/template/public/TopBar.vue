@@ -30,10 +30,10 @@
             <div class="hidden lg:flex items-center space-x-4 text-lg">
                 <ul class="flex space-x-6 text-white mr-4">
                     <li>
-                        <RouterLink :to="{ name: 'resources' }" class="text-white">Recursos</RouterLink>
+                        <RouterLink :to="{ name: 'resources' }" class="text-white">{{ $t("resources") }}</RouterLink>
                     </li>
                     <li>
-                        <RouterLink :to="{ name: 'login' }" class="text-white">Login</RouterLink>
+                        <RouterLink :to="{ name: 'login' }" class="text-white">{{ $t("login") }}</RouterLink>
                     </li>
                 </ul>
             </div>
