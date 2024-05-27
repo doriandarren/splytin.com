@@ -11,7 +11,7 @@
     
     <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
       <div class="lg:w-1/1 md:w-1/2 w-full px-4">
-        <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Interés General</h2>
+        <h2 class="title-font font-medium text-gray-500 tracking-widest text-sm mb-3 uppercase">{{ $t("link_interest") }}</h2>
         <nav class="list-none mb-10">
           <li>
             <router-link to="/privacy-policies" class="text-gray-600 hover:text-gray-800">{{ $t("privacity_polices") }}</router-link>
@@ -25,7 +25,7 @@
 
     <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
       <div class="lg:w-1/1 md:w-1/2 w-full px-4">
-        <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">{{ $t("resources") }}</h2>
+        <h2 class="title-font font-medium text-gray-500 tracking-widest text-sm mb-3 uppercase">{{ $t("resources") }}</h2>
         <nav class="list-none mb-10">
           <li>
             <router-link to="/resources" class="text-gray-600 hover:text-gray-800">{{ $t("Tailwind") }}</router-link>
