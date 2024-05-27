@@ -1,5 +1,5 @@
 <template>
-<footer class="text-gray-600 body-font">
+<footer class="text-gray-600 body-font bg-gray-200">
   <div class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
     <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
       <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">

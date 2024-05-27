@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div v-animate>
+    
     <h1 class="text-3xl">Chat Room</h1>
 
     <div class="grid grid-cols-12 mt-4 mb-4 gap-2">
