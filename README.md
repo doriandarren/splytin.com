@@ -296,3 +296,29 @@ npm install @headlessui/vue@latest
 npm install @heroicons/vue
 
 ```
+
+
+
+## vue3-cookies:
+
+```sh
+
+  npm install vue3-cookies
+
+
+// Create Component in folder components/coockies/CookieConsent.vue -> Copy code.
+
+
+// Then import to App.vue file
+
+  ...
+
+  <CookieConsent />
+
+  ...
+
+  import CookieConsent from './components/CookieConsent.vue';
+
+  ...
+
+```
