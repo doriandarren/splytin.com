@@ -373,3 +373,18 @@ useHead({
 
 
 ```
+
+
+
+## Cargar el archivo robots.txt
+
+Tiene que estar en la carpeta public del proyecto.
+
+```sh
+
+User-agent: *
+Disallow: /admin/
+Disallow: /login/
+Allow: /
+
+```

@@ -2,3 +2,5 @@ User-agent: *
 Disallow: /admin/
 Disallow: /login/
 Allow: /
+
+Sitemap: https://splytin.com/sitemap.xml
