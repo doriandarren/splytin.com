@@ -29,10 +29,10 @@
                             <div
                                 class="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-900 px-6 pb-4 ring-1 ring-white/10">
                                 <div class="flex h-16 shrink-0 items-center">
-                                    <svg class="h-10 w-10 text-blue-500" id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 815.84 826.5"><defs><radialGradient id="Degradado_sin_nombre_28" cx="419.08" cy="424.75" r="410.59" gradientTransform="translate(0 169.9) scale(1 0.6)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#00b8d4"/></radialGradient></defs><path class="cls-1" d="M678,321.41" transform="translate(-11.16 -11.5)"/><path class="cls-2" d="M767.09,661.05C692.4,768,559.82,838,419.44,838,213,838,42,686.7,11.16,489H142c29.16,126.2,142.51,220.54,277.45,220.54a283,283,0,0,0,150.74-43.25l-390.47-395s-49-48.26-93.22-91.34c75.2-102.18,196.3-168.47,333-168.47C624.35,11.5,794.37,160.61,827,356.23H695.83C665.08,232.21,552.84,140,419.44,140a282.73,282.73,0,0,0-134.21,33.7l377,381.44Z" transform="translate(-11.16 -11.5)"/></svg>
+                                    <Logo />
 
                                     <div class="text-3xl ml-3 text-white">
-                                        Splytin
+                                        <LogoLetters />
                                     </div>
                                 </div>
 
@@ -109,10 +109,10 @@
                     <!-- <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
                         alt="Your Company" /> -->
 
-                    <svg class="h-10 w-10 text-blue-500" id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 815.84 826.5"><defs><radialGradient id="Degradado_sin_nombre_28" cx="419.08" cy="424.75" r="410.59" gradientTransform="translate(0 169.9) scale(1 0.6)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#00b8d4"/></radialGradient></defs><path class="cls-1" d="M678,321.41" transform="translate(-11.16 -11.5)"/><path class="cls-2" d="M767.09,661.05C692.4,768,559.82,838,419.44,838,213,838,42,686.7,11.16,489H142c29.16,126.2,142.51,220.54,277.45,220.54a283,283,0,0,0,150.74-43.25l-390.47-395s-49-48.26-93.22-91.34c75.2-102.18,196.3-168.47,333-168.47C624.35,11.5,794.37,160.61,827,356.23H695.83C665.08,232.21,552.84,140,419.44,140a282.73,282.73,0,0,0-134.21,33.7l377,381.44Z" transform="translate(-11.16 -11.5)"/></svg>
+                    <Logo />
 
                     <div class="text-3xl ml-3 text-white">
-                        Splytin
+                        <LogoLetters />
                     </div>
 
                 </div>
@@ -249,9 +249,9 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue'
-import { useRouter, useRoute } from 'vue-router'
-import { useI18n } from 'vue-i18n'
+import { ref, watch } from 'vue';
+import { useRouter, useRoute } from 'vue-router';
+import { useI18n } from 'vue-i18n';
 import {
     Dialog,
     DialogPanel,
@@ -279,6 +279,10 @@ import {
     ServerIcon,
 } from '@heroicons/vue/24/outline';
 import { ChevronDownIcon, MagnifyingGlassIcon, ChevronRightIcon } from '@heroicons/vue/20/solid';
+
+import Logo from '@/components/template/images/Logo.vue';
+import LogoLetters from '@/components/template/images/LogoLetters.vue';
+
 
 // Importar traducciones
 const { t } = useI18n()
