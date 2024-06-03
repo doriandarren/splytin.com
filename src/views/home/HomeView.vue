@@ -210,32 +210,76 @@ const findData = async () => {
 
 
 
+
 useHead({
-  title: 'Home Splytin',
+  title: 'Splytin - Home',
   meta: [
     {
       name: 'description',
-      content: 'Welcome to the home page of Splytin.',
+      content: 'Bienvenido a Splytin, tu destino para el mejor entretenimiento en línea. Descubre productos de alta calidad y disfruta de una experiencia única.'
+    },
+    {
+      name: 'robots',
+      content: 'index, follow'
+    },
+    {
+      name: 'keywords',
+      content: 'entretenimiento, videos, música, productos de alta calidad, Splytin'
+    },
+    {
+      name: 'author',
+      content: 'Splytin'
     },
     {
       property: 'og:title',
-      content: 'Home - Splytin',
+      content: 'Splytin - Home'
     },
     {
       property: 'og:description',
-      content: 'Welcome to the home page of Splytin.',
+      content: 'Bienvenido a Splytin, tu destino para el mejor entretenimiento en línea. Descubre productos de alta calidad y disfruta de una experiencia única.'
     },
     {
-      property: 'og:image',
-      content: 'URL_to_your_image',
+      property: 'og:type',
+      content: 'website'
     },
     {
       property: 'og:url',
-      content: 'https://splytin.com/',
+      content: 'https://splytin.com/'
     },
-  ],
+    {
+      property: 'og:image',
+      content: '/img/splytin.svg'
+    },
+    {
+      property: 'og:site_name',
+      content: 'Splytin'
+    },
+    {
+      name: 'twitter:card',
+      content: 'summary_large_image'
+    },
+    {
+      name: 'twitter:title',
+      content: 'Splytin - Home'
+    },
+    {
+      name: 'twitter:description',
+      content: 'Bienvenido a Splytin, tu destino para el mejor entretenimiento en línea. Descubre productos de alta calidad y disfruta de una experiencia única.'
+    },
+    {
+      name: 'twitter:image',
+      content: '/img/splytin.svg'
+    },
+    {
+      name: 'twitter:site',
+      content: '@tu_twitter_handle'
+    },
+    {
+      name: 'twitter:creator',
+      content: '@tu_twitter_handle'
+    }
+  ]
 });
-
 
 
 
