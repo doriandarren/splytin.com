@@ -322,3 +322,54 @@ npm install @heroicons/vue
   ...
 
 ```
+
+
+
+## SEO: vueuse/head
+
+```sh
+
+npm install @vueuse/head
+
+
+//Main.js:
+...
+import { createHead } from '@vueuse/head';
+...
+const head = createHead();
+app.use(head);
+
+
+//Views Exmple Home.vue
+
+...
+import { useHead } from '@vueuse/head';
+...
+useHead({
+  title: 'Home QQ Splytin',
+  meta: [
+    {
+      name: 'description',
+      content: 'Welcome to the home page of Splytin.',
+    },
+    {
+      property: 'og:title',
+      content: 'Home QQ Splytin',
+    },
+    {
+      property: 'og:description',
+      content: 'Welcome to the home page of Splytin.',
+    },
+    {
+      property: 'og:image',
+      content: 'URL_to_your_image',
+    },
+    {
+      property: 'og:url',
+      content: 'https://splytin.com/',
+    },
+  ],
+});
+
+
+```

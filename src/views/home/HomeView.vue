@@ -162,6 +162,8 @@
 <script setup>
 
 import { onMounted, ref } from 'vue';
+import { useHead } from '@vueuse/head';
+
 
 
 const videoUrl1 = ref('https://www.youtube.com/embed/');
@@ -205,6 +207,35 @@ const findData = async () => {
     });
 
 }
+
+
+
+useHead({
+  title: 'Home Splytin',
+  meta: [
+    {
+      name: 'description',
+      content: 'Welcome to the home page of Splytin.',
+    },
+    {
+      property: 'og:title',
+      content: 'Home - Splytin',
+    },
+    {
+      property: 'og:description',
+      content: 'Welcome to the home page of Splytin.',
+    },
+    {
+      property: 'og:image',
+      content: 'URL_to_your_image',
+    },
+    {
+      property: 'og:url',
+      content: 'https://splytin.com/',
+    },
+  ],
+});
+
 
 
 

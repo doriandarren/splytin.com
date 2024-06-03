@@ -11,7 +11,7 @@ const routes = [
       {
         path: '/',
         name: 'home',
-        component: () => import('@/views/home/HomeView.vue')
+        component: () => import('@/views/home/HomeView.vue'),
       },
 
       {
@@ -552,15 +552,12 @@ const router = createRouter({
 
 
 
-
 router.beforeEach(async (to, from, next) => {
-
-  document.title = `${to.name} - ${import.meta.env.VITE_APP_TITLE}`;
+  // Actualizar el título de la página
+  //document.title = `${to.name} - ${import.meta.env.VITE_APP_TITLE}`;
 
   if (to.matched.some(record => record.meta.requiresAuth)) {
-
-    const {currentUser} = useAuthenticationStore();
-
+    const { currentUser } = useAuthenticationStore();
     let response = await currentUser();
 
     try {
@@ -573,12 +570,9 @@ router.beforeEach(async (to, from, next) => {
       console.log(e);
       next({ name: "login" });
     }
-
   } else {
     next();
   }
-
 });
-
 
 export default router
