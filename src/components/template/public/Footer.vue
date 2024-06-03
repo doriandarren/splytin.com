@@ -4,6 +4,7 @@
     <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
       <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
         <img src="../../../assets/Logo.svg" alt="Logo" class="w-8 h-8 mr-3">
+        
         <img src="../../../assets/Letras_Splytin.svg" alt="Logo" class="w-32 h-8 mr-3">
       </a>
       <p class="mt-2 text-sm text-gray-500"></p>
