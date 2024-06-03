@@ -20,12 +20,12 @@
   });
   
   const acceptCookies = () => {
-    cookies.set('cookie_consent', 'accepted', { expires: '365d' });
+    cookies.set('cookie_consent', 'accepted', { expires: '10d' });
     showCookieConsent.value = false;
   };
   
   const rejectCookies = () => {
-    cookies.set('cookie_consent', 'rejected', { expires: '365d' });
+    cookies.set('cookie_consent', 'rejected', { expires: '10d' });
     showCookieConsent.value = false;
   };
   </script>

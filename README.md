@@ -388,3 +388,7 @@ Disallow: /login/
 Allow: /
 
 ```
+
+
+Registrarse en google search console, con una cuenta google ejemplo: cuenta_asociada@gmail.com.
+
