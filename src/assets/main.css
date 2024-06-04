@@ -1,20 +1,13 @@
 @import './base.css';
 
 
-
 /*
  |--------------------------------------------------------------------------
- | Tabulator
+ | Font Style
  |--------------------------------------------------------------------------
  |
- | Import Tabulator
- | 
- */
- @import  "tabulator-tables/dist/css/tabulator.min.css";
-
-
-
- @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+ */ 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 
 
 
@@ -71,11 +64,11 @@
     }
 
     h1{
-        @apply text-3xl text-blue-400 mt-5;
+        @apply text-3xl text-blue-400 mt-5 font-semibold;
     }
 
     h2{
-        @apply text-2xl text-blue-400 mt-5;
+        @apply text-2xl text-blue-400 mt-5 font-semibold;
     }
 
     h3{
