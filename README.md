@@ -346,11 +346,11 @@ app.use(head);
 import { useHead } from '@vueuse/head';
 ...
 useHead({
-  title: 'Home QQ Splytin',
+  title: 'Home - PAGE',
   meta: [
     {
       name: 'description',
-      content: 'Welcome to the home page of Splytin.',
+      content: 'Welcome to the home page of PAGE.',
     },
     {
       property: 'og:title',
@@ -358,7 +358,7 @@ useHead({
     },
     {
       property: 'og:description',
-      content: 'Welcome to the home page of Splytin.',
+      content: 'Welcome to the home page of PAGE.',
     },
     {
       property: 'og:image',
@@ -366,7 +366,7 @@ useHead({
     },
     {
       property: 'og:url',
-      content: 'https://splytin.com/',
+      content: 'https://PAGE.com/',
     },
   ],
 });
