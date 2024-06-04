@@ -20,7 +20,7 @@
             <router-link to="/privacy-policies" class="text-gray-600 hover:text-gray-800">{{ $t("privacity_polices") }}</router-link>
           </li>
           <li>
-            <router-link to="/coockies" class="text-gray-600 hover:text-gray-800">{{ $t("coockies") }}</router-link>
+            <router-link to="/cookies" class="text-gray-600 hover:text-gray-800">{{ $t("coockies") }}</router-link>
           </li>
         </nav>
       </div>
