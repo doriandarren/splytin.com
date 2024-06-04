@@ -1,5 +1,5 @@
 <template>
-  <div class="cookie-consent">
+  <div v-if="showCookieConsent" class="cookie-consent">
     <div class="flex flex-row justify-center">
       <div>
         <p>Este sitio web utiliza cookies para garantizar que obtenga la mejor experiencia en nuestro sitio web.</p>
