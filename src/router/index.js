@@ -475,11 +475,6 @@ const routes = [
         component: () => import('@/views/dashboard/DashboardList.vue')
       },
       {
-        path: '/categories',
-        name: 'categories',
-        component: () => import('@/modules/invoices/views/categories/CategoryList.vue')
-      },
-      {
         path: '/msft-prices',
         name: 'msft-prices',
         component: () => import('@/views/msft_prices/MsftPricesList.vue')
