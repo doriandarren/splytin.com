@@ -23,7 +23,7 @@ const routes = [
       {
         path: '/websocket',
         name: 'websocket',
-        component: () => import('@/views/websocket/Websocket.vue')
+        component: () => import('@/modules/websocket/views/Websocket.vue')
       },
 
       {
@@ -477,7 +477,7 @@ const routes = [
       {
         path: '/categories',
         name: 'categories',
-        component: () => import('@/views/categories/CategoryList.vue')
+        component: () => import('@/modules/invoices/views/categories/CategoryList.vue')
       },
       {
         path: '/msft-prices',
@@ -487,47 +487,47 @@ const routes = [
       {
         path: '/companies',
         name: 'companies',
-        component: () => import('@/views/companies/CompanyList.vue')
+        component: () => import('@/modules/invoices/views/companies/CompanyList.vue')
       },
       {
         path: '/own_companies',
         name: 'own_companies',
-        component: () => import('@/views/own_companies/OwnCompanyList.vue')
+        component: () => import('@/modules/invoices/views/own_companies/OwnCompanyList.vue')
       },
       {
         path: '/projects',
         name: 'projects',
-        component: () => import('@/views/projects/ProjectList.vue')
+        component: () => import('@/modules/invoices/views/projects/ProjectList.vue')
       },
       {
         path: '/project_hours',
         name: 'project_hours',
-        component: () => import('@/views/project_hours/ProjectHourList.vue')
+        component: () => import('@/modules/invoices/views/project_hours/ProjectHourList.vue')
       },
       {
         path: '/invoice_headers',
         name: 'invoice_headers',
-        component: () => import('@/views/invoice_headers/InvoiceHeaderList.vue')
+        component: () => import('@/modules/invoices/views/invoice_headers/InvoiceHeaderList.vue')
       },
       {
         path: '/invoice_lines',
         name: 'invoice_lines',
-        component: () => import('@/views/invoice_lines/InvoiceLineList.vue')
+        component: () => import('@/modules/invoices/views/invoice_lines/InvoiceLineList.vue')
       },
       {
         path: '/customers',
         name: 'customers',
-        component: () => import('@/views/customers/CustomerList.vue')
+        component: () => import('@/modules/invoices/views/customers/CustomerList.vue')
       },
       {
         path: '/providers',
         name: 'providers',
-        component: () => import('@/views/providers/ProviderList.vue')
+        component: () => import('@/modules/invoices/views/providers/ProviderList.vue')
       },
       {
         path: '/services',
         name: 'services',
-        component: () => import('@/views/services/ServiceList.vue')
+        component: () => import('@/modules/invoices/views/services/ServiceList.vue')
       },
 
     ]
