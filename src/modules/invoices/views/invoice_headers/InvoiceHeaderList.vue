@@ -74,7 +74,7 @@
 	import { useI18n } from 'vue-i18n';
 	import { Toast } from '@/utils/toast';
 	import Swal from 'sweetalert2';
-	import useInvoiceHeaders from "../../invoice_headers";
+	import useInvoiceHeaders from "../../composables/invoice_headers";
 	import Create from "../../components/invoice_headers/InvoiceHeaderCreate.vue";
 	import Edit from "../../components/invoice_headers/InvoiceHeaderEdit.vue";
 

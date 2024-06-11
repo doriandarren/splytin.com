@@ -58,11 +58,12 @@
 <script setup>
 
 	import { onMounted, reactive, toRefs } from 'vue';
-	import useServices from '@/composables/services';
 	import { required, minLength, maxLength, email, url, integer } from '@vuelidate/validators';
 	import { useVuelidate } from '@vuelidate/core';
 	import { helpers } from '@vuelidate/validators';
 	import { useI18n } from 'vue-i18n';
+	import useServices from '../../composables/services';
+
 
 	const { service, getService } = useServices();
 	const { t } = useI18n();

@@ -146,11 +146,11 @@
 <script setup>
 
 	import { onMounted, reactive, toRefs } from 'vue';
-	import useInvoiceLines from '@/composables/invoice_lines';
 	import { required, minLength, maxLength, email, url, integer } from '@vuelidate/validators';
 	import { useVuelidate } from '@vuelidate/core';
 	import { helpers } from '@vuelidate/validators';
 	import { useI18n } from 'vue-i18n';
+	import useInvoiceLines from '../../composables/invoice_lines';
 
 	const { invoiceLine, getInvoiceLine } = useInvoiceLines();
 	const { t } = useI18n();

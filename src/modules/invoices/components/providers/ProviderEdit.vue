@@ -102,7 +102,7 @@
 <script setup>
 
 	import { onMounted, reactive, toRefs } from 'vue';
-	import useProviders from '@/composables/providers';
+	import useProviders from '../../composables/providers';
 	import { required, minLength, maxLength, email, url, integer } from '@vuelidate/validators';
 	import { useVuelidate } from '@vuelidate/core';
 	import { helpers } from '@vuelidate/validators';

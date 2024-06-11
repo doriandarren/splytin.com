@@ -102,11 +102,12 @@
 <script setup>
 
 	import { onMounted, reactive, toRefs } from 'vue';
-	import useCustomers from '@/composables/customers';
 	import { required, minLength, maxLength, email, url, integer } from '@vuelidate/validators';
 	import { useVuelidate } from '@vuelidate/core';
 	import { helpers } from '@vuelidate/validators';
 	import { useI18n } from 'vue-i18n';
+	import useCustomers from '../../composables/customers';
+	
 
 	const { customer, getCustomer } = useCustomers();
 	const { t } = useI18n();
