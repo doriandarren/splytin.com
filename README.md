@@ -392,3 +392,53 @@ Allow: /
 
 Registrarse en google search console, con una cuenta google ejemplo: cuenta_asociada@gmail.com.
 
+
+
+
+
+
+
+
+
+## Select combobox:
+
+```sh
+
+npm install vue-select@beta
+
+en main.js:
+
+...
+// vueselecu
+import vSelect from 'vue-select';
+...
+app.component('v-select', vSelect);
+
+
+
+Luego en XXXX.vue ejemplo: 
+
+...
+<v-select
+    v-model="validate.country_id.$model"
+    :options="countries"
+    label="common_name"
+    :reduce="country => country.id"
+    :class="{ 'border-danger': validate.country_id.$error }"
+    class="form-control"
+></v-select>
+...
+
+...
+
+import vSelect from 'vue-select';
+import 'vue-select/dist/vue-select.css';
+...
+
+
+
+Nota: para que funcione tuve que agregar en base.css en el ::before ::after:
+...
+--vs-border-color: #ffffff;
+...
+```
