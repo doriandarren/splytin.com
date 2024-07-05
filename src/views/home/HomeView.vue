@@ -7,70 +7,85 @@
     </h1>
 
 
-    <div class="container mx-auto">
-      <div class="mx-auto">
-        <div class="flex flex-wrap w-full bg-gray-100 py-2 px-10 relative mb-2">
-          <div class="flex flex-wrap w-full flex-col items-center text-center mb-10">
-            <h1 class="sm:text-2xl text-2xl font-medium title-font mb-2 text-gray-900">
-              Nuestros Videos
-            </h1>
-          </div>
-          <iframe src="https://www.youtube.com/embed/VVYnVptxKKM" frameborder="0" allowfullscreen width="100%"
-            height="600vh"></iframe>
 
-          <div class="text-center relative z-10 w-full">
-            <h2 class="text-2xl text-gray-900 font-medium title-font mb-2">
-              Nature Ambience Minecraft
-            </h2>
-            <a href="https://www.youtube.com/@FamiliaMusicMDDD" target="_blank"
-              class="mt-3 text-indigo-500 inline-flex items-center">Más videos
-              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                <path d="M5 12h14M12 5l7 7-7 7"></path>
-              </svg>
-            </a>
-          </div>
+
+    <section class="text-gray-600 body-font pt-10 mb-5">
+      <div class="container mx-auto">
+        <div class="flex flex-wrap w-full flex-col items-center text-center mb-10">
+          <h1 class="sm:text-2xl text-2xl font-medium title-font mb-2 text-gray-900">
+            {{ $t("Nuestros Videos") }}
+          </h1>
         </div>
-        <div class="flex flex-wrap -mx-2">
-          <div class="px-2 w-1/2">
-            <div class="flex flex-wrap w-full bg-gray-100 sm:py-24 py-16 sm:px-10 px-6 relative">
-              <iframe src="https://www.youtube.com/embed/je-NfsNOP3g" frameborder="0" allowfullscreen width="100%"
-                height="300vh"></iframe>
-              <div class="text-center relative z-10 w-full">
-                <h2 class="text-xl text-gray-900 font-medium title-font mb-2">
-                  Relaxing Melodies
-                </h2>
-                <a href="https://www.youtube.com/@FamiliaMusicMDDD" target="_blank"
-                  class="mt-3 text-indigo-500 inline-flex items-center">Más videos
-                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </a>
-              </div>
+
+        <div class="grid grid-cols-2 gap-10">
+
+          <div class="col-span-2 md:col-span-2 lg:col-span-1">
+            <iframe src="https://www.youtube.com/embed/VVYnVptxKKM" frameborder="0" allowfullscreen width="100%"
+            height="300vh"></iframe>
+
+            <div class="text-center w-full mb-10">
+              <h2 class="text-2xl text-gray-900 font-medium title-font mb-4">
+                Nature Ambience Minecraft
+              </h2>
+              <a href="https://www.youtube.com/@FamiliaMusicMDDD" target="_blank"
+                class="mt-3 text-indigo-500 inline-flex items-center">Más videos
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
             </div>
+
           </div>
-          <div class="px-2 w-1/2">
-            <div class="flex flex-wrap w-full bg-gray-100 sm:py-24 py-16 sm:px-10 px-6 relative">
-              <iframe src="https://www.youtube.com/embed/-o209ByIFcM" frameborder="0" allowfullscreen width="100%"
-                height="300vh"></iframe>
-              <div class="text-center relative z-10 w-full">
-                <h2 class="text-xl text-gray-900 font-medium title-font mb-2">
-                  Música que te ayuda a relajar, estudiar, dormir con Night Ambience
-                </h2>
-                <a href="https://www.youtube.com/@FamiliaMusicMDDD" target="_blank"
-                  class="mt-3 text-indigo-500 inline-flex items-center">Más videos
-                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </a>
-              </div>
+
+
+          <div class="col-span-2 md:col-span-2 lg:col-span-1">
+            <iframe src="https://www.youtube.com/embed/je-NfsNOP3g" frameborder="0" allowfullscreen width="100%"
+            height="300vh"></iframe>
+
+            <div class="text-center w-full mb-10">
+              <h2 class="text-2xl text-gray-900 font-medium title-font mb-2">
+                 Relaxing Melodies
+              </h2>
+              <a href="https://www.youtube.com/@FamiliaMusicMDDD" target="_blank"
+                class="mt-3 text-indigo-500 inline-flex items-center">Más videos
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
             </div>
+
           </div>
-        </div>
+
+
+
+          <div class="col-span-2 md:col-span-2 lg:col-span-1">
+            <iframe src="https://www.youtube.com/embed/-o209ByIFcM" frameborder="0" allowfullscreen width="100%"
+            height="300vh"></iframe>
+
+            <div class="text-center w-full mb-10">
+              <h2 class="text-2xl text-gray-900 font-medium title-font mb-2">
+                Música que te ayuda a relajar, estudiar, dormir con Night Ambience
+              </h2>
+              <a href="https://www.youtube.com/@FamiliaMusicMDDD" target="_blank"
+                class="mt-3 text-indigo-500 inline-flex items-center">Más videos
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+
+          </div>
+
+
+        </div> 
+
+
       </div>
-    </div>
+    </section>
+
 
 
 
@@ -89,7 +104,6 @@
             <iframe :src="videoUrl1" frameborder="0" allowfullscreen width="100%" height="300vh"></iframe>
           </div>
 
-
           <div class="col-span-2 md:col-span2 lg:col-span-1">
             <iframe :src="videoUrl2" frameborder="0" allowfullscreen width="100%" height="300vh"></iframe>
           </div>
@@ -103,8 +117,6 @@
           <div class="col-span-2 md:col-span2 lg:col-span-1">
             <iframe :src="videoUrl4" frameborder="0" allowfullscreen width="100%" height="300vh"></iframe>
           </div>
-
-
 
         </div>
 
@@ -185,23 +197,19 @@ const findData = async () => {
 
   //await fetch(`${import.meta.env.VITE_API_URL}session-logs/list`,{
   await fetch(`https://api.splytin.com/api/v1/youtube-videos/list`, {
-    method: 'GET',
-    headers: config.headers,
-  })
-    .then(res => res.json())
-    .then((res) => {
-
-
-      videoUrl1.value = videoUrl1.value + res.data[0].yt_id;
-      videoUrl2.value = videoUrl2.value + res.data[1].yt_id;
-      videoUrl3.value = videoUrl3.value + res.data[2].yt_id;
-      videoUrl4.value = videoUrl4.value + res.data[3].yt_id;
-
-
-    })
-    .catch((e) => {
-      sessionLogErrors.value.push(t("errors.error_internal"));
-    });
+        method: 'GET',
+        headers: config.headers,
+      })
+      .then(res => res.json())
+      .then((res) => {
+        videoUrl1.value = videoUrl1.value + res.data[0].yt_id;
+        videoUrl2.value = videoUrl2.value + res.data[1].yt_id;
+        videoUrl3.value = videoUrl3.value + res.data[2].yt_id;
+        videoUrl4.value = videoUrl4.value + res.data[3].yt_id;
+      })
+      .catch((e) => {
+        sessionLogErrors.value.push(t("errors.error_internal"));
+      });
 
 }
 
