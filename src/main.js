@@ -32,8 +32,15 @@ import 'vue-good-table-next/dist/vue-good-table-next.css';
 import { createCookies } from 'vue3-cookies';
 
 
+//SEO
+import { createHead } from "@vueuse/head";
 
-const app = createApp(App)
+
+
+const app = createApp(App);
+
+const head = createHead();
+
 
 app.use(createPinia())
 app.use(router)
@@ -44,7 +51,10 @@ app.use(i18n())
 
 app.use(VueGoodTablePlugin)
 
-app.directive('animate', animateDirective);
+app.directive('animate', animateDirective)
+
+app.use(head);
+
 
 app.use(createCookies(), {
     expireTimes: '30d',

@@ -296,3 +296,149 @@ npm install @headlessui/vue@latest
 npm install @heroicons/vue
 
 ```
+
+
+
+## vue3-cookies:
+
+```sh
+
+  npm install vue3-cookies
+
+
+// Create Component in folder components/coockies/CookieConsent.vue -> Copy code.
+
+
+// Then import to App.vue file
+
+  ...
+
+  <CookieConsent />
+
+  ...
+
+  import CookieConsent from './components/CookieConsent.vue';
+
+  ...
+
+```
+
+
+
+## SEO: vueuse/head
+
+```sh
+
+npm install @vueuse/head
+
+
+//Main.js:
+...
+import { createHead } from '@vueuse/head';
+...
+const head = createHead();
+app.use(head);
+
+
+//Views Exmple Home.vue
+
+...
+import { useHead } from '@vueuse/head';
+...
+useHead({
+  title: 'Home - PAGE',
+  meta: [
+    {
+      name: 'description',
+      content: 'Welcome to the home page of PAGE.',
+    },
+    {
+      property: 'og:title',
+      content: 'Home QQ Splytin',
+    },
+    {
+      property: 'og:description',
+      content: 'Welcome to the home page of PAGE.',
+    },
+    {
+      property: 'og:image',
+      content: 'URL_to_your_image',
+    },
+    {
+      property: 'og:url',
+      content: 'https://PAGE.com/',
+    },
+  ],
+});
+
+
+```
+
+
+
+## Cargar el archivo robots.txt
+
+Tiene que estar en la carpeta public del proyecto.
+
+```sh
+
+User-agent: *
+Disallow: /admin/
+Disallow: /login/
+Allow: /
+
+```
+
+
+Registrarse en google search console, con una cuenta google ejemplo: cuenta_asociada@gmail.com.
+
+
+
+
+
+
+
+
+
+## Select combobox:
+
+```sh
+
+npm install vue-select@beta
+
+en main.js:
+
+...
+// vueselecu
+import vSelect from 'vue-select';
+...
+app.component('v-select', vSelect);
+
+
+
+Luego en XXXX.vue ejemplo: 
+
+...
+<v-select
+    v-model="validate.country_id.$model"
+    :options="countries"
+    label="common_name"
+    :reduce="country => country.id"
+    :class="{ 'border-danger': validate.country_id.$error }"
+    class="form-control"
+></v-select>
+...
+
+...
+
+import vSelect from 'vue-select';
+import 'vue-select/dist/vue-select.css';
+...
+
+
+
+Nota: para que funcione tuve que agregar en base.css en el ::before ::after:
+...
+--vs-border-color: #ffffff;
+...
+```

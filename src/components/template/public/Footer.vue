@@ -3,8 +3,11 @@
   <div class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
     <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
       <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-        <img src="../../../assets/LogoSplytin.png" alt="Logo" class="w-8 h-8 mr-3">
-        <span class="ml-3 text-3xl">Splytin</span>
+
+        <Logo />
+
+        <LogoLetters />
+        
       </a>
       <p class="mt-2 text-sm text-gray-500"></p>
     </div>
@@ -17,7 +20,7 @@
             <router-link to="/privacy-policies" class="text-gray-600 hover:text-gray-800">{{ $t("privacity_polices") }}</router-link>
           </li>
           <li>
-            <router-link to="/coockies" class="text-gray-600 hover:text-gray-800">{{ $t("coockies") }}</router-link>
+            <router-link to="/cookies" class="text-gray-600 hover:text-gray-800">{{ $t("coockies") }}</router-link>
           </li>
         </nav>
       </div>
@@ -74,9 +77,11 @@
 
 <script setup>
 
-    import { ref } from 'vue';
+import { ref } from 'vue';
+import Logo from '@/components/template/images/Logo.vue';
+import LogoLetters from '@/components/template/images/LogoLetters.vue';
 
-    const year = ref(new Date().getFullYear());
+const year = ref(new Date().getFullYear());
 
 
 </script>
