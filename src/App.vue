@@ -1,6 +1,5 @@
 <template>
     <CookieConsent />
-    <CookieConsent />
     <RouterView />
 </template>
 
