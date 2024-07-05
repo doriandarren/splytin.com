@@ -28,6 +28,9 @@ import VueGoodTablePlugin from 'vue-good-table-next';
 // import the styles
 import 'vue-good-table-next/dist/vue-good-table-next.css';
 
+//vue cookies
+import { createCookies } from 'vue3-cookies';
+
 
 
 const app = createApp(App)
@@ -42,6 +45,14 @@ app.use(i18n())
 app.use(VueGoodTablePlugin)
 
 app.directive('animate', animateDirective);
+
+app.use(createCookies(), {
+    expireTimes: '30d',
+    path: '/',
+    domain: '',
+    secure: true,
+    sameSite: 'Lax'
+  });
 
 app.mount('#app')
 

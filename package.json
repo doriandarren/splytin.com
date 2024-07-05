@@ -16,6 +16,7 @@
     "pinia": "^2.1.7",
     "tabulator-tables": "^5.6.1",
     "vue": "^3.3.4",
+    "vue-cookies": "^1.8.4",
     "vue-good-table-next": "^0.2.1",
     "vue-i18n": "^9.9.0",
     "vue-router": "^4.2.5",
