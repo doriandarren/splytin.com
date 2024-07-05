@@ -19,9 +19,13 @@
 
         <div class="grid grid-cols-2 gap-10">
 
-          <div class="col-span-2 md:col-span-2 lg:col-span-1">
-            <iframe src="https://www.youtube.com/embed/VVYnVptxKKM" frameborder="0" allowfullscreen width="100%"
-            height="300vh"></iframe>
+          <div class="col-span-2 md:col-span-2 lg:col-span-2">
+            <iframe 
+              src="https://www.youtube.com/embed/VVYnVptxKKM" 
+              frameborder="0" 
+              allowfullscreen width="100%"
+              class="w-full h-[300vh] sm:h-[30vh] md:h-[60vh]"
+            ></iframe>
 
             <div class="text-center w-full mb-10">
               <h2 class="text-2xl text-gray-900 font-medium title-font mb-4">
