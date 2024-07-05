@@ -9,10 +9,10 @@
 
 
 
-    <section class="text-gray-600 body-font pt-10 mb-5">
+    <section class="body-font pt-10 mb-5">
       <div class="container mx-auto">
         <div class="flex flex-wrap w-full flex-col items-center text-center mb-10">
-          <h1 class="sm:text-2xl text-2xl font-medium title-font mb-2 text-gray-900">
+          <h1>
             {{ $t("Nuestros Videos") }}
           </h1>
         </div>
@@ -28,11 +28,11 @@
             ></iframe>
 
             <div class="text-center w-full mb-10">
-              <h2 class="text-2xl text-gray-900 font-medium title-font mb-4">
+              <p class="text-2xl font-medium title-font mb-4 text-center">
                 Nature Ambience Minecraft
-              </h2>
+              </p>
               <a href="https://www.youtube.com/@FamiliaMusicMDDD" target="_blank"
-                class="mt-3 text-indigo-500 inline-flex items-center">Más videos
+                class="mt-3 text-gray-600 inline-flex items-center">Más videos
                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   class="w-4 h-4 ml-2" viewBox="0 0 24 24">
                   <path d="M5 12h14M12 5l7 7-7 7"></path>
@@ -52,7 +52,7 @@
                  Relaxing Melodies
               </h2>
               <a href="https://www.youtube.com/@FamiliaMusicMDDD" target="_blank"
-                class="mt-3 text-indigo-500 inline-flex items-center">Más videos
+                class="mt-3 text-gray-600 inline-flex items-center">Más videos
                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   class="w-4 h-4 ml-2" viewBox="0 0 24 24">
                   <path d="M5 12h14M12 5l7 7-7 7"></path>
@@ -73,7 +73,7 @@
                 Música que te ayuda a relajar, estudiar, dormir con Night Ambience
               </h2>
               <a href="https://www.youtube.com/@FamiliaMusicMDDD" target="_blank"
-                class="mt-3 text-indigo-500 inline-flex items-center">Más videos
+                class="mt-3 text-gray-600 inline-flex items-center">Más videos
                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   class="w-4 h-4 ml-2" viewBox="0 0 24 24">
                   <path d="M5 12h14M12 5l7 7-7 7"></path>
@@ -97,7 +97,7 @@
     <section class="text-gray-600 body-font pt-10">
       <div class="container mx-auto">
         <div class="flex flex-wrap w-full flex-col items-center text-center mb-10">
-          <h1 class="sm:text-2xl text-2xl font-medium title-font mb-2 text-gray-900">
+          <h1>
             Videos a la carta
           </h1>
         </div>
@@ -133,8 +133,8 @@
     <section class="text-gray-600 body-font pt-10">
       <div class="container mx-auto">
         <div class="flex flex-wrap w-full flex-col items-center text-center pb-10">
-          <h1 class="sm:text-2xl text-2xl font-medium title-font mb-2 text-gray-900">Nuestros Productos</h1>
-          <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">
+          <h1>Nuestros Productos</h1>
+          <p class="w-full leading-relaxed text-gray-500 text-center">
             Pensado en todos y para todos
           </p>
         </div>
@@ -143,9 +143,9 @@
           <div class="xl:w-1/3 md:w-1/2 p-4">
             <a href="https://music.famindex.com/" target="_blank">
               <div
-                class="border border-gray-200 p-6 rounded-lg hover:bg-blue-100 hover:border-blue-300 hover:rounded-lg hover:shadow-xl ">
+                class="border border-gray-200 bg-primary-light p-6 rounded-lg hover:bg-blue-100 hover:border-blue-300 hover:rounded-lg hover:shadow-xl">
                 <div
-                  class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
+                  class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-700 mb-4">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                     <g fill="none" fill-rule="evenodd">
                       <path

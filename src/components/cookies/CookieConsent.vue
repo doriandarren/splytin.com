@@ -5,11 +5,19 @@
         <p>Este sitio web utiliza cookies para garantizar que obtenga la mejor experiencia en nuestro sitio web.</p>
       </div>
 
-      <div class="ml-5 mt-3">
-        <button class="outline outline-2 outline-offset-2 rounded-md p-2 text-red-200"
-          @click="rejectCookies">Rechazar</button>
-        <button class="outline outline-2 outline-offset-2 rounded-md p-2 text-blue-200"
-          @click="acceptCookies">Aceptar</button>
+      <div class="flex ml-5 mt-3">
+        <button 
+          class="outline outline-2 outline-offset-2 rounded-md p-2 text-red-200"
+          @click="rejectCookies"
+        >
+          Rechazar
+        </button>
+        <button 
+          class="outline outline-2 outline-offset-2 rounded-md p-2 text-blue-200"
+          @click="acceptCookies"
+        >
+          Aceptar
+        </button>
       </div>
 
     </div>
