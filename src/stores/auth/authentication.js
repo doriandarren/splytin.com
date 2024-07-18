@@ -52,7 +52,6 @@ export const useAuthenticationStore = defineStore('authentication', () => {
   }
 
 
-
   async function currentUser() {
     
     user.value = '';
