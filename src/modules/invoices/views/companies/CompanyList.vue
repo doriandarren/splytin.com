@@ -59,7 +59,7 @@
 						<IconEdit class="h-6 w-8 text-primary hover:text-primary-dark" />
 					</button>
 					<button @click="showDeleteCompany(props.row.id)">
-						<IconDelete class="h-6 w-8 text-primary hover:text-primary-dark" />
+						<IconDelete class="h-6 w-6 text-red-600 hover:text-red-400" />
 					</button>
 					</span>
 				</template>
