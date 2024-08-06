@@ -1,5 +1,4 @@
 <template>
-
 	<!-- BEGIN: Page Layout Create -->
 	<div v-animate v-if="isCreate">
 		<Create
@@ -61,12 +60,12 @@
 					<button @click="showDeleteCompany(props.row.id)">
 						<IconDelete class="h-6 w-6 text-red-600 hover:text-red-400" />
 					</button>
-					</span>
-				</template>
-			</VueGoodTable>
-		</div>
-
+				</span>
+			</template>
+		</VueGoodTable>
 	</div>
+	
+</div>
 
 </template>
 <script setup>
