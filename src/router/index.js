@@ -1,9 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import { useAuthenticationStore } from '@/stores/auth/authentication.js';
-import TailwindResourceRoutes from '../modules/tailwind_resources/routes';
-import LoginRoutes from '../modules/auth/routes';
+// Tailwind Resources
+import TailwindResourceRoutes from '../modules/tailwind_resources/routes/index.js';
+// Auth
+import LoginRoutes from '../modules/auth/routes/index.js';
+
+
 
 const routes = [
+  /** Template Public */
   {
     path: '/',
     name: 'master',
@@ -46,18 +51,7 @@ const routes = [
 
 
 
-
-  /** test */
-  {
-    path: '/test',
-    name: 'test',
-    component: () => import('@/views/dev/TestView.vue')
-  },
-
-
-
-
-  /** Rutas protegidas */
+  /** Template Private */
   {
     path: '/',
     name: 'main',
@@ -126,6 +120,15 @@ const routes = [
   },
 
 
+
+  /** test */
+  {
+    path: '/test',
+    name: 'test',
+    component: () => import('@/views/dev/TestView.vue')
+  },
+
+  /** Not found */
   { 
     path: '/:path(.*)', 
     name: "NotFound",
