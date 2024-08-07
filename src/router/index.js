@@ -42,16 +42,16 @@ const routes = [
       },
       
 
-      /** Login */
-      ...LoginRoutes,      
-
-
       //Resouces
       ...TailwindResourceRoutes,
 
+
+      /** Login */
+      ...LoginRoutes,      
+      
+
       //MainScreen
       ...MainScreenRoutes,
-
 
     ]
   },
