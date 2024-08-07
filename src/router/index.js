@@ -148,7 +148,7 @@ const router = createRouter({
 
 router.beforeEach(async (to, from, next) => {
   // Actualizar el título de la página
-  //document.title = `${to.name} - ${import.meta.env.VITE_APP_TITLE}`;
+  document.title = `${to.name.charAt(0).toUpperCase() + to.name.slice(1)} - ${import.meta.env.VITE_APP_TITLE}`;
 
   if (to.matched.some(record => record.meta.requiresAuth)) {
     const { currentUser } = useAuthenticationStore();

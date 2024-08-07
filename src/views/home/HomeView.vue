@@ -221,7 +221,7 @@ const findData = async () => {
 
 
 useHead({
-  title: 'Splytin - Home',
+  title: 'Home - Splytin',
   meta: [
     {
       name: 'description',
