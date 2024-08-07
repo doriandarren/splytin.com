@@ -1,9 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import { useAuthenticationStore } from '@/stores/auth/authentication.js';
 // Tailwind Resources
-import TailwindResourceRoutes from '../modules/tailwind_resources/routes/index.js';
+import TailwindResourceRoutes from '../modules/tailwind_resources/router/index.js';
 // Auth
-import LoginRoutes from '../modules/auth/routes/index.js';
+import LoginRoutes from '../modules/auth/router/index.js';
+
+// MainScreen
+import MainScreenRoutes from '../modules/main_screen/router/index.js';
 
 
 
@@ -45,6 +48,10 @@ const routes = [
 
       //Resouces
       ...TailwindResourceRoutes,
+
+      //MainScreen
+      ...MainScreenRoutes,
+
 
     ]
   },
