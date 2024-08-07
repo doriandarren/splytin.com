@@ -2,8 +2,19 @@
     <div>
         Pantalla de Modulos
 
-        <RouterLink :to="{ name: 'dashboard' }" class="hover:text-blue-300">Dashboard
-        </RouterLink>
+        <div class="mt-5">
+
+            <button class="text-white btn-primary">
+                <RouterLink 
+                    :to="{ name: 'dashboard' }" 
+                    class="hover:text-blue-300"
+                >
+                    Dashboard
+                </RouterLink>
+            </button>
+
+        </div>
+        
 
     </div>
 </template>
