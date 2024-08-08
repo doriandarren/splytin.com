@@ -435,6 +435,7 @@
 		formData.has_paid = invoiceHeader.value.has_paid;
 		
 		await getCountries();
+		console.log(formData)
 		
 
 	});

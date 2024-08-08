@@ -13,9 +13,27 @@
 						<label for="invoice_counter_id" class="form-label w-full">
 							{{ $t("invoice_counter_id") }} *
 						</label>
-						<input v-model.trim="validate.invoice_counter_id.$model" id="invoice_counter_id" type="text"
+						<!-- <input v-model.trim="validate.invoice_counter_id.$model" id="invoice_counter_id" type="text"
 							name="invoice_counter_id" class="form-control"
-							:class="{ 'border-danger': validate.invoice_counter_id.$error }" />
+							:class="{ 'border-danger': validate.invoice_counter_id.$error }" /> -->
+
+							<select
+							v-model.trim="validate.invoice_counter_id.$model"
+                            id="invoice_counter_id"
+                            name="invoice_counter_id"
+                            class="form-control"
+                            :class="{ 'border-danger': validate.invoice_counter_id.$error }"
+						>
+							<option value="">{{ $t("form.select") }}</option>
+							<option 
+                				v-for="item in invoiceCounters" 
+                				:key="item.id" 
+                				:value="item.id"
+              				>
+                				{{ item.name }}
+							</option>
+
+						</select>
 
 						<template v-if="validate.invoice_counter_id.$error">
 							<div v-for="(error, index) in validate.invoice_counter_id.$errors" :key="index"
@@ -305,6 +323,8 @@ import { helpers } from '@vuelidate/validators';
 import { useI18n } from 'vue-i18n';
 import useCompany from "../../composables/companies";
 import useOwnCompany from "../../composables/own_companies";
+import useInvoinceCounter from "../../composables/invoice_counters";
+
 
 
 const { t } = useI18n();
@@ -312,6 +332,7 @@ const emit = defineEmits(['cancelCreate', 'saveInvoiceHeaderForm']);
 
 const { companies, getCompanies } = useCompany();
 const { ownCompanies, getOwnCompanies } = useOwnCompany();
+const { invoiceCounters, getInvoiceCounters } = useInvoinceCounter();
 
 const rules = {
 	invoice_counter_id: {
@@ -385,6 +406,7 @@ const save = () => {
 onMounted(async () => {
 	await getCompanies();
 	await getOwnCompanies();
+	await getInvoiceCounters();
 });
 
 </script>
