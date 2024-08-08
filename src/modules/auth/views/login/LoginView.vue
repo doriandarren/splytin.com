@@ -219,9 +219,6 @@ const submit = async () => {
     
     loading.value = false;
 
-
-    //console.log(authErrors.value);
-
 }
 
 </script>

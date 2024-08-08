@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import { storeToRefs } from 'pinia';
 import { useAuthenticationStore } from '@/stores/auth/authentication.js';
+
 // Tailwind Resources
 import TailwindResourceRoutes from '../modules/tailwind_resources/router/index.js';
 // Auth
@@ -50,9 +52,6 @@ const routes = [
       ...LoginRoutes,      
       
 
-      //MainScreen
-      ...MainScreenRoutes,
-
     ]
   },
 
@@ -66,6 +65,9 @@ const routes = [
     redirect: '/dashboard',
     meta: { requiresAuth: true },
     children: [
+      //MainScreen
+      ...MainScreenRoutes,
+      
       {
         path: '/dashboard',
         name: 'dashboard',
@@ -158,11 +160,16 @@ router.beforeEach(async (to, from, next) => {
   document.title = `${to.name.charAt(0).toUpperCase() + to.name.slice(1)} - ${import.meta.env.VITE_APP_TITLE}`;
 
   if (to.matched.some(record => record.meta.requiresAuth)) {
-    const { currentUser } = useAuthenticationStore();
-    let response = await currentUser();
 
     try {
-      if (response) {
+
+      const authStore = useAuthenticationStore();
+      const { currentUser } = authStore;
+      const { user, authErrors } = storeToRefs(authStore);
+
+      await currentUser();
+
+      if (user.value) {
         next();
       } else {
         next({ name: "login" });
@@ -171,6 +178,7 @@ router.beforeEach(async (to, from, next) => {
       console.log(e);
       next({ name: "login" });
     }
+
   } else {
     next();
   }

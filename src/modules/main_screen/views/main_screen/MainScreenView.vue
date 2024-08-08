@@ -1,7 +1,12 @@
 <template>
     <div>
-        Pantalla de Modulos
+        <div>
+            Pantalla de Modulos
+        </div>
+        
 
+
+        
         <div class="mt-5">
 
             <button class="text-white btn-primary">

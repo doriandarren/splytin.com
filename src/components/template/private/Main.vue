@@ -89,7 +89,7 @@
                                                     src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                                     alt="" />
                                                 <span class="sr-only">Your profile</span>
-                                                <span aria-hidden="true">Tom Cook</span>
+                                                <span aria-hidden="true">{{ user.name }}</span>
                                             </a>
                                         </li>
                                     </ul>
@@ -211,7 +211,7 @@
                                     alt="" />
                                 <span class="hidden lg:flex lg:items-center">
                                     <span class="ml-4 text-sm font-semibold leading-6 text-gray-900"
-                                        aria-hidden="true">Tom Cook</span>
+                                        aria-hidden="true">{{ user.name }}</span>
                                     <ChevronDownIcon class="ml-2 h-5 w-5 text-gray-400" aria-hidden="true" />
                                 </span>
                             </MenuButton>
@@ -249,7 +249,7 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue';
+import { onMounted, ref, watch } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import {
@@ -282,10 +282,22 @@ import { ChevronDownIcon, MagnifyingGlassIcon, ChevronRightIcon } from '@heroico
 
 import Logo from '@/components/template/images/Logo.vue';
 import LogoLetters from '@/components/template/images/LogoLetters.vue';
+import { useAuthenticationStore } from '@/stores/auth/authentication';
+import { storeToRefs } from 'pinia';
+
+
+
+
 
 
 // Importar traducciones
 const { t } = useI18n()
+const authStore = useAuthenticationStore();
+const {logout, currentUser} = authStore;
+const { user, authErrors } = storeToRefs(authStore);
+
+
+
 
 
 
@@ -314,12 +326,12 @@ const navigation = [
 ]
 
 const userNavigation = [
-    { name: t('logout'), href: '/login' },
-    // { name: t('logout'), href: '#', onClick: () => submit() },
+    //{ name: t('logout'), href: '/login' },
+    { name: t('logout'), href: '#', onClick: () => sessionLogout() },
 ]
 
-const submit = async () => {
-    // await logout()
+const sessionLogout = async () => {
+    await logout();
 }
 
 const sidebarOpen = ref(false);
@@ -335,7 +347,6 @@ watch(
         currentRoute.value = newRoute
         const parentItem = navigation.find((item) => item.children && item.children.some((subItem) => subItem.href === newRoute))
         if (parentItem) {
-            
             openDropdown.value = parentItem.name
         } else {
             openDropdown.value = null
@@ -373,8 +384,18 @@ const closeSidebar = () => {
     sidebarOpen.value = false;
     closeAllDropdowns();
 }
+
+
+
+onMounted(async () => {
+    await currentUser();
+    //console.log(user.value);
+})
+
 </script>
 
+
+
 <style scoped>
-/* Añade estilos específicos aquí si lo deseas */
+
 </style>
