@@ -96,7 +96,10 @@
   "vat_quote": "IVA",
   "total_without_vat": "Total sin IVA",
   "total_with_vat": "Total con IVA",
-  "has_paid": "Ha Pagado"
+  "has_paid": "Ha Pagado",
+  "customers": "Clientes",
+  "providers": "Proveedores",
+  "services": "Servicios"
   
   
 }
