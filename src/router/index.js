@@ -80,7 +80,7 @@ const routes = [
   {
     path: '/',
     name: 'main',
-    component: () => import('@/components/template/private/Main.vue'),
+    component: () => import('@/components/template/private/Invoices.vue'),
     redirect: '/dashboard',
     meta: { requiresAuth: true },
     children: [      
