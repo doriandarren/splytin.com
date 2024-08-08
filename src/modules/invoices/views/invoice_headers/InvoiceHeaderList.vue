@@ -99,8 +99,8 @@
 
 	// Table
 	const columns = [
-		{ label: t("own_company_id"), field: 'own_company_id' },
-		{ label: t("company_id"), field: 'company_id' },
+		{ label: t("own_company_id"), field: 'own_company.name' },
+		{ label: t("company_id"), field: 'company.name' },
 		{ label: t("number"), field: 'number' },
 		{ label: t("date"), field: 'date' },
 		{ label: t("due_date"), field: 'due_date' },
@@ -169,6 +169,7 @@
 
 	onMounted(async () => {
 		rows.value = await findData();
+		console.log(rows.value);
 	});
 
 
