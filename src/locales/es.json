@@ -99,7 +99,11 @@
   "has_paid": "Ha Pagado",
   "customers": "Clientes",
   "providers": "Proveedores",
-  "services": "Servicios"
+  "services": "Servicios",
+  "country": "País",
+  "service_id": "Servicio",
+  "Actions": "Acciones"
+
   
   
 }

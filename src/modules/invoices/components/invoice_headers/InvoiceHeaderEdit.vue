@@ -421,7 +421,7 @@
 	onMounted(async () => {
 		await getInvoiceHeader(props.invoiceHeaderId);
 		formData.invoice_counter_id = invoiceHeader.value.invoice_counter_id;
-		formData.own_company_id = invoiceHeader.value.own_company_id;
+		formData.own_company_id = invoiceHeader.value.own_company.name;
 		formData.company_id = invoiceHeader.value.company_id;
 		formData.number = invoiceHeader.value.number;
 		formData.date = invoiceHeader.value.date.split(' ')[0];
