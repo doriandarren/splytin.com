@@ -433,8 +433,9 @@
 		formData.total_without_vat = invoiceHeader.value.total_without_vat;
 		formData.total_with_vat = invoiceHeader.value.total_with_vat;
 		formData.has_paid = invoiceHeader.value.has_paid;
-
+		
 		await getCountries();
+		
 
 	});
 
