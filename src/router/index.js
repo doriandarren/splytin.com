@@ -57,6 +57,25 @@ const routes = [
 
 
 
+
+  {
+    path: '/',
+    name: 'module',
+    component: () => import('@/components/template/private/Modules.vue'),
+    redirect: '/dashboard',
+    meta: { requiresAuth: true },
+    children: [
+      //MainScreen
+      ...MainScreenRoutes,
+    ]
+  },
+
+
+
+
+
+
+
   /** Template Private */
   {
     path: '/',
@@ -64,10 +83,7 @@ const routes = [
     component: () => import('@/components/template/private/Main.vue'),
     redirect: '/dashboard',
     meta: { requiresAuth: true },
-    children: [
-      //MainScreen
-      ...MainScreenRoutes,
-      
+    children: [      
       {
         path: '/dashboard',
         name: 'dashboard',
