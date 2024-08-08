@@ -57,12 +57,12 @@ const routes = [
 
 
 
-
+  /** Template Modules */
   {
     path: '/',
     name: 'module',
-    component: () => import('@/components/template/private/Modules.vue'),
-    redirect: '/dashboard',
+    component: () => import('@/components/template/private/MainScreen.vue'),
+    redirect: '/main-screen',
     meta: { requiresAuth: true },
     children: [
       //MainScreen
