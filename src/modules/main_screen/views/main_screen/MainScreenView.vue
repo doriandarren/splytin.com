@@ -1,70 +1,58 @@
 <template>
-    <div>
-        <h1 class="text-center mb-10">
-            Módulo Principal
-        </h1>
-        
 
-        <div class="grid grid-cols-12 gap-6">
 
-            <div class="col-span-12 md:col-span-6 lg:col-span-4">
-            
-                <div class="card text-center">
+    <div class="min-h-screen bg-gray-100 p-8">
+        <div class="max-w-7xl mx-auto">
+            <header class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-gray-800 mb-4">Módulos de la Aplicación</h1>
+                <p class="text-lg text-gray-600">Selecciona un módulo para comenzar</p>
+            </header>
 
-                    <h2 class="mb-10">Facturación </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div
+                    class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://via.placeholder.com/600x400" alt="Módulo 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-2xl font-semibold text-gray-800 mb-3">Facturación</h2>
+                        <p class="text-gray-600 mb-4">Descripción breve del módulo 1. Explica la funcionalidad principal
+                            y cómo puede ser utilizado.</p>
 
-                    <RouterLink 
-                        :to="{ name: 'dashboard' }" 
-                        class="hover:bg-primary-dark"
-                    >
-                        <button class="btn-primary">{{ $t("dashboard")}}</button>
-                    </RouterLink>
-                    
+                        <RouterLink :to="{ name: 'dashboard' }" class="hover:bg-primary-dark">
+                            <button class="btn-primary">{{ $t("dashboard") }}</button>
+                        </RouterLink>
+                    </div>
                 </div>
 
+                <!-- Card 2 -->
+                <!-- <div
+                    class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://via.placeholder.com/600x400" alt="Módulo 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-2xl font-semibold text-gray-800 mb-3">Módulo 2</h2>
+                        <p class="text-gray-600 mb-4">Descripción breve del módulo 2. Explica la funcionalidad principal
+                            y cómo puede ser utilizado.</p>
+                        <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">Ver más &rarr;</a>
+                    </div>
+                </div> -->
+
+                <!-- Card 3 -->
+                <!-- <div
+                    class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://via.placeholder.com/600x400" alt="Módulo 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-2xl font-semibold text-gray-800 mb-3">Módulo 3</h2>
+                        <p class="text-gray-600 mb-4">Descripción breve del módulo 3. Explica la funcionalidad principal
+                            y cómo puede ser utilizado.</p>
+                        <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">Ver más &rarr;</a>
+                    </div>
+                </div> -->
+
+                 
             </div>
-
-
-
-            <div class="col-span-12 md:col-span-6 lg:col-span-4">
-            
-            <div class="card text-center">
-
-                <h2 class="mb-10">Gestor de noticias </h2>
-
-                <RouterLink 
-                    :to="{ name: 'dashboard' }" 
-                    class="hover:bg-primary-dark"
-                >
-                    <button class="btn-primary">{{ $t("dashboard")}}</button>
-                </RouterLink>
-                
-            </div>
-
         </div>
-
-        </div>
-        
-
-
-
-        <div class="cols-12 ">
-
-            
-
-
-
-        
-
-
-
-        </div>
-
-        
-        
-        
-
     </div>
+
 </template>
 
 <script setup>
@@ -74,4 +62,3 @@ import { useI18n } from 'vue-i18n';
 const { t } = useI18n();
 
 </script>
-
