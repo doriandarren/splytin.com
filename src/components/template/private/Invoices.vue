@@ -19,7 +19,7 @@
                   </div>
                 </TransitionChild>
                 <!-- Sidebar component, swap this element with another sidebar if you like -->
-                <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-primary px-6 pb-4 ring-1 ring-white/10">
+                <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-navbar px-6 pb-4 ring-1 ring-white/10">
                   <div class="flex h-16 shrink-0 items-center">
                     <Logo />
 
@@ -79,7 +79,7 @@
       <!-- Static sidebar for desktop -->
       <div class="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
         <!-- Sidebar component, swap this element with another sidebar if you like -->
-        <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-primary-dark px-6 pb-4">
+        <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-navbar px-6 pb-4">
           <div class="flex h-16 shrink-0 items-center">
             <Logo />
             <div class="text-3xl ml-3 text-white">
