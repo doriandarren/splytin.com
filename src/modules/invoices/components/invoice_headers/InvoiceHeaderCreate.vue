@@ -407,6 +407,7 @@ onMounted(async () => {
 	await getCompanies();
 	await getOwnCompanies();
 	await getInvoiceCounters();
+	console.log(invoiceCounters.value)
 });
 
 </script>
