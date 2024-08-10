@@ -232,21 +232,20 @@ import LogoLetters from '@/components/template/images/LogoLetters.vue';
   const navigation = [
     { name: t('dashboard'), href: 'dashboard', icon: HomeModernIcon, current: true },
     
-    { name: t('own_companies'), href: 'own_companies', icon: BuildingOffice2Icon, current: false },
+    
     { name: t('projects'), href: 'projects', icon: DocumentDuplicateIcon, current: false },
     { name: t('project_hours'), href: 'project_hours', icon: CalendarIcon, current: false },
     { name: t('invoice_headers'), href: 'invoice_headers', icon: DocumentDuplicateIcon, current: false },
-    { name: t('invoice_lines'), href: 'invoice_lines', icon: DocumentTextIcon, current: false },
-    { name: t('customers'), href: 'customers', icon: UserCircleIcon, current: false },
-    { name: t('providers'), href: 'providers', icon: CurrencyDollarIcon, current: false },
-    { name: t('services'), href: 'services', icon: ServerIcon, current: false },
-
+    // { name: t('invoice_lines'), href: 'invoice_lines', icon: DocumentTextIcon, current: false },
+    
     {
         name: t("setting"), icon: Cog6ToothIcon, current: false,
         children: [
             { name: t('companies'), href: 'companies', icon: BuildingLibraryIcon, current: false },
+            { name: t('own_companies'), href: 'own_companies', icon: BuildingOffice2Icon, current: false },
+            { name: t('providers'), href: 'providers', icon: CurrencyDollarIcon, current: false },
+            { name: t('services'), href: 'services', icon: ServerIcon, current: false },
         ]
-
     }
 
   ]
