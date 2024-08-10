@@ -11,11 +11,11 @@ export default function useInvoiceCounter() {
 
 	const getInvoiceCounters = async () => {
 		invoiceCounterErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}invoice-counters/list`,{
+		await fetch(`${import.meta.env.VITE_API_URL}invoice-counters/list`,{
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
 			},
 		})
 		.then(res => res.json())
@@ -34,11 +34,11 @@ export default function useInvoiceCounter() {
 
 	const getInvoiceCounter = async (id) => {
 		invoiceCounterErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}invoice-counters/show/${id}`,{
+		await fetch(`${import.meta.env.VITE_API_URL}invoice-counters/show/${id}`,{
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
 			},
 		})
 		.then(res => res.json())
@@ -57,11 +57,11 @@ export default function useInvoiceCounter() {
 
 	const storeInvoiceCounter = async (data) => {
 		invoiceCounterErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}invoice-counters/store`,{
+		await fetch(`${import.meta.env.VITE_API_URL}invoice-counters/store`,{
 			method: 'POST',
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
 			},
 			body: JSON.stringify(data),
 		})
@@ -81,11 +81,11 @@ export default function useInvoiceCounter() {
 
 	const updateInvoiceCounter = async (id, data) => {
 		invoiceCounterErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}invoice-counters/update/${id}`,{
+		await fetch(`${import.meta.env.VITE_API_URL}invoice-counters/update/${id}`,{
 			method: 'PUT',
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
 			},
 			body: JSON.stringify(data),
 		})
@@ -105,11 +105,11 @@ export default function useInvoiceCounter() {
 
 	const destroyInvoiceCounter = async (id) => {
 		invoiceCounterErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}invoice-counters/delete/${id}`,{
+		await fetch(`${import.meta.env.VITE_API_URL}invoice-counters/delete/${id}`,{
 			method: 'DELETE',
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
 			},
 		})
 		.then(res => res.json())
