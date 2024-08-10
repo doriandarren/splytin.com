@@ -212,8 +212,7 @@ const findData = async () => {
 
 
 
-  //await fetch(`${import.meta.env.VITE_API_URL}session-logs/list`,{
-  await fetch(`https://api.splytin.com/api/v1/youtube-videos/list`, {
+  await fetch(`${import.meta.env.VITE_API_URL}youtube-videos/list`, {
     method: 'GET',
     headers: config.headers,
   })
