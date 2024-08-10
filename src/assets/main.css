@@ -82,3 +82,19 @@
 
 }
 
+/* Banner - Home*/
+.banner-image {
+    width: 100%;
+    height: auto;
+    animation: slideIn 3s ease-in-out infinite alternate;
+  }
+  
+  @keyframes slideIn {
+    0% {
+      transform: translateX(-10%);
+    }
+    100% {
+      transform: translateX(10%);
+    }
+  }
+

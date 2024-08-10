@@ -1,12 +1,28 @@
 <template>
   <div v-animate>
 
-    <h1 class="sm:text-2xl text-2xl font-medium title-font text-gray-900 text-center mb-10">
+    <!-- <h1 class="sm:text-2xl text-2xl font-medium title-font text-gray-900 text-center mb-10">
       ¡Bienvenido a Splytin! Descubre la excelencia en entretenimiento con nuestros productos de alta calidad.
       <br>Explora y encuentra la solución perfecta para ti.
-    </h1>
+    </h1> -->
 
-
+    <div class="banner-container">
+      <img src="@/assets/Banner_Splytin_3.png" alt="Banner Splytin"
+        class="banner-background" />
+      <div class="banner-content">
+        <div class="animated-element logo-container">
+          <img src="@/assets/Logo_S_60X60.png" alt="Logo Splytin" class="logo" />
+          
+        </div>
+        <div class="animated-element slogan">
+          Descubre el poder de la innovación con Splytin. Servicios tecnológicos a medida, plantillas que destacan. ¡Tu
+          web, tu estilo, nuestra especialidad!
+        </div>
+        <div class="animated-element website">
+          www.splytin.com
+        </div>
+      </div>
+    </div>
 
 
     <section class="body-font pt-10 mb-5">
@@ -20,12 +36,8 @@
         <div class="grid grid-cols-2 gap-10">
 
           <div class="col-span-2 md:col-span-2 lg:col-span-2">
-            <iframe 
-              src="https://www.youtube.com/embed/VVYnVptxKKM" 
-              frameborder="0" 
-              allowfullscreen width="100%"
-              class="w-full h-[300vh] sm:h-[30vh] md:h-[60vh]"
-            ></iframe>
+            <iframe src="https://www.youtube.com/embed/VVYnVptxKKM" frameborder="0" allowfullscreen width="100%"
+              class="w-full h-[300vh] sm:h-[30vh] md:h-[60vh]"></iframe>
 
             <div class="text-center w-full mb-10">
               <p class="text-2xl font-medium title-font mb-4 text-center">
@@ -45,11 +57,11 @@
 
           <div class="col-span-2 md:col-span-2 lg:col-span-1">
             <iframe src="https://www.youtube.com/embed/je-NfsNOP3g" frameborder="0" allowfullscreen width="100%"
-            height="300vh"></iframe>
+              height="300vh"></iframe>
 
             <div class="text-center w-full mb-10">
               <h2 class="text-2xl text-gray-900 font-medium title-font mb-2">
-                 Relaxing Melodies
+                Relaxing Melodies
               </h2>
               <a href="https://www.youtube.com/@FamiliaMusicMDDD" target="_blank"
                 class="mt-3 text-gray-600 inline-flex items-center">Más videos
@@ -66,7 +78,7 @@
 
           <div class="col-span-2 md:col-span-2 lg:col-span-1">
             <iframe src="https://www.youtube.com/embed/-o209ByIFcM" frameborder="0" allowfullscreen width="100%"
-            height="300vh"></iframe>
+              height="300vh"></iframe>
 
             <div class="text-center w-full mb-10">
               <h2 class="text-2xl text-gray-900 font-medium title-font mb-2">
@@ -84,7 +96,7 @@
           </div>
 
 
-        </div> 
+        </div>
 
 
       </div>
@@ -176,8 +188,9 @@
 
 import { onMounted, ref } from 'vue';
 import { useHead } from '@vueuse/head';
+import { useI18n } from 'vue-i18n';
 
-
+const { t } = useI18n();
 
 const videoUrl1 = ref('https://www.youtube.com/embed/');
 const videoUrl2 = ref('https://www.youtube.com/embed/');
@@ -201,19 +214,19 @@ const findData = async () => {
 
   //await fetch(`${import.meta.env.VITE_API_URL}session-logs/list`,{
   await fetch(`https://api.splytin.com/api/v1/youtube-videos/list`, {
-        method: 'GET',
-        headers: config.headers,
-      })
-      .then(res => res.json())
-      .then((res) => {
-        videoUrl1.value = videoUrl1.value + res.data[0].yt_id;
-        videoUrl2.value = videoUrl2.value + res.data[1].yt_id;
-        videoUrl3.value = videoUrl3.value + res.data[2].yt_id;
-        videoUrl4.value = videoUrl4.value + res.data[3].yt_id;
-      })
-      .catch((e) => {
-        sessionLogErrors.value.push(t("errors.error_internal"));
-      });
+    method: 'GET',
+    headers: config.headers,
+  })
+    .then(res => res.json())
+    .then((res) => {
+      videoUrl1.value = videoUrl1.value + res.data[0].yt_id;
+      videoUrl2.value = videoUrl2.value + res.data[1].yt_id;
+      videoUrl3.value = videoUrl3.value + res.data[2].yt_id;
+      videoUrl4.value = videoUrl4.value + res.data[3].yt_id;
+    })
+    .catch((e) => {
+      sessionLogErrors.value.push(t("errors.error_internal"));
+    });
 
 }
 
@@ -301,4 +314,77 @@ onMounted(() => {
 </script>
 
 
-<style></style>
+<style>
+
+.banner-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+}
+
+.banner-background {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.banner-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.animated-element {
+  margin: 10px 0;
+  animation: fadeInMove 3s ease-in-out infinite alternate;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  margin-right: 15px;
+}
+
+.logo-text {
+  width: auto;
+  height: 60px;
+}
+
+.slogan {
+  font-size: 24px;
+  margin-top: 20px;
+  max-width: 80%;
+}
+
+.website {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+@keyframes fadeInMove {
+  0% {
+    opacity: 0.8;
+    transform: translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(5px);
+  }
+}
+
+</style>
