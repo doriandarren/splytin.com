@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col min-h-screen">
     <TopBar />
-    <main class="flex-grow m-10">
+    <main class="flex-grow">
         <router-view />
     </main>
     <Footer />
