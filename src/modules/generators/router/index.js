@@ -1,7 +1,12 @@
 export default [
     {
-        path: '/generators/forms',
-        name: 'generator-',
-        component: () => import('./views/Facturacion.vue'),
+        path: '/generators/form',
+        name: 'generator-form',
+        component: () => import('@/modules/generators/views/form/GeneratorFormList.vue')
+    },
+    {
+        path: '/generators/xml',
+        name: 'generator-xml',
+        component: () => import('@/modules/generators/views/form/GeneratorXmlList.vue')
     },
 ];
