@@ -10,9 +10,11 @@ import LoginRoutes from '../modules/auth/router';
 // MainScreen
 import MainScreenRoutes from '../modules/main_screen/router';
 
-
 // Invoices
 import InvoiceRoutes from '../modules/invoices/router';
+
+// Invoices
+import GeneratorRoutes from '../modules/generators/router';
 
 
 
@@ -78,9 +80,7 @@ const routes = [
 
 
 
-
-
-  /** Template Private */
+  /** Invoices */
   {
     path: '/',
     name: 'main',
@@ -90,6 +90,21 @@ const routes = [
     children: [
       //Invoices
       ...InvoiceRoutes
+    ]
+
+  },
+
+
+  
+  /** Generators */
+  {
+    path: '/',
+    name: 'generators',
+    component: () => import('@/modules/generators/components/template/Main.vue'),
+    redirect: '/generators',
+    meta: { requiresAuth: true },
+    children: [
+      ...GeneratorRoutes
     ]
 
   },

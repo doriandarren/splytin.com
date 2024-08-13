@@ -7,6 +7,6 @@ export default [
     {
         path: '/generators/xml',
         name: 'generator-xml',
-        component: () => import('@/modules/generators/views/form/GeneratorXmlList.vue')
+        component: () => import('@/modules/generators/views/xml/GeneratorXmlList.vue')
     },
 ];
