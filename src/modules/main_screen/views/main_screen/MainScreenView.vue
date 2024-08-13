@@ -25,6 +25,20 @@
                 </div>
 
                 <!-- Card 2 -->
+                <div
+                    class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <img src="@/assets/Invoice.png" alt="Módulo 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-2xl font-semibold text-gray-800 mb-3">Generador</h2>
+                        <p class="text-gray-600 mb-4">Generador de código</p>
+
+                        <RouterLink :to="{ name: 'dashboard' }" class="hover:bg-primary-dark">
+                            <button class="btn-primary">{{ $t("dashboard") }}</button>
+                        </RouterLink>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
                 <!-- <div
                     class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                     <img src="https://via.placeholder.com/600x400" alt="Módulo 2" class="w-full h-48 object-cover">

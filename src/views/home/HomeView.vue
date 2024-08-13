@@ -1,6 +1,6 @@
 <template>
 
-  <div v-animate>
+  <div>
 
     <!-- <h1 class="sm:text-2xl text-2xl font-medium title-font text-gray-900 text-center mb-10">
       ¡Bienvenido a Splytin! Descubre la excelencia en entretenimiento con nuestros productos de alta calidad.
@@ -445,17 +445,4 @@ onMounted(() => {
   right: 40px;
 }
 
-.animated-slogan {
-  animation: moveSlogan 2s ease-in-out infinite alternate;
-}
-
-@keyframes moveSlogan {
-  0% {
-    transform: translate(-50%, -50%) translateY(0);
-  }
-
-  100% {
-    transform: translate(-50%, -50%) translateY(-10px);
-  }
-}
 </style>
