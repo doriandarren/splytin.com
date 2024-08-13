@@ -431,6 +431,7 @@ onMounted(() => {
   font-size: 25px;
   line-height: 1.5;
   text-align: center;
+  color:rgb(255, 255, 255);
   max-width: 70%;
 }
 
@@ -445,7 +446,7 @@ onMounted(() => {
 }
 
 .animated-slogan {
-  animation: moveSlogan 3s ease-in-out infinite alternate;
+  animation: moveSlogan 2s ease-in-out infinite alternate;
 }
 
 @keyframes moveSlogan {
