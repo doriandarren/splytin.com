@@ -9,6 +9,8 @@
 
 <script setup>
 
+console.log("PASA simpre por aqui");
+
 </script>
 
 <style lang="scss" scoped>

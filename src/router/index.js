@@ -67,7 +67,7 @@ const routes = [
   {
     path: '/',
     name: 'module',
-    component: () => import('@/components/template/private/MainScreen.vue'),
+    component: () => import('@/modules/main_screen/components/template/Main.vue'),
     redirect: '/main-screen',
     meta: { requiresAuth: true },
     children: [
@@ -84,7 +84,7 @@ const routes = [
   {
     path: '/',
     name: 'main',
-    component: () => import('@/components/template/private/Invoices.vue'),
+    component: () => import('@/modules/invoices/components/template/Main.vue'),
     redirect: '/dashboard',
     meta: { requiresAuth: true },
     children: [
