@@ -15,11 +15,10 @@
                     <img src="@/assets/Invoice.png" alt="Módulo 1" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h2 class="text-2xl font-semibold text-gray-800 mb-3">Facturación</h2>
-                        <p class="text-gray-600 mb-4">Descripción breve del módulo 1. Explica la funcionalidad principal
-                            y cómo puede ser utilizado.</p>
+                        <p class="text-gray-600 mb-4">Facturación de proyectos</p>
 
-                        <RouterLink :to="{ name: 'dashboard' }" class="hover:bg-primary-dark">
-                            <button class="btn-primary">{{ $t("dashboard") }}</button>
+                        <RouterLink :to="{ name: 'dashboard' }" class="hover:bg-primary-dark block">
+                            <button class="btn-primary w-full">{{ $t("dashboard") }}</button>
                         </RouterLink>
                     </div>
                 </div>
@@ -30,13 +29,17 @@
                     <img src="@/assets/generador.png" alt="Módulo 1" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h2 class="text-2xl font-semibold text-gray-800 mb-3">Generador</h2>
-                        <p class="text-gray-600 mb-4">Generador de código</p>
+                        <p class="text-gray-600 mb-4 overflow-hidden text-ellipsis">Generador de código</p>
 
-                        <RouterLink :to="{ name: 'generator-form' }" class="hover:bg-primary-dark">
-                            <button class="btn-primary">{{ $t("dashboard") }}</button>
+                        <RouterLink :to="{ name: 'generator-form' }" class="hover:bg-primary-dark block">
+                            <button class="btn-primary w-full">{{ $t("dashboard") }}</button>
                         </RouterLink>
                     </div>
                 </div>
+
+
+
+               
 
                 <!-- Card 2 -->
                 <!-- <div
