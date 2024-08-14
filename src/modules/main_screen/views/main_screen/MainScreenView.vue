@@ -32,7 +32,7 @@
                         <h2 class="text-2xl font-semibold text-gray-800 mb-3">Generador</h2>
                         <p class="text-gray-600 mb-4">Generador de código</p>
 
-                        <RouterLink :to="{ name: 'dashboard' }" class="hover:bg-primary-dark">
+                        <RouterLink :to="{ name: 'generator-form' }" class="hover:bg-primary-dark">
                             <button class="btn-primary">{{ $t("dashboard") }}</button>
                         </RouterLink>
                     </div>
