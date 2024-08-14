@@ -204,18 +204,11 @@ import {
   TransitionRoot,
 } from '@headlessui/vue';
 import {
+  CodeBracketIcon,
   Bars3Icon,
   BellIcon,
-  CalendarIcon,
-  HomeModernIcon,
   XMarkIcon,
-  BuildingOffice2Icon,
-  Cog6ToothIcon,
   DocumentDuplicateIcon,
-  DocumentTextIcon,
-  UserCircleIcon,
-  CurrencyDollarIcon,
-  ServerIcon,
   BuildingLibraryIcon,
 } from '@heroicons/vue/24/outline';
 import { ChevronDownIcon, MagnifyingGlassIcon, ChevronRightIcon } from '@heroicons/vue/20/solid';
@@ -236,8 +229,8 @@ const { user, authErrors } = storeToRefs(authStore);
 
 
 const navigation = [
-  { name: t('generator'), href: 'generator-form', icon: BuildingLibraryIcon, current: true },
-  { name: t('projects'), href: 'projects', icon: DocumentDuplicateIcon, current: false },
+  { name: t('form'), href: 'generator-form', icon: CodeBracketIcon, current: true },
+  { name: t('xml'), href: 'generator-xml', icon: DocumentDuplicateIcon, current: false },
 
   // {
   //     name: t("setting"), icon: Cog6ToothIcon, current: false,
