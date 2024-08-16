@@ -9,4 +9,9 @@ export default [
         name: 'generator-xml',
         component: () => import('@/modules/generators/views/xml/GeneratorXmlList.vue')
     },
+    {
+        path: '/generators/videos',
+        name: 'generator-videos',
+        component: () => import('@/modules/generators/views/videos/GeneratorVideoList.vue')
+    },
 ];

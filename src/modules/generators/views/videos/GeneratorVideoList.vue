@@ -1,9 +1,10 @@
 <template>
     <div v-animate>
 
-        <h1>XML</h1>
-
+        <h1>Formulario Videos</h1>
         
+
+
     </div>
 </template>
 

@@ -209,7 +209,7 @@ import {
   BellIcon,
   XMarkIcon,
   DocumentDuplicateIcon,
-  BuildingLibraryIcon,
+  VideoCameraIcon,
 } from '@heroicons/vue/24/outline';
 import { ChevronDownIcon, MagnifyingGlassIcon, ChevronRightIcon } from '@heroicons/vue/20/solid';
 import Logo from '@/components/template/images/Logo.vue';
@@ -231,6 +231,7 @@ const { user, authErrors } = storeToRefs(authStore);
 const navigation = [
   { name: t('form'), href: 'generator-form', icon: CodeBracketIcon, current: true },
   { name: t('xml'), href: 'generator-xml', icon: DocumentDuplicateIcon, current: false },
+  { name: t('videos'), href: 'generator-videos', icon: VideoCameraIcon, current: false },
 
   // {
   //     name: t("setting"), icon: Cog6ToothIcon, current: false,
