@@ -12,6 +12,6 @@ export default [
     {
         path: '/generators/videos',
         name: 'generator-videos',
-        component: () => import('@/modules/generators/views/videos/GeneratorVideoList.vue')
+        component: () => import('@/modules/generators/views/generator_videos/GeneratorVideoList.vue')
     },
 ];
