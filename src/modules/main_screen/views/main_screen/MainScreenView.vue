@@ -1,6 +1,5 @@
 <template>
-
-
+    
     <div class="min-h-screen bg-gray-100 p-8">
         <div class="max-w-7xl mx-auto">
             <header class="text-center mb-12">
@@ -9,6 +8,7 @@
             </header>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
                 <!-- Card 1 -->
                 <div
                     class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
@@ -17,8 +17,8 @@
                         <h2 class="text-2xl font-semibold text-gray-800 mb-3">Facturación</h2>
                         <p class="text-gray-600 mb-4">Facturación de proyectos</p>
 
-                        <RouterLink :to="{ name: 'dashboard' }" class="hover:bg-primary-dark block">
-                            <button class="btn-primary w-full">{{ $t("dashboard") }}</button>
+                        <RouterLink :to="{ name: 'dashboard' }" class="hover:bg-primary-dark hover:shadow-xl">
+                            <button class="btn-primary hover:shadow-xl w-full">{{ $t("dashboard") }} </button>
                         </RouterLink>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
                         <h2 class="text-2xl font-semibold text-gray-800 mb-3">Generador</h2>
                         <p class="text-gray-600 mb-4 overflow-hidden text-ellipsis">Generador de código</p>
 
-                        <RouterLink :to="{ name: 'generator-form' }" class="hover:bg-primary-dark block">
+                        <RouterLink :to="{ name: 'generator-form' }" class="hover:bg-primary-dark hover:shadow-xl">
                             <button class="btn-primary w-full">{{ $t("dashboard") }}</button>
                         </RouterLink>
                     </div>
