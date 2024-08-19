@@ -90,47 +90,6 @@
 
 
 
-
-
-
-
-
-
-
-	// const save = async () => {
-	// 	validate.value.$touch();
-
-	// 	if (validate.value.$invalid) {
-	// 		console.log('Form is invalid');
-	// 		return;
-	// 	}
-
-	// 	// Preparar el FormData para la subida
-	// 	const payload = new FormData();
-	// 	payload.append('file', formData.file);
-
-	// 	// Enviar el archivo al servidor
-	// 	try {
-	// 		const response = await axios.post(`${import.meta.env.VITE_API_URL}generator-videos/store`, payload, {
-	// 		headers: {
-	// 			'Content-Type': 'multipart/form-data',
-	// 		},
-	// 		onUploadProgress: (progressEvent) => {
-	// 			console.log(
-	// 			`Upload progress: ${(progressEvent.loaded / progressEvent.total) * 100}%`
-	// 			);
-	// 		},
-	// 		});
-	// 		console.log('Archivo subido con éxito:', response.data);
-	// 		emit('saveGeneratorVideoForm', response.data); // Emitir la respuesta del servidor
-	// 	} catch (error) {
-	// 		console.error('Error al subir el archivo:', error);
-	// 	}
-	// };
-
-
-
-
 	const save = async () => {
 		validate.value.$touch();
 
