@@ -22,12 +22,8 @@
 		<div class="flex flex-col sm:flex-row sm:items-end xl:items-start justify-end">
 			<div class="flex mt-5 mb-5 sm:mt-0">
 				<button class="btn-primary w-1/2 sm:w-auto" @click.prevent="showCreateService">
-				<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 50 50">
-				<path fill="currentColor"
-					d="M25 42c-9.4 0-17-7.6-17-17S15.6 8 25 8s17 7.6 17 17s-7.6 17-17 17m0-32c-8.3 0-15 6.7-15 15s6.7 15 15 15s15-6.7 15-15s-6.7-15-15-15" />
-					<path fill="currentColor" d="M16 24h18v2H16z" />
-					<path fill="currentColor" d="M24 16h2v18h-2z" />
-				</svg>
+					<IconAdd />
+					{{ $t("add") }}
 			</button>
 		</div>
 	</div>
@@ -79,6 +75,8 @@
 	import Edit from "../../components/services/ServiceEdit.vue";
 	import IconEdit from '@/components/icons/IconEdit.vue';
 	import IconDelete from '@/components/icons/IconDelete.vue';
+	import IconAdd from '@/components/icons/IconAdd.vue';
+
 
 	// Tabulator
 	const rows = ref([]);
