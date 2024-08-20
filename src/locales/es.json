@@ -38,12 +38,13 @@
   },
   "login_form":{
     "title": "Entra con tu cuenta",
-    "email" : "Correo",
+    "email" : "Correo electrónico",
     "password" : "Contraseña",
-    "sign_in": "Login",
+    "sign_in": "Acceder",
     "remember_me": "Recuerdame",
     "forgot_password": "Olvidaste la contraseña?",
-    "or_continue_with": "Continuar con"
+    "or_continue_with": "Continuar con",
+    "credential_error": "Claves de acceso no válidas"
   },
   "form": {
     "required": "Requerido",
@@ -104,12 +105,9 @@
   "service_id": "Servicio",
   "Actions": "Acciones",
   "setting": "Configuración",
-  "form": "Formulario",
   "videos": "Videos",
   "generator_videos": "Generador de Videos",
   "add": "Agregar",
   "file": "Archivo"
-
-  
   
 }

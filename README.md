@@ -1,22 +1,6 @@
 # Spytin Web
 
 
-
-
-<IconAdd />
-{{ $t("add") }}
-
-
-import IconAdd from '@/components/icons/IconAdd.vue';
-
-
-
-
-
-
-
-
-
 ## Project Setup
 
 ```sh

@@ -33,7 +33,6 @@ export const useAuthenticationStore = defineStore('authentication', () => {
           localStorage.removeItem('splytin_token');
         }
         
-        
 
         if (data.success) {
           loginResponse.value = data;

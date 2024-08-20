@@ -172,15 +172,17 @@
 import { ref, toRefs } from 'vue';
 import { storeToRefs } from 'pinia';
 import { useRouter } from 'vue-router';
+import { useI18n } from "vue-i18n";
+import { Toast } from '@/utils/toast';
 import Preloader from '@/components/preloader/Preloader.vue';
 import { useAuthenticationStore } from '@/stores/auth/authentication';
 import { email } from '@vuelidate/validators';
 
 
+const { t } = useI18n();
+
 //init
 const loading = ref(false);
-
-
 const email_input = ref('');
 const password = ref('');
 const message = ref('');
@@ -205,19 +207,24 @@ const submit = async () => {
 
     if (!email_input.value || !password.value) {
         message.value = 'los dos campos son requeridos';
+        loading.value = false;
         return;
     }
 
 
     await login(email_input.value, password.value);
-    
-    if (loginResponse.value.success) {
+
+
+    console.log(loginResponse);
+
+
+    if(!loginResponse.value){
         loading.value = false;
-        //router.push('/dashboard');
+        await Toast(t("login_form.credential_error"), 'error');
+    }else {
+        loading.value = false;
         router.push({name: 'main_screen'});
     }
-    
-    loading.value = false;
 
 }
 
