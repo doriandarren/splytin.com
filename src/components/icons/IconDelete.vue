@@ -11,7 +11,7 @@ import { defineProps } from 'vue'
 const props = defineProps({
     className: {
         type: String,
-        default: '',
+        default: 'w-6 h-6 mr-1 text-red-600 hover:text-red-400',
     }
 })
 </script>
