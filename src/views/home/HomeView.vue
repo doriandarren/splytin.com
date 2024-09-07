@@ -87,10 +87,10 @@
 
     </div>
     <div class="slogan animated-slogan">
-      Descubre el poder de la innovación con Splytin. Servicios tecnológicos a medida, plantillas que destacan.
-      <div>¡Tu web, tu estilo, nuestra especialidad!</div>
+      Descubre el poder de la innovación con Splytin. 
+      <div>¡Tu gestión, tu crecimiento, nuestra especialidad!</div>
     </div>
-    <img src="@/assets/Logo_S_60X60.png" alt="Logo Splytin" class="logo" />
+    <!-- <img src="@/assets/Logo_S_60X60.png" alt="Logo Splytin" class="logo" /> -->
   </div>
   <!-- END Banner -->
 
