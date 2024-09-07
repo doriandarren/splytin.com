@@ -88,9 +88,9 @@
     </svg>
   </div>
 
-  <div class="slogan animated-slogan">
+  <div class="slogan">
     Descubre el poder de la innovación con Splityn.
-    <div>¡Tu gestión, tu crecimiento, nuestra especialidad!</div>
+    <div class="bold-text">¡Tu gestión, tu crecimiento, nuestra especialidad!</div>
   </div>
 
   <div class="animations animations-bottom-left">
@@ -544,6 +544,10 @@ useHead({
   /* Ajusta la distancia desde el borde derecho */
   right: 40px;
 }
+
+.bold-text {
+    font-weight: bold;
+  }
 
 
 </style>
