@@ -1,5 +1,100 @@
 <template>
 
+  <!-- BEGIN Banner -->
+  <div class="custom-div">
+    <div class="animations">
+      <!-- Primera animación SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24">
+        <rect width="24" height="24" fill="none" />
+        <path fill="#03AEEF" d="M4 16h4v4H4V16z">
+          <animate fill="remove" accumulate="none" additive="replace" attributeName="opacity" begin=".2"
+            calcMode="linear" dur="3s" keyTimes="0;0.9;1" repeatCount="indefinite" restart="always" values="1;0;0" />
+        </path>
+        <path fill="#03AEEF" d="M10 16h4v4h-4V16z">
+          <animate fill="remove" accumulate="none" additive="replace" attributeName="opacity" begin=".4"
+            calcMode="linear" dur="3s" keyTimes="0;0.9;1" repeatCount="indefinite" restart="always" values="1;0;0" />
+        </path>
+        <path fill="#03AEEF" d="M16 16h4v4h-4V16z">
+          <animate fill="remove" accumulate="none" additive="replace" attributeName="opacity" begin=".6"
+            calcMode="linear" dur="3s" keyTimes="0;0.9;1" repeatCount="indefinite" restart="always" values="1;0;0" />
+        </path>
+        <path fill="#03AEEF" d="M4 10h4v4H4V10z">
+          <animate fill="remove" accumulate="none" additive="replace" attributeName="opacity" begin=".8"
+            calcMode="linear" dur="3s" keyTimes="0;0.9;1" repeatCount="indefinite" restart="always" values="1;0;0" />
+        </path>
+        <path fill="#03AEEF" d="M10 10h4v4h-4V10z">
+          <animate fill="remove" accumulate="none" additive="replace" attributeName="opacity" begin="1"
+            calcMode="linear" dur="3s" keyTimes="0;0.9;1" repeatCount="indefinite" restart="always" values="1;0;0" />
+        </path>
+        <path fill="#03AEEF" d="M16 10h4v4h-4V10z">
+          <animate fill="remove" accumulate="none" additive="replace" attributeName="opacity" begin="1.2"
+            calcMode="linear" dur="3s" keyTimes="0;0.9;1" repeatCount="indefinite" restart="always" values="1;0;0" />
+        </path>
+        <path fill="#03AEEF" d="M4 4h4v4H4V4z">
+          <animate fill="remove" accumulate="none" additive="replace" attributeName="opacity" begin="1.4"
+            calcMode="linear" dur="3s" keyTimes="0;0.9;1" repeatCount="indefinite" restart="always" values="1;0;0" />
+        </path>
+        <path fill="#03AEEF" d="M10 4h4v4h-4V4z">
+          <animate fill="remove" accumulate="none" additive="replace" attributeName="opacity" begin="1.6"
+            calcMode="linear" dur="3s" keyTimes="0;0.9;1" repeatCount="indefinite" restart="always" values="1;0;0" />
+        </path>
+        <path fill="#03AEEF" d="M16 4h4v4h-4V4z">
+          <animate fill="remove" accumulate="none" additive="replace" attributeName="opacity" begin="1.8"
+            calcMode="linear" dur="3s" keyTimes="0;0.9;1" repeatCount="indefinite" restart="always" values="1;0;0" />
+        </path>
+      </svg>
+
+      <!-- Segunda animación SVG (idéntica a la primera) -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24">
+        <rect width="24" height="24" fill="none" />
+        <path fill="#03AEEF" d="M4 16h4v4H4V16z">
+          <animate fill="remove" accumulate="none" additive="replace" attributeName="opacity" begin=".2"
+            calcMode="linear" dur="3s" keyTimes="0;0.9;1" repeatCount="indefinite" restart="always" values="1;0;0" />
+        </path>
+        <path fill="#03AEEF" d="M10 16h4v4h-4V16z">
+          <animate fill="remove" accumulate="none" additive="replace" attributeName="opacity" begin=".4"
+            calcMode="linear" dur="3s" keyTimes="0;0.9;1" repeatCount="indefinite" restart="always" values="1;0;0" />
+        </path>
+        <path fill="#03AEEF" d="M16 16h4v4h-4V16z">
+          <animate fill="remove" accumulate="none" additive="replace" attributeName="opacity" begin=".6"
+            calcMode="linear" dur="3s" keyTimes="0;0.9;1" repeatCount="indefinite" restart="always" values="1;0;0" />
+        </path>
+        <path fill="#03AEEF" d="M4 10h4v4H4V10z">
+          <animate fill="remove" accumulate="none" additive="replace" attributeName="opacity" begin=".8"
+            calcMode="linear" dur="3s" keyTimes="0;0.9;1" repeatCount="indefinite" restart="always" values="1;0;0" />
+        </path>
+        <path fill="#03AEEF" d="M10 10h4v4h-4V10z">
+          <animate fill="remove" accumulate="none" additive="replace" attributeName="opacity" begin="1"
+            calcMode="linear" dur="3s" keyTimes="0;0.9;1" repeatCount="indefinite" restart="always" values="1;0;0" />
+        </path>
+        <path fill="#03AEEF" d="M16 10h4v4h-4V10z">
+          <animate fill="remove" accumulate="none" additive="replace" attributeName="opacity" begin="1.2"
+            calcMode="linear" dur="3s" keyTimes="0;0.9;1" repeatCount="indefinite" restart="always" values="1;0;0" />
+        </path>
+        <path fill="#03AEEF" d="M4 4h4v4H4V4z">
+          <animate fill="remove" accumulate="none" additive="replace" attributeName="opacity" begin="1.4"
+            calcMode="linear" dur="3s" keyTimes="0;0.9;1" repeatCount="indefinite" restart="always" values="1;0;0" />
+        </path>
+        <path fill="#03AEEF" d="M10 4h4v4h-4V4z">
+          <animate fill="remove" accumulate="none" additive="replace" attributeName="opacity" begin="1.6"
+            calcMode="linear" dur="3s" keyTimes="0;0.9;1" repeatCount="indefinite" restart="always" values="1;0;0" />
+        </path>
+        <path fill="#03AEEF" d="M16 4h4v4h-4V4z">
+          <animate fill="remove" accumulate="none" additive="replace" attributeName="opacity" begin="1.8"
+            calcMode="linear" dur="3s" keyTimes="0;0.9;1" repeatCount="indefinite" restart="always" values="1;0;0" />
+        </path>
+      </svg>
+
+    </div>
+    <div class="slogan animated-slogan">
+      Descubre el poder de la innovación con Splytin. Servicios tecnológicos a medida, plantillas que destacan.
+      <div>¡Tu web, tu estilo, nuestra especialidad!</div>
+    </div>
+    <img src="@/assets/Logo_S_60X60.png" alt="Logo Splytin" class="logo" />
+  </div>
+  <!-- END Banner -->
+
+
   <section class="text-gray-600 body-font pt-10">
     <div class="container mx-auto">
       <div class="flex flex-wrap w-full flex-col items-center text-center pb-10">
@@ -186,13 +281,7 @@ import { useI18n } from 'vue-i18n';
 const { t } = useI18n();
 
 
-
-
 const sessionLogErrors = ref([]);
-
-
-
-
 
 
 useHead({
