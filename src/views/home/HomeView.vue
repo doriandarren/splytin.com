@@ -181,43 +181,6 @@
     </div>
   </section>
 
-
-  <section class="text-gray-600 body-font pt-10">
-    <div class="container mx-auto">
-      <div class="flex flex-wrap w-full flex-col items-center text-center mb-10">
-        <h1>
-          Videos a la carta
-        </h1>
-      </div>
-
-      <div class="grid grid-cols-2 gap-10">
-
-        <div class="col-span-2 md:col-span-2 lg:col-span-1">
-          <iframe :src="videoUrl1" frameborder="0" allowfullscreen width="100%" height="300vh"></iframe>
-        </div>
-
-        <div class="col-span-2 md:col-span2 lg:col-span-1">
-          <iframe :src="videoUrl2" frameborder="0" allowfullscreen width="100%" height="300vh"></iframe>
-        </div>
-
-
-        <div class="col-span-2 md:col-span-2 lg:col-span-1">
-          <iframe :src="videoUrl3" frameborder="0" allowfullscreen width="100%" height="300vh"></iframe>
-        </div>
-
-
-        <div class="col-span-2 md:col-span2 lg:col-span-1">
-          <iframe :src="videoUrl4" frameborder="0" allowfullscreen width="100%" height="300vh"></iframe>
-        </div>
-
-      </div>
-
-      <!-- https://www.youtube.com/watch?v=YaoF20yvUXM&t=1807s -->
-
-    </div>
-  </section>
-
-
   <section class="text-gray-600 body-font pt-10">
     <div class="container mx-auto">
       <div class="flex flex-wrap w-full flex-col items-center text-center pb-10">
@@ -399,48 +362,18 @@
 
 <script setup>
 
-import { onMounted, ref } from 'vue';
+import { ref } from 'vue';
 import { useHead } from '@vueuse/head';
 import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n();
 
-const videoUrl1 = ref('https://www.youtube.com/embed/');
-const videoUrl2 = ref('https://www.youtube.com/embed/');
-const videoUrl3 = ref('https://www.youtube.com/embed/');
-const videoUrl4 = ref('https://www.youtube.com/embed/');
+
 
 
 const sessionLogErrors = ref([]);
 
 
-const findData = async () => {
-
-  let config = {
-    headers: {
-      "Content-Type": "application/json",
-      // "Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
-    }
-  }
-
-
-
-  await fetch(`${import.meta.env.VITE_API_URL}youtube-videos/list`, {
-    method: 'GET',
-    headers: config.headers,
-  })
-    .then(res => res.json())
-    .then((res) => {
-      videoUrl1.value = videoUrl1.value + res.data[0].yt_id;
-      videoUrl2.value = videoUrl2.value + res.data[1].yt_id;
-      videoUrl3.value = videoUrl3.value + res.data[2].yt_id;
-      videoUrl4.value = videoUrl4.value + res.data[3].yt_id;
-    })
-    .catch((e) => {
-      sessionLogErrors.value.push(t("errors.error_internal"));
-    });
-
-}
 
 
 
@@ -514,13 +447,6 @@ useHead({
     }
   ]
 });
-
-
-
-onMounted(() => {
-  findData();
-})
-
 
 
 </script>
