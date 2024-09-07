@@ -1,5 +1,6 @@
 <template>
 
+
   <!-- BEGIN Banner -->
   <div class="custom-div">
     <div class="animations">
