@@ -314,7 +314,7 @@
   </section>
 
 
-  <section class="animate">
+  <section v-animate>
 
     <div class="container mx-auto mt-10 mb-10">
       <div class="flex">

@@ -13,6 +13,8 @@
     "record_deleted": "Registro eliminado",
     "record_updated": "Registro actualizado"
   },
+  "website": "Splytin", 
+  "all_right": "Todos los derechos reservados", 
   "privacity_polices": "Políticas de Privacidad",
   "link_interest": "Enlaces de interés",
   "login": "Login",
@@ -57,7 +59,6 @@
   "address": "Dirección",
   "cif": "Código identificación fiscal",
   "email": "Correo electrónico",
-  "website": "Sitio web",
   "phone": "Teléfono",
   "code_zip": "Código postal",
   "project_id": "Proyecto",
