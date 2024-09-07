@@ -17,7 +17,7 @@
                             <path d="M12 5l7 7-7 7"></path>
                         </svg>
                     </a>
-                    <div
+                    <!-- <div
                         class="text-center mt-2 leading-none flex justify-center absolute bottom-0 left-0 w-full py-4">
                         <span
                             class="text-gray-400 mr-3 inline-flex items-center leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
@@ -35,7 +35,7 @@
                                 </path>
                             </svg>6
                         </span>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="p-4 lg:w-1/3">
@@ -51,7 +51,7 @@
                             <path d="M12 5l7 7-7 7"></path>
                         </svg>
                     </a>
-                    <div
+                    <!-- <div
                         class="text-center mt-2 leading-none flex justify-center absolute bottom-0 left-0 w-full py-4">
                         <span
                             class="text-gray-400 mr-3 inline-flex items-center leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
@@ -69,7 +69,7 @@
                                 </path>
                             </svg>6
                         </span>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="p-4 lg:w-1/3">
@@ -85,7 +85,7 @@
                             <path d="M12 5l7 7-7 7"></path>
                         </svg>
                     </a>
-                    <div
+                    <!-- <div
                         class="text-center mt-2 leading-none flex justify-center absolute bottom-0 left-0 w-full py-4">
                         <span
                             class="text-gray-400 mr-3 inline-flex items-center leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
@@ -103,7 +103,7 @@
                                 </path>
                             </svg>6
                         </span>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
