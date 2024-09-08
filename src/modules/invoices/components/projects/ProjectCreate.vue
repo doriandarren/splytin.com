@@ -61,9 +61,13 @@
 						<label for="total_hours" class="form-label w-full">
 							{{ $t("total_hours") }} *
 						</label>
-						<input v-model.trim="validate.total_hours.$model" id="total_hours" type="text"
+						<input 
+							v-model.trim="validate.total_hours.$model" 
+							id="total_hours" 
+							type="number"
 							name="total_hours" class="form-control"
-							:class="{ 'border-danger': validate.total_hours.$error }" />
+							min="1"
+							:class="{ 'border-danger': validate.total_hours.$error  }" />
 						<template v-if="validate.total_hours.$error">
 							<div v-for="(error, index) in validate.total_hours.$errors" :key="index"
 								class="text-danger mt-2">
@@ -80,8 +84,13 @@
 						<label for="started_at" class="form-label w-full">
 							{{ $t("started_at") }} *
 						</label>
-						<input v-model.trim="validate.started_at.$model" id="started_at" type="date" name="started_at"
-							class="form-control" :class="{ 'border-danger': validate.started_at.$error }" />
+						<input 
+							v-model.trim="validate.started_at.$model" 
+							id="started_at" 
+							type="date" 
+							name="started_at"
+							class="form-control" :class="{ 'border-danger': validate.started_at.$error }" 
+						/>
 						<template v-if="validate.started_at.$error">
 							<div v-for="(error, index) in validate.started_at.$errors" :key="index"
 								class="text-danger mt-2">
@@ -155,7 +164,7 @@
 
 <script setup>
 
-import { onMounted, reactive, toRefs } from 'vue';
+import { ref, onMounted, reactive, toRefs } from 'vue';
 import { required, minLength, maxLength, email, url, integer } from '@vuelidate/validators';
 import { useVuelidate } from '@vuelidate/core';
 import { helpers } from '@vuelidate/validators';
@@ -190,11 +199,13 @@ const rules = {
 	},
 };
 
+const now = ref(null);
+
 const formData = reactive({
 	company_id: "",
 	name: "",
 	total_hours: "",
-	started_at: "",
+	started_at: "2024-10-01",
 	finished_at: "",
 	description: "",
 });
@@ -213,6 +224,14 @@ const save = () => {
 onMounted(async () => {
 	// TODO here implements...
 	await getCompanies();
+	const today = new Date();
+	const day = String(today.getDate()).padStart(2, '0');
+	const month = String(today.getMonth() + 1).padStart(2, '0'); // Los meses en JavaScript empiezan desde 0
+	const year = today.getFullYear();
+
+	formData.started_at = `${year}-${month}-${day}`;
+
+	console.log(formData.started_at)
 });
 
 </script>

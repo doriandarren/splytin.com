@@ -77,9 +77,10 @@
 						<input
 							v-model.trim="validate.total_hours.$model"
 							id="total_hours"
-							type="text"
+							type="number"
 							name="total_hours"
 							class="form-control"
+							min="1"
 							:class="{ 'border-danger': validate.total_hours.$error }"
 						/>
 						<template v-if="validate.total_hours.$error">
@@ -145,7 +146,7 @@
 							id="description"
 							type="text"
 							name="description"
-							class="form-control"
+							class="form-control"	
 							:class="{ 'border-danger': validate.description.$error }"
 						/>
 						<template v-if="validate.description.$error">
@@ -253,7 +254,14 @@
 		formData.finished_at = project.value.finished_at.split(' ')[0];
 		formData.description = project.value.description;
 		
-		
+		const today = new Date();
+		const day = String(today.getDate()).padStart(2, '0');
+		const month = String(today.getMonth() + 1).padStart(2, '0'); // Los meses en JavaScript empiezan desde 0
+		const year = today.getFullYear();
+
+		formData.started_at = `${year}-${month}-${day}`;
+
+		console.log(formData.started_at)
 	
 	
 		await getCompanies();
