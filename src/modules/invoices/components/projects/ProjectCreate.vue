@@ -205,7 +205,7 @@ const formData = reactive({
 	company_id: "",
 	name: "",
 	total_hours: "",
-	started_at: "2024-10-01",
+	started_at: "",
 	finished_at: "",
 	description: "",
 });
@@ -231,7 +231,6 @@ onMounted(async () => {
 
 	formData.started_at = `${year}-${month}-${day}`;
 
-	console.log(formData.started_at)
 });
 
 </script>

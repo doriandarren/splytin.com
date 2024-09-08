@@ -97,12 +97,16 @@
 		return toRaw(projectHours.value);
 	}
 
+	const formatIsGenerated = (value) => {
+		return value === 0 ? t('no') : t('yes')
+	}
+
 	// Table
 	const columns = [
 		{ label: t("project_id"), field: 'project.name' },
 		{ label: t("hours"), field: 'hours' },
 		{ label: t("invoice_at"), field: 'invoice_at' },
-		{ label: t("is_generated"), field: 'is_generated' },
+		{ label: t("is_generated"), field: 'is_generated', formatFn:formatIsGenerated },
 		{ label: t('actions'), field: 'actions', sortable: false, searchable: false, width: '100px',},
 	];
 	//Store

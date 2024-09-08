@@ -260,8 +260,6 @@
 		const year = today.getFullYear();
 
 		formData.started_at = `${year}-${month}-${day}`;
-
-		console.log(formData.started_at)
 	
 	
 		await getCompanies();
