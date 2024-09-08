@@ -28,6 +28,7 @@
 					<button
 							class="mt-3 py-2 px-4 bg-blue-600 text-white leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
 							id="btn_upload"
+							@click.prevent="subirFichero"
 					>
 						Subir fichero
 					</button>
@@ -36,10 +37,6 @@
 			</div>
 
 		</div>
-
-
-
-
 
 
 		<div class="px-6 pt-4 pb-5">
@@ -64,11 +61,6 @@
 
 		</div>
 
-
-
-
-
-
 	</div>
 
         
@@ -76,6 +68,11 @@
 </template>
 
 <script setup>
+
+
+const subirFichero = () => {
+	console.log('Subir Fichero')
+}
 
 </script>
 
