@@ -22,33 +22,35 @@
 		<div class="flex flex-col sm:flex-row sm:items-end xl:items-start justify-end">
 			<div class="flex mt-5 mb-5 sm:mt-0">
 				<button class="btn-primary w-1/2 sm:w-auto" @click.prevent="showCreateInvoiceLine">
-					<IconAdd />
-					{{ $t("add") }}
-			</button>
+					<div class="flex flex-row">
+						<IconAdd />
+						{{ $t("add") }}
+					</div>
+				</button>
+			</div>
 		</div>
-	</div>
 
-	<!-- BEGIN: Table -->
-	<div class="overflow-x-auto scrollbar-hidden">
-		<VueGoodTable
-			:columns="columns" 
-			:rows="rows" 
-			:pagination-options="{
-				enabled: true,
-				mode: 'records',
-				perPage: 5,
-				perPageDropdown: [10, 20, 50],
-				dropdownAllowAll: false,
-				setCurrentPage: 1,
-				nextLabel: $t('setting_table.next_table'),
-				prevLabel: $t('setting_table.prev_table'),
-				rowsPerPageLabel: $t('setting_table.rows_per_page'),
-				ofLabel: $t('setting_table.of'),
-				pageLabel: 'page', // for pages mode
-				allLabel: 'All',
-			}" 
-			:search-options="{ enabled: true, placeholder: $t('setting_table.search') }"
-		>
+		<!-- BEGIN: Table -->
+		<div class="overflow-x-auto scrollbar-hidden">
+			<VueGoodTable
+				:columns="columns" 
+				:rows="rows" 
+				:pagination-options="{
+					enabled: true,
+					mode: 'records',
+					perPage: 5,
+					perPageDropdown: [10, 20, 50],
+					dropdownAllowAll: false,
+					setCurrentPage: 1,
+					nextLabel: $t('setting_table.next_table'),
+					prevLabel: $t('setting_table.prev_table'),
+					rowsPerPageLabel: $t('setting_table.rows_per_page'),
+					ofLabel: $t('setting_table.of'),
+					pageLabel: 'page', // for pages mode
+					allLabel: 'All',
+				}" 
+				:search-options="{ enabled: true, placeholder: $t('setting_table.search') }"
+			>
 			<template #table-row="props">
 				<span v-if="props.column.field == 'actions'">
 					<button @click="showEditInvoiceLine(props.row.id)">

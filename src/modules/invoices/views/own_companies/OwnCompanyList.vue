@@ -22,34 +22,36 @@
 		<div class="flex flex-col sm:flex-row sm:items-end xl:items-start justify-end">
 			<div class="flex mt-5 mb-5 sm:mt-0">
 				<button class="btn-primary w-1/2 sm:w-auto" @click.prevent="showCreateOwnCompany">
-					<IconAdd />
-					{{ $t("add") }}
-			</button>
+					<div class="flex flex-row">
+						<IconAdd />
+						{{ $t("add") }}
+					</div>
+				</button>
+			</div>
 		</div>
-	</div>
 
-	<!-- BEGIN: Table -->
-	<div class="overflow-x-auto scrollbar-hidden">
-		<VueGoodTable
-			:columns="columns" 
-			:rows="rows" 
-			:pagination-options="{
-				enabled: true,
-				mode: 'records',
-				perPage: 5,
-				position: 'bottton',
-				perPageDropdown: [10, 20, 50],
-				dropdownAllowAll: false,
-				setCurrentPage: 1,
-				nextLabel: 'Sig',
-				prevLabel: 'Prev',
-				rowsPerPageLabel: 'Rows per page',
-				ofLabel: 'de',
-				pageLabel: 'page', // for pages mode
-				allLabel: 'All',
-			}" 
-			:search-options="{ enabled: true, placeholder: 'Buscar' }"
-		>
+		<!-- BEGIN: Table -->
+		<div class="overflow-x-auto scrollbar-hidden">
+			<VueGoodTable
+				:columns="columns" 
+				:rows="rows" 
+				:pagination-options="{
+					enabled: true,
+					mode: 'records',
+					perPage: 5,
+					position: 'bottton',
+					perPageDropdown: [10, 20, 50],
+					dropdownAllowAll: false,
+					setCurrentPage: 1,
+					nextLabel: 'Sig',
+					prevLabel: 'Prev',
+					rowsPerPageLabel: 'Rows per page',
+					ofLabel: 'de',
+					pageLabel: 'page', // for pages mode
+					allLabel: 'All',
+				}" 
+				:search-options="{ enabled: true, placeholder: 'Buscar' }"
+			>
 			<template #table-row="props">
 				<span v-if="props.column.field == 'actions'">
 					<button @click="showEditOwnCompany(props.row.id)">
