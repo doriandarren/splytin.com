@@ -177,6 +177,7 @@ import { Toast } from '@/utils/toast';
 import Preloader from '@/components/preloader/Preloader.vue';
 import { useAuthenticationStore } from '@/stores/auth/authentication';
 import { email } from '@vuelidate/validators';
+import { delay } from '../../../../utils/helper';
 
 
 const { t } = useI18n();
@@ -215,15 +216,15 @@ const submit = async () => {
     await login(email_input.value, password.value);
 
 
-    console.log(loginResponse);
-
-
     if(!loginResponse.value){
         loading.value = false;
         await Toast(t("login_form.credential_error"), 'error');
     }else {
-        loading.value = false;
-        router.push({name: 'main_screen'});
+
+      //await delay(6000);
+      
+      loading.value = false;
+      router.push({name: 'main_screen'});
     }
 
 }
