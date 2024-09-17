@@ -3,31 +3,7 @@
 
         <div class="px-6 py-4">
 			<div class="font-bold text-xl mb-2">Generator en CARPETA Splytin (SE GUARDA EN STORAGE)</div>
-			<div class="grid grid-cols-12 gap-2 mb-6">
-				<div class="col-span-10">
-					<div class="form-group mb-5">
-						<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
-							Nombres de Columnas
-						</label>
-						<input
-								class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-								id="input_format"
-								type="text"
-						>
-					</div>
-				</div>
-
-				<div class="col-span-2">
-					<div class="mt-6">
-						<button
-								class="px-3 py-3 text-sm bg-blue-600 text-white font-medium leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-								id="btn_format"
-						>
-							Agregar columnas
-						</button>
-					</div>
-				</div>
-			</div>
+			
 
 
 			<div class="form-group mb-6 mt-5">
@@ -265,6 +241,33 @@
 
 			<hr>
 
+			<div class="grid grid-cols-12 gap-2 mb-6">
+				<div class="col-span-10">
+					<div class="form-group mb-5">
+						<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+							Nombres de Columnas
+						</label>
+						<input
+								class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+								id="input_format"
+								type="text"
+						>
+					</div>
+				</div>
+
+				<div class="col-span-2">
+					<div class="mt-6">
+						<button
+								class="px-3 py-3 text-sm bg-blue-600 text-white font-medium leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+								id="btn_format"
+								@click="agregarColumnas"
+						>
+							Agregar columnas
+						</button>
+					</div>
+				</div>
+			</div>
+
 			<div class="flex flex-wrap -mx-3 mb-6">
 				<div class="w-full px-3">
 					<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
@@ -278,6 +281,7 @@
 			<button
 				class="px-3 py-3 bg-blue-600 text-white font-medium leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
 				id="save"
+				@click="generar"
 			>
 				Generar
 			</button>
@@ -289,6 +293,13 @@
 
 <script setup>
 
+const agregarColumnas = () => {
+	console.log('Agregar columnas')
+}
+
+const generar = () => {
+	console.log('generar')
+}
 </script>
 
 <style lang="scss" scoped>
