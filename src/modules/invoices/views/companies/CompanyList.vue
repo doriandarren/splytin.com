@@ -89,7 +89,7 @@
 	const companyId = ref(0);
 
 	const { t } = useI18n();
-	const { companies, getCompanies, storeCompany, updateCompany, destroyCompany} = useCompanies();
+	const { companies, companyErrors, getCompanies, storeCompany, updateCompany, destroyCompany} = useCompanies();
 
 
 	const findData = async() => {
@@ -120,8 +120,17 @@
 		isCreate.value = false;
 		div_table.style.display = 'block';
 		await storeCompany({ ...form });
+		
+
+		console.log("Okkk",companyErrors.value);
+		if (companyErrors.value.length === 0) {
+            await Toast(t("message.record_saved"), 'success');
+        }else{
+            const errorMessages = companyErrors.value.flatMap(errorObj => Object.values(errorObj).flat()).join(', ');
+            await Toast(errorMessages, 'error');
+        }
 		rows.value = await findData();
-		await Toast(t("message.record_saved"), 'success');
+		
 	}
 
 	//Edit
