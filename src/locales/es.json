@@ -112,6 +112,7 @@
   "generator_videos": "Generador de Videos",
   "add": "Agregar",
   "file": "Archivo",
-  "webside": "Sitio Web"
+  "website_name": "Sitio Web",
+  "form.invalidUrl": "Formato Url Invalido"
   
 }

@@ -222,6 +222,7 @@ const { t } = useI18n();
 const emit = defineEmits(['cancelCreate', 'saveOwnCompanyForm']);
 
 const {countries, getCountries} = useCountry();
+const urlPattern = /^(https?:\/\/)([\w\-]+)+([\w\-]+\.)+[a-zA-Z]{2,}(\/\S*)?$/;
 
 const rules = {
 	country_id: {
@@ -253,6 +254,7 @@ const rules = {
 	},
 	website: {
 		required: helpers.withMessage(t("form.required"), required),
+		url: helpers.withMessage(t("form.invalidUrl"), (value) => urlPattern.test(value)),
 	},
 };
 
