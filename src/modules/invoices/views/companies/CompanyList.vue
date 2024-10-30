@@ -122,7 +122,7 @@
 		await storeCompany({ ...form });
 		
 
-		console.log("Okkk",companyErrors.value);
+
 		if (companyErrors.value.length === 0) {
             await Toast(t("message.record_saved"), 'success');
         }else{

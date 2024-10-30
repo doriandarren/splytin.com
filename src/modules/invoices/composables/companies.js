@@ -69,8 +69,7 @@ export default function useCompany() {
 		.then((res) => {
 			
 			if (!res.success) {
-				companyErrors.value = res.errors;
-				console.log("Respuesta del composable:", companyErrors.value);
+				companyErrors.value = res.errors;				
 			}else{
 				company.value = res.data;
 			}
