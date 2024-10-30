@@ -189,7 +189,7 @@
 							{{ $t("website_name") }} *
 						</label>
 						<input v-model.trim="validate.website.$model" id="website" type="text" name="website"
-							class="form-control" :class="{ 'border-danger': validate.website.$error }" />
+							class="form-control" :class="{ 'border-danger': validate.website.$error }" placeholder="https://example.com" />
 						<template v-if="validate.website.$error">
 							<div v-for="(error, index) in validate.website.$errors" :key="index"
 								class="text-danger mt-2">
@@ -239,6 +239,10 @@ const emit = defineEmits(['cancelCreate', 'saveCompanyForm']);
 
 const {countries, getCountries} = useCountry();
 
+//const urlPattern = /^(https?:\/\/)?([\w\-]+)+([\w\-]+\.)+[a-zA-Z]{2,}(\/\S*)?$/;
+
+const urlPattern = /^(https?:\/\/)([\w\-]+)+([\w\-]+\.)+[a-zA-Z]{2,}(\/\S*)?$/;
+
 const rules = {
 	country_id: {
 		required: helpers.withMessage(t("form.required"), required),
@@ -269,6 +273,7 @@ const rules = {
 	},
 	website: {
 		required: helpers.withMessage(t("form.required"), required),
+		url: helpers.withMessage(t("form.invalidUrl"), (value) => urlPattern.test(value)),
 	},
 };
 
@@ -282,7 +287,7 @@ const formData = reactive({
 	email: "",
 	phone: "",
 	zip_code: "",
-	website: "https://",
+	website: "",
 });
 
 const validate = useVuelidate(rules, toRefs(formData));
