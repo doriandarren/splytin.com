@@ -11,11 +11,11 @@ export default function useProvider() {
 
 	const getProviders = async () => {
 		providerErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}providers/list`,{
+		await fetch(`${import.meta.env.VITE_API_URL}providers/list`,{
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
 			},
 		})
 		.then(res => res.json())
@@ -34,11 +34,11 @@ export default function useProvider() {
 
 	const getProvider = async (id) => {
 		providerErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}providers/show/${id}`,{
+		await fetch(`${import.meta.env.VITE_API_URL}providers/show/${id}`,{
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
 			},
 		})
 		.then(res => res.json())
@@ -57,11 +57,11 @@ export default function useProvider() {
 
 	const storeProvider = async (data) => {
 		providerErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}providers/store`,{
+		await fetch(`${import.meta.env.VITE_API_URL}providers/store`,{
 			method: 'POST',
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
 			},
 			body: JSON.stringify(data),
 		})
@@ -81,11 +81,11 @@ export default function useProvider() {
 
 	const updateProvider = async (id, data) => {
 		providerErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}providers/update/${id}`,{
+		await fetch(`${import.meta.env.VITE_API_URL}providers/update/${id}`,{
 			method: 'PUT',
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
 			},
 			body: JSON.stringify(data),
 		})
@@ -105,11 +105,11 @@ export default function useProvider() {
 
 	const destroyProvider = async (id) => {
 		providerErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}providers/delete/${id}`,{
+		await fetch(`${import.meta.env.VITE_API_URL}providers/delete/${id}`,{
 			method: 'DELETE',
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
 			},
 		})
 		.then(res => res.json())

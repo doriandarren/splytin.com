@@ -89,7 +89,7 @@
 	const providerId = ref(0);
 
 	const { t } = useI18n();
-	const { providers, getProviders, storeProvider, updateProvider, destroyProvider} = useProviders();
+	const { providers, providerErrors, getProviders, storeProvider, updateProvider, destroyProvider} = useProviders();
 
 
 	const findData = async() => {
@@ -119,8 +119,16 @@
 		isCreate.value = false;
 		div_table.style.display = 'block';
 		await storeProvider({ ...form });
+		
+		if (providerErrors.value.length === 0) {
+			await Toast(t("message.record_updated"), 'success');
+		}else{
+			const errorMessages = providerErrors.value.flatMap(errorObj => Object.values(errorObj).flat()).join(', ');
+			await Toast(errorMessages, 'error');
+		}
+
 		rows.value = await findData();
-		await Toast(t("message.record_saved"), 'success');
+		
 	}
 
 	//Edit
@@ -139,8 +147,16 @@
 		isEdit.value = false;
 		div_table.style.display = 'block';
 		await updateProvider(id, data);
+
+		if (providerErrors.value.length === 0) {
+			await Toast(t("message.record_updated"), 'success');
+		}else{
+			const errorMessages = providerErrors.value.flatMap(errorObj => Object.values(errorObj).flat()).join(', ');
+			await Toast(errorMessages, 'error');
+		}
+
 		rows.value = await findData();
-		await Toast(t("message.record_updated"), 'success');
+		
 	}
 
 	// Delete
