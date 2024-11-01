@@ -13,14 +13,33 @@
 						<label for="service_id" class="form-label w-full">
 							{{ $t("service_id") }} *
 						</label>
-						<input
+						<!-- <input
 							v-model.trim="validate.service_id.$model"
 							id="service_id"
 							type="text"
 							name="service_id"
 							class="form-control"
 							:class="{ 'border-danger': validate.service_id.$error }"
-						/>
+						/> -->
+						<select v-model.trim="validate.service_id.$model" 
+							id="service_id"
+							name="service_id"
+							class="form-control" :class="{ 'border-danger': validate.service_id.$error }">
+
+							<option value="">{{ $t("form.select") }}</option>
+							<option 
+								v-for="service in services" 
+								:key="service.id" 
+								:value="service.id"
+							>
+								{{ service.name }}
+							</option>
+
+							<!-- <option value="">ES</option>
+							<option value="">PT</option>
+							<option value="">IT</option> -->
+						</select>
+
 						<template v-if="validate.service_id.$error">
 							<div v-for="(error, index) in validate.service_id.$errors" :key="index" class="text-danger mt-2">
 								{{ error.$message }}
@@ -106,10 +125,11 @@
 	import { useVuelidate } from '@vuelidate/core';
 	import { helpers } from '@vuelidate/validators';
 	import { useI18n } from 'vue-i18n';
+	import useService from "../../composables/services";
 
 	const { t } = useI18n();
 	const emit = defineEmits(['cancelCreate', 'saveProviderForm']);
-
+	const {services, getServices} = useService();
 	const rules = {
 		service_id: {
 			required: helpers.withMessage(t("form.required"), required),
@@ -140,7 +160,8 @@
 	};
 
 	onMounted(async () => {
-		// TODO here implements...
+		await getServices();
+		//console.log(services.value)
 	});
 
 </script>
