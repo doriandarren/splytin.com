@@ -89,7 +89,7 @@
 	const projectId = ref(0);
 
 	const { t } = useI18n();
-	const { projects, getProjects, storeProject, updateProject, destroyProject} = useProjects();
+	const { projects, getProjects, storeProject, projectErrors, updateProject, destroyProject} = useProjects();
 
 
 	const findData = async() => {
@@ -121,8 +121,16 @@
 		isCreate.value = false;
 		div_table.style.display = 'block';
 		await storeProject({ ...form });
+
+		if (projectErrors.value.length === 0) {
+            await Toast(t("message.record_saved"), 'success');
+        }else{
+            const errorMessages = projectErrors.value.flatMap(errorObj => Object.values(errorObj).flat()).join(', ');
+            await Toast(errorMessages, 'error');
+        }
+
 		rows.value = await findData();
-		await Toast(t("message.record_saved"), 'success');
+		
 	}
 
 	//Edit
