@@ -156,7 +156,7 @@
 		}
 
 		rows.value = await findData();
-		
+
 	}
 
 	// Delete
@@ -171,7 +171,7 @@
 		}).then(async(result) => {
 			if (result.isConfirmed) {
 				await destroyProvider(id);
-		rows.value = await findData();
+				rows.value = await findData();
 				Swal.fire(t("message.record_deleted"), '', 'success');
 			}
 
