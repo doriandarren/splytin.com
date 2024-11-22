@@ -113,6 +113,7 @@
   "add": "Agregar",
   "file": "Archivo",
   "website_name": "Sitio Web",
-  "form.invalidUrl": "Formato Url Invalido"
+  "form.invalidUrl": "Formato Url Invalido",
+  "Tailwind": "Tailwind"
   
 }
