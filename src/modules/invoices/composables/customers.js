@@ -11,11 +11,11 @@ export default function useCustomer() {
 
 	const getCustomers = async () => {
 		customerErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}customers/list`,{
+		await fetch(`${import.meta.env.VITE_API_URL}customers/list`,{
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
 			},
 		})
 		.then(res => res.json())
@@ -34,11 +34,11 @@ export default function useCustomer() {
 
 	const getCustomer = async (id) => {
 		customerErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}customers/show/${id}`,{
+		await fetch(`${import.meta.env.VITE_API_URL}customers/show/${id}`,{
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
 			},
 		})
 		.then(res => res.json())
@@ -57,11 +57,11 @@ export default function useCustomer() {
 
 	const storeCustomer = async (data) => {
 		customerErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}customers/store`,{
+		await fetch(`${import.meta.env.VITE_API_URL}customers/store`,{
 			method: 'POST',
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
 			},
 			body: JSON.stringify(data),
 		})
@@ -81,11 +81,11 @@ export default function useCustomer() {
 
 	const updateCustomer = async (id, data) => {
 		customerErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}customers/update/${id}`,{
+		await fetch(`${import.meta.env.VITE_API_URL}customers/update/${id}`,{
 			method: 'PUT',
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
 			},
 			body: JSON.stringify(data),
 		})
@@ -105,11 +105,11 @@ export default function useCustomer() {
 
 	const destroyCustomer = async (id) => {
 		customerErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}customers/delete/${id}`,{
+		await fetch(`${import.meta.env.VITE_API_URL}customers/delete/${id}`,{
 			method: 'DELETE',
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
 			},
 		})
 		.then(res => res.json())

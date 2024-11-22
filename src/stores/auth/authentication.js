@@ -8,6 +8,7 @@ export const useAuthenticationStore = defineStore('authentication', () => {
   const token = ref(null);
   const user = ref(null);
   const loginResponse = ref(null);
+  const response = ref(null);
   const authErrors = ref([]);
 
   const router = useRouter();
@@ -31,7 +32,6 @@ export const useAuthenticationStore = defineStore('authentication', () => {
         if (localStorage.getItem('splytin_token')) {
           localStorage.removeItem('splytin_token');
         }
-        
         
 
         if (data.success) {
@@ -57,8 +57,6 @@ export const useAuthenticationStore = defineStore('authentication', () => {
     user.value = '';
     authErrors.value = [];
 
-    let response;
-
     await fetch(`${import.meta.env.VITE_API_URL}auth/user`, {
       method: "GET",
       headers: {
@@ -68,7 +66,7 @@ export const useAuthenticationStore = defineStore('authentication', () => {
     })
       .then(data => data.json())
       .then(data => {
-        response = data;
+        user.value = data.data;
       })
       .catch((e) => {
         if (localStorage.getItem('splytin_token')) {
@@ -78,9 +76,8 @@ export const useAuthenticationStore = defineStore('authentication', () => {
         console.log("Error:", e);
       });
 
-    return response;
-
   }
+
 
   async function logout() {
 

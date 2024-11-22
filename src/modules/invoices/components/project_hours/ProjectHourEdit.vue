@@ -13,13 +13,23 @@
 						<label for="project_id" class="form-label w-full">
 							{{ $t("project_id") }} *
 						</label>
-						<input
+						<select
 							v-model.trim="validate.project_id.$model"
 							id="project_id"
 							name="project_id"
 							class="form-control"
 							:class="{ 'border-danger': validate.project_id.$error }"
-						/>
+							disabled="disabled"
+						>
+							<option 
+                				v-for="item in projects" 
+                				:key="item.id" 
+                				:value="item.id"
+              					>
+                				{{ item.name }}
+							</option>
+
+						</select>
 						<template v-if="validate.project_id.$error">
 							<div v-for="(error, index) in validate.project_id.$errors" :key="index" class="text-danger mt-2">
 						{{ error.$message }}
@@ -30,7 +40,7 @@
 
 
 
-				<div class="col-span-12 md:col-span-6 lg:col-span-2">
+				<div class="col-span-12 md:col-span-2 lg:col-span-2">
 					<div class="input-form">
 						<label for="hours" class="form-label w-full">
 							{{ $t("hours") }} *
@@ -38,9 +48,10 @@
 						<input
 							v-model.trim="validate.hours.$model"
 							id="hours"
-							type="text"
+							type="number"
 							name="hours"
 							class="form-control"
+							min="1"
 							:class="{ 'border-danger': validate.hours.$error }"
 						/>
 						<template v-if="validate.hours.$error">
@@ -52,7 +63,7 @@
 				</div>
 
 
-				<div class="col-span-12 md:col-span-6 lg:col-span-2">
+				<div class="col-span-12 md:col-span-4 lg:col-span-4">
 					<div class="input-form">
 						<label for="invoice_at" class="form-label w-full">
 							{{ $t("invoice_at") }} *
@@ -129,6 +140,10 @@
 	import { helpers } from '@vuelidate/validators';
 	import { useI18n } from 'vue-i18n';
 	import useProjectHours from '../../composables/project_hours';
+	import useProject from "../../composables/projects";
+
+
+	const {projects, getProjects} = useProject();
 
 	const { projectHour, getProjectHour } = useProjectHours();
 	const { t } = useI18n();
@@ -169,13 +184,23 @@
 	};
 
 	onMounted(async () => {
-		await getProjectHour(props.projectHourId);
+
+		await Promise.all([
+			getProjectHour(props.projectHourId),
+			getProjects(),
+		])
+		
 		formData.project_id = projectHour.value.project_id;
-		formData.invoice_id = projectHour.value.invoice_id;
 		formData.hours = projectHour.value.hours;
 		formData.invoice_at = projectHour.value.invoice_at;
-		formData.is_generated = projectHour.value.is_generated.split(' ')[0];
 		formData.description = projectHour.value.description;
+
+		const today = new Date();
+		const day = String(today.getDate()).padStart(2, '0');
+		const month = String(today.getMonth() + 1).padStart(2, '0'); // Los meses en JavaScript empiezan desde 0
+		const year = today.getFullYear();
+
+		formData.started_at = `${year}-${month}-${day}`;
 	});
 
 </script>

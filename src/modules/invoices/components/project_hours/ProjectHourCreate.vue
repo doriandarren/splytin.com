@@ -46,8 +46,9 @@
 						<input
 							v-model.trim="validate.hours.$model"
 							id="hours"
-							type="text"
+							type="number"
 							name="hours"
+							min="1"
 							class="form-control"
 							:class="{ 'border-danger': validate.hours.$error }"
 						/>
@@ -131,7 +132,7 @@
 
 <script setup>
 
-	import { onMounted, reactive, toRefs } from 'vue';
+	import { ref, onMounted, reactive, toRefs } from 'vue';
 	import { required, minLength, maxLength, email, url, integer } from '@vuelidate/validators';
 	import { useVuelidate } from '@vuelidate/core';
 	import { helpers } from '@vuelidate/validators';
@@ -181,6 +182,12 @@
 	onMounted(async () => {
 		// TODO here implements...
 		await getProjects();
+		const today = new Date();
+		const day = String(today.getDate()).padStart(2, '0');
+		const month = String(today.getMonth() + 1).padStart(2, '0'); // Los meses en JavaScript empiezan desde 0
+		const year = today.getFullYear();
+
+		formData.invoice_at = `${year}-${month}-${day}`;
 
 	});
 

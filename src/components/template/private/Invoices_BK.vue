@@ -89,7 +89,7 @@
                                                     src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                                     alt="" />
                                                 <span class="sr-only">Your profile</span>
-                                                <span aria-hidden="true">Tom Cook</span>
+                                                <span aria-hidden="true">{{ user.name }}</span>
                                             </a>
                                         </li>
                                     </ul>
@@ -184,15 +184,15 @@
                 <div class="h-6 w-px bg-gray-900/10 lg:hidden" aria-hidden="true" />
 
                 <div class="flex flex-1 gap-x-4 self-stretch lg:gap-x-6">
-                    <form class="relative flex flex-1" action="#" method="GET">
-                        <label for="search-field" class="sr-only">Search</label>
+                    <div class="relative flex flex-1" action="#" method="GET">
+                        <!-- <label for="search-field" class="sr-only">Search</label>
                         <MagnifyingGlassIcon
                             class="pointer-events-none absolute inset-y-0 left-0 h-full w-5 text-gray-400"
                             aria-hidden="true" />
                         <input id="search-field"
                             class="block h-full w-full border-0 py-0 pl-8 pr-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm"
-                            placeholder="Search..." type="search" name="search" />
-                    </form>
+                            placeholder="Search..." type="search" name="search" /> -->
+                    </div>
                     <div class="flex items-center gap-x-4 lg:gap-x-6">
                         <button type="button" class="-m-2.5 p-2.5 text-gray-400 hover:text-gray-500">
                             <span class="sr-only">View notifications</span>
@@ -211,7 +211,7 @@
                                     alt="" />
                                 <span class="hidden lg:flex lg:items-center">
                                     <span class="ml-4 text-sm font-semibold leading-6 text-gray-900"
-                                        aria-hidden="true">Tom Cook</span>
+                                        aria-hidden="true">{{ user.name }}</span>
                                     <ChevronDownIcon class="ml-2 h-5 w-5 text-gray-400" aria-hidden="true" />
                                 </span>
                             </MenuButton>
@@ -249,7 +249,7 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue';
+import { onMounted, ref, watch } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import {
@@ -277,21 +277,34 @@ import {
     UserCircleIcon,
     CurrencyDollarIcon,
     ServerIcon,
+    Cog6ToothIcon
 } from '@heroicons/vue/24/outline';
 import { ChevronDownIcon, MagnifyingGlassIcon, ChevronRightIcon } from '@heroicons/vue/20/solid';
 
 import Logo from '@/components/template/images/Logo.vue';
 import LogoLetters from '@/components/template/images/LogoLetters.vue';
+import { useAuthenticationStore } from '@/stores/auth/authentication';
+import { storeToRefs } from 'pinia';
+
+
+
+
 
 
 // Importar traducciones
 const { t } = useI18n()
+const authStore = useAuthenticationStore();
+const {logout, currentUser} = authStore;
+const { user, authErrors } = storeToRefs(authStore);
+
+
+
 
 
 
 const navigation = [
     { name: t('dashboard'), href: 'dashboard', icon: HomeModernIcon, current: true },
-    { name: t('companies'), href: 'companies', icon: BuildingLibraryIcon, current: false },
+    
     { name: t('own_companies'), href: 'own_companies', icon: BuildingOffice2Icon, current: false },
     { name: t('projects'), href: 'projects', icon: DocumentDuplicateIcon, current: false },
     { name: t('project_hours'), href: 'project_hours', icon: CalendarIcon, current: false },
@@ -300,6 +313,14 @@ const navigation = [
     { name: t('customers'), href: 'customers', icon: UserCircleIcon, current: false },
     { name: t('providers'), href: 'providers', icon: CurrencyDollarIcon, current: false },
     { name: t('services'), href: 'services', icon: ServerIcon, current: false },
+
+    {
+        name: t("setting"), icon: Cog6ToothIcon, current: false,
+        children: [
+            { name: t('companies'), href: 'companies', icon: BuildingLibraryIcon, current: false },
+        ]
+
+    }
 
     //   { 
     //     name: 'Teams',
@@ -314,12 +335,12 @@ const navigation = [
 ]
 
 const userNavigation = [
-    { name: t('logout'), href: '/login' },
-    // { name: t('logout'), href: '#', onClick: () => submit() },
+    { name: t('modules'), href: '/main-screen' },
+    { name: t('logout'), href: '#', onClick: () => sessionLogout() },
 ]
 
-const submit = async () => {
-    // await logout()
+const sessionLogout = async () => {
+    await logout();
 }
 
 const sidebarOpen = ref(false);
@@ -335,7 +356,6 @@ watch(
         currentRoute.value = newRoute
         const parentItem = navigation.find((item) => item.children && item.children.some((subItem) => subItem.href === newRoute))
         if (parentItem) {
-            
             openDropdown.value = parentItem.name
         } else {
             openDropdown.value = null
@@ -373,8 +393,18 @@ const closeSidebar = () => {
     sidebarOpen.value = false;
     closeAllDropdowns();
 }
+
+
+
+onMounted(async () => {
+    await currentUser();
+    //console.log(user.value);
+})
+
 </script>
 
+
+
 <style scoped>
-/* Añade estilos específicos aquí si lo deseas */
+
 </style>

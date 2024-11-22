@@ -1,9 +1,20 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import { storeToRefs } from 'pinia';
 import { useAuthenticationStore } from '@/stores/auth/authentication.js';
+
 // Tailwind Resources
-import TailwindResourceRoutes from '../modules/tailwind_resources/routes/index.js';
+import TailwindResourceRoutes from '../modules/tailwind_resources/router';
 // Auth
-import LoginRoutes from '../modules/auth/routes/index.js';
+import LoginRoutes from '../modules/auth/router';
+
+// MainScreen
+import MainScreenRoutes from '../modules/main_screen/router';
+
+// Invoices
+import InvoiceRoutes from '../modules/invoices/router';
+
+// Invoices
+import GeneratorRoutes from '../modules/generators/router';
 
 
 
@@ -39,82 +50,61 @@ const routes = [
       },
       
 
-      /** Login */
-      ...LoginRoutes,      
-
-
       //Resouces
       ...TailwindResourceRoutes,
+
+
+      /** Login */
+      ...LoginRoutes,      
+      
 
     ]
   },
 
 
 
-  /** Template Private */
+  /** Template Modules */
+  {
+    path: '/',
+    name: 'module',
+    component: () => import('@/modules/main_screen/components/template/Main.vue'),
+    redirect: '/main-screen',
+    meta: { requiresAuth: true },
+    children: [
+      //MainScreen
+      ...MainScreenRoutes,
+    ]
+  },
+
+
+
+
+
+  /** Invoices */
   {
     path: '/',
     name: 'main',
-    component: () => import('@/components/template/private/Main.vue'),
+    component: () => import('@/modules/invoices/components/template/Main.vue'),
     redirect: '/dashboard',
     meta: { requiresAuth: true },
     children: [
-      {
-        path: '/dashboard',
-        name: 'dashboard',
-        component: () => import('@/views/dashboard/DashboardList.vue')
-      },
-      {
-        path: '/msft-prices',
-        name: 'msft-prices',
-        component: () => import('@/views/msft_prices/MsftPricesList.vue')
-      },
-      {
-        path: '/companies',
-        name: 'companies',
-        component: () => import('@/modules/invoices/views/companies/CompanyList.vue')
-      },
-      {
-        path: '/own_companies',
-        name: 'own_companies',
-        component: () => import('@/modules/invoices/views/own_companies/OwnCompanyList.vue')
-      },
-      {
-        path: '/projects',
-        name: 'projects',
-        component: () => import('@/modules/invoices/views/projects/ProjectList.vue')
-      },
-      {
-        path: '/project_hours',
-        name: 'project_hours',
-        component: () => import('@/modules/invoices/views/project_hours/ProjectHourList.vue')
-      },
-      {
-        path: '/invoice_headers',
-        name: 'invoice_headers',
-        component: () => import('@/modules/invoices/views/invoice_headers/InvoiceHeaderList.vue')
-      },
-      {
-        path: '/invoice_lines',
-        name: 'invoice_lines',
-        component: () => import('@/modules/invoices/views/invoice_lines/InvoiceLineList.vue')
-      },
-      {
-        path: '/customers',
-        name: 'customers',
-        component: () => import('@/modules/invoices/views/customers/CustomerList.vue')
-      },
-      {
-        path: '/providers',
-        name: 'providers',
-        component: () => import('@/modules/invoices/views/providers/ProviderList.vue')
-      },
-      {
-        path: '/services',
-        name: 'services',
-        component: () => import('@/modules/invoices/views/services/ServiceList.vue')
-      },
+      //Invoices
+      ...InvoiceRoutes
+    ]
 
+  },
+
+
+  
+  /** Generators */
+  {
+    path: '/',
+    name: 'generators',
+    component: () => import('@/modules/generators/components/template/Main.vue'),
+    redirect: '/generators',
+    meta: { requiresAuth: true },
+    children: [
+      ...GeneratorRoutes
     ]
 
   },
@@ -148,14 +138,19 @@ const router = createRouter({
 
 router.beforeEach(async (to, from, next) => {
   // Actualizar el título de la página
-  //document.title = `${to.name} - ${import.meta.env.VITE_APP_TITLE}`;
+  document.title = `${to.name.charAt(0).toUpperCase() + to.name.slice(1)} - ${import.meta.env.VITE_APP_TITLE}`;
 
   if (to.matched.some(record => record.meta.requiresAuth)) {
-    const { currentUser } = useAuthenticationStore();
-    let response = await currentUser();
 
     try {
-      if (response) {
+
+      const authStore = useAuthenticationStore();
+      const { currentUser } = authStore;
+      const { user, authErrors } = storeToRefs(authStore);
+
+      await currentUser();
+
+      if (user.value) {
         next();
       } else {
         next({ name: "login" });
@@ -164,6 +159,7 @@ router.beforeEach(async (to, from, next) => {
       console.log(e);
       next({ name: "login" });
     }
+
   } else {
     next();
   }

@@ -67,8 +67,9 @@ export default function useCompany() {
 		})
 		.then(res => res.json())
 		.then((res) => {
+			
 			if (!res.success) {
-				companyErrors.value = res.errors;
+				companyErrors.value = res.errors;				
 			}else{
 				company.value = res.data;
 			}

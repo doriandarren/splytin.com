@@ -1,15 +1,12 @@
 <template>
+
+    <Preloader v-if="loading" />
+
     <div class="flex min-h-full flex-1 mt-10" v-animate>
       <div class="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
         <div class="mx-auto w-full max-w-sm lg:w-96">
           <div>
-            <!-- <img class="h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company" /> -->
             <h2 class="mt-8 text-2xl font-bold leading-9 tracking-tight text-gray-900">{{ $t("login_form.title") }}</h2>
-            <!-- <p class="mt-2 text-sm leading-6 text-gray-500">
-              Not a member?
-              {{ ' ' }}
-              <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500">Start a 14 day free trial</a>
-            </p> -->
           </div>
           
   
@@ -175,15 +172,18 @@
 import { ref, toRefs } from 'vue';
 import { storeToRefs } from 'pinia';
 import { useRouter } from 'vue-router';
+import { useI18n } from "vue-i18n";
+import { Toast } from '@/utils/toast';
 import Preloader from '@/components/preloader/Preloader.vue';
 import { useAuthenticationStore } from '@/stores/auth/authentication';
 import { email } from '@vuelidate/validators';
+import { delay } from '../../../../utils/helper';
 
+
+const { t } = useI18n();
 
 //init
 const loading = ref(false);
-
-
 const email_input = ref('');
 const password = ref('');
 const message = ref('');
@@ -208,24 +208,24 @@ const submit = async () => {
 
     if (!email_input.value || !password.value) {
         message.value = 'los dos campos son requeridos';
+        loading.value = false;
         return;
     }
 
 
     await login(email_input.value, password.value);
-    
-    if (loginResponse.value.success) {
+
+
+    if(!loginResponse.value){
         loading.value = false;
-        router.push('/dashboard');
+        await Toast(t("login_form.credential_error"), 'error');
+    }else {
+
+      //await delay(6000);
+      
+      loading.value = false;
+      router.push({name: 'main_screen'});
     }
-    
-    loading.value = false;
-
-
-    //console.log(authErrors.value);
-
-
-
 
 }
 

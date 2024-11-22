@@ -32,6 +32,7 @@ module.exports = {
         'analogous': '#03effa', // un color análogo (turquesa)
         'analogous-dark': '#02c1c7', // análogo oscuro
         'analogous-light': '#7ffaff', // análogo claro
+        navbar: '#111827'
       },
     },
   },

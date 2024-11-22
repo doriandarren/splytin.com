@@ -7,11 +7,9 @@
             <div class="p-4 lg:w-1/3">
                 <div
                     class="h-full bg-gray-100 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
-                    <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">CATEGORY</h2>
-                    <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">Raclette Blueberry
-                        Nextious Level</h1>
-                    <p class="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings
-                        jianbing microdosing tousled waistcoat.</p>
+                    <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">Desarrollo de Software</h2>
+                    <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">Soluciones Personalizadas</h1>
+                    <p class="leading-relaxed mb-3">Creamos software a medida para optimizar los procesos de tu empresa, adaptándonos a tus necesidades específicas.</p>
                     <a class="text-indigo-500 inline-flex items-center">Learn More
                         <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
                             fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -19,7 +17,7 @@
                             <path d="M12 5l7 7-7 7"></path>
                         </svg>
                     </a>
-                    <div
+                    <!-- <div
                         class="text-center mt-2 leading-none flex justify-center absolute bottom-0 left-0 w-full py-4">
                         <span
                             class="text-gray-400 mr-3 inline-flex items-center leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
@@ -37,17 +35,15 @@
                                 </path>
                             </svg>6
                         </span>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="p-4 lg:w-1/3">
                 <div
                     class="h-full bg-gray-100 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
-                    <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">CATEGORY</h2>
-                    <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">Ennui Snackwave
-                        Thundercats</h1>
-                    <p class="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings
-                        jianbing microdosing tousled waistcoat.</p>
+                    <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">Diseño Web</h2>
+                    <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">Páginas Web Profesionales</h1>
+                    <p class="leading-relaxed mb-3">Diseñamos y desarrollamos sitios web modernos y responsivos para mejorar tu presencia en línea.</p>
                     <a class="text-indigo-500 inline-flex items-center">Learn More
                         <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
                             fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -55,7 +51,7 @@
                             <path d="M12 5l7 7-7 7"></path>
                         </svg>
                     </a>
-                    <div
+                    <!-- <div
                         class="text-center mt-2 leading-none flex justify-center absolute bottom-0 left-0 w-full py-4">
                         <span
                             class="text-gray-400 mr-3 inline-flex items-center leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
@@ -73,17 +69,15 @@
                                 </path>
                             </svg>6
                         </span>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="p-4 lg:w-1/3">
                 <div
                     class="h-full bg-gray-100 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
-                    <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">CATEGORY</h2>
-                    <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">Selvage Poke
-                        Waistcoat Godard</h1>
-                    <p class="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings
-                        jianbing microdosing tousled waistcoat.</p>
+                    <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">Soporte Técnico</h2>
+                    <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">Soporte Continuo</h1>
+                    <p class="leading-relaxed mb-3">Ofrecemos mantenimiento y soporte continuo para asegurar que tu software y sitio web funcionen sin problemas.</p>
                     <a class="text-indigo-500 inline-flex items-center">Learn More
                         <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
                             fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -91,7 +85,7 @@
                             <path d="M12 5l7 7-7 7"></path>
                         </svg>
                     </a>
-                    <div
+                    <!-- <div
                         class="text-center mt-2 leading-none flex justify-center absolute bottom-0 left-0 w-full py-4">
                         <span
                             class="text-gray-400 mr-3 inline-flex items-center leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
@@ -109,7 +103,7 @@
                                 </path>
                             </svg>6
                         </span>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

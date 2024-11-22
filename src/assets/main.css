@@ -11,8 +11,6 @@
 
 
 
-
-
 /*
  |--------------------------------------------------------------------------
  | Tailwind Directives
@@ -38,12 +36,21 @@
  */
 
 @layer components {
+
+    .btn{
+        @apply py-2 px-4 font-semibold rounded-lg shadow-md;
+    }
+
     .btn-primary {
-        @apply py-2 px-4 bg-primary text-white font-semibold rounded-lg shadow-md hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-75;
+        @apply py-2 px-4 pl-4 bg-primary text-white font-semibold rounded-lg shadow-md hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-75;
+    }
+
+    .btn-secondary {
+        @apply py-2 px-4 pl-4 bg-secondary text-white font-semibold rounded-lg shadow-md hover:bg-secondary-dark focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-opacity-75;
     }
 
     .btn-danger {
-        @apply py-2 px-4 bg-red-500 text-white font-semibold rounded-lg shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75;
+        @apply py-2 px-4 pl-4 bg-red-500 text-white font-semibold rounded-lg shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75;
     }
 
     .form-control{
@@ -81,4 +88,20 @@
     
 
 }
+
+/* Banner - Home*/
+.banner-image {
+    width: 100%;
+    height: auto;
+    animation: slideIn 3s ease-in-out infinite alternate;
+  }
+  
+  @keyframes slideIn {
+    0% {
+      transform: translateX(-10%);
+    }
+    100% {
+      transform: translateX(10%);
+    }
+  }
 

@@ -11,11 +11,11 @@ export default function useService() {
 
 	const getServices = async () => {
 		serviceErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}services/list`,{
+		await fetch(`${import.meta.env.VITE_API_URL}services/list`,{
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
 			},
 		})
 		.then(res => res.json())
@@ -34,11 +34,11 @@ export default function useService() {
 
 	const getService = async (id) => {
 		serviceErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}services/show/${id}`,{
+		await fetch(`${import.meta.env.VITE_API_URL}services/show/${id}`,{
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
 			},
 		})
 		.then(res => res.json())
@@ -57,11 +57,11 @@ export default function useService() {
 
 	const storeService = async (data) => {
 		serviceErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}services/store`,{
+		await fetch(`${import.meta.env.VITE_API_URL}services/store`,{
 			method: 'POST',
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
 			},
 			body: JSON.stringify(data),
 		})
@@ -81,11 +81,11 @@ export default function useService() {
 
 	const updateService = async (id, data) => {
 		serviceErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}services/update/${id}`,{
+		await fetch(`${import.meta.env.VITE_API_URL}services/update/${id}`,{
 			method: 'PUT',
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
 			},
 			body: JSON.stringify(data),
 		})
@@ -105,11 +105,11 @@ export default function useService() {
 
 	const destroyService = async (id) => {
 		serviceErrors.value = [];
-		await fetch(`${import.meta.env.VITE_API_URL_GLOBALFLEET}services/delete/${id}`,{
+		await fetch(`${import.meta.env.VITE_API_URL}services/delete/${id}`,{
 			method: 'DELETE',
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer ${localStorage.getItem('token')}`
+				"Authorization": `Bearer ${localStorage.getItem('splytin_token')}`
 			},
 		})
 		.then(res => res.json())

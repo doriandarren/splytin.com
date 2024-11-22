@@ -180,7 +180,7 @@
 				<div class="col-span-12 md:col-span-6 lg:col-span-12">
 					<div class="input-form">
 						<label for="website" class="form-label w-full">
-							{{ $t("website") }} *
+							{{ $t("website_name") }} *
 						</label>
 						<input v-model.trim="validate.website.$model" id="website" type="text" name="website"
 							class="form-control" :class="{ 'border-danger': validate.website.$error }" />
@@ -236,6 +236,7 @@ const props = defineProps(['ownCompanyId']);
 const emit = defineEmits(['cancelEdit', 'updateOwnCompanyForm']);
 
 const {countries, getCountries} = useCountry();
+const urlPattern = /^(https?:\/\/)([\w\-]+)+([\w\-]+\.)+[a-zA-Z]{2,}(\/\S*)?$/;
 
 const rules = {
 	country_id: {
@@ -267,6 +268,7 @@ const rules = {
 	},
 	website: {
 		required: helpers.withMessage(t("form.required"), required),
+		url: helpers.withMessage(t("form.invalidUrl"), (value) => urlPattern.test(value)),
 	},
 };
 
