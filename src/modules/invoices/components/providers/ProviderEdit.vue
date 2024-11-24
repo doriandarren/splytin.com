@@ -13,17 +13,29 @@
 						<label for="service_id" class="form-label w-full">
 							{{ $t("service_id") }} *
 						</label>
-						<input
-							v-model.trim="validate.service_id.$model"
+						
+						<select v-model.trim="validate.service_id.$model" 
 							id="service_id"
-							type="text"
 							name="service_id"
-							class="form-control"
-							:class="{ 'border-danger': validate.service_id.$error }"
-						/>
+							class="form-control" :class="{ 'border-danger': validate.service_id.$error }">
+
+							<option value="">{{ $t("form.select") }}</option>
+							<option 
+								v-for="service in services" 
+								:key="service.id" 
+								:value="service.id"
+							>
+								{{ service.name }}
+							</option>
+
+							<!-- <option value="">ES</option>
+							<option value="">PT</option>
+							<option value="">IT</option> -->
+						</select>
+
 						<template v-if="validate.service_id.$error">
 							<div v-for="(error, index) in validate.service_id.$errors" :key="index" class="text-danger mt-2">
-						{{ error.$message }}
+								{{ error.$message }}
 							</div>
 						</template>
 					</div>
@@ -102,13 +114,15 @@
 <script setup>
 
 	import { onMounted, reactive, toRefs } from 'vue';
-	import useProviders from '../../composables/providers';
+	import useProvider from '../../composables/providers';
 	import { required, minLength, maxLength, email, url, integer } from '@vuelidate/validators';
 	import { useVuelidate } from '@vuelidate/core';
 	import { helpers } from '@vuelidate/validators';
 	import { useI18n } from 'vue-i18n';
+	import useService from "../../composables/services";
 
-	const { provider, getProvider } = useProviders();
+	const { provider, getProvider } = useProvider();
+	const { services, getServices } = useService();
 	const { t } = useI18n();
 	const props = defineProps(['providerId']);
 	const emit = defineEmits(['cancelEdit', 'updateProviderForm']);
@@ -142,8 +156,12 @@
 		}
 	};
 
+	
+
 	onMounted(async () => {
+		await getServices();
 		await getProvider(props.providerId);
+		console.log(provider.value);
 		formData.service_id = provider.value.service_id;
 		formData.code = provider.value.code;
 		formData.name = provider.value.name;
