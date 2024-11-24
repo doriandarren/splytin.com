@@ -249,6 +249,7 @@ const navigation = [
     children: [
       { name: t('companies'), href: 'companies', icon: BuildingLibraryIcon, current: false },
       { name: t('own_companies'), href: 'own_companies', icon: BuildingOffice2Icon, current: false },
+      { name: t('customers'), href: 'customers', icon: BuildingOffice2Icon, current: false },
       { name: t('services'), href: 'services', icon: ServerIcon, current: false },
       { name: t('providers'), href: 'providers', icon: CurrencyDollarIcon, current: false },
       
