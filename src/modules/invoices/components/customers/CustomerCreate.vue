@@ -13,14 +13,34 @@
 						<label for="company_id" class="form-label w-full">
 							{{ $t("company_id") }} *
 						</label>
-						<input
+						<!-- <input
 							v-model.trim="validate.company_id.$model"
 							id="company_id"
 							type="text"
 							name="company_id"
 							class="form-control"
 							:class="{ 'border-danger': validate.company_id.$error }"
-						/>
+						/> -->
+						<select 
+							v-model.trim="validate.company_id.$model"
+							id="company_id"
+							name="company_id"
+							class="form-control"
+							:class="{ 'border-danger': validate.company_id.$error }"	
+						>
+
+							<option value="">{{ $t("form.select") }}</option>
+							<option 
+								v-for="item in companies" 
+								:key="item.id" 
+								:value="item.id"
+								>
+								{{ item.name }}
+							</option>
+
+
+						</select>
+
 						<template v-if="validate.company_id.$error">
 							<div v-for="(error, index) in validate.company_id.$errors" :key="index" class="text-danger mt-2">
 								{{ error.$message }}
@@ -35,14 +55,31 @@
 						<label for="service_id" class="form-label w-full">
 							{{ $t("service_id") }} *
 						</label>
-						<input
+						<select 
 							v-model.trim="validate.service_id.$model"
 							id="service_id"
-							type="text"
 							name="service_id"
 							class="form-control"
 							:class="{ 'border-danger': validate.service_id.$error }"
-						/>
+						>
+						<option value="">{{ $t("form.select") }}</option>
+							<option 
+								v-for="item in services" 
+								:key="item.id" 
+								:value="item.id"
+								>
+								{{ item.name }}
+							</option>
+
+
+						</select>
+						<!-- <input
+							v-model.trim="validate.service_id.$model"
+							id="service_id"
+							name="service_id"
+							class="form-control"
+							:class="{ 'border-danger': validate.service_id.$error }"
+						/> -->
 						<template v-if="validate.service_id.$error">
 							<div v-for="(error, index) in validate.service_id.$errors" :key="index" class="text-danger mt-2">
 								{{ error.$message }}
@@ -106,7 +143,10 @@
 	import { useVuelidate } from '@vuelidate/core';
 	import { helpers } from '@vuelidate/validators';
 	import { useI18n } from 'vue-i18n';
+	import useCompany from "../../composables/companies";
 
+
+	const { companies, getCompanies} = useCompany();
 	const { t } = useI18n();
 	const emit = defineEmits(['cancelCreate', 'saveCustomerForm']);
 
@@ -141,6 +181,8 @@
 
 	onMounted(async () => {
 		// TODO here implements...
+		await getCompanies(props.companyId);
+		await companies(props.companyId);
 	});
 
 </script>
