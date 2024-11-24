@@ -13,14 +13,7 @@
 						<label for="service_id" class="form-label w-full">
 							{{ $t("service_id") }} *
 						</label>
-						<!-- <input
-							v-model.trim="validate.service_id.$model"
-							id="service_id"
-							type="text"
-							name="service_id"
-							class="form-control"
-							:class="{ 'border-danger': validate.service_id.$error }"
-						/> -->
+						
 						<select v-model.trim="validate.service_id.$model" 
 							id="service_id"
 							name="service_id"
