@@ -78,6 +78,7 @@
 	import IconEdit from '@/components/icons/IconEdit.vue';
 	import IconDelete from '@/components/icons/IconDelete.vue';
 	import IconAdd from '@/components/icons/IconAdd.vue';
+import CustomerList from '../customers/CustomerList.vue';
 
 
 	// Tabulator
@@ -95,11 +96,12 @@
 	const findData = async() => {
 		await getProjects();
 		return toRaw(projects.value);
+		
 	}
 
 	// Table
 	const columns = [
-		{ label: t("company_id"), field: 'company.name' },
+		{ label: t("customer_id"), field: 'customer_id' },
 		{ label: t("name"), field: 'name' },
 		{ label: t("total_hours"), field: 'total_hours' },
 		{ label: t("started_at"), field: 'started_at' },
@@ -185,6 +187,7 @@
 
 	onMounted(async () => {
 		rows.value = await findData();
+		
 	});
 
 

@@ -10,18 +10,18 @@
 
 				<div class="col-span-12 md:col-span-6 lg:col-span-6">
 					<div class="input-form">
-						<label for="company_id" class="form-label w-full">
-							{{ $t("company_id") }} *
+						<label for="customer_id" class="form-label w-full">
+							{{ $t("customer_id") }} *
 						</label>
-						<select v-model.trim="validate.company_id.$model" 
-							id="company_id"
-							name="company_id"
+						<select v-model.trim="validate.customer_id.$model" 
+							id="customer_id"
+							name="customer_id"
 							class="form-control" 
-							:class="{ 'border-danger': validate.company_id.$error }"
+							:class="{ 'border-danger': validate.customer_id.$error }"
 						>
 
 							<option 
-                				v-for="item in companies" 
+                				v-for="item in customers" 
                 				:key="item.id" 
                 				:value="item.id"
               				>
@@ -30,8 +30,8 @@
 						</select>
 
 
-						<template v-if="validate.company_id.$error">
-							<div v-for="(error, index) in validate.company_id.$errors" :key="index"
+						<template v-if="validate.customer_id.$error">
+							<div v-for="(error, index) in validate.customer_id.$errors" :key="index"
 								class="text-danger mt-2">
 								{{ error.$message }}
 							</div>
@@ -169,17 +169,17 @@ import { required, minLength, maxLength, email, url, integer } from '@vuelidate/
 import { useVuelidate } from '@vuelidate/core';
 import { helpers } from '@vuelidate/validators';
 import { useI18n } from 'vue-i18n';
-import useCompany from "../../composables/companies";
+import useCustomer from "../../composables/customers";
 
 
 const { t } = useI18n();
 const emit = defineEmits(['cancelCreate', 'saveProjectForm']);
 
-const {companies, getCompanies} = useCompany();
+const {customers, getCustomers} = useCustomer();
 
 
 const rules = {
-	company_id: {
+	customer_id: {
 		required: helpers.withMessage(t("form.required"), required),
 	},
 	name: {
@@ -202,7 +202,7 @@ const rules = {
 const now = ref(null);
 
 const formData = reactive({
-	company_id: "",
+	customer_id: "",
 	name: "",
 	total_hours: "",
 	started_at: "",
@@ -223,7 +223,9 @@ const save = () => {
 
 onMounted(async () => {
 	// TODO here implements...
-	await getCompanies();
+	await getCustomers();
+
+	
 	const today = new Date();
 	const day = String(today.getDate()).padStart(2, '0');
 	const month = String(today.getMonth() + 1).padStart(2, '0'); // Los meses en JavaScript empiezan desde 0

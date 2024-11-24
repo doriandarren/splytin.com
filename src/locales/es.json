@@ -114,6 +114,7 @@
   "file": "Archivo",
   "website_name": "Sitio Web",
   "form.invalidUrl": "Formato Url Invalido",
-  "Tailwind": "Tailwind"
+  "Tailwind": "Tailwind",
+  "customer_id": "Cliente"
   
 }
