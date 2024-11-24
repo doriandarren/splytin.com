@@ -144,9 +144,11 @@
 	import { helpers } from '@vuelidate/validators';
 	import { useI18n } from 'vue-i18n';
 	import useCompany from "../../composables/companies";
+	import useService from "../../composables/services";
 
 
 	const { companies, getCompanies} = useCompany();
+	const { services, getServices} = useService();
 	const { t } = useI18n();
 	const emit = defineEmits(['cancelCreate', 'saveCustomerForm']);
 
@@ -181,8 +183,9 @@
 
 	onMounted(async () => {
 		// TODO here implements...
-		await getCompanies(props.companyId);
-		await companies(props.companyId);
+		await getCompanies();
+		await getServices();
+		
 	});
 
 </script>
