@@ -14,7 +14,7 @@
 							{{ $t("customer_id") }} *
 						</label>
 						
-						/> -->
+						/> 
 						<select
 						v-model.trim="validate.customer_id.$model"
 							id="customer_id"
