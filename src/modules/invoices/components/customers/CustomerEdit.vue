@@ -188,8 +188,9 @@
 	};
 
 	onMounted(async () => {
-		await getServices(props.serviceId)
-		await getCompanies(props.companyId);
+		await getServices();
+		await getCompanies();
+		
 		await getCustomer(props.customerId);
 		formData.company_id = customer.value.company_id;
 		formData.service_id = customer.value.service_id;
