@@ -30,7 +30,7 @@ const options = [
   <div>
     <div class="flex items-center justify-between mb-6">
       <a href="/" class="-m-1.5 p-1.5">
-        <img class="h-12 w-auto" src="/images/logo.webp" alt={company} />
+        <img class="h-12 w-auto" src="/images/logo.svg" alt={company} />
       </a>
       <!-- Botón cerrar -->
       <label for="menu-toggle" class="cursor-pointer -m-2.5 p-2.5 text-gray-400 peer-checked:hidden">
@@ -52,12 +52,6 @@ const options = [
         href={`/${lang}/about`} 
         class={`block text-lg font-semibold p-2 rounded relative ${currentPath.includes('/about') ? 'active-mobile' : 'text-white'}`}
       >{t("navbar.about")}
-      </a>
-
-      <a 
-        href={`/${lang}/menu`} 
-        class={`block text-lg font-semibold p-2 rounded relative ${currentPath.includes('/menu') ? 'active-mobile' : 'text-white'}`}
-      >{t("navbar.menu")}
       </a>
 
       <a 
@@ -83,7 +77,7 @@ const options = [
     <div class="flex lg:flex-1">
       <a href="/" class="-m-1.5 p-1.5 flex items-center">
         <span class="sr-only">{company}</span>
-        <img class="w-20 h-auto" src="/images/logo.webp" alt="logo" />
+        <img class="w-20 h-auto" src="/images/logo.svg" alt="logo" />
       </a>
     </div>
 
@@ -109,14 +103,6 @@ const options = [
         class={`text-xl font-semibold ${currentPath.includes('/about') ? 'active' : 'text-white'}`}>
         {t("navbar.about")}
       </a> 
-      
-      
-      <a 
-        href={`/${lang}/menu`} 
-        class={`text-xl font-semibold ${currentPath.includes('/menu') ? 'active' : 'text-white'}`}>
-        {t("navbar.menu")}
-      </a>
-
 
       <a 
         href={`/${lang}/contact`} 

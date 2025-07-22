@@ -2,18 +2,17 @@
   "navbar": {
     "lang_es": "Español",
     "lang_en": "English",
-    "brand": "MiSitio",
+    "brand": "Splytin",
     "home": "Inicio",
     "about": "Nosotros",
-    "menu": "Menú",
     "contact": "Contacto",
     "map": "Mapa",
     "login": "Login"
   },
   "home": {
     "title": "Inicio",
-    "heading": "Bienvenidos a la Meva Llar",
-    "description": "Tapas - Restaurante con esencia mediterránea"
+    "heading": "Bienvenidos a Splytin",
+    "description": "Tu sitio de confianza"
   },
   "about": {
     "title": "Sobre Nosotros",
@@ -67,11 +66,6 @@
     },
     "copyright": "Todos los derechos reservados."
   },
-  "menu": {
-    "title": "Nuestra Carta",
-    "heading": "Explora sabores únicos",
-    "description": "Una selección de platos pensados para deleitar tus sentidos con lo mejor de la cocina mediterránea"
-  },
   "map": {
     "title": "Ubicación",
     "heading": "Tu destino gastronómico",
@@ -108,14 +102,6 @@
       "keywords": "la meva llar ubicación, cómo llegar restaurante, mapa restaurante mediterráneo, restaurante cerca de mí, restaurante familiar ubicación, restaurante con terraza dirección, La Meva Llar mapa, localización bar restaurante, dirección restaurante mediterráneo, restaurante Costa Brava, parking restaurante mediterráneo",
       "ogTitle": "La Meva Llar | Mapa y Localización",
       "ogDescription": "Encuentra La Meva Llar, bar restaurante mediterráneo. Consulta nuestra ubicación exacta, cómo llegar y planifica tu visita para disfrutar de tapas, desayunos y platos caseros.",
-      "ogType": "website"
-    },
-    "menu": {
-      "title": "La Meva Llar | Nuestra Carta y Menú",
-      "description": "Descubre el menú de La Meva Llar: platos caseros, tapas mediterráneas, desayunos y postres en un restaurante acogedor con cocina tradicional y de calidad.",
-      "keywords": "la meva llar menú, carta restaurante mediterráneo, tapas restaurante, menú desayunos, menú postres caseros, platos mediterráneos, menú bar restaurante, especialidades mediterráneas, menú cocina casera, carta La Meva Llar, menú actualizado, menú Costa Brava, platos típicos mediterráneos",
-      "ogTitle": "La Meva Llar | Nuestra Carta y Menú",
-      "ogDescription": "Descubre el menú de La Meva Llar: platos caseros, tapas mediterráneas, desayunos y postres en un restaurante acogedor con cocina tradicional y de calidad.",
       "ogType": "website"
     }
   }
