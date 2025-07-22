@@ -1,0 +1,44 @@
+---
+import AboutComponent from '@components/about/AboutComponent.astro';
+import { getStaticPaths, getI18nProps } from '@i18n/helperi18n';
+import MainLayout from '@layouts/MainLayout.astro';
+import ContactComponent from '@components/contact/ContactComponent.astro';
+import IndexComponent from '@components/index/IndexComponent.astro';
+import MapComponent from '@components/maps/MapComponent.astro';
+import MenuComponent from '@components/menu/MenuComponent.astro';
+
+export { getStaticPaths };
+
+const { lang, t, title } = getI18nProps(Astro.params, 'home');
+
+
+// SEO
+const description = t('seo.home.description');
+const keyword = t('seo.home.keywords');
+
+// OG
+const ogTitle = t('seo.home.title');
+const ogDescription = t('seo.home.ogDescription');
+const ogImage = "https://lamevallar.splytin.com/images/og-home.jpg";
+const ogURL = "https://lamevallar.splytin.com";
+const ogType = t('seo.home.ogType');
+
+---
+
+
+<MainLayout 
+  title={title} 
+  lang={lang}
+  description={description}
+  keyword={keyword}
+  ogTitle={ogTitle}
+  ogDescription={ogDescription}
+  ogImage={ogImage}
+  ogURL={ogURL}
+  ogType={ogType}
+>
+
+
+  <IndexComponent title={title} />
+
+</MainLayout>

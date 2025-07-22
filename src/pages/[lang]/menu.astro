@@ -1,0 +1,41 @@
+---
+import MainLayout from "@layouts/MainLayout.astro";
+import { getStaticPaths, getI18nProps } from "@i18n/helperi18n";
+import MenuComponent from "@components/menu/MenuComponent.astro";
+
+
+export { getStaticPaths };
+
+const { lang, t, title } = getI18nProps(Astro.params, "menu");
+
+// SEO - Menú
+const description = t('seo.menu.description');
+const keyword = t('seo.menu.keywords');
+
+// OG - Menú
+const ogTitle = t('seo.menu.title');
+const ogDescription = t('seo.menu.ogDescription');
+const ogImage = "https://lamevallar.splytin.com/images/og-home.jpg";
+const ogURL = `https://lamevallar.splytin.com/${lang}/menu`;
+const ogType = t('seo.menu.ogType');
+
+
+---
+
+<MainLayout 
+    title={title} 
+    lang={lang}
+    description={description}
+    keyword={keyword}
+    ogTitle={ogTitle}
+    ogDescription={ogDescription}
+    ogImage={ogImage}
+    ogURL={ogURL}
+    ogType={ogType}
+>
+    
+    <div class="section">
+        <MenuComponent />
+    </div>
+
+</MainLayout>

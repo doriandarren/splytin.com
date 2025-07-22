@@ -1,0 +1,122 @@
+{
+  "navbar": {
+    "lang_es": "Español",
+    "lang_en": "English",
+    "brand": "MiSitio",
+    "home": "Inicio",
+    "about": "Nosotros",
+    "menu": "Menú",
+    "contact": "Contacto",
+    "map": "Mapa",
+    "login": "Login"
+  },
+  "home": {
+    "title": "Inicio",
+    "heading": "Bienvenidos a la Meva Llar",
+    "description": "Tapas - Restaurante con esencia mediterránea"
+  },
+  "about": {
+    "title": "Sobre Nosotros",
+    "heading": "Pasión por los pequeños detalles",
+    "description": "Creamos experiencias únicas combinando cocina, ambiente y servicio para que cada visita sea especial.",
+    "title1": "Sabores que nos definen",
+    "txt1": "En La Meva Llar celebramos la esencia de la cocina mediterránea con recetas de toda la vida, elaboradas con productos frescos y locales.",
+    "title2": "Un lugar para compartir",
+    "txt2": "Nuestro espacio está pensado para reunir personas, celebrar momentos y saborear juntos cada plato."
+  },
+  "contact": {
+    "title": "Ubicación y Horarios",
+    "address": "📍 Calle Buenos Aires, 12 – Barcelona",
+    "hours": "🕒 Lunes a Domingo: 9:00 - 23:00",
+    "phone": "📞 +34 600 123 456",
+    "note": "* Horarios especiales en festivos"
+  },
+  "footer": {
+    "solutions": "Soluciones",
+    "solutions_list": {
+      "marketing": "Marketing",
+      "analytics": "Analítica",
+      "automation": "Automatización",
+      "commerce": "Comercio",
+      "insights": "Información"
+    },
+    "support": "Soporte",
+    "support_list": {
+      "submit_ticket": "Enviar ticket",
+      "documentation": "Documentación",
+      "guides": "Guías"
+    },
+    "company": "Compañía",
+    "company_list": {
+      "about": "Sobre nosotros",
+      "blog": "Blog",
+      "jobs": "Trabajos",
+      "press": "Prensa"
+    },
+    "legal": "Legal",
+    "legal_list": {
+      "terms_of_service": "Términos de servicio",
+      "privacy_policy": "Política de privacidad",
+      "license": "Licencia"
+    },
+    "newsletter": {
+      "title": "Suscríbete a nuestro boletín",
+      "description": "Las últimas noticias, artículos y recursos directamente a tu correo semanalmente.",
+      "placeholder": "Introduce tu correo electrónico",
+      "button": "Suscribirse"
+    },
+    "copyright": "Todos los derechos reservados."
+  },
+  "menu": {
+    "title": "Nuestra Carta",
+    "heading": "Explora sabores únicos",
+    "description": "Una selección de platos pensados para deleitar tus sentidos con lo mejor de la cocina mediterránea"
+  },
+  "map": {
+    "title": "Ubicación",
+    "heading": "Tu destino gastronómico",
+    "description": "Un lugar donde cada visita es especial."
+  },
+  "seo": {
+    "home": {
+      "title": "La Meva Llar | Restaurante Mediterráneo",
+      "description": "La Meva Llar, bar restaurante con esencia mediterránea: desayunos, tapas, postres y platos caseros en un ambiente cálido y familiar.",
+      "keywords": "la meva llar, restaurante mediterráneo, tapas, desayunos, postres, comida casera, bar Buenos Aires, bar mediterráneo, barcelona, bar barcelona",
+      "ogTitle": "La Meva Llar | Restaurante Mediterráneo",
+      "ogDescription": "La Meva Llar, bar restaurante con esencia mediterránea: desayunos, tapas, postres y platos caseros en un ambiente cálido y familiar.",
+      "ogType": "website"
+    },
+    "about": {
+      "title": "La Meva Llar | Sobre Nosotros",
+      "description": "Conoce La Meva Llar, restaurante con esencia mediterránea donde compartimos sabores auténticos, recetas caseras y un ambiente acogedor para disfrutar en compañía.",
+      "keywords": "la meva llar, sobre nosotros, quienes somos, restaurante mediterráneo, historia restaurante, cocina casera, tapas tradicionales, platos mediterráneos, ambiente familiar, esencia mediterránea, restaurante acogedor, gastronomía mediterránea, comida local, tradición y sabor",
+      "ogTitle": "La Meva Llar | Sobre Nosotros",
+      "ogDescription": "Conoce La Meva Llar, restaurante con esencia mediterránea donde compartimos sabores auténticos, recetas caseras y un ambiente acogedor para disfrutar en compañía.",
+      "ogType": "website"
+    },
+    "contact": {
+      "title": "La Meva Llar | Contacto y Reservas",
+      "description": "Contacta con La Meva Llar, bar restaurante mediterráneo. Reserva tu mesa, consulta disponibilidad o solicita información sobre nuestros menús y eventos especiales.",
+      "keywords": "la meva llar contacto, reservar mesa restaurante, teléfono restaurante mediterráneo, contactar restaurante, reserva online bar, restaurante con tapas, restaurante mediterráneo reservas, contactar bar restaurante, localización restaurante, horarios restaurante, restaurante familiar contacto",
+      "ogTitle": "La Meva Llar | Contacto y Reservas",
+      "ogDescription": "Contacta con La Meva Llar, bar restaurante mediterráneo. Reserva tu mesa, consulta disponibilidad o solicita información sobre nuestros menús y eventos especiales.",
+      "ogType": "website"
+    },
+    "map": {
+      "title": "La Meva Llar | Mapa y Localización",
+      "description": "Encuentra La Meva Llar, bar restaurante mediterráneo. Consulta nuestra ubicación exacta, cómo llegar y planifica tu visita para disfrutar de tapas, desayunos y platos caseros.",
+      "keywords": "la meva llar ubicación, cómo llegar restaurante, mapa restaurante mediterráneo, restaurante cerca de mí, restaurante familiar ubicación, restaurante con terraza dirección, La Meva Llar mapa, localización bar restaurante, dirección restaurante mediterráneo, restaurante Costa Brava, parking restaurante mediterráneo",
+      "ogTitle": "La Meva Llar | Mapa y Localización",
+      "ogDescription": "Encuentra La Meva Llar, bar restaurante mediterráneo. Consulta nuestra ubicación exacta, cómo llegar y planifica tu visita para disfrutar de tapas, desayunos y platos caseros.",
+      "ogType": "website"
+    },
+    "menu": {
+      "title": "La Meva Llar | Nuestra Carta y Menú",
+      "description": "Descubre el menú de La Meva Llar: platos caseros, tapas mediterráneas, desayunos y postres en un restaurante acogedor con cocina tradicional y de calidad.",
+      "keywords": "la meva llar menú, carta restaurante mediterráneo, tapas restaurante, menú desayunos, menú postres caseros, platos mediterráneos, menú bar restaurante, especialidades mediterráneas, menú cocina casera, carta La Meva Llar, menú actualizado, menú Costa Brava, platos típicos mediterráneos",
+      "ogTitle": "La Meva Llar | Nuestra Carta y Menú",
+      "ogDescription": "Descubre el menú de La Meva Llar: platos caseros, tapas mediterráneas, desayunos y postres en un restaurante acogedor con cocina tradicional y de calidad.",
+      "ogType": "website"
+    }
+  }
+}

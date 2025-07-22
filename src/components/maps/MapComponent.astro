@@ -1,0 +1,28 @@
+---
+import { getStaticPaths, getI18nProps } from '@i18n/helperi18n';
+import MapComponentReact from './MapComponentReact';
+
+
+export { getStaticPaths };
+
+interface Props {
+  title?: string; 
+}
+
+const { lang, t, title } = getI18nProps(Astro.params, 'map');
+
+---
+
+
+
+<section id="map">
+  <div class="max-w-7xl mx-auto text-center space-y-4">
+    <h2>{t("map.heading")}</h2>
+    <p class="text-center">{t("map.description")}</p>
+  </div>
+
+  <div class="max-w-5xl mx-auto mt-8 px-4">
+    <MapComponentReact client:only="react" />
+  </div>
+</section>
+

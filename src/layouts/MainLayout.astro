@@ -1,0 +1,100 @@
+---
+import ClientRouter from 'astro/components/ClientRouter.astro';
+import "@styles/global.css";
+import Navbar from "@components/navbar/Navbar.astro";
+import type { SupportedLang } from '@i18n/utils';
+import FooterComponent from "@components/footer/FooterComponent.astro";
+
+import 'aos/dist/aos.css';  // Importa los estilos de AOS en el layout global
+import AOS from 'aos';
+import CookieButton from '@components/cookies/CookieButton';
+
+interface Props {
+    title: string;
+    lang: SupportedLang;
+    description?: string;
+    keyword?: string;
+    ogTitle?: string;
+    ogDescription?: string;
+    ogImage?: string;
+    ogURL?: string;
+    ogType?: string;
+}
+
+const {
+  title, 
+  lang, 
+  description = "La Meva Llar es tu rincón mediterráneo para disfrutar de desayunos, tapas, postres caseros y comidas llenas de sabor. Un espacio acogedor para compartir momentos únicos.",
+  keyword = "la meva llar, restaurante mediterráneo, tapas, desayunos, postres, comida casera, bar Buenos Aires, bar mediterráneo, barcelona, bar barcelona",
+  ogTitle = "La Meva Llar | Restaurante Mediterráneo",
+  ogDescription = "Resumen que aparece al compartir en redes.",
+  ogImage = "https://lamevallar.splytin.com/images/og-home.jpg",
+  ogURL = "https://lamevallar.splytin.com",
+  ogType = "website",
+} = Astro.props;
+
+
+const author = 'lamevallar';
+
+
+---
+
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Icono de pestaña -->
+    <!-- <link rel="icon" href="./favicon.ico" type="image/x-icon"> -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+
+    <!-- Descripción que se muestra en Google -->
+    <meta name="description" content={description}>
+    <!-- Palabras clave (Google ya no la usa, pero algunos motores sí) -->
+    <meta name="keywords" content={keyword}>
+    <!-- Autor -->
+    <meta name="author" content={author}>
+    <!-- Indexación y seguimiento (importante) -->
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph para compartir en redes sociales -->
+    <meta property="og:title" content={ogTitle}>
+    <meta property="og:description" content={ogDescription}>
+    <meta property="og:image" content={ogImage}>
+    <meta property="og:url" content={ogURL}>
+    <meta property="og:type" content={ogType}>
+
+    
+    <!-- <script src="https://unpkg.com/alpinejs" is:inline defer></script> -->
+
+    <title>{title}</title>
+
+    <ClientRouter />
+    
+  </head>
+  <body class="overflow-x-hidden bg-background">
+    
+    <!-- Navbar -->
+    <Navbar lang={lang} />
+
+    <main class="w-full overflow-x-hidden">
+      <slot />
+    </main>
+    
+
+    <FooterComponent />
+
+
+    <CookieButton client:only="react" />
+
+    <script>
+      import AOS from 'aos';
+      AOS.init({
+        once: true,
+        startEvent: 'DOMContentLoaded',
+      });
+    </script>
+    
+  </body>
+</html>

@@ -1,0 +1,122 @@
+{
+  "navbar": {
+    "lang_es": "Español",
+    "lang_en": "English",
+    "brand": "MySite",
+    "home": "Home",
+    "about": "About",
+    "menu": "Menu",
+    "contact": "Contact",
+    "map": "Map",
+    "login": "Login"
+  },
+ "home": {
+    "title": "Home",
+    "heading": "Welcome to La Meva Llar",
+    "description": "Tapas - Mediterranean style restaurant"
+  },
+  "about": {
+    "title": "About Us",
+    "heading": "Passion for every detail",
+    "description": "We create unique experiences blending food, atmosphere, and service so every visit feels special.",
+    "title1": "Flavors that define us",
+    "txt1": "At La Meva Llar, we celebrate the essence of Mediterranean cuisine with timeless recipes made from fresh, local ingredients.",
+    "title2": "A place to gather",
+    "txt2": "Our space is designed for people to come together and enjoy good food, heartfelt moments, and the warmth of home."
+  },
+  "contact": {
+    "title": "Location & Hours",
+    "address": "📍 Buenos Aires Street, 12 – Barcelona",
+    "hours": "🕒 Monday to Sunday: 9:00 AM - 11:00 PM",
+    "phone": "📞 +34 600 123 456",
+    "note": "* Special schedules on holidays"
+  },
+  "footer": {
+    "solutions": "Solutions",
+    "solutions_list": {
+      "marketing": "Marketing",
+      "analytics": "Analytics",
+      "automation": "Automation",
+      "commerce": "Commerce",
+      "insights": "Insights"
+    },
+    "support": "Support",
+    "support_list": {
+      "submit_ticket": "Submit ticket",
+      "documentation": "Documentation",
+      "guides": "Guides"
+    },
+    "company": "Company",
+    "company_list": {
+      "about": "About",
+      "blog": "Blog",
+      "jobs": "Jobs",
+      "press": "Press"
+    },
+    "legal": "Legal",
+    "legal_list": {
+      "terms_of_service": "Terms of service",
+      "privacy_policy": "Privacy policy",
+      "license": "License"
+    },
+    "newsletter": {
+      "title": "Subscribe to our newsletter",
+      "description": "The latest news, articles, and resources, sent to your inbox weekly.",
+      "placeholder": "Enter your email",
+      "button": "Subscribe"
+    },
+    "copyright": "All rights reserved."
+  },
+  "menu": {
+    "title": "Our Menu",
+    "heading": "Discover unique flavors",
+    "description": "A curated selection of dishes designed to delight your senses with the best of Mediterranean cuisine"
+  },
+  "map": {
+    "title": "Location",
+    "heading": "Your dining destination",
+    "description": "A place where every visit feels special."
+  },
+  "seo": {
+    "home": {
+      "title": "La Meva Llar | Mediterranean Restaurant",
+      "description": "La Meva Llar, a Mediterranean bar and restaurant offering breakfasts, tapas, homemade desserts, and flavorful dishes in a cozy and friendly atmosphere.",
+      "keywords": "la meva llar, mediterranean restaurant, tapas, breakfasts, desserts, homemade food, bar Buenos Aires, mediterranean bar, barcelona, bar barcelona",
+      "ogTitle": "La Meva Llar | Mediterranean Restaurant",
+      "ogDescription": "La Meva Llar, a Mediterranean bar and restaurant offering breakfasts, tapas, homemade desserts, and flavorful dishes in a cozy and friendly atmosphere.",
+      "ogType": "website"
+    },
+    "about": {
+      "title": "La Meva Llar | About Us",
+      "description": "Discover La Meva Llar, a Mediterranean restaurant where we share authentic flavors, homemade recipes, and a cozy atmosphere to enjoy together.",
+      "keywords": "la meva llar, about us, who we are, mediterranean restaurant, restaurant history, homemade food, traditional tapas, mediterranean dishes, family atmosphere, mediterranean essence, cozy restaurant, mediterranean gastronomy, local food, tradition and flavor",
+      "ogTitle": "La Meva Llar | About Us",
+      "ogDescription": "Discover La Meva Llar, a Mediterranean restaurant where we share authentic flavors, homemade recipes, and a cozy atmosphere to enjoy together.",
+      "ogType": "website"
+    },
+    "contact": {
+      "title": "La Meva Llar | Contact & Reservations",
+      "description": "Get in touch with La Meva Llar, a Mediterranean bar and restaurant. Book your table, check availability, or inquire about our menus and special events.",
+      "keywords": "la meva llar contact, book a table restaurant, mediterranean restaurant phone, contact restaurant, online booking bar, tapas restaurant, mediterranean restaurant reservations, contact bar restaurant, restaurant location, opening hours restaurant, family restaurant contact",
+      "ogTitle": "La Meva Llar | Contact & Reservations",
+      "ogDescription": "Get in touch with La Meva Llar, a Mediterranean bar and restaurant. Book your table, check availability, or inquire about our menus and special events.",
+      "ogType": "website"
+    },
+    "map": {
+      "title": "La Meva Llar | Map and Location",
+      "description": "Find La Meva Llar, a Mediterranean bar and restaurant. Check our exact location, how to get here, and plan your visit to enjoy tapas, breakfasts, and homemade dishes.",
+      "keywords": "la meva llar location, how to get to restaurant, mediterranean restaurant map, restaurant near me, family restaurant location, restaurant with terrace address, La Meva Llar map, bar restaurant location, mediterranean restaurant address, Costa Brava restaurant, mediterranean restaurant parking",
+      "ogTitle": "La Meva Llar | Map and Location",
+      "ogDescription": "Find La Meva Llar, a Mediterranean bar and restaurant. Check our exact location, how to get here, and plan your visit to enjoy tapas, breakfasts, and homemade dishes.",
+      "ogType": "website"
+    },
+    "menu": {
+      "title": "La Meva Llar | Our Menu and Dishes",
+      "description": "Discover La Meva Llar's menu: homemade dishes, Mediterranean tapas, breakfasts, and desserts in a cozy restaurant with traditional and quality cuisine.",
+      "keywords": "la meva llar menu, mediterranean restaurant menu, tapas restaurant, breakfast menu, homemade desserts, mediterranean dishes, bar restaurant menu, mediterranean specialties, homemade cuisine menu, La Meva Llar menu, updated menu, Costa Brava menu, typical mediterranean dishes",
+      "ogTitle": "La Meva Llar | Our Menu and Dishes",
+      "ogDescription": "Discover La Meva Llar's menu: homemade dishes, Mediterranean tapas, breakfasts, and desserts in a cozy restaurant with traditional and quality cuisine.",
+      "ogType": "website"
+    }
+  }
+}
