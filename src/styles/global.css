@@ -3,15 +3,21 @@
 
 @theme {
     --font-display: "Roboto", "sans-serif";
-    --color-primary: #0096b2;
-    --color-primary-light: #00b4d6;
-    --color-primary-dark: #007a91;
-    --color-primary-alpha70: rgba(79, 157, 166, 0.7);
+    /* Color principal basado en la curva inferior */
+    --color-primary: #1f7cc0;             /* Azul medio */
+    --color-primary-light: #4fa1db;       /* Azul claro */
+    --color-primary-dark: #165d8c;        /* Azul oscuro */
+    --color-primary-alpha70: rgba(31, 124, 192, 0.7); /* Versión 70% del color principal */
 
-    --color-secondary: #0998FC;
-    --color-secondary-light: #09C0FC;
-    --color-secondary-dark: #0976FC;
+    /* Color secundario basado en la curva superior */
+    --color-secondary: #00b9f2;           /* Cyan vibrante */
+    --color-secondary-light: #4dd8fb;     /* Cyan claro */
+    --color-secondary-dark: #0090c0;      /* Cyan oscuro */
 
+    /* Color acento del centro brillante */
+    --color-accent: #a6cffa;              /* Azul brillante del centro */
+
+    /* Resto de tu esquema (se mantienen) */
     --color-danger: #f44336;
     --color-danger-light: #ff7961;
     --color-danger-dark: #b83329;
@@ -40,7 +46,6 @@
     --color-white-light: rgba(255, 255, 255, 0.4);
     --color-white-dark: #f0f0f0;
 
-    
     --color-navbar: #222831;
     --color-background: #fff;
 
