@@ -7,26 +7,26 @@
     "about": "Nosotros",
     "contact": "Contacto",
     "map": "Mapa",
-    "login": "Login"
+    "login": "Acceder"
   },
   "home": {
     "title": "Inicio",
     "heading": "Bienvenidos a Splytin",
-    "description": "Tu sitio de confianza"
+    "description": "Tu sitio de confianza para gestionar tus proyectos"
   },
   "about": {
     "title": "Sobre Nosotros",
-    "heading": "Pasión por los pequeños detalles",
-    "description": "Creamos experiencias únicas combinando cocina, ambiente y servicio para que cada visita sea especial.",
-    "title1": "Sabores que nos definen",
-    "txt1": "En La Meva Llar celebramos la esencia de la cocina mediterránea con recetas de toda la vida, elaboradas con productos frescos y locales.",
-    "title2": "Un lugar para compartir",
-    "txt2": "Nuestro espacio está pensado para reunir personas, celebrar momentos y saborear juntos cada plato."
+    "heading": "Pasión por las soluciones a medida",
+    "description": "Creamos herramientas centralizadas y eficientes para gestionar tu negocio con precisión y creatividad.",
+    "title1": "Gestión Inteligente",
+    "txt1": "Splytin te permite llevar el control de clientes, facturación, horas trabajadas y cada proyecto desde un panel unificado.",
+    "title2": "Modular y Escalable",
+    "txt2": "Ya sea una plataforma musical, un CRM personalizado o un ERP interno, Splytin se adapta y crece con tu ecosistema."
   },
   "contact": {
-    "title": "Ubicación y Horarios",
-    "address": "📍 Calle Buenos Aires, 12 – Barcelona",
-    "hours": "🕒 Lunes a Domingo: 9:00 - 23:00",
+    "title": "Contacto y Soporte",
+    "address": "📍 Sede central: Barcelona, España",
+    "hours": "🕒 Lunes a Viernes: 9:00 - 18:00",
     "phone": "📞 +34 600 123 456",
     "note": "* Horarios especiales en festivos"
   },
@@ -60,7 +60,7 @@
     },
     "newsletter": {
       "title": "Suscríbete a nuestro boletín",
-      "description": "Las últimas noticias, artículos y recursos directamente a tu correo semanalmente.",
+      "description": "Noticias, artículos y recursos directamente en tu correo cada semana.",
       "placeholder": "Introduce tu correo electrónico",
       "button": "Suscribirse"
     },
@@ -68,40 +68,40 @@
   },
   "map": {
     "title": "Ubicación",
-    "heading": "Tu destino gastronómico",
-    "description": "Un lugar donde cada visita es especial."
+    "heading": "Nuestra sede",
+    "description": "Descubre desde dónde operamos y gestionamos todos nuestros proyectos."
   },
   "seo": {
     "home": {
-      "title": "La Meva Llar | Restaurante Mediterráneo",
-      "description": "La Meva Llar, bar restaurante con esencia mediterránea: desayunos, tapas, postres y platos caseros en un ambiente cálido y familiar.",
-      "keywords": "la meva llar, restaurante mediterráneo, tapas, desayunos, postres, comida casera, bar Buenos Aires, bar mediterráneo, barcelona, bar barcelona",
-      "ogTitle": "La Meva Llar | Restaurante Mediterráneo",
-      "ogDescription": "La Meva Llar, bar restaurante con esencia mediterránea: desayunos, tapas, postres y platos caseros en un ambiente cálido y familiar.",
+      "title": "Splytin | Gestión Centralizada de Proyectos",
+      "description": "Splytin, tu centro de confianza para gestionar clientes, facturas, horas y proyectos personalizados desde un solo lugar.",
+      "keywords": "splytin, gestión de proyectos, CRM, ERP, plataforma centralizada, facturación, control de clientes",
+      "ogTitle": "Splytin | Gestión Centralizada de Proyectos",
+      "ogDescription": "Splytin, tu centro de confianza para gestionar clientes, facturas, horas y proyectos personalizados desde un solo lugar.",
       "ogType": "website"
     },
     "about": {
-      "title": "La Meva Llar | Sobre Nosotros",
-      "description": "Conoce La Meva Llar, restaurante con esencia mediterránea donde compartimos sabores auténticos, recetas caseras y un ambiente acogedor para disfrutar en compañía.",
-      "keywords": "la meva llar, sobre nosotros, quienes somos, restaurante mediterráneo, historia restaurante, cocina casera, tapas tradicionales, platos mediterráneos, ambiente familiar, esencia mediterránea, restaurante acogedor, gastronomía mediterránea, comida local, tradición y sabor",
-      "ogTitle": "La Meva Llar | Sobre Nosotros",
-      "ogDescription": "Conoce La Meva Llar, restaurante con esencia mediterránea donde compartimos sabores auténticos, recetas caseras y un ambiente acogedor para disfrutar en compañía.",
+      "title": "Splytin | Sobre Nosotros",
+      "description": "Conoce Splytin, la plataforma que centraliza el control de tus proyectos y se adapta al crecimiento de tu negocio.",
+      "keywords": "splytin, quienes somos, soluciones tecnológicas, plataforma de gestión, proyectos a medida, control empresarial",
+      "ogTitle": "Splytin | Sobre Nosotros",
+      "ogDescription": "Conoce Splytin, la plataforma que centraliza el control de tus proyectos y se adapta al crecimiento de tu negocio.",
       "ogType": "website"
     },
     "contact": {
-      "title": "La Meva Llar | Contacto y Reservas",
-      "description": "Contacta con La Meva Llar, bar restaurante mediterráneo. Reserva tu mesa, consulta disponibilidad o solicita información sobre nuestros menús y eventos especiales.",
-      "keywords": "la meva llar contacto, reservar mesa restaurante, teléfono restaurante mediterráneo, contactar restaurante, reserva online bar, restaurante con tapas, restaurante mediterráneo reservas, contactar bar restaurante, localización restaurante, horarios restaurante, restaurante familiar contacto",
-      "ogTitle": "La Meva Llar | Contacto y Reservas",
-      "ogDescription": "Contacta con La Meva Llar, bar restaurante mediterráneo. Reserva tu mesa, consulta disponibilidad o solicita información sobre nuestros menús y eventos especiales.",
+      "title": "Splytin | Contacto y Soporte",
+      "description": "Contacta con Splytin para soporte, consultas o colaboraciones. Estamos aquí para ayudarte.",
+      "keywords": "splytin contacto, soporte técnico, contacto plataforma, ayuda empresarial, consulta software, asistencia cliente",
+      "ogTitle": "Splytin | Contacto y Soporte",
+      "ogDescription": "Contacta con Splytin para soporte, consultas o colaboraciones. Estamos aquí para ayudarte.",
       "ogType": "website"
     },
     "map": {
-      "title": "La Meva Llar | Mapa y Localización",
-      "description": "Encuentra La Meva Llar, bar restaurante mediterráneo. Consulta nuestra ubicación exacta, cómo llegar y planifica tu visita para disfrutar de tapas, desayunos y platos caseros.",
-      "keywords": "la meva llar ubicación, cómo llegar restaurante, mapa restaurante mediterráneo, restaurante cerca de mí, restaurante familiar ubicación, restaurante con terraza dirección, La Meva Llar mapa, localización bar restaurante, dirección restaurante mediterráneo, restaurante Costa Brava, parking restaurante mediterráneo",
-      "ogTitle": "La Meva Llar | Mapa y Localización",
-      "ogDescription": "Encuentra La Meva Llar, bar restaurante mediterráneo. Consulta nuestra ubicación exacta, cómo llegar y planifica tu visita para disfrutar de tapas, desayunos y platos caseros.",
+      "title": "Splytin | Mapa y Localización",
+      "description": "Conoce la ubicación desde donde operamos y desarrollamos las soluciones de Splytin.",
+      "keywords": "splytin ubicación, mapa sede, localización empresa tech, base de operaciones Splytin, oficina central",
+      "ogTitle": "Splytin | Mapa y Localización",
+      "ogDescription": "Conoce la ubicación desde donde operamos y desarrollamos las soluciones de Splytin.",
       "ogType": "website"
     }
   }
