@@ -15,13 +15,20 @@
     "description": "Tu sitio de confianza para gestionar tus proyectos"
   },
   "about": {
-    "title": "Sobre Nosotros",
-    "heading": "Pasión por las soluciones a medida",
-    "description": "Creamos herramientas centralizadas y eficientes para gestionar tu negocio con precisión y creatividad.",
-    "title1": "Gestión Inteligente",
-    "txt1": "Splytin te permite llevar el control de clientes, facturación, horas trabajadas y cada proyecto desde un panel unificado.",
-    "title2": "Modular y Escalable",
-    "txt2": "Ya sea una plataforma musical, un CRM personalizado o un ERP interno, Splytin se adapta y crece con tu ecosistema."
+    "title": "Sobre Splytin",
+    "description": "Una plataforma diseñada para centralizar y optimizar la gestión de tus proyectos digitales.",
+    
+    "title1": "Gestión Centralizada",
+    "txt1": "Administra todos tus proyectos desde un único lugar, con control total sobre tareas, tiempos y facturación.",
+
+    "title2": "Control de Clientes",
+    "txt2": "Visualiza toda la información de tus clientes, facturas, historial y comunicaciones en tiempo real.",
+
+    "title3": "Análisis de Proyectos",
+    "txt3": "Consulta informes detallados sobre el rendimiento y evolución de cada uno de tus productos digitales.",
+
+    "title4": "Escalabilidad Técnica",
+    "txt4": "Splytin crece contigo: agrega nuevas funcionalidades y módulos personalizados según lo necesites."
   },
   "contact": {
     "title": "Contacto y Soporte",

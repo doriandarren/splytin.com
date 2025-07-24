@@ -15,13 +15,16 @@
     "description": "Your trusted management hub"
   },
   "about": {
-    "title": "About Us",
-    "heading": "Passion for tailored solutions",
-    "description": "We create centralized and efficient tools to manage your business with precision and creativity.",
-    "title1": "Smart Management",
-    "txt1": "Splytin empowers you to track clients, invoices, hours, and every project from one powerful dashboard.",
-    "title2": "Modular and Scalable",
-    "txt2": "Whether it's a music platform, custom CRM, or internal ERP, Splytin adapts and grows with your ecosystem."
+    "title": "About Splytin",
+    "description": "A platform designed to centralize and optimize the management of your digital projects.",
+    "title1": "Centralized Management",
+    "txt1": "Manage all your projects from one place, with full control over tasks, time tracking, and billing.",
+    "title2": "Client Control",
+    "txt2": "Access all your client info, invoices, history, and real-time communication in one dashboard.",
+    "title3": "Project Analysis",
+    "txt3": "Get detailed reports on the performance and progress of each of your digital products.",
+    "title4": "Technical Scalability",
+    "txt4": "Splytin grows with you: add new features and custom modules as your needs evolve."
   },
   "contact": {
     "title": "Contact & Support",
@@ -81,12 +84,20 @@
       "ogType": "website"
     },
     "about": {
-      "title": "Splytin | About Us",
-      "description": "Learn about Splytin, the platform that empowers developers and entrepreneurs with centralized project control and modular solutions.",
-      "keywords": "about Splytin, tech platform, project management, developer tools, custom CRM, business ecosystem",
-      "ogTitle": "Splytin | About Us",
-      "ogDescription": "Learn about Splytin, the platform that empowers developers and entrepreneurs with centralized project control and modular solutions.",
-      "ogType": "website"
+      "title": "About Splytin",
+      "description": "A platform designed to centralize and optimize the management of your digital projects.",
+      
+      "title1": "Centralized Management",
+      "txt1": "Manage all your projects from one place, with full control over tasks, time tracking, and billing.",
+
+      "title2": "Client Control",
+      "txt2": "Access all your client info, invoices, history, and real-time communication in one dashboard.",
+
+      "title3": "Project Analysis",
+      "txt3": "Get detailed reports on the performance and progress of each of your digital products.",
+
+      "title4": "Technical Scalability",
+      "txt4": "Splytin grows with you: add new features and custom modules as your needs evolve."
     },
     "contact": {
       "title": "Splytin | Contact & Support",
