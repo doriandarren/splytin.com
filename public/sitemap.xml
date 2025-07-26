@@ -6,12 +6,32 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://splytin.com/about</loc>
+    <loc>https://splytin.com/es</loc>
+    <lastmod>2025-07-22</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://splytin.com/en</loc>
+    <lastmod>2025-07-22</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://splytin.com/es/about</loc>
     <lastmod>2025-07-22</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://splytin.com/contact</loc>
+    <loc>https://splytin.com/en/about</loc>
+    <lastmod>2025-07-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://splytin.com/es/contact</loc>
+    <lastmod>2025-07-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://splytin.com/en/contact</loc>
     <lastmod>2025-07-22</lastmod>
     <priority>0.8</priority>
   </url>
