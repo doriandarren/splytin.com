@@ -12,7 +12,7 @@ export default function Map() {
     }).setView([41.3851, 2.1734], 13);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
-    L.marker([41.3851, 2.1734]).addTo(map).bindPopup("Estamos aqui! :)").openPopup();
+    L.marker([41.39100, 2.14488]).addTo(map).bindPopup("Estamos aqui! :)").openPopup();
 
     return () => map.remove();
   }, []);
