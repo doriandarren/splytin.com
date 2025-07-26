@@ -27,3 +27,7 @@ lerna-debug.log*
 *.sw?
 .vscode
 .env
+
+dist/
+.idea/
+.vscode/
