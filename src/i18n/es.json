@@ -16,19 +16,19 @@
   },
   "about": {
     "title": "Sobre Splytin",
-    "description": "Una plataforma diseñada para centralizar y optimizar la gestión de tus proyectos digitales.",
-    
+    "description": "Impulsamos tus ideas y centralizamos tu crecimiento. Splytin es tu centro de control para gestionar proyectos, clientes y resultados.",
+
     "title1": "Gestión Centralizada",
-    "txt1": "Administra todos tus proyectos desde un único lugar, con control total sobre tareas, tiempos y facturación.",
+    "txt1": "Olvídate de herramientas dispersas. Administra todo desde un solo lugar: tareas, tiempo y facturación, con eficiencia y control total.",
 
     "title2": "Control de Clientes",
-    "txt2": "Visualiza toda la información de tus clientes, facturas, historial y comunicaciones en tiempo real.",
+    "txt2": "Consulta en segundos el historial de tus clientes, sus facturas, notas y comunicación, todo sincronizado y siempre accesible.",
 
     "title3": "Análisis de Proyectos",
-    "txt3": "Consulta informes detallados sobre el rendimiento y evolución de cada uno de tus productos digitales.",
+    "txt3": "Obtén métricas claras y visuales sobre el rendimiento, avances y puntos críticos de cada proyecto. Toma decisiones con confianza.",
 
     "title4": "Escalabilidad Técnica",
-    "txt4": "Splytin crece contigo: agrega nuevas funcionalidades y módulos personalizados según lo necesites."
+    "txt4": "Splytin evoluciona contigo: añade módulos y funciones personalizadas a medida que tu empresa crece o cambia de rumbo."
   },
   "contact": {
     "title": "Contacto y Soporte",

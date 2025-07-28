@@ -47,7 +47,9 @@
     --color-white-dark: #f0f0f0;
 
     --color-navbar: #222831;
-    --color-background: #e6f2fa;
+    /* --color-background: #e6f2fa; */
+    --color-background: #f2f9fd; /* azul muy claro */
+
 
     --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
     --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
