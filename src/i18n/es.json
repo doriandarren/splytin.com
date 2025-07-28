@@ -16,19 +16,32 @@
   },
   "about": {
     "title": "Sobre Splytin",
-    "description": "Impulsamos tus ideas y centralizamos tu crecimiento. Splytin es tu centro de control para gestionar proyectos, clientes y resultados.",
+    "description": "Una plataforma diseñada para centralizar y optimizar la gestión de tus proyectos digitales.",
 
     "title1": "Gestión Centralizada",
-    "txt1": "Olvídate de herramientas dispersas. Administra todo desde un solo lugar: tareas, tiempo y facturación, con eficiencia y control total.",
+    "txt1": "Administra todos tus proyectos desde un único lugar, con control total sobre tareas, tiempos y facturación.",
 
     "title2": "Control de Clientes",
-    "txt2": "Consulta en segundos el historial de tus clientes, sus facturas, notas y comunicación, todo sincronizado y siempre accesible.",
+    "txt2": "Visualiza toda la información de tus clientes, facturas, historial y comunicaciones en tiempo real.",
+    
+    "midBlockTitle": "¿Por qué elegir Splytin?",
+    "midBlockText": "La plataforma evoluciona contigo, automatiza procesos y centraliza tu crecimiento en una sola interfaz.",
 
     "title3": "Análisis de Proyectos",
-    "txt3": "Obtén métricas claras y visuales sobre el rendimiento, avances y puntos críticos de cada proyecto. Toma decisiones con confianza.",
+    "txt3": "Consulta informes detallados sobre el rendimiento y evolución de cada uno de tus productos digitales.",
 
     "title4": "Escalabilidad Técnica",
-    "txt4": "Splytin evoluciona contigo: añade módulos y funciones personalizadas a medida que tu empresa crece o cambia de rumbo."
+    "txt4": "Splytin crece contigo: agrega nuevas funcionalidades y módulos personalizados según lo necesites.",
+
+    "title5": "Automatización Eficiente",
+    "txt5": "Reduce tareas repetitivas y optimiza tu tiempo con flujos automáticos adaptados a tus procesos.",
+
+    "kpi1": "Proyectos gestionados",
+    "kpi2": "Satisfacción de usuarios",
+    "kpi3": "Horas monitorizadas",
+    "kpi4": "Soporte personalizado",
+
+    "quote": "La tecnología no debe ser un obstáculo, sino tu mejor aliada. 🤖 Bienvenido a Splytin."
   },
   "contact": {
     "title": "Contacto y Soporte",

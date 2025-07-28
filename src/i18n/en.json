@@ -17,14 +17,31 @@
   "about": {
     "title": "About Splytin",
     "description": "A platform designed to centralize and optimize the management of your digital projects.",
+
     "title1": "Centralized Management",
-    "txt1": "Manage all your projects from one place, with full control over tasks, time tracking, and billing.",
+    "txt1": "Manage all your projects from one place, with full control over tasks, time, and billing.",
+
     "title2": "Client Control",
-    "txt2": "Access all your client info, invoices, history, and real-time communication in one dashboard.",
-    "title3": "Project Analysis",
-    "txt3": "Get detailed reports on the performance and progress of each of your digital products.",
+    "txt2": "View all your clients’ information, invoices, history, and communications in real time.",
+
+    "midBlockTitle": "Why choose Splytin?",
+    "midBlockText": "The platform evolves with you, automates processes, and centralizes your growth in a single interface.",
+
+    "title3": "Project Analytics",
+    "txt3": "Access detailed reports on the performance and evolution of each digital product.",
+
     "title4": "Technical Scalability",
-    "txt4": "Splytin grows with you: add new features and custom modules as your needs evolve."
+    "txt4": "Splytin grows with you: add new features and custom modules as you need them.",
+
+    "title5": "Efficient Automation",
+    "txt5": "Reduce repetitive tasks and optimize your time with automated flows tailored to your processes.",
+
+    "kpi1": "Managed projects",
+    "kpi2": "User satisfaction",
+    "kpi3": "Monitored hours",
+    "kpi4": "Personalized support",
+
+    "quote": "Technology shouldn't be a barrier — it should be your best ally. 🤖 Welcome to Splytin."
   },
   "contact": {
     "title": "Contact & Support",
