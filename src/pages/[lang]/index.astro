@@ -1,29 +1,26 @@
 ---
-import { getStaticPaths, getI18nProps } from '@i18n/helperi18n';
-import MainLayout from '@layouts/MainLayout.astro';
-import IndexComponent from '@components/index/IndexComponent.astro';
+import { getStaticPaths, getI18nProps } from "@i18n/helperi18n";
+import MainLayout from "@layouts/MainLayout.astro";
+import IndexComponent from "@components/index/IndexComponent.astro";
 
 export { getStaticPaths };
 
-const { lang, t, title } = getI18nProps(Astro.params, 'home');
-
+const { lang, t, title } = getI18nProps(Astro.params, "home");
 
 // SEO
-const description = t('seo.home.description');
-const keyword = t('seo.home.keywords');
+const description = t("seo.home.description");
+const keyword = t("seo.home.keywords");
 
 // OG
-const ogTitle = t('seo.home.title');
-const ogDescription = t('seo.home.ogDescription');
+const ogTitle = t("seo.home.title");
+const ogDescription = t("seo.home.ogDescription");
 const ogImage = "https://splytin.com/images/og-home.jpg";
 const ogURL = "https://splytin.com";
-const ogType = t('seo.home.ogType');
-
+const ogType = t("seo.home.ogType");
 ---
 
-
-<MainLayout 
-  title={title} 
+<MainLayout
+  title={title}
   lang={lang}
   description={description}
   keyword={keyword}
@@ -33,8 +30,5 @@ const ogType = t('seo.home.ogType');
   ogURL={ogURL}
   ogType={ogType}
 >
-
-
   <IndexComponent title={title} />
-
 </MainLayout>

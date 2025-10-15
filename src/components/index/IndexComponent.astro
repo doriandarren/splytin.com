@@ -1,4 +1,5 @@
 ---
+import AdsenseBanner from "@components/google/AdseseBanner";
 import Navbar from "@components/navbar/Navbar.astro";
 import { getStaticPaths, getI18nProps } from '@i18n/helperi18n';
 
@@ -21,6 +22,12 @@ const { lang, t, title } = getI18nProps(Astro.params, 'home');
 
 
   <main>
+
+    <AdsenseBanner client:only="react"
+      slot="TU_SLOT_ID"
+      style={{ display: "block", width: "100%", maxWidth: "728px", height: "90px", margin: "24px auto" }}
+    />
+
     <div class="relative isolate pt-10">
       <svg aria-hidden="true" class="absolute inset-x-0 top-0 -z-10 h-256 w-full mask-[radial-gradient(32rem_32rem_at_center,white,transparent)] stroke-gray-200">
         <defs>
